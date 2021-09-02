@@ -21,6 +21,10 @@ jobs:
           hugo-version: "0.85.0"
           extended: true
 
+      - name: Install requirements
+        run: |
+          npm install -g postcss-cli postcss autoprefixer
+
       - name: Build
         run: hugo --minify
 
