@@ -1,9 +1,8 @@
 ---
 date: 2021-09-02
-title: "Spice.ai - time series AI for developers"
+title: "Introducing Spice.ai - open source, time series AI for developers"
 type: blog
-linkTitle: "Spice.ai - time series AI for developers"
-description: "Introducing Spice.ai - open source, time series AI for developers"
+linkTitle: "Introducing Spice.ai - open source, time series AI for developers"
 author: Spice AI ([@SpiceAIHQ](https://twitter.com/SpiceAIHQ))
 ---
 
@@ -17,11 +16,9 @@ In the neurofeedback project, we worked with brain activity [EEG](https://en.wik
 
 We also realized that handling time series data is often sensitive, such as with health, financial, and security data. Instead of sending all data into a 3rd-party AI service, we needed the choice to bring AI to wherever our data and compute lived, either in the cloud, on-premises on or the edge.
 
-## Spice.ai - a familiar development experience and open source runtime for deep learning on time series data
+### Spice.ai - a modern development experience and open source runtime for deep learning on time series data
 
 Spice.ai is an open source, portable runtime for training and using deep learning on time series data. It's written in Golang and Python and runs as a container or microservice with applications calling a simple HTTP API. It's deployable to any public cloud, on-premises, and edge.
-
-\_\_
 
 The vision for Spice.ai is to make creating intelligent applications as easy as possible for developers in their development environment of choice. Spice.ai brings AI development to their editor, in any language or framework with a fast, iterative, inner development loop, with continuous-integration (CI) and continuous-deployment (CD) workflows.
 
@@ -31,13 +28,11 @@ The Spice.ai runtime also includes a library of [community-driven components](ht
 
 Modern developers build with the community by leveraging registries such as [npm](https://npmjs.org), [NuGet](https://nuget.orghttps://www.nuget.org/), and [pip](https://pypi.org/). The registry for sharing and using Spice.ai packages is [spicerack.org](https://spicerack.org). As the community shares more and more AI building blocks, developers can quickly build intelligence into their applications, initially with definitions of AI projects and eventually by sharing and reusing fully-trained models.
 
-\_\_
-
-## Applying Spice.ai to real-world problems
+### Applying Spice.ai to real-world problems
 
 We are already working with several companies on Spice.ai pilots to develop intelligent applications, such as optimizing in-store pickups for a large online retailer and scheduling optimizations for healthcare workers and resources. We've had interest in use cases from suspicious login detection to intelligent cloud spend analysis and order routing for a food delivery app. And a personal interest of ours, stock and crypto trading.
 
-## Alpha software
+### Alpha software
 
 The vision to bring intelligent application development to the maturity of modern web development is a vast undertaking. We started working on it in June with three engineers, and we haven't figured it all out or solved all the problems yet.
 
