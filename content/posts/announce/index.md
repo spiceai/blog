@@ -3,6 +3,7 @@ date: 2021-09-02
 title: "Introducing Spice.ai - open source, time series AI for developers"
 type: blog
 linkTitle: "Introducing Spice.ai - open source, time series AI for developers"
+notoc: true
 author: Spice AI ([@SpiceAIHQ](https://twitter.com/SpiceAIHQ))
 ---
 
