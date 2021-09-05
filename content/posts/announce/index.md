@@ -1,5 +1,5 @@
 ---
-date: 2021-09-02
+date: 2021-09-07
 title: "Introducing Spice.ai - open source, time series AI for developers"
 type: blog
 linkTitle: "Introducing Spice.ai - open source, time series AI for developers"
