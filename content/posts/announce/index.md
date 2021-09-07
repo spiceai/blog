@@ -17,7 +17,7 @@ Today, we are making [Spice.ai](https://spiceai.org/) available on GitHub, a new
 <div>
 <img style="max-width: 600px;" width="100%" src="https://res.craft.do/user/full/f6ea57b9-4723-ca7b-aa16-e2a916601d59/doc/E951CFE6-D24A-4C02-A796-FFFCFC5FD5A9/A1AAFFBD-0AE9-47B5-AC9C-D37A6932CE5B_2/screen.png" />
 
-_Figure 1. Adding Spice.ai pod, training and getting a recommendation with three commands_
+_Figure 1. Adding a Spice.ai pod, training and getting a recommendation with three commands_
 
 </div>
 </div>
