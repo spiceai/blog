@@ -7,8 +7,6 @@ notoc: true
 author: Spice AI ([@SpiceAIHQ](https://twitter.com/SpiceAIHQ))
 ---
 
-September 7, 2021
-
 AI has recently seen some impressive advances, like with OpenAI [Codex](https://openai.com/blog/openai-codex/) and DeepMind [AlphaFold 2](https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology). And at the same time, for most developers, leveraging AI to create intelligent applications is still way too hard. The [Data Science Hierarchy of Needs](https://hackernoon.com/the-ai-hierarchy-of-needs-18f111fcc007) pyramid from 2017 _still_ illustrates it well; there are too many unmet needs in applying ML in applications.
 
 We faced the same AI development challenges many developers do, even though we had years of engineering experience at Microsoft and GitHub, there was too much to learn and build. And we simply didn't have the time, resources, or tools to learn and utilize AI effectively in the project. After experiencing this pain ourselves, we saw an opportunity to make it better for everyone.
