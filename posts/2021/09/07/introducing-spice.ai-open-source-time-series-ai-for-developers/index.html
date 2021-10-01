@@ -1,5 +1,164 @@
-<!doctype html><html lang=en class=no-js><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=generator content="Hugo 0.85.0"><meta name=ROBOTS content="INDEX, FOLLOW"><link rel="shortcut icon" href=/favicons/favicon.ico><link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180><link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/favicons/android-36x36.png sizes=36x36><link rel=icon type=image/png href=/favicons/android-48x48.png sizes=48x48><link rel=icon type=image/png href=/favicons/android-72x72.png sizes=72x72><link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96><link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144><link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192><title>Introducing Spice.ai - open source, time series AI for developers | Spice.ai blog</title><meta name=description content="AI has recently seen some impressive advances, like with OpenAI Codex and DeepMind AlphaFold 2. And at the same time, for most developers, leveraging …"><meta property="og:title" content="Introducing Spice.ai - open source, time series AI for developers"><meta property="og:description" content="AI has recently seen some impressive advances, like with OpenAI Codex and DeepMind AlphaFold 2. And at the same time, for most developers, leveraging AI to create intelligent applications is still way too hard. The Data Science Hierarchy of Needs pyramid from 2017 still illustrates it well; there are too many unmet needs in applying ML in applications.
-We faced the same AI development challenges many developers do, even though we had years of engineering experience at Microsoft and GitHub, there was too much to learn and build."><meta property="og:type" content="article"><meta property="og:url" content="/posts/2021/09/07/introducing-spice.ai-open-source-time-series-ai-for-developers/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-09-07T00:00:00+00:00"><meta property="article:modified_time" content="2021-09-08T02:14:18+09:00"><meta itemprop=name content="Introducing Spice.ai - open source, time series AI for developers"><meta itemprop=description content="AI has recently seen some impressive advances, like with OpenAI Codex and DeepMind AlphaFold 2. And at the same time, for most developers, leveraging AI to create intelligent applications is still way too hard. The Data Science Hierarchy of Needs pyramid from 2017 still illustrates it well; there are too many unmet needs in applying ML in applications.
-We faced the same AI development challenges many developers do, even though we had years of engineering experience at Microsoft and GitHub, there was too much to learn and build."><meta itemprop=datePublished content="2021-09-07T00:00:00+00:00"><meta itemprop=dateModified content="2021-09-08T02:14:18+09:00"><meta itemprop=wordCount content="809"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Introducing Spice.ai - open source, time series AI for developers"><meta name=twitter:description content="AI has recently seen some impressive advances, like with OpenAI Codex and DeepMind AlphaFold 2. And at the same time, for most developers, leveraging AI to create intelligent applications is still way too hard. The Data Science Hierarchy of Needs pyramid from 2017 still illustrates it well; there are too many unmet needs in applying ML in applications.
-We faced the same AI development challenges many developers do, even though we had years of engineering experience at Microsoft and GitHub, there was too much to learn and build."><link rel=preload href=/scss/main.min.82e7f2f18852989aa388d0348fc949381f02a01342c8c9a5155eb5dbae217198.css as=style><link href=/scss/main.min.82e7f2f18852989aa388d0348fc949381f02a01342c8c9a5155eb5dbae217198.css rel=stylesheet integrity><script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script></head><body class="td-page td-blog"><header><nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar"><a class=navbar-brand href=/><span class=navbar-logo></span><span class="text-uppercase font-weight-bold">Spice.ai blog</span></a><div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar><ul class="navbar-nav mt-2 mt-lg-0"><li class="nav-item mr-4 mb-2 mb-lg-0"><a class=nav-link href=https://github.com/spiceai target=_blank><span>GitHub</span></a></li></ul></div><div class="navbar-nav d-none d-lg-block"></div></nav></header><div class="container-fluid td-outer"><div class=td-main><div class="row flex-xl-nowrap"><aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none"><div id=td-sidebar-menu class=td-sidebar__inner><form class="td-sidebar__search d-flex align-items-center"><button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation"></button></form><nav class="collapse td-sidebar-nav" id=td-section-nav><ul class="td-sidebar-nav__section pr-md-3 ul-0"><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-posts-li><a href=/posts/ title="Spice.ai blog" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-posts><span>Blog</span></a><ul class=ul-1><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-posts20210907introducing-spiceai-open-source-time-series-ai-for-developers-li><a href=/posts/2021/09/07/introducing-spice.ai-open-source-time-series-ai-for-developers/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-posts20210907introducing-spiceai-open-source-time-series-ai-for-developers><span class=td-sidebar-nav-active-item>Introducing Spice.ai - open source, time series AI for developers</span></a></li></ul></li></ul></nav></div></aside><aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none"><div class="td-page-meta ml-2 pb-1 pt-2 mb-0"></div></aside><main class="col-12 col-md-9 col-xl-8 pl-md-5 pr-md-4" role=main><div class=td-content><h1>Introducing Spice.ai - open source, time series AI for developers</h1><div class="td-byline mb-4">By <b>Spice AI (<a href=https://twitter.com/SpiceAIHQ>@SpiceAIHQ</a>)</b> |
-<time datetime=2021-09-07 class=text-muted>Tuesday, September 07, 2021</time></div><header class=article-meta></header><p>AI has recently seen some impressive advances, like with OpenAI <a href=https://openai.com/blog/openai-codex/>Codex</a> and DeepMind <a href=https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology>AlphaFold 2</a>. And at the same time, for most developers, leveraging AI to create intelligent applications is still way too hard. The <a href=https://hackernoon.com/the-ai-hierarchy-of-needs-18f111fcc007>Data Science Hierarchy of Needs</a> pyramid from 2017 <em>still</em> illustrates it well; there are too many unmet needs in applying ML in applications.</p><p>We faced the same AI development challenges many developers do, even though we had years of engineering experience at Microsoft and GitHub, there was too much to learn and build. And we simply didn&rsquo;t have the time, resources, or tools to learn and utilize AI effectively in the project. After experiencing this pain ourselves, we saw an opportunity to make it better for everyone.</p><p>Today, we are making <a href=https://spiceai.org/>Spice.ai</a> available on GitHub, a new open source project that helps developers use deep learning to create intelligent applications. We&rsquo;re looking for feedback on the direction. It&rsquo;s not finished, in fact, we only started this summer, and we invite you to try out the alpha.</p><div style=display:flex;justify-content:center><img style=max-width:600px width=100% src=https://res.craft.do/user/full/f6ea57b9-4723-ca7b-aa16-e2a916601d59/doc/E951CFE6-D24A-4C02-A796-FFFCFC5FD5A9/A1AAFFBD-0AE9-47B5-AC9C-D37A6932CE5B_2/screen.png></div><p style=text-align:center><i>Figure 1. Adding a Spice.ai pod, training and getting a recommendation in three commands</i></p><p>Like many developer stories, it all started with a side-project. We were interested in <a href=https://en.wikipedia.org/wiki/Neurofeedback>neurofeedback</a>, a type of biofeedback therapy that reinforces healthy brain function but can cost up to $15,000. We wanted to make it accessible to more people, so we set out to build a system that leverages AI to deliver neurofeedback more cost-effectively. Using AI for the application was much more challenging than expected, and this sparked the inspiration for Spice.ai.</p><p>In the neurofeedback project, we worked with brain activity <a href=https://en.wikipedia.org/wiki/Electroencephalographyhttps://en.wikipedia.org/wiki/Electroencephalography>EEG</a> data - time series data. We realized that time series data applies to many domains, from health and biometrics to finance, sales, logistics, security, IoT, and application monitoring. The amount of time series data in these fields is growing exponentially, and extracting insights from this data to make more intelligent software will determine the success of the next generation of applications.</p><p>We also realized that handling time series data is often sensitive, such as with health, financial, and security data. Instead of sending all data into a 3rd-party AI service, we needed the choice to bring the AI runtime to wherever our data and compute lived, either in the cloud, on-premises or on edge devices.</p><h3 id=spiceai---a-modern-development-experience-and-open-source-runtime-for-deep-learning-on-time-series-data>Spice.ai - a modern development experience and open source runtime for deep learning on time series data</h3><p>Spice.ai is an open source, portable runtime for training and using deep learning on time series data. It&rsquo;s written in Golang and Python and runs as a container or microservice with applications calling a simple HTTP API. It&rsquo;s deployable to any public cloud, on-premises, and edge.</p><p>The vision for Spice.ai is to make creating intelligent applications as easy as possible for developers in their development environment of choice. Spice.ai brings AI development to their editor in any language or framework with a fast, iterative, inner development loop, continuous-integration (CI), and continuous-deployment (CD) workflows.</p><p>The Spice.ai runtime also includes a library of <a href=https://github.com/spiceai/data-components-contrib>community-driven components</a> for streaming and processing time series data, enabling developers to quickly and easily combine data with learning to create intelligent models.</p><p>Developers can write easy-to-understand and re-useable, &ldquo;pods,&rdquo; with manifests that connect these data components with a simple definition of the learning environment. These pods also serve as a package for the resulting trained model.</p><p>Modern developers build together with the community by leveraging registries such as npm, NuGet, and pip. The registry for sharing and using pods is <a href=https://spicerack.org>spicerack.org</a>. As the community shares more and more pods, developers can quickly build upon each others' work, initially by sharing manifests and eventually by reusing fully-trained models.</p><h3 id=applying-spiceai-to-real-world-problems>Applying Spice.ai to real-world problems</h3><p>We are currently piloting Spice.ai with several companies to create the next generation of modern applications, such as optimizing in-store pickups for a large online retailer or scheduling optimizations for healthcare workers and resources. We&rsquo;ve already seen some cool use cases, including suspicious login detection, intelligent cloud-spend analysis, and order routing for a food delivery app.</p><h3 id=learn-more-and-contribute>Learn more and contribute</h3><p>Building intelligent apps that leverage AI is still way too hard, even for advanced developers. Our mission is to make this as easy as creating a modern web page.</p><p>This mission is a huge undertaking and Spice.ai v0.1-alpha has many gaps, including limited deep learning algorithms and training scale, streaming data, simulated environments, and offline learning modes. Pods aren&rsquo;t searchable or even listed on <a href=http://spicerack.org>spicerack.org</a> yet. But if the vision resonates with you, join us! Our <a href=https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md>Spice.ai Roadmap</a> is public, and now that we have launched, the project and work are open for collaboration.</p><p>If you are interested in partnering, we&rsquo;d love to talk. Try out <a href=https://spiceai.org>Spice.ai</a>, <a href=mailto:hey@spiceai.io>email us</a> &ldquo;hey,&rdquo; get in touch on <a href=https://discord.com/channels/803820740868571196/803820740868571199>Discord</a>, or reach out on <a href=https://twitter.com/0xlukekim>Twitter</a>.</p><p>We are just getting started! 🚀</p><p><a href=https://twitter.com/0xlukekim>Luke</a>, <a href=https://twitter.com/leblancphill>Phillip</a>, and <a href=https://twitter.com/lanesharris>Lane</a> - Spice.ai project founders</p><ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><li><a class="btn btn-primary disabled"><span class=mr-1>←</span> Previous</a></li><a class="btn btn-primary disabled">Next <span class=ml-1>→</span></a></li></ul></div></main></div></div><footer class="bg-dark py-5 row d-print-none"><div class="container-fluid mx-sm-5"><div class=row><div class="col-6 col-sm-4 text-xs-center order-sm-2"></div><div class="col-6 col-sm-4 text-right text-xs-center order-sm-3"><ul class="list-inline mb-0"><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter><a class=text-white target=_blank rel=noopener href=https://twitter.com/SpiceAIHQ aria-label=Twitter><i class="fab fa-twitter"></i></a></li><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub><a class=text-white target=_blank rel=noopener href=https://github.com/spiceai/spiceai aria-label=GitHub><i class="fab fa-github"></i></a></li><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Discord aria-label=Discord><a class=text-white target=_blank rel=noopener href=https://discord.com/channels/803820740868571196/803820740868571199 aria-label=Discord><i class="fab fa-discord"></i></a></li></ul></div><div class="col-12 col-sm-4 text-center py-2 order-sm-2"><small class=text-white>&copy; 2021 Spice AI All Rights Reserved</small></div></div></div></footer></div><script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js integrity=sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF crossorigin=anonymous></script><script src=/js/tabpane-persist.js></script><script src=/js/main.min.5c74b870c6953931a705f390a49c7e4c0a842ec5c83b24354758dd674343ed0d.js integrity="sha256-XHS4cMaVOTGnBfOQpJx+TAqELsXIOyQ1R1jdZ0ND7Q0=" crossorigin=anonymous></script></body></html>
+<!doctype html><html lang=en class=no-js>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=generator content="Hugo 0.88.1"><meta name=ROBOTS content="INDEX, FOLLOW">
+<link rel="shortcut icon" href=/favicons/favicon.ico>
+<link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
+<link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16>
+<link rel=icon type=image/png href=/favicons/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/favicons/android-36x36.png sizes=36x36>
+<link rel=icon type=image/png href=/favicons/android-48x48.png sizes=48x48>
+<link rel=icon type=image/png href=/favicons/android-72x72.png sizes=72x72>
+<link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
+<link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
+<link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
+<title>Introducing Spice.ai - open source, time series AI for developers | Spice.ai blog</title>
+<meta name=description content="AI has recently seen some impressive advances, like with OpenAI Codex and DeepMind AlphaFold 2. And at the same time, for most developers, leveraging …">
+<meta property="og:title" content="Introducing Spice.ai - open source, time series AI for developers">
+<meta property="og:description" content="AI has recently seen some impressive advances, like with OpenAI Codex and DeepMind AlphaFold 2. And at the same time, for most developers, leveraging AI to create intelligent applications is still way too hard. The Data Science Hierarchy of Needs pyramid from 2017 still illustrates it well; there are too many unmet needs in applying ML in applications.
+We faced the same AI development challenges many developers do, even though we had years of engineering experience at Microsoft and GitHub, there was too much to learn and build.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/posts/2021/09/07/introducing-spice.ai-open-source-time-series-ai-for-developers/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-09-07T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-09-08T02:14:18+09:00">
+<meta itemprop=name content="Introducing Spice.ai - open source, time series AI for developers">
+<meta itemprop=description content="AI has recently seen some impressive advances, like with OpenAI Codex and DeepMind AlphaFold 2. And at the same time, for most developers, leveraging AI to create intelligent applications is still way too hard. The Data Science Hierarchy of Needs pyramid from 2017 still illustrates it well; there are too many unmet needs in applying ML in applications.
+We faced the same AI development challenges many developers do, even though we had years of engineering experience at Microsoft and GitHub, there was too much to learn and build."><meta itemprop=datePublished content="2021-09-07T00:00:00+00:00">
+<meta itemprop=dateModified content="2021-09-08T02:14:18+09:00">
+<meta itemprop=wordCount content="809">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Introducing Spice.ai - open source, time series AI for developers">
+<meta name=twitter:description content="AI has recently seen some impressive advances, like with OpenAI Codex and DeepMind AlphaFold 2. And at the same time, for most developers, leveraging AI to create intelligent applications is still way too hard. The Data Science Hierarchy of Needs pyramid from 2017 still illustrates it well; there are too many unmet needs in applying ML in applications.
+We faced the same AI development challenges many developers do, even though we had years of engineering experience at Microsoft and GitHub, there was too much to learn and build.">
+<link rel=preload href=/scss/main.min.82e7f2f18852989aa388d0348fc949381f02a01342c8c9a5155eb5dbae217198.css as=style>
+<link href=/scss/main.min.82e7f2f18852989aa388d0348fc949381f02a01342c8c9a5155eb5dbae217198.css rel=stylesheet integrity>
+<script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
+</head>
+<body class="td-page td-blog">
+<header>
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+<a class=navbar-brand href=/>
+<span class=navbar-logo></span><span class="text-uppercase font-weight-bold">Spice.ai blog</span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
+<ul class="navbar-nav mt-2 mt-lg-0">
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=https://github.com/spiceai target=_blank><span>GitHub</span></a>
+</li>
+</ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+</div>
+</nav>
+</header>
+<div class="container-fluid td-outer">
+<div class=td-main>
+<div class="row flex-xl-nowrap">
+<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<div id=td-sidebar-menu class=td-sidebar__inner>
+<form class="td-sidebar__search d-flex align-items-center">
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
+</button>
+</form>
+<nav class="collapse td-sidebar-nav" id=td-section-nav>
+<ul class="td-sidebar-nav__section pr-md-3 ul-0">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-posts-li>
+<a href=/posts/ title="Spice.ai blog" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-posts><span>Blog</span></a>
+<ul class=ul-1>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-posts20210907introducing-spiceai-open-source-time-series-ai-for-developers-li>
+<a href=/posts/2021/09/07/introducing-spice.ai-open-source-time-series-ai-for-developers/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-posts20210907introducing-spiceai-open-source-time-series-ai-for-developers><span class=td-sidebar-nav-active-item>Introducing Spice.ai - open source, time series AI for developers</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+<aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+</div>
+</aside>
+<main class="col-12 col-md-9 col-xl-8 pl-md-5 pr-md-4" role=main>
+<div class=td-content>
+<h1>Introducing Spice.ai - open source, time series AI for developers</h1>
+<div class="td-byline mb-4">
+By <b>Spice AI (<a href=https://twitter.com/SpiceAIHQ>@SpiceAIHQ</a>)</b> |
+<time datetime=2021-09-07 class=text-muted>Tuesday, September 07, 2021</time>
+</div>
+<header class=article-meta>
+</header>
+<p>AI has recently seen some impressive advances, like with OpenAI <a href=https://openai.com/blog/openai-codex/>Codex</a> and DeepMind <a href=https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology>AlphaFold 2</a>. And at the same time, for most developers, leveraging AI to create intelligent applications is still way too hard. The <a href=https://hackernoon.com/the-ai-hierarchy-of-needs-18f111fcc007>Data Science Hierarchy of Needs</a> pyramid from 2017 <em>still</em> illustrates it well; there are too many unmet needs in applying ML in applications.</p>
+<p>We faced the same AI development challenges many developers do, even though we had years of engineering experience at Microsoft and GitHub, there was too much to learn and build. And we simply didn&rsquo;t have the time, resources, or tools to learn and utilize AI effectively in the project. After experiencing this pain ourselves, we saw an opportunity to make it better for everyone.</p>
+<p>Today, we are making <a href=https://spiceai.org/>Spice.ai</a> available on GitHub, a new open source project that helps developers use deep learning to create intelligent applications. We&rsquo;re looking for feedback on the direction. It&rsquo;s not finished, in fact, we only started this summer, and we invite you to try out the alpha.</p>
+<div style=display:flex;justify-content:center>
+<img style=max-width:600px width=100% src=https://res.craft.do/user/full/f6ea57b9-4723-ca7b-aa16-e2a916601d59/doc/E951CFE6-D24A-4C02-A796-FFFCFC5FD5A9/A1AAFFBD-0AE9-47B5-AC9C-D37A6932CE5B_2/screen.png>
+</div>
+<p style=text-align:center>
+<i>Figure 1. Adding a Spice.ai pod, training and getting a recommendation in three commands</i>
+</p>
+<p>Like many developer stories, it all started with a side-project. We were interested in <a href=https://en.wikipedia.org/wiki/Neurofeedback>neurofeedback</a>, a type of biofeedback therapy that reinforces healthy brain function but can cost up to $15,000. We wanted to make it accessible to more people, so we set out to build a system that leverages AI to deliver neurofeedback more cost-effectively. Using AI for the application was much more challenging than expected, and this sparked the inspiration for Spice.ai.</p>
+<p>In the neurofeedback project, we worked with brain activity <a href=https://en.wikipedia.org/wiki/Electroencephalographyhttps://en.wikipedia.org/wiki/Electroencephalography>EEG</a> data - time series data. We realized that time series data applies to many domains, from health and biometrics to finance, sales, logistics, security, IoT, and application monitoring. The amount of time series data in these fields is growing exponentially, and extracting insights from this data to make more intelligent software will determine the success of the next generation of applications.</p>
+<p>We also realized that handling time series data is often sensitive, such as with health, financial, and security data. Instead of sending all data into a 3rd-party AI service, we needed the choice to bring the AI runtime to wherever our data and compute lived, either in the cloud, on-premises or on edge devices.</p>
+<h3 id=spiceai---a-modern-development-experience-and-open-source-runtime-for-deep-learning-on-time-series-data>Spice.ai - a modern development experience and open source runtime for deep learning on time series data</h3>
+<p>Spice.ai is an open source, portable runtime for training and using deep learning on time series data. It&rsquo;s written in Golang and Python and runs as a container or microservice with applications calling a simple HTTP API. It&rsquo;s deployable to any public cloud, on-premises, and edge.</p>
+<p>The vision for Spice.ai is to make creating intelligent applications as easy as possible for developers in their development environment of choice. Spice.ai brings AI development to their editor in any language or framework with a fast, iterative, inner development loop, continuous-integration (CI), and continuous-deployment (CD) workflows.</p>
+<p>The Spice.ai runtime also includes a library of <a href=https://github.com/spiceai/data-components-contrib>community-driven components</a> for streaming and processing time series data, enabling developers to quickly and easily combine data with learning to create intelligent models.</p>
+<p>Developers can write easy-to-understand and re-useable, &ldquo;pods,&rdquo; with manifests that connect these data components with a simple definition of the learning environment. These pods also serve as a package for the resulting trained model.</p>
+<p>Modern developers build together with the community by leveraging registries such as npm, NuGet, and pip. The registry for sharing and using pods is <a href=https://spicerack.org>spicerack.org</a>. As the community shares more and more pods, developers can quickly build upon each others' work, initially by sharing manifests and eventually by reusing fully-trained models.</p>
+<h3 id=applying-spiceai-to-real-world-problems>Applying Spice.ai to real-world problems</h3>
+<p>We are currently piloting Spice.ai with several companies to create the next generation of modern applications, such as optimizing in-store pickups for a large online retailer or scheduling optimizations for healthcare workers and resources. We&rsquo;ve already seen some cool use cases, including suspicious login detection, intelligent cloud-spend analysis, and order routing for a food delivery app.</p>
+<h3 id=learn-more-and-contribute>Learn more and contribute</h3>
+<p>Building intelligent apps that leverage AI is still way too hard, even for advanced developers. Our mission is to make this as easy as creating a modern web page.</p>
+<p>This mission is a huge undertaking and Spice.ai v0.1-alpha has many gaps, including limited deep learning algorithms and training scale, streaming data, simulated environments, and offline learning modes. Pods aren&rsquo;t searchable or even listed on <a href=http://spicerack.org>spicerack.org</a> yet. But if the vision resonates with you, join us! Our <a href=https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md>Spice.ai Roadmap</a> is public, and now that we have launched, the project and work are open for collaboration.</p>
+<p>If you are interested in partnering, we&rsquo;d love to talk. Try out <a href=https://spiceai.org>Spice.ai</a>, <a href=mailto:hey@spiceai.io>email us</a> &ldquo;hey,&rdquo; get in touch on <a href=https://discord.com/channels/803820740868571196/803820740868571199>Discord</a>, or reach out on <a href=https://twitter.com/0xlukekim>Twitter</a>.</p>
+<p>We are just getting started! 🚀</p>
+<p><a href=https://twitter.com/0xlukekim>Luke</a>, <a href=https://twitter.com/leblancphill>Phillip</a>, and <a href=https://twitter.com/lanesharris>Lane</a> - Spice.ai project founders</p>
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
+<li>
+<a class="btn btn-primary disabled"><span class=mr-1>←</span> Previous</a>
+</li>
+<a class="btn btn-primary disabled">Next <span class=ml-1>→</span></a>
+</li>
+</ul>
+</div>
+</main>
+</div>
+</div>
+<footer class="bg-dark py-5 row d-print-none">
+<div class="container-fluid mx-sm-5">
+<div class=row>
+<div class="col-6 col-sm-4 text-xs-center order-sm-2">
+</div>
+<div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter>
+<a class=text-white target=_blank rel=noopener href=https://twitter.com/SpiceAIHQ aria-label=Twitter>
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub>
+<a class=text-white target=_blank rel=noopener href=https://github.com/spiceai/spiceai aria-label=GitHub>
+<i class="fab fa-github"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Discord aria-label=Discord>
+<a class=text-white target=_blank rel=noopener href=https://discord.com/channels/803820740868571196/803820740868571199 aria-label=Discord>
+<i class="fab fa-discord"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+<small class=text-white>&copy; 2021 Spice AI All Rights Reserved</small>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js integrity=sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF crossorigin=anonymous></script>
+<script src=/js/tabpane-persist.js></script>
+<script src=/js/main.min.5c74b870c6953931a705f390a49c7e4c0a842ec5c83b24354758dd674343ed0d.js integrity="sha256-XHS4cMaVOTGnBfOQpJx+TAqELsXIOyQ1R1jdZ0ND7Q0=" crossorigin=anonymous></script>
+</body>
+</html>
