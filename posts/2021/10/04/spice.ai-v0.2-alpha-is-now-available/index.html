@@ -23,12 +23,12 @@ Highlights in v0.2-alpha Tagged data In the first release, the runtime and AI en
 <meta property="og:type" content="article">
 <meta property="og:url" content="/posts/2021/10/04/spice.ai-v0.2-alpha-is-now-available/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-10-04T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-10-12T16:44:30-07:00">
+<meta property="article:modified_time" content="2021-10-12T16:58:49-07:00">
 <meta itemprop=name content="Spice.ai v0.2-alpha is now available">
 <meta itemprop=description content="We are excited to announce the release of Spice.ai v0.2-alpha! 🎉
 This release is the first major version since the initial v0.1 announcement and includes significant improvements based upon community and customer feedback. If you are new to Spice.ai, check out the getting started guide and star spiceai/spiceai on GitHub.
 Highlights in v0.2-alpha Tagged data In the first release, the runtime and AI engine could only ingest numerical data. In v0."><meta itemprop=datePublished content="2021-10-04T00:00:00+00:00">
-<meta itemprop=dateModified content="2021-10-12T16:44:30-07:00">
+<meta itemprop=dateModified content="2021-10-12T16:58:49-07:00">
 <meta itemprop=wordCount content="469">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Spice.ai v0.2-alpha is now available">
@@ -93,11 +93,11 @@ Highlights in v0.2-alpha Tagged data In the first release, the runtime and AI en
 <li><a href=#tagged-data>Tagged data</a></li>
 <li><a href=#streaming-data>Streaming data</a></li>
 <li><a href=#interpreted-data>Interpreted data</a></li>
+</ul>
+</li>
 <li><a href=#new-in-this-release>New in this release</a></li>
 <li><a href=#resources>Resources</a></li>
 <li><a href=#community>Community</a></li>
-</ul>
-</li>
 </ul>
 </nav></div>
 </aside>
@@ -119,7 +119,7 @@ By <b>Spice AI (<a href=https://twitter.com/SpiceAIHQ>@SpiceAIHQ</a>)</b> |
 <p>Previously, the runtime would trigger each <a href=https://github.com/spiceai/data-components-contrib/blob/trunk/dataconnectors/README.md>data connector</a> to fetch on a 15-second interval. In v0.2, we upgraded the <a href=https://github.com/spiceai/data-components-contrib/blob/trunk/dataconnectors/dataconnector.go>interface for data connectors</a> to a push/streaming model, which enables continuous streaming data into the environment and AI engine.</p>
 <h3 id=interpreted-data>Interpreted data</h3>
 <p><a href=http://Spice.ai>Spice.ai</a> works together with your application code and works best when it&rsquo;s provided continuous feedback. This feedback could be from the application itself, for example, ratings, likes, thumbs-up/down, profit from trades, or external expertise. The <a href=https://docs.spiceai.org/concepts/interpretations>interpretations API</a> was <a href=https://github.com/spiceai/spiceai/blob/trunk/docs/release_notes/v0.1.1-alpha.md>introduced in v0.1.1</a>, and v0.2 adds AI engine support providing a way to give meaning or an interpretation of ranges of time-series data, which are then available within reward functions. For example, a time range of stock prices could be a &ldquo;good time to buy,&rdquo; or perhaps Tuesday mornings is a &ldquo;good time to tweet,&rdquo; and an application or expert can teach the AI engine this through interpretations providing a shortcut to it&rsquo;s learning.</p>
-<h3 id=new-in-this-release>New in this release</h3>
+<h2 id=new-in-this-release>New in this release</h2>
 <ul>
 <li><strong>Adds</strong> core runtime and AI engine tagged data support</li>
 <li><strong>Adds</strong> tagged data support to the CSV processor</li>
@@ -134,13 +134,13 @@ By <b>Spice AI (<a href=https://twitter.com/SpiceAIHQ>@SpiceAIHQ</a>)</b> |
 <li><strong>Fixes</strong> pod period, interval, and granularity not being correctly set when trying to use a &ldquo;d&rdquo; format</li>
 <li><strong>Fixes</strong> the color scheme of action counts in the dashboard to improve readability</li>
 </ul>
-<h3 id=resources>Resources</h3>
+<h2 id=resources>Resources</h2>
 <ul>
 <li><a href=https://docs.spiceai.org/getting-started/>Getting started with Spice.ai</a></li>
 <li><a href=https://docs.spiceai.org/>Documentation</a></li>
 <li><a href=https://github.com/spiceai/quickstarts/blob/trunk/README.md>Quickstarts</a> and <a href=https://github.com/spiceai/samples/blob/trunk/README.md>Samples</a></li>
 </ul>
-<h3 id=community>Community</h3>
+<h2 id=community>Community</h2>
 <p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved. We will also be starting a community call series soon!</p>
 <ul>
 <li>Discord: <a href=https://discord.gg/kZnTfneP5u>https://discord.gg/kZnTfneP5u</a></li>
