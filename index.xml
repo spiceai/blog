@@ -1,6 +1,40 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice.ai v0.2-alpha is now available</title><link>/posts/2021/10/04/spice.ai-v0.2-alpha-is-now-available/</link><pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/04/spice.ai-v0.2-alpha-is-now-available/</guid><description>
-&lt;p>We are excited to announce the release of &lt;a href="http://Spice.ai">Spice.ai&lt;/a> v0.2-alpha! 🎉&lt;/p>
-&lt;p>This release is the first major version since the &lt;a href="https://blog.spiceai.org/posts/2021/09/07/introducing-spice.ai-open-source-time-series-ai-for-developers/">initial v0.1 announcement&lt;/a> and includes significant improvements based upon community and customer feedback. If you are new to &lt;a href="http://Spice.ai">Spice.ai&lt;/a>, check out the &lt;a href="https://docs.spiceai.org/getting-started/">getting started guide&lt;/a> and star &lt;a href="https://github.com/spiceai/spiceai">spiceai/spiceai&lt;/a> on GitHub.&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.2.1-alpha</title><link>/posts/2021/10/12/announcing-the-release-of-spice.ai-v0.2.1-alpha/</link><pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/12/announcing-the-release-of-spice.ai-v0.2.1-alpha/</guid><description>
+&lt;p>Announcing the release of Spice.ai v0.2.1-alpha! 🚚&lt;/p>
+&lt;p>This point release focuses on fixes and improvements to v0.2-alpha. Highlights include the ability to specify how missing data should be treated and a new production mode for &lt;code>spiced&lt;/code>.&lt;/p>
+&lt;p>This release supports the ability to specify how the runtime should treat missing data. Previous releases filled missing data with the last value (or initial value) in the series. While this makes sense for some data, i.e., market prices of a stock or cryptocurrency, it does not make sense for discrete data, i.e., ratings. In v0.2.1, developers can now add the &lt;code>fill&lt;/code> parameter on a dataspace field to specify the behavior. This release supports fill types &lt;code>previous&lt;/code> and &lt;code>none&lt;/code>. The default is &lt;code>previous&lt;/code>.&lt;/p>
+&lt;p>Example in a manifest:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">dataspaces&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">twitter&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tweets&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">fields&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">likes&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">fill&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">none&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># The new fill parameter&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>spiced&lt;/code> now defaults to a new production mode when run standalone (not via the CLI), with development mode now explicitly set with the &lt;code>--development&lt;/code> flag. Production mode does not activate development time features, such as the Spicepod file watcher. The CLI always runs &lt;code>spiced&lt;/code> in development mode as it is not expected to be used in production deployments.&lt;/p>
+&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Adds&lt;/strong> a &lt;code>fill&lt;/code> parameter to dataspace fields to specify how missing values should be treated.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> the ability to specify the fill behavior of empty values in a dataspace.&lt;/li>
+&lt;li>&lt;strong>Simplifies&lt;/strong> releases with a single &lt;code>spiceai&lt;/code> release instead of separate &lt;code>spice&lt;/code> and &lt;code>spiced&lt;/code> releases.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> an explicit &lt;strong>development&lt;/strong> mode to &lt;code>spiced&lt;/code>. Production mode does not activate the file watcher.&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> a bug when the pod parameter &lt;code>epoch_time&lt;/code> was not set which would cause data not to be sent to the AI engine.&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> a bug where the User-Agent was not set correctly from CLI calls to api.spicerack.org&lt;/li>
+&lt;/ul>
+&lt;h3 id="resources">Resources&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/spiceai/quickstarts/blob/trunk/README.md">Quickstarts&lt;/a> and &lt;a href="https://github.com/spiceai/samples/blob/trunk/README.md">Samples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="community">Community&lt;/h3>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved. We will also be starting a community call series soon!&lt;/p>
+&lt;ul>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spiceaihq">@SpiceAIHQ&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:team@spiceai.io">hey@spiceai.io&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice.ai v0.2-alpha is now available</title><link>/posts/2021/10/04/spice.ai-v0.2-alpha-is-now-available/</link><pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/04/spice.ai-v0.2-alpha-is-now-available/</guid><description>
+&lt;p>We are excited to announce the release of Spice.ai v0.2-alpha! 🎉&lt;/p>
+&lt;p>This release is the first major version since the &lt;a href="https://blog.spiceai.org/posts/2021/09/07/introducing-spice.ai-open-source-time-series-ai-for-developers/">initial v0.1 announcement&lt;/a> and includes significant improvements based upon community and customer feedback. If you are new to Spice.ai, check out the &lt;a href="https://docs.spiceai.org/getting-started/">getting started guide&lt;/a> and star &lt;a href="https://github.com/spiceai/spiceai">spiceai/spiceai&lt;/a> on GitHub.&lt;/p>
 &lt;h2 id="highlights-in-v02-alpha">Highlights in v0.2-alpha&lt;/h2>
 &lt;h3 id="tagged-data">Tagged data&lt;/h3>
 &lt;p>In the first release, the runtime and AI engine could only ingest numerical data. In v0.2, tagged data is accepted and automatically encoded into fields available for learning. For example, it&amp;rsquo;s now possible to include a &amp;ldquo;liked&amp;rdquo; tag when using tweet data, automatically encoded to a 0/1 field for training. Both CSV and the new &lt;a href="https://github.com/spiceai/data-components-contrib/blob/trunk/dataprocessors/json/README.md">JSON&lt;/a> observation formats support tags. The v0.3 release will add additional support for sets of categorical data.&lt;/p>
@@ -30,7 +64,7 @@
 &lt;li>&lt;a href="https://github.com/spiceai/quickstarts/blob/trunk/README.md">Quickstarts&lt;/a> and &lt;a href="https://github.com/spiceai/samples/blob/trunk/README.md">Samples&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="community">Community&lt;/h3>
-&lt;p>&lt;a href="http://Spice.ai">Spice.ai&lt;/a> started with the vision to make AI easy for developers. We are building &lt;a href="http://Spice.ai">Spice.ai&lt;/a> in the open and with the community. Reach out on Discord or by email to get involved. We will also be starting a community call series soon!&lt;/p>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved. We will also be starting a community call series soon!&lt;/p>
 &lt;ul>
 &lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
