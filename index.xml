@@ -2,13 +2,17 @@
 &lt;p>We are excited to announce the release of Spice.ai v0.3-alpha! 🎉&lt;/p>
 &lt;p>This release adds support for ingestion, automatic encoding, and training of categorical data, enabling more use-cases and datasets beyond just numerical measurements. For example, perhaps you want to learn from data that includes a category of t-shirt sizes, with discrete values, such as small, medium, and large. The v0.3 engine now supports this and automatically encodes the categorical string values into numerical values that the AI engine can use. Also included is a preview of data visualizations in the dashboard, which is helpful for developers as they author Spicepods and dataspaces.&lt;/p>
 &lt;div style="display: flex; justify-content: center;">
+&lt;div style="display: flex; flex-direction: column;">
 &lt;img style="max-width: 500px;" src="https://user-images.githubusercontent.com/80174/138641533-612d1541-a90e-4279-b4f9-2872e02619d6.png" />
-&lt;em>A screenshot of the data visualization preview&lt;/em>
+&lt;em style="text-align: center">A screenshot of the data visualization preview&lt;/em>
+&lt;/div>
 &lt;/div>
 &lt;p>A special acknowledgment to &lt;a href="https://github.com/sboorlagadda">@sboorlagadda&lt;/a>, who submitted the first Spice.ai feature contribution from the community ever! He added the ability to list pods from the CLI with the new &lt;code>spice pods list&lt;/code> command. Thank you, &lt;a href="https://github.com/sboorlagadda">@sboorlagadda&lt;/a>!!!&lt;/p>
 &lt;div style="display: flex; justify-content: center;">
+&lt;div style="display: flex; flex-direction: column;">
 &lt;img style="max-width: 500px;" src="https://user-images.githubusercontent.com/80174/138642457-a8f254ce-6b4f-4836-b921-f0eb0feadeab.png" />
-&lt;em>A screenshot of the new spice pods list command and output.&lt;/em>
+&lt;em style="text-align: center">A screenshot of the new spice pods list command and output.&lt;/em>
+&lt;/div>
 &lt;/div>
 &lt;p>If you are new to Spice.ai, check out the &lt;a href="https://docs.spiceai.org/getting-started/">getting started guide&lt;/a> and star &lt;a href="https://github.com/spiceai/spiceai">spiceai/spiceai&lt;/a> on GitHub.&lt;/p>
 &lt;h2 id="highlights-in-v03-alpha">Highlights in v0.3-alpha&lt;/h2>
