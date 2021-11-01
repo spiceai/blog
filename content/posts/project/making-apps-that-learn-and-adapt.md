@@ -1,5 +1,5 @@
 ---
-date: 2021-11-01
+date: 2021-11-04
 title: "Making Apps That Learn And Adapt"
 type: blog
 linkTitle: "Making Apps That Learn And Adapt"
