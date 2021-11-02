@@ -1,0 +1,234 @@
+<!doctype html><html lang=en class=no-js>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=generator content="Hugo 0.88.1"><meta name=ROBOTS content="INDEX, FOLLOW">
+<link rel="shortcut icon" href=/favicons/favicon.ico>
+<link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
+<link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16>
+<link rel=icon type=image/png href=/favicons/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/favicons/android-36x36.png sizes=36x36>
+<link rel=icon type=image/png href=/favicons/android-48x48.png sizes=48x48>
+<link rel=icon type=image/png href=/favicons/android-72x72.png sizes=72x72>
+<link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
+<link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
+<link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
+<title>Announcing the release of Spice.ai v0.3.1-alpha | Spice.ai blog</title>
+<meta name=description content="We are excited to announce the release of Spice.ai v0.3.1-alpha! 🎃
+This point release focuses on fixes and improvements to v0.3-alpha. Highlights …">
+<meta property="og:title" content="Announcing the release of Spice.ai v0.3.1-alpha">
+<meta property="og:description" content="We are excited to announce the release of Spice.ai v0.3.1-alpha! 🎃
+This point release focuses on fixes and improvements to v0.3-alpha. Highlights include the ability to specify both seed and runtime data, to select custom named fields for time and tags, a new spice upgrade command and several bug fixes.
+A special acknowledgment to @Adm28, who added the new spice upgrade command, which enables the CLI to self-update, which in turn will auto-update the runtime.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/posts/2021/11/02/announcing-the-release-of-spice.ai-v0.3.1-alpha/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-11-02T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-11-02T10:52:11+09:00">
+<meta itemprop=name content="Announcing the release of Spice.ai v0.3.1-alpha">
+<meta itemprop=description content="We are excited to announce the release of Spice.ai v0.3.1-alpha! 🎃
+This point release focuses on fixes and improvements to v0.3-alpha. Highlights include the ability to specify both seed and runtime data, to select custom named fields for time and tags, a new spice upgrade command and several bug fixes.
+A special acknowledgment to @Adm28, who added the new spice upgrade command, which enables the CLI to self-update, which in turn will auto-update the runtime."><meta itemprop=datePublished content="2021-11-02T00:00:00+00:00">
+<meta itemprop=dateModified content="2021-11-02T10:52:11+09:00">
+<meta itemprop=wordCount content="511">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Announcing the release of Spice.ai v0.3.1-alpha">
+<meta name=twitter:description content="We are excited to announce the release of Spice.ai v0.3.1-alpha! 🎃
+This point release focuses on fixes and improvements to v0.3-alpha. Highlights include the ability to specify both seed and runtime data, to select custom named fields for time and tags, a new spice upgrade command and several bug fixes.
+A special acknowledgment to @Adm28, who added the new spice upgrade command, which enables the CLI to self-update, which in turn will auto-update the runtime.">
+<link rel=preload href=/scss/main.min.82e7f2f18852989aa388d0348fc949381f02a01342c8c9a5155eb5dbae217198.css as=style>
+<link href=/scss/main.min.82e7f2f18852989aa388d0348fc949381f02a01342c8c9a5155eb5dbae217198.css rel=stylesheet integrity>
+<script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
+</head>
+<body class="td-page td-blog">
+<header>
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+<a class=navbar-brand href=/>
+<span class=navbar-logo></span><span class="text-uppercase font-weight-bold">Spice.ai blog</span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
+<ul class="navbar-nav mt-2 mt-lg-0">
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=https://github.com/spiceai target=_blank><span>GitHub</span></a>
+</li>
+</ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+</div>
+</nav>
+</header>
+<div class="container-fluid td-outer">
+<div class=td-main>
+<div class="row flex-xl-nowrap">
+<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<div id=td-sidebar-menu class=td-sidebar__inner>
+<form class="td-sidebar__search d-flex align-items-center">
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
+</button>
+</form>
+<nav class="collapse td-sidebar-nav" id=td-section-nav>
+<ul class="td-sidebar-nav__section pr-md-3 ul-0">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-posts-li>
+<a href=/posts/ title="Spice.ai blog" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-posts><span>Blog</span></a>
+<ul class=ul-1>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-posts20211102announcing-the-release-of-spiceai-v031-alpha-li>
+<a href=/posts/2021/11/02/announcing-the-release-of-spice.ai-v0.3.1-alpha/ title="Announcing the release of Spice.ai v0.3.1-alpha" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-posts20211102announcing-the-release-of-spiceai-v031-alpha><span class=td-sidebar-nav-active-item>Spice.ai v0.3.1-alpha is now available</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211026spiceai-v03-alpha-is-now-available-li>
+<a href=/posts/2021/10/26/spice.ai-v0.3-alpha-is-now-available/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211026spiceai-v03-alpha-is-now-available><span>Spice.ai v0.3-alpha is now available</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211012announcing-the-release-of-spiceai-v021-alpha-li>
+<a href=/posts/2021/10/12/announcing-the-release-of-spice.ai-v0.2.1-alpha/ title="Announcing the release of Spice.ai v0.2.1-alpha" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211012announcing-the-release-of-spiceai-v021-alpha><span>Spice.ai v0.2.1-alpha is now available</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211004spiceai-v02-alpha-is-now-available-li>
+<a href=/posts/2021/10/04/spice.ai-v0.2-alpha-is-now-available/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211004spiceai-v02-alpha-is-now-available><span>Spice.ai v0.2-alpha is now available</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20210907introducing-spiceai-open-source-time-series-ai-for-developers-li>
+<a href=/posts/2021/09/07/introducing-spice.ai-open-source-time-series-ai-for-developers/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20210907introducing-spiceai-open-source-time-series-ai-for-developers><span>Introducing Spice.ai - open source, time series AI for developers</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+<aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+</div>
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li><a href=#highlights-in-v031-alpha>Highlights in v0.3.1-alpha</a>
+<ul>
+<li><a href=#upgrade-command>Upgrade command</a></li>
+<li><a href=#seed-data>Seed data</a></li>
+<li><a href=#time-field-selectors>Time field selectors</a></li>
+<li><a href=#tag-field-selectors>Tag field selectors</a></li>
+</ul>
+</li>
+<li><a href=#new-in-this-release>New in this release</a></li>
+<li><a href=#resources>Resources</a></li>
+<li><a href=#community>Community</a></li>
+</ul>
+</nav></div>
+</aside>
+<main class="col-12 col-md-9 col-xl-8 pl-md-5 pr-md-4" role=main>
+<div class=td-content>
+<h1>Announcing the release of Spice.ai v0.3.1-alpha</h1>
+<div class="td-byline mb-4">
+By <b>Spice AI (<a href=https://twitter.com/SpiceAIHQ>@SpiceAIHQ</a>)</b> |
+<time datetime=2021-11-02 class=text-muted>Tuesday, November 02, 2021</time>
+</div>
+<header class=article-meta>
+</header>
+<p>We are excited to announce the release of Spice.ai v0.3.1-alpha! 🎃</p>
+<p>This point release focuses on fixes and improvements to v0.3-alpha. Highlights include the ability to specify both seed and runtime data, to select custom named fields for <code>time</code> and <code>tags</code>, a new <code>spice upgrade</code> command and several bug fixes.</p>
+<p>A special acknowledgment to <a href=https://github.com/Adm28>@Adm28</a>, who added the new <code>spice upgrade</code> command, which enables the CLI to self-update, which in turn will auto-update the runtime.</p>
+<h2 id=highlights-in-v031-alpha>Highlights in v0.3.1-alpha</h2>
+<h3 id=upgrade-command>Upgrade command</h3>
+<p>The CLI can now be updated using the new <code>spice upgrade</code> command. This command will check for, download, and install the latest Spice.ai CLI release, which will become active on it&rsquo;s next run.</p>
+<p>When run, the CLI will check for the matching version of the Spice.ai runtime, and will automatically download and install it as necessary.</p>
+<p>The version of both the Spice.ai CLI and runtime can be checked with the <code>spice version</code> CLI command.</p>
+<h3 id=seed-data>Seed data</h3>
+<p>When working with streaming data sources, like market prices, it&rsquo;s often also useful to seed the dataspace with historical data. Spice.ai enables this with the new <code>seed_data</code> node in the dataspace configuration. The syntax is exactly the same as the <code>data</code> syntax. For example:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#204a87;font-weight:700>dataspaces</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>  </span>- <span style=color:#204a87;font-weight:700>from</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline> </span><span style=color:#000>coinbase</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>    </span><span style=color:#204a87;font-weight:700>name</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline> </span><span style=color:#000>btcusd</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>    </span><span style=color:#204a87;font-weight:700>seed_data</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>      </span><span style=color:#204a87;font-weight:700>connector</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline> </span><span style=color:#000>file</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>        </span><span style=color:#204a87;font-weight:700>params</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>          </span><span style=color:#204a87;font-weight:700>path</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline> </span><span style=color:#000>path/to/seed/data.csv</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>      </span><span style=color:#204a87;font-weight:700>processor</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>        </span><span style=color:#204a87;font-weight:700>name</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline> </span><span style=color:#000>csv</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>    </span><span style=color:#204a87;font-weight:700>data</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>      </span><span style=color:#204a87;font-weight:700>connector</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline> </span><span style=color:#000>coinbase</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>        </span><span style=color:#204a87;font-weight:700>params</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>          </span><span style=color:#204a87;font-weight:700>product_ids</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline> </span><span style=color:#000>BTC-USD</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>      </span><span style=color:#204a87;font-weight:700>processor</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>        </span><span style=color:#204a87;font-weight:700>name</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline> </span><span style=color:#000>json</span><span style=color:#f8f8f8;text-decoration:underline>
+</span></code></pre></div><p>The seed data will be fetched first, before the runtime data is initialized. Both sets of connectors and processors use the dataspace scoped <code>measurements</code>, <code>categories</code> and <code>tags</code> for processing, and both data sources are merged in pod-scoped observation timeline.</p>
+<h3 id=time-field-selectors>Time field selectors</h3>
+<p>Before v0.3.1-alpha, data was required to include a specific <code>time</code> field. In v0.3.1-alpha, the <a href=https://github.com/spiceai/data-components-contrib/blob/trunk/dataprocessors/json/README.md>JSON</a> and <a href=https://github.com/spiceai/data-components-contrib/tree/trunk/dataprocessors/csv>CSV</a> data processors now support the ability to select a specific field to populate the time field. An example selector to use the <code>created_at</code> column for <code>time</code> is:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#204a87;font-weight:700>data</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>  </span><span style=color:#204a87;font-weight:700>processor</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>    </span><span style=color:#204a87;font-weight:700>name</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline> </span><span style=color:#000>csv</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>    </span><span style=color:#204a87;font-weight:700>params</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>      </span><span style=color:#204a87;font-weight:700>time_selector</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline> </span><span style=color:#000>created_at</span><span style=color:#f8f8f8;text-decoration:underline>
+</span></code></pre></div><h3 id=tag-field-selectors>Tag field selectors</h3>
+<p>Before v0.3.1-alpha, <a href=https://docs.spiceai.org/reference/pod/#dataspacestags>tags</a> were required to be placed in a <code>_tags</code> field. In v0.3.1-alpha, any field can now be selected to populate tags. Tags are pod-unique string values, and the union of all selected fields will make up the resulting tag list. For example:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#204a87;font-weight:700>dataspace</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>  </span><span style=color:#204a87;font-weight:700>from</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline> </span><span style=color:#000>twitter</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>  </span><span style=color:#204a87;font-weight:700>name</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline> </span><span style=color:#000>tweets</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>  </span><span style=color:#204a87;font-weight:700>tags</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>    </span><span style=color:#204a87;font-weight:700>selectors</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>      </span>- <span style=color:#000>tags</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>      </span>- <span style=color:#000>author_id</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>    </span><span style=color:#204a87;font-weight:700>values</span><span style=color:#000;font-weight:700>:</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>      </span>- <span style=color:#000>spiceaihq</span><span style=color:#f8f8f8;text-decoration:underline>
+</span><span style=color:#f8f8f8;text-decoration:underline>      </span>- <span style=color:#000>spicy</span><span style=color:#f8f8f8;text-decoration:underline>
+</span></code></pre></div><h2 id=new-in-this-release>New in this release</h2>
+<ul>
+<li><strong>Adds</strong> a new <code>spice upgrade</code> command for self-upgrade of the Spice.ai CLI.</li>
+<li><strong>Adds</strong> a new <code>seed_data</code> node to the dataspace configuration, enabling the dataspace to be seeded with an alternative source of data.</li>
+<li><strong>Adds</strong> the ability to select a custom time field in JSON and CSV data processors with the <code>time_selector</code> parameter.</li>
+<li><strong>Adds</strong> the ability to select custom tag fields in the dataspace configuration with <code>selectors</code> list.</li>
+<li><strong>Adds</strong> error reporting for AI engine crashes, where previously it would fail silently.</li>
+<li><strong>Fixes</strong> the dashboard pods list from &ldquo;jumping&rdquo; around due to being unsorted.</li>
+<li><strong>Fixes</strong> rare cases where categorical data might be sent to the AI engine in the wrong format.</li>
+</ul>
+<h2 id=resources>Resources</h2>
+<ul>
+<li><a href=https://docs.spiceai.org/getting-started/>Getting started with Spice.ai</a></li>
+<li><a href=https://docs.spiceai.org/>Documentation</a></li>
+<li><a href=https://github.com/spiceai/quickstarts/blob/trunk/README.md>Quickstarts</a> and <a href=https://github.com/spiceai/samples/blob/trunk/README.md>Samples</a></li>
+</ul>
+<h2 id=community>Community</h2>
+<p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved. We will also be starting a community call series soon!</p>
+<ul>
+<li>Discord: <a href=https://discord.gg/kZnTfneP5u>https://discord.gg/kZnTfneP5u</a></li>
+<li>Reddit: <a href=https://www.reddit.com/r/spiceai>https://www.reddit.com/r/spiceai</a></li>
+<li>Twitter: <a href=https://twitter.com/spiceaihq>@SpiceAIHQ</a></li>
+<li>Email: <a href=mailto:hey@spiceai.io>hey@spiceai.io</a></li>
+</ul>
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
+<li>
+<a href=/posts/2021/10/26/spice.ai-v0.3-alpha-is-now-available/ aria-label="Previous - Spice.ai v0.3-alpha is now available" class="btn btn-primary"><span class=mr-1>←</span> Previous</a>
+</li>
+<a class="btn btn-primary disabled">Next <span class=ml-1>→</span></a>
+</li>
+</ul>
+</div>
+</main>
+</div>
+</div>
+<footer class="bg-dark py-5 row d-print-none">
+<div class="container-fluid mx-sm-5">
+<div class=row>
+<div class="col-6 col-sm-4 text-xs-center order-sm-2">
+</div>
+<div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter>
+<a class=text-white target=_blank rel=noopener href=https://twitter.com/SpiceAIHQ aria-label=Twitter>
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub>
+<a class=text-white target=_blank rel=noopener href=https://github.com/spiceai/spiceai aria-label=GitHub>
+<i class="fab fa-github"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Discord aria-label=Discord>
+<a class=text-white target=_blank rel=noopener href=https://discord.com/channels/803820740868571196/803820740868571199 aria-label=Discord>
+<i class="fab fa-discord"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+<small class=text-white>&copy; 2021 Spice AI All Rights Reserved</small>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js integrity=sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF crossorigin=anonymous></script>
+<script src=/js/tabpane-persist.js></script>
+<script src=/js/main.min.5c74b870c6953931a705f390a49c7e4c0a842ec5c83b24354758dd674343ed0d.js integrity="sha256-XHS4cMaVOTGnBfOQpJx+TAqELsXIOyQ1R1jdZ0ND7Q0=" crossorigin=anonymous></script>
+</body>
+</html>
