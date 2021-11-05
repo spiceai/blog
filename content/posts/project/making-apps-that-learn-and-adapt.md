@@ -6,8 +6,6 @@ linkTitle: "Making Apps That Learn And Adapt"
 author: Luke Kim ([@0xLukeKim](https://twitter.com/0xLukeKim))
 ---
 
-Making Apps That Learn And Adapt
-
 In the [Spice.ai announcement blog post](https://blog.spiceai.org/posts/2021/09/07/introducing-spice.ai-open-source-time-series-ai-for-developers/), we shared some of the inspiration for the project stemming from challenges in applying and integrating AI/ML into a neurofeedback application. Building upon those ideas, in this post, we explore the shift in approach from a focus of data science and machine learning (ML) to apps that learn and adapt.
 
 As a developer, I've followed the AI/ML space with keen interest and been impressed with the advances and announcements that only seem to be increasing. [stateof.ai](https://stateof.ai) recently published its 2021 report, and once again, it's been another great year of progress. At the same time, it's still more challenging than ever for mainstream developers to integrate AI/ML into their applications. For most developers, where AI/ML is not their full-time job, and without the support of a dedicated ML team, creating and developing an intelligent application that learns and adapts is still too hard.
