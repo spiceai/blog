@@ -22,7 +22,7 @@ Being part of the application is not just conceptual. Development teams deploy t
 
 <div style="display: flex; justify-content: center;">
   <div style="display: flex; flex-direction: column;">
-    <img style="max-width: 400px;" src="https://user-images.githubusercontent.com/80174/140449520-eb2cd6f9-cae4-4199-b137-9181bf244625.png" />
+    <img style="max-width: 400px;" src="https://user-images.githubusercontent.com/80174/140449760-97974f3c-8a78-4ea2-9ec5-843dc3cff5b6.png" />
   </div>
 </div>
 
