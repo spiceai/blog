@@ -18,7 +18,7 @@ With Spice.ai, we propose a new approach to building applications. By bringing A
 
 Being part of the application is not just conceptual. Development teams deploy the Spice.ai runtime and AI engine with the application as a sidecar or microservice, enabling the app services and runtime to work together and for data to be kept application local. A developer teaches the AI engine how to learn by defining application goals and rewards for actions the application takes. The AI Engine observes the application and the consequences of its actions, which feeds into its experience. As the AI engine learns, the application can adapt.
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
     <img style="max-width: 400px;" src="https://user-images.githubusercontent.com/80174/140449760-97974f3c-8a78-4ea2-9ec5-843dc3cff5b6.png" />
   </div>
