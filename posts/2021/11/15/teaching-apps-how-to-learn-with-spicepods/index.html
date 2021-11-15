@@ -1,0 +1,191 @@
+<!doctype html><html lang=en class=no-js>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=generator content="Hugo 0.88.1"><meta name=ROBOTS content="INDEX, FOLLOW">
+<link rel="shortcut icon" href=/favicons/favicon.ico>
+<link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
+<link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16>
+<link rel=icon type=image/png href=/favicons/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/favicons/android-36x36.png sizes=36x36>
+<link rel=icon type=image/png href=/favicons/android-48x48.png sizes=48x48>
+<link rel=icon type=image/png href=/favicons/android-72x72.png sizes=72x72>
+<link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
+<link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
+<link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
+<title>Teaching Apps how to Learn with Spicepods | Spice.ai blog</title>
+<meta name=description content="Teaching Apps how to Learn with Spicepods
+The last post in this series, Making Apps that Learn and Adapt, described the shift from building AI/ML …">
+<meta property="og:title" content="Teaching Apps how to Learn with Spicepods">
+<meta property="og:description" content="Teaching Apps how to Learn with Spicepods The last post in this series, Making Apps that Learn and Adapt, described the shift from building AI/ML solutions to building apps that learn and adapt. But, how does the app learn? And as a developer, how do I teach it what it should learn?
+With Spice.ai, we teach the app how to learn using a Spicepod.
+Imagine you own a restaurant. You created a menu, hired staff, constructed the kitchen and dining room, and got off to a great start when it first opened.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-11-15T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-11-15T17:25:26+09:00">
+<meta itemprop=name content="Teaching Apps how to Learn with Spicepods">
+<meta itemprop=description content="Teaching Apps how to Learn with Spicepods The last post in this series, Making Apps that Learn and Adapt, described the shift from building AI/ML solutions to building apps that learn and adapt. But, how does the app learn? And as a developer, how do I teach it what it should learn?
+With Spice.ai, we teach the app how to learn using a Spicepod.
+Imagine you own a restaurant. You created a menu, hired staff, constructed the kitchen and dining room, and got off to a great start when it first opened."><meta itemprop=datePublished content="2021-11-15T00:00:00+00:00">
+<meta itemprop=dateModified content="2021-11-15T17:25:26+09:00">
+<meta itemprop=wordCount content="1000">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Teaching Apps how to Learn with Spicepods">
+<meta name=twitter:description content="Teaching Apps how to Learn with Spicepods The last post in this series, Making Apps that Learn and Adapt, described the shift from building AI/ML solutions to building apps that learn and adapt. But, how does the app learn? And as a developer, how do I teach it what it should learn?
+With Spice.ai, we teach the app how to learn using a Spicepod.
+Imagine you own a restaurant. You created a menu, hired staff, constructed the kitchen and dining room, and got off to a great start when it first opened.">
+<link rel=preload href=/scss/main.min.82e7f2f18852989aa388d0348fc949381f02a01342c8c9a5155eb5dbae217198.css as=style>
+<link href=/scss/main.min.82e7f2f18852989aa388d0348fc949381f02a01342c8c9a5155eb5dbae217198.css rel=stylesheet integrity>
+<script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
+</head>
+<body class="td-page td-blog">
+<header>
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+<a class=navbar-brand href=/>
+<span class=navbar-logo></span><span class="text-uppercase font-weight-bold">Spice.ai blog</span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
+<ul class="navbar-nav mt-2 mt-lg-0">
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=https://github.com/spiceai target=_blank><span>GitHub</span></a>
+</li>
+</ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+</div>
+</nav>
+</header>
+<div class="container-fluid td-outer">
+<div class=td-main>
+<div class="row flex-xl-nowrap">
+<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<div id=td-sidebar-menu class=td-sidebar__inner>
+<form class="td-sidebar__search d-flex align-items-center">
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
+</button>
+</form>
+<nav class="collapse td-sidebar-nav" id=td-section-nav>
+<ul class="td-sidebar-nav__section pr-md-3 ul-0">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-posts-li>
+<a href=/posts/ title="Spice.ai blog" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-posts><span>Blog</span></a>
+<ul class=ul-1>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-posts20211115teaching-apps-how-to-learn-with-spicepods-li>
+<a href=/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-posts20211115teaching-apps-how-to-learn-with-spicepods><span class=td-sidebar-nav-active-item>Teaching Apps how to Learn with Spicepods</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211105making-apps-that-learn-and-adapt-li>
+<a href=/posts/2021/11/05/making-apps-that-learn-and-adapt/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211105making-apps-that-learn-and-adapt><span>Making Apps That Learn And Adapt</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211102announcing-the-release-of-spiceai-v031-alpha-li>
+<a href=/posts/2021/11/02/announcing-the-release-of-spice.ai-v0.3.1-alpha/ title="Announcing the release of Spice.ai v0.3.1-alpha" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211102announcing-the-release-of-spiceai-v031-alpha><span>Spice.ai v0.3.1-alpha is now available</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211026spiceai-v03-alpha-is-now-available-li>
+<a href=/posts/2021/10/26/spice.ai-v0.3-alpha-is-now-available/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211026spiceai-v03-alpha-is-now-available><span>Spice.ai v0.3-alpha is now available</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211012announcing-the-release-of-spiceai-v021-alpha-li>
+<a href=/posts/2021/10/12/announcing-the-release-of-spice.ai-v0.2.1-alpha/ title="Announcing the release of Spice.ai v0.2.1-alpha" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211012announcing-the-release-of-spiceai-v021-alpha><span>Spice.ai v0.2.1-alpha is now available</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211004spiceai-v02-alpha-is-now-available-li>
+<a href=/posts/2021/10/04/spice.ai-v0.2-alpha-is-now-available/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211004spiceai-v02-alpha-is-now-available><span>Spice.ai v0.2-alpha is now available</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20210907introducing-spiceai-open-source-time-series-ai-for-developers-li>
+<a href=/posts/2021/09/07/introducing-spice.ai-open-source-time-series-ai-for-developers/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20210907introducing-spiceai-open-source-time-series-ai-for-developers><span>Introducing Spice.ai - open source, time series AI for developers</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+<aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+</div>
+</aside>
+<main class="col-12 col-md-9 col-xl-8 pl-md-5 pr-md-4" role=main>
+<div class=td-content>
+<h1>Teaching Apps how to Learn with Spicepods</h1>
+<div class="td-byline mb-4">
+By <b>Luke Kim (<a href=https://twitter.com/0xLukeKim>@0xLukeKim</a>)</b> |
+<time datetime=2021-11-15 class=text-muted>Monday, November 15, 2021</time>
+</div>
+<header class=article-meta>
+</header>
+<h1 id=teaching-apps-how-to-learn-with-spicepods>Teaching Apps how to Learn with Spicepods</h1>
+<p>The last post in this series, <a href=https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/>Making Apps that Learn and Adapt</a>, described the shift from building AI/ML solutions to building apps that learn and adapt. But, how does the app learn? And as a developer, how do I teach it what it should learn?</p>
+<p>With <a href=https://spiceai.org>Spice.ai</a>, we teach the app how to learn using a Spicepod.</p>
+<p>Imagine you own a restaurant. You created a menu, hired staff, constructed the kitchen and dining room, and got off to a great start when it first opened. However, over the years, your customers' tastes changed, you&rsquo;ve had to make compromises on ingredients, and there&rsquo;s a hot new place down the street&mldr; business is stagnating, and you know that you need to make some changes to stay competitive.</p>
+<p>You have a few options. First, you could gather all the data, such as customer surveys, seasonal produce metrics, and staff performance profiles. You may even hire outside consultants. You then take this data to your office, and after spending some time organizing, filtering, and collating it, you&rsquo;ve discovered an insight! Your seafood dishes sell poorly and cost the most&mldr; you are losing money! You spend several weeks or months perfecting a new menu, which you roll out with much fanfare! And then… business is still poor. What!? How could this be? It was a data-driven approach! You start the process again. While this approach is a worthy option, it has long latency from data to learning to implementation.</p>
+<p>Another option is to build real-time learning and adaption directly into the restaurant. Imagine a staff member whose sole job was learning and adapting how the restaurant should operate; lets name them Blue. You write a guide for Blue that defines certain goal metrics, like customer food ratings, staff happiness, and of course, profit. Blue tracks each dish served, from start to finish, from who prepared it to its temperature, its costs, and its final customer taste rating. Blue not only learns from each customer review as each dish is consumed but also how dish preparation affects other goal metrics, like profitability. The restaurant staff consults Blue to determine any adjustments to improve goal metrics as they work. The latency from data to learning, to adaption, has been reduced, from weeks or months to minutes. This option, of course, is not feasible for most restaurants, but software applications can use this approach. Blue and his instructions are analogous to the Spice.ai runtime and manifest.</p>
+<p>In the Spice.ai model, developers teach the app how to learn by describing goals and rewarding its actions, much like how a parent might teach a child. As these rewards are applied in training, the app learns what actions maximize its rewards towards the defined goals.</p>
+<p>Returning to the restaurant example, you can think of the Spice.ai runtime as Blue, and Spicepod manifests as the guide on how Blue should learn. Individual staff members would consult with Blue for ongoing recommendations on decisions to make and how to act. These goals and rewards are defined in <strong>Spicepods</strong> or &ldquo;pods&rdquo; for short. Spicepods are packages of configuration that describe the application&rsquo;s goals and how it should learn from data. Although it&rsquo;s not a direct analogy, Spicepods and their manifests can be conceptualized similar to Docker containers and Dockerfiles. In contrast, Dockerfiles define the packaging of your app, Spicepods specify the packaging of your app&rsquo;s learning and data.</p>
+<p><strong>Anatomy of a Spicepod</strong></p>
+<p>A Spicepod consists of:</p>
+<ul>
+<li>A required YAML manifest that describes how the pod should learn from data</li>
+<li>Optional seed data</li>
+<li>Learned model/state</li>
+<li>Performance telemetry and metrics</li>
+</ul>
+<p>Developers author Spicepods using the <code>spice</code> CLI command such as with <code>spice pod init &lt;name></code> or simply by creating a manifest file such as <code>mypod.yaml</code> in the <code>spicepods</code> directory of their application.</p>
+<p>Here&rsquo;s an example of the <a href=https://github.com/spiceai/quickstarts/tree/trunk/tweet-recommendation/README.md>Tweet Recommendation Quickstart</a> Spicepod manifest.</p>
+<img width=400 alt=tweet-recommendation-manifest src=https://user-images.githubusercontent.com/80174/141739579-9cf7b971-7637-43bc-b661-89115e3b1b59.png>
+<p><em>A screenshot of the Spicepod manifest for the Tweet Recommendation Quickstart</em></p>
+<p>You can see the data definitions under <code>dataspaces</code>, the actions the application may take under <code>actions</code>, and their rewards when training.</p>
+<p>In the next post, I&rsquo;ll walk through in detail each section of the pod manifest. In the meantime, you can review the documentation for a complete reference of the <a href=https://docs.spiceai.org/reference/pod/>Spicepod manifest syntax</a>.</p>
+<p><strong>Spicepods as packages</strong></p>
+<p>On disk, Spicepods are generally layouts of a manifest file, seed data, and trained models, but they can also be exported as zipped packages.</p>
+<img width=235 alt=spicepod-layout src=https://user-images.githubusercontent.com/80174/141739662-7be361fe-aa79-4408-bb3d-311fd0f849eb.png>
+<p><em>A screenshot of the Spicepod layout for the trader quickstart application</em></p>
+<p>When the runtime exports a Spicepod using the <code>spice export</code> command, it is saved with a <code>.spicepod</code> extension. It can then be shared, archived, or imported into another instance of the Spice.ai runtime.</p>
+<p>Soon, we also expect to enable publishing of <code>.spicepods</code> to spicerack.org, from where community-created Spicepods can easily be added to your application using <code>spice add &lt;pod name></code> (currently, only Spice AI published pods are available on spicerack.org).</p>
+<p>Treating Spicepods as packages and enabling their sharing and distribution through spicerack.org will help developers share their &ldquo;restaurant guides&rdquo; and build upon each other&rsquo;s work, much like they do with npmjs.org or pypi.org. In this way, developers can together build better and more intelligent applications.</p>
+<p>In the next post, we&rsquo;ll dive deeper into authoring a Spicepod manifest to create an intelligent application. Follow <a href=https://twitter.com/SpiceAIHQ>@SpiceAIHQ</a> on Twitter to get an update when we post.</p>
+<p>If you haven&rsquo;t already, read the next the first post in the series, <a href=https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/>Making Apps that Learn and Adapt</a>.</p>
+<h3 id=learn-more-and-contribute>Learn more and contribute</h3>
+<p>Building intelligent apps that leverage AI is still way too hard, even for advanced developers. Our mission is to make this as easy as creating a modern web page. If the vision resonates with you, join us!</p>
+<p>Our <a href=https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md>Spice.ai Roadmap</a> is public, and now that we have launched, the project and work are open for collaboration.</p>
+<p>If you are interested in partnering, we&rsquo;d love to talk. Try out <a href=https://spiceai.org>Spice.ai</a>, <a href=mailto:hey@spiceai.io>email us</a> &ldquo;hey,&rdquo; get in touch on <a href=https://discord.gg/kZnTfneP5u>Discord</a>, or reach out on <a href=https://twitter.com/SpiceAIHQ>Twitter</a>.</p>
+<p>We are just getting started! 🚀</p>
+<p>Luke</p>
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
+<li>
+<a href=/posts/2021/11/05/making-apps-that-learn-and-adapt/ aria-label="Previous - Making Apps That Learn And Adapt" class="btn btn-primary"><span class=mr-1>←</span> Previous</a>
+</li>
+<a class="btn btn-primary disabled">Next <span class=ml-1>→</span></a>
+</li>
+</ul>
+</div>
+</main>
+</div>
+</div>
+<footer class="bg-dark py-5 row d-print-none">
+<div class="container-fluid mx-sm-5">
+<div class=row>
+<div class="col-6 col-sm-4 text-xs-center order-sm-2">
+</div>
+<div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter>
+<a class=text-white target=_blank rel=noopener href=https://twitter.com/SpiceAIHQ aria-label=Twitter>
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub>
+<a class=text-white target=_blank rel=noopener href=https://github.com/spiceai/spiceai aria-label=GitHub>
+<i class="fab fa-github"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Discord aria-label=Discord>
+<a class=text-white target=_blank rel=noopener href=https://discord.com/channels/803820740868571196/803820740868571199 aria-label=Discord>
+<i class="fab fa-discord"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+<small class=text-white>&copy; 2021 Spice AI All Rights Reserved</small>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js integrity=sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF crossorigin=anonymous></script>
+<script src=/js/tabpane-persist.js></script>
+<script src=/js/main.min.5c74b870c6953931a705f390a49c7e4c0a842ec5c83b24354758dd674343ed0d.js integrity="sha256-XHS4cMaVOTGnBfOQpJx+TAqELsXIOyQ1R1jdZ0ND7Q0=" crossorigin=anonymous></script>
+</body>
+</html>
