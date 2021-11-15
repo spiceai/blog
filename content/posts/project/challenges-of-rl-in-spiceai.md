@@ -31,9 +31,9 @@ RL has been growing very steadily, especially for robotic applications, the topi
 
 Most of today research is base on environements the agent can interact with during the training process. In fact most of the time the most efficient to have multiple agent/environement pairs training together and sharing their experiences. Having an environement to interact with is very helpfull try differenct actions from the agents from the actual state of learning: **on-policy learning**; while past experiences from them or bootstrap data can also be used, without the need of the environement:**off-policy learning**.
 
-At the time of writting those lines, Spice.ai is not meant to be used with an environement (wither pre-made or given by the user). **This makes off-policy learning the only possibility.** Despite limiting the exploration of agents the good size of this can be be seen as a strenght as:
+At the time of writting those lines, Spice.ai is not meant to be used with an environement (wither pre-made or given by the user). **This makes off-policy learning the only possibility.** Despite limiting the exploration of agents this can be be seen as a strenght as:
 
-* Creating environements has its downside: it can be difficult and/or expensive to create a model of the real-world, sometime even impossible.
+* Creating environments has its downside: it can be difficult and/or expensive to create a model of the real-world, sometime even impossible.
 
 * Off-policy learning is usually way more efficient than on-policy (time/data and computation).
 
