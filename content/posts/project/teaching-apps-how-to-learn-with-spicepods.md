@@ -6,8 +6,6 @@ linkTitle: "Teaching Apps how to Learn with Spicepods"
 author: Luke Kim ([@0xLukeKim](https://twitter.com/0xLukeKim))
 ---
 
-# Teaching Apps how to Learn with Spicepods
-
 The last post in this series, [Making Apps that Learn and Adapt](https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/), described the shift from building AI/ML solutions to building apps that learn and adapt. But, how does the app learn? And as a developer, how do I teach it what it should learn?
 
 With [Spice.ai](https://spiceai.org), we teach the app how to learn using a Spicepod.
