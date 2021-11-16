@@ -1,4 +1,81 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Teaching Apps how to Learn with Spicepods</title><link>/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/</link><pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.4-alpha</title><link>/posts/2021/11/15/announcing-the-release-of-spice.ai-v0.4-alpha/</link><pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/15/announcing-the-release-of-spice.ai-v0.4-alpha/</guid><description>
+&lt;p>We are excited to announce the release of Spice.ai v0.4-alpha! 🏄‍♂️&lt;/p>
+&lt;p>Highlights include support for authoring reward functions in a code file, the ability to specify the time of recommendation, and ingestion support for transaction/correlation ids. Authoring reward functions in a code file is a significant improvement to the developer experience than specifying functions inline in the YAML manifest, and we are looking forward to your feedback on it!&lt;/p>
+&lt;p>If you are new to Spice.ai, check out the &lt;a href="https://docs.spiceai.org/getting-started/">getting started guide&lt;/a> and star &lt;a href="https://github.com/spiceai/spiceai">spiceai/spiceai&lt;/a> on GitHub.&lt;/p>
+&lt;h2 id="highlights-in-v04-alpha">Highlights in v0.4-alpha&lt;/h2>
+&lt;h3 id="upgrade-using-spice-upgrade">Upgrade using spice upgrade&lt;/h3>
+&lt;p>The &lt;code>spice upgrade&lt;/code> command was added in the v0.3.1-alpha release, so you can now upgrade from v0.3.1 to v0.4 by simply running &lt;code>spice upgrade&lt;/code> in your terminal. Special thanks to community member &lt;a href="https://github.com/Adm28">@Adm28&lt;/a> for contributing this feature!&lt;/p>
+&lt;h3 id="reward-function-files">Reward Function Files&lt;/h3>
+&lt;p>In addition to defining reward code inline, it is now possible to author reward code in functions in a separate Python file.&lt;/p>
+&lt;p>The reward function file path is defined by the &lt;code>reward_funcs&lt;/code> property.&lt;/p>
+&lt;p>A function defined in the code file is mapped to an action by authoring its name in the &lt;code>with&lt;/code> property of the relevant reward.&lt;/p>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">training&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reward_funcs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my_reward.py&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">rewards&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">reward&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">buy&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">with&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">buy_reward&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">reward&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">sell&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">with&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">sell_reward&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">reward&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">hold&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">with&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">hold_reward&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Learn more in the documentation: &lt;a href="https://docs.spiceai.org/concepts/rewards/external">docs.spiceai.org/concepts/rewards/external&lt;/a>&lt;/p>
+&lt;h3 id="time-categories">Time Categories&lt;/h3>
+&lt;p>Spice.ai can now learn from cyclical patterns, such as daily, weekly, or monthly cycles.&lt;/p>
+&lt;p>To enable automatic cyclical field generation from the observation time, specify one or more time categories in the pod manifest, such as a &lt;code>month&lt;/code> or &lt;code>weekday&lt;/code> in the &lt;code>time&lt;/code> section.&lt;/p>
+&lt;p>For example, by specifying &lt;code>month&lt;/code> the Spice.ai engine automatically creates a field in the AI engine data stream called &lt;code>time_month_{month}&lt;/code> with the value calculated from the month of which that timestamp relates.&lt;/p>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">time&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">categories&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">month&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">dayofweek&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Supported category values are:
+&lt;code>month&lt;/code> &lt;code>dayofmonth&lt;/code> &lt;code>dayofweek&lt;/code> &lt;code>hour&lt;/code>&lt;/p>
+&lt;p>Learn more in the documentation: &lt;a href="https://docs.spiceai.org/reference/pod/#time">docs.spiceai.org/reference/pod/#time&lt;/a>&lt;/p>
+&lt;h3 id="get-recommendation-for-a-specific-time">Get recommendation for a specific time&lt;/h3>
+&lt;p>It is now possible to specify the time of recommendations fetched from the &lt;code>/recommendation&lt;/code> API.&lt;/p>
+&lt;p>Valid times are from pod &lt;code>epoch_time&lt;/code> to &lt;code>epoch_time + period&lt;/code>.&lt;/p>
+&lt;p>Previously the API only supported recommendations based on the time of the last ingested observation.&lt;/p>
+&lt;p>Requests are made in the following format: &lt;code>GET http://localhost:8000/api/v0.1/pods/{pod}/recommendation?time={unix_timestamp}&lt;/code>&lt;/p>
+&lt;p>An example for &lt;code>quickstarts/trader&lt;/code>&lt;/p>
+&lt;p>&lt;code>GET http://localhost:8000/api/v0.1/pods/trader/recommendation?time=1605729600&lt;/code>&lt;/p>
+&lt;p>Specifying &lt;code>{unix_timestamp}&lt;/code> as &lt;code>0&lt;/code> will return a recommendation based on the latest data. An invalid &lt;code>{unix_timestamp}&lt;/code> will return a result that has the valid time range in the error message:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;response&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;result&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;invalid_recommendation_time&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;message&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;The time specified (1610060201) is outside of the allowed range: (1610057600, 1610060200)&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;error&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Adds&lt;/strong> time categories configuration to the pod manifest to enable learning from cyclical patterns in data - e.g. hour, day of week, day of month, and month&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> support for defining reward functions in a rewards functions code file.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> the ability to specify recommendation time making it possible to now see which action Spice.ai recommends at any time during the pod period.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> support for ingestion of transaction/correlation identifiers (e.g. &lt;code>order_id&lt;/code>, &lt;code>trace_id&lt;/code>) in the pod manifest.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> validation for invalid dataspace names in the pod manifest.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> the ability to resize columns to the dashboard observation data grid.&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> to TensorFlow 2.7 and Keras 2.7&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> a bug where data processors were using data connector params&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> a dashboard issue in the pod observations data grid where a column might not be shown.&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> a crash on pod load if the &lt;code>training&lt;/code> section is not included in the manifest.&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> an issue where data manager stats errors were incorrectly being printed to console.&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> an issue where selectors may not match due to surrounding whitespace.&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/spiceai/quickstarts/blob/trunk/README.md">Quickstarts&lt;/a> and &lt;a href="https://github.com/spiceai/samples/blob/trunk/README.md">Samples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved. We will also be starting a community call series soon!&lt;/p>
+&lt;ul>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spiceaihq">@SpiceAIHQ&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spiceai.io">hey@spiceai.io&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Teaching Apps how to Learn with Spicepods</title><link>/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/</link><pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/</guid><description>
 &lt;p>The last post in this series, &lt;a href="https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/">Making Apps that Learn and Adapt&lt;/a>, described the shift from building AI/ML solutions to building apps that learn and adapt. But, how does the app learn? And as a developer, how do I teach it what it should learn?&lt;/p>
 &lt;p>With &lt;a href="https://spiceai.org">Spice.ai&lt;/a>, we teach the app how to learn using a Spicepod.&lt;/p>
 &lt;p>Imagine you own a restaurant. You created a menu, hired staff, constructed the kitchen and dining room, and got off to a great start when it first opened. However, over the years, your customers' tastes changed, you&amp;rsquo;ve had to make compromises on ingredients, and there&amp;rsquo;s a hot new place down the street&amp;hellip; business is stagnating, and you know that you need to make some changes to stay competitive.&lt;/p>
