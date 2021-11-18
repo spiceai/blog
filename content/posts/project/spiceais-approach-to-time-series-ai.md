@@ -12,6 +12,13 @@ This post will discuss some of the challenges and directions for the technology 
 
 ### Time Series
 
+<div style="display: flex; justify-content: center; padding: 5px;">
+  <div style="display: flex; flex-direction: column;">
+    <img style="max-width: 400px;" src="https://user-images.githubusercontent.com/19952490/142404970-de910848-cdb4-451b-a0d5-302c90215216.png" />
+	<div syle="font-size: 0.8rem; font-style: italic;">Figure 1. Time Series processing visualization: a time window is usually chosen to process part of the data stream</div>
+  </div>
+</div>
+
 Time series AI has become more popular over recent years, and there is extensive literature on the subject, including time-series-focused neural networks. Research in this space points to the likelihood that there is no silver bullet, and a single approach to time series AI will not be sufficient. However, for developers, this can make building a product complex, as it comes with the challenge of exploring and evaluating many algorithms and approaches.
 
 A fundamental challenge of time series is the data itself. The shape and length are usually variable and can even be infinite (real-time streams of data). The volume of data required is often too much for simple and efficient machine learning algorithms such as [Decision Trees](https://en.wikipedia.org/wiki/Decision_tree). This challenge makes Deep Learning popular to process such data. There are several types of neural networks that have been shown to work well with time series so let's review some of the common classes:
@@ -27,6 +34,13 @@ While not a complete representation of classes of neural networks, this list rep
 Reinforcement Learning (RL) has grown steadily, especially in fields like robotics. Usually, RL doesn't require as much data processing as Supervised Learning, where large datasets can be demanding for hardware and people alike. RL is more dynamic: agents are trained to replicate behaviors/outputs and explore and 'optimize' themselves with their environment to maximize a reward.
 
 Most of today's research is based on environments the agent can interact with during the training process, known as online learning. Usually, efficient training processes have multiple agent/environment pairs training together and sharing their experiences. Having an environment for agents to interact enables different actions from the actual historical state known as **on-policy learning**, and using only past experiences without an environment is **off-policy learning**.
+
+<div style="display: flex; justify-content: center; padding: 5px;">
+  <div style="display: flex; flex-direction: column;">
+    <img style="max-width: 400px;" src="https://user-images.githubusercontent.com/19952490/142404987-cc6f0654-d2bd-496a-b6a4-52da19b9f912.png" />
+	<div syle="font-size: 0.8rem; font-style: italic;"> Figure 2. AI training without interacting with the environment (real world nor simulation). Only gathered data is used for training.</div>
+  </div>
+</div>
 
 [Spice.ai](http://Spice.ai) is initially taking an off-policy approach, where an environment (either pre-made or given by the user) is not required. Despite limiting the exploration of agents, this aligns to an application-centric approach as:
 
