@@ -15,7 +15,7 @@ This post will discuss some of the challenges and directions for the technology 
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
     <img style="max-width: 600px; margin: auto" src="https://user-images.githubusercontent.com/19952490/142404970-de910848-cdb4-451b-a0d5-302c90215216.png" />
-	<div syle="font-size: 0.8rem; font-style: italic;">Figure 1. Time Series processing visualization: a time window is usually chosen to process part of the data stream</div>
+	<div style="font-size: 0.8rem; font-style: italic;">Figure 1. Time Series processing visualization: a time window is usually chosen to process part of the data stream</div>
   </div>
 </div>
 
@@ -38,7 +38,7 @@ Most of today's research is based on environments the agent can interact with du
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
     <img style="max-width: 600px; margin: auto" src="https://user-images.githubusercontent.com/19952490/142404987-cc6f0654-d2bd-496a-b6a4-52da19b9f912.png" />
-	<div syle="font-size: 0.8rem; font-style: italic;"> Figure 2. AI training without interacting with the environment (real world nor simulation). Only gathered data is used for training.</div>
+	<div style="font-size: 0.8rem; font-style: italic;"> Figure 2. AI training without interacting with the environment (real world nor simulation). Only gathered data is used for training.</div>
   </div>
 </div>
 
