@@ -12,7 +12,7 @@ One of the challenges with developing apps powered by AI is that writing the log
 
 If you're a developer, you probably build intelligence into your app every day without realizing it - and used data to do so. If you've ever performed an A/B test to see which version of a website works better - you just used data to make your website more intelligent. If you've ever looked through your app's logs and found a behavior that wasn't supposed to happen and then fixed it - that's another place you used data to make your app more intelligent.
 
-One critical difference with an intelligent app that leverages AI is it can learn from data and experience on its own, without help from a human. It is also possible to build entirely new classes of applications that are infeasible to write code.
+One critical difference with an intelligent app that leverages AI is it can learn from data and experience on its own, without help from a human. It is also possible to build entirely new classes of applications that are infeasible to write with code.
 
 ### Why is processing data hard?
 
