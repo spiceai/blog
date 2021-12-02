@@ -144,7 +144,7 @@ Through these rewards and punishments and the CPU metric data, the Spicepod will
 
 The manifest now has defined data, actions, and rewards. The Spicepod can get data to learn which actions to take and when based on the rewards provided.
 
-If the Spice.ai runtime were running, the Spicepod would automatically use those updates to train each time you saved the manifest while monitoring reward performance in the dashboard.
+If the Spice.ai runtime is running, the Spicepod automatically trains each time the manifest file is saved. As this happens reward performance can be monitored in the dashboard.
 
 Once each training run completes, the application can query the Spicepod for a decision recommendation by calling the recommendations API http://localhost:8000/api/v0.1/pods/serverops/recommendation. The API returns a JSON document that provides the recommended action, the confidence of taking that action, and when that recommendation is valid.
 
