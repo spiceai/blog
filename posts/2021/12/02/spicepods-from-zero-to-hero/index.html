@@ -21,11 +21,11 @@ As a refresher, a Spicepod consists of:">
 <meta property="og:type" content="article">
 <meta property="og:url" content="/posts/2021/12/02/spicepods-from-zero-to-hero/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-02T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-12-02T22:11:55+09:00">
+<meta property="article:modified_time" content="2021-12-02T22:19:55+09:00">
 <meta itemprop=name content="Spicepods: From Zero To Hero">
 <meta itemprop=description content="In my previous post, Teaching Apps how to Learn with Spicepods, I introduced Spicepods as packages of configuration that describe an application&rsquo;s data-driven goals and how it should learn from data. To leverage Spice.ai in your application, you can author a Spicepod from scratch or build upon one fetched from the spicerack.org registry. In this post, we&rsquo;ll walk through the creation and authoring of a Spicepod step-by-step from scratch.
 As a refresher, a Spicepod consists of:"><meta itemprop=datePublished content="2021-12-02T00:00:00+00:00">
-<meta itemprop=dateModified content="2021-12-02T22:11:55+09:00">
+<meta itemprop=dateModified content="2021-12-02T22:19:55+09:00">
 <meta itemprop=wordCount content="1485">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Spicepods: From Zero To Hero">
@@ -140,20 +140,20 @@ By <b>Luke Kim (<a href=https://twitter.com/0xLukeKim>@0xLukeKim</a>)</b> |
 <p>You would normally do this by opening two terminal windows side-by-side, one that runs the runtime using the command <code>spice run</code> and one where you enter CLI commands. In addition, developers would open the Spice.ai dashboard located at <a href=http://localhost:8000>http://localhost:8000</a> to preview changes they make.</p>
 <div style=display:flex;justify-content:center;padding:5px>
 <div style=display:flex;flex-direction:column>
-<img style=max-width:400px alt="Figure 1. Spice.ai's modern development workflow" src=https://user-images.githubusercontent.com/80174/144368808-1b1ce9dc-e296-42ff-a65d-44b8aa97605f.png>
+<img style=max-width:600px alt="Figure 1. Spice.ai's modern development workflow" src=https://user-images.githubusercontent.com/80174/144368808-1b1ce9dc-e296-42ff-a65d-44b8aa97605f.png>
 </div>
 </div>
 <h2 id=creating-a-spicepod>Creating a Spicepod</h2>
 <p>The easiest way to create a Spicepod is to use the Spice.ai CLI command: <code>spice init &lt;Spicepod name></code>. We&rsquo;ll make one in the ServerOps Quickstart application called <code>serverops</code>.</p>
 <div style=display:flex;justify-content:center;padding:5px>
 <div style=display:flex;flex-direction:column>
-<img max-width=400 alt="Figure 2. Creating a Spicepod." src=https://user-images.githubusercontent.com/80174/144368947-2698d7e2-e451-4961-a289-d84f4f328eae.png>
+<img style=max-width:600px alt="Figure 2. Creating a Spicepod." src=https://user-images.githubusercontent.com/80174/144368947-2698d7e2-e451-4961-a289-d84f4f328eae.png>
 </div>
 </div>
 <p>The CLI saves the Spicepod manifest file in the <code>spicepods</code> directory of your application. You can see it created a new serverops.yaml file, which should be included in your application and be committed to your source repository. Let&rsquo;s take a look at it.</p>
 <div style=display:flex;justify-content:center;padding:5px>
 <div style=display:flex;flex-direction:column>
-<img max-width=400 alt="Figure 3. Spicepod manifest." src=https://user-images.githubusercontent.com/80174/144369087-59022f3d-84cc-4f8f-bceb-c60351ac69b7.png>
+<img style=max-width:600px alt="Figure 3. Spicepod manifest." src=https://user-images.githubusercontent.com/80174/144369087-59022f3d-84cc-4f8f-bceb-c60351ac69b7.png>
 </div>
 </div>
 <p>The initialized manifest file is very simple. It contains a name and three main sections being:</p>
@@ -171,7 +171,7 @@ By <b>Luke Kim (<a href=https://twitter.com/0xLukeKim>@0xLukeKim</a>)</b> |
 <p>Let&rsquo;s add a dataspace to the Spicepod manifest to load CPU metric data from a CSV file. This file is a snapshot of data from <a href=https://www.influxdata.com/products/influxdb/>InfluxDB</a>, a time-series database we like.</p>
 <div style=display:flex;justify-content:center;padding:5px>
 <div style=display:flex;flex-direction:column>
-<img max-width=400 alt="Figure 4. Adding a dataspace." src=https://user-images.githubusercontent.com/80174/144369723-4336a4d5-1637-42c8-94aa-369531d6d1f7.png>
+<img style=max-width:600px alt="Figure 4. Adding a dataspace." src=https://user-images.githubusercontent.com/80174/144369723-4336a4d5-1637-42c8-94aa-369531d6d1f7.png>
 </div>
 </div>
 <p>We can see this dataspace is identified by its source <code>hostmetrics</code> and name <code>cpu</code>. It includes a <code>data</code> section with a file data connector, the path to the file, and a data processor to know how to process it. In addition, it defines a single measurement <code>usage_idle</code> under the measurements section, which is a measurement of CPU load. In Spice.ai, measurements are the core primitive the AI engine uses to learn and is always numerical data. Spice.ai includes a growing library of community contributable data connectors and data processors you can consist of in your Spicepod to access data. You can also contribute your own.</p>
@@ -181,26 +181,26 @@ By <b>Luke Kim (<a href=https://twitter.com/0xLukeKim>@0xLukeKim</a>)</b> |
 <p>Now that the Spicepod has data, let&rsquo;s define some data-driven actions so the ServerOps application can learn when is the best time to take them. We&rsquo;ll add three actions using the CLI helper command, <code>spice action add</code>.</p>
 <div style=display:flex;justify-content:center;padding:5px>
 <div style=display:flex;flex-direction:column>
-<img max-width=400 alt="Figure 5. Adding actions." src=https://user-images.githubusercontent.com/80174/144369840-1dcea686-9661-408a-a8a4-c62e3d84093f.png>
+<img style=max-width:600px alt="Figure 5. Adding actions." src=https://user-images.githubusercontent.com/80174/144369840-1dcea686-9661-408a-a8a4-c62e3d84093f.png>
 </div>
 </div>
 <p>And in the manifest:</p>
 <div style=display:flex;justify-content:center;padding:5px>
 <div style=display:flex;flex-direction:column>
-<img max-width=400 alt="Figure 6. Actions added to the manifest" src=https://user-images.githubusercontent.com/80174/144371117-5eb816aa-e088-4160-8f33-9dabf1a5bb7c.png>
+<img style=max-width:600px alt="Figure 6. Actions added to the manifest" src=https://user-images.githubusercontent.com/80174/144371117-5eb816aa-e088-4160-8f33-9dabf1a5bb7c.png>
 </div>
 </div>
 <h2 id=adding-rewards>Adding rewards</h2>
 <p>The Spicepod now has data and possible actions, so we can now define how it should learn when to take them. Similar to how humans learn, we can set rewards or punishments for actions taken based on their effect and the data. Let&rsquo;s add scaffold rewards for all actions using the <code>spice rewards add</code> command.</p>
 <div style=display:flex;justify-content:center;padding:5px>
 <div style=display:flex;flex-direction:column>
-<img max-width=400 alt="Figure 7. Adding rewards" src=https://user-images.githubusercontent.com/80174/144371214-86803184-5100-45cb-a592-ac3114176dba.png>
+<img style=max-width:600px alt="Figure 7. Adding rewards" src=https://user-images.githubusercontent.com/80174/144371214-86803184-5100-45cb-a592-ac3114176dba.png>
 </div>
 </div>
 <p>We now have rewards set for each action. The rewards are uniform (all the same), meaning the Spicepod is rewarded the same for each action. Higher rewards are better, so if we change <code>perform_maintenance</code> to 2, the Spicepod will learn to perform maintenance more often than the other actions. Of course, instead of setting these arbitrarily, we want to learn from data, and we can do that by referencing the state of data at each time-step in the time-series data as the AI engine trains.</p>
 <div style=display:flex;justify-content:center;padding:5px>
 <div style=display:flex;flex-direction:column>
-<img max-width=400 alt="Figure 8. Rewards added to the manifest" src=https://user-images.githubusercontent.com/80174/144371299-70b40d99-85e1-4ab8-b1e1-f4f40aa27fc7.png>
+<img style=max-width:600px alt="Figure 8. Rewards added to the manifest" src=https://user-images.githubusercontent.com/80174/144371299-70b40d99-85e1-4ab8-b1e1-f4f40aa27fc7.png>
 </div>
 </div>
 <p>The rewards themselves are just code. Currently, we currently support Python code, either inline or in a .py <a href=https://docs.spiceai.org/concepts/rewards/external/>external code file</a> and we plan to support several other languages. The reward code can access the time-step state through the <code>prev_state</code> and <code>new_state</code> variables and the dataspace name. For the full documentation, see <a href=https://docs.spiceai.org/concepts/rewards/>Rewards</a>.</p>
@@ -212,7 +212,7 @@ By <b>Luke Kim (<a href=https://twitter.com/0xLukeKim>@0xLukeKim</a>)</b> |
 </code></pre></div><p>This code takes the CPU usage (100 minus the idle time) deltas between the previous time state and the current time state, and sets the reward to be a normalized delta value between 0 and 1. When the CPU usage is moving from higher <code>cpu_usage_prev</code> to lower <code>cpu_usage_low</code>, its a better time to run server maintenance and so we reward the inverse of the delta. E.g. <code>80% - 50% = 30% = 0.3</code>. However, if the CPU moves lower to higher, <code>50% - 80% = -30% = -0.3</code>, it&rsquo;s a bad time to run maintenance, so we provide a negative reward or &ldquo;punish&rdquo; the action.</p>
 <div style=display:flex;justify-content:center;padding:5px>
 <div style=display:flex;flex-direction:column>
-<img max-width=400 alt="Figure 9. Reward code" src=https://user-images.githubusercontent.com/80174/144371629-497f0ed4-1217-4e55-b7dd-0eec3eb187ae.png>
+<img style=max-width:600px alt="Figure 9. Reward code" src=https://user-images.githubusercontent.com/80174/144371629-497f0ed4-1217-4e55-b7dd-0eec3eb187ae.png>
 </div>
 </div>
 <p>Through these rewards and punishments and the CPU metric data, the Spicepod will when it is a good time to perform maintence and be the decision engine for the ServerOps application. You might be thinking you could write code without AI to do this, which is true, but handling the variety of cases, like CPU spikes, or patterns in the data, like cyclical server load, would take a lot of code and a development time. Applying AI helps you build faster.</p>
