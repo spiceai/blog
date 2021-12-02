@@ -67,7 +67,7 @@ You author and edit Spicepod manifest files in your favorite text editor with a 
 
 To build an intelligent, data-driven application, we must first start with data.
 
-A Spice.aio **dataspace** is a logical grouping of data with definitions of how that data should be loaded and processed, usually from a single source. A combination of its data source and its name identifies it, for example, nasdaq/msft or twitter/tweets. Read more about Dataspaces in the [Core Concepts](https://docs.spiceai.org/concepts/dataspaces/) documentation.
+A Spice.ai **dataspace** is a logical grouping of data with definitions of how that data should be loaded and processed, usually from a single source. A combination of its data source and its name identifies it, for example, nasdaq/msft or twitter/tweets. Read more about Dataspaces in the [Core Concepts](https://docs.spiceai.org/concepts/dataspaces/) documentation.
 
 Let's add a dataspace to the Spicepod manifest to load CPU metric data from a CSV file. This file is a snapshot of data from [InfluxDB](https://www.influxdata.com/products/influxdb/), a time-series database we like.
 
