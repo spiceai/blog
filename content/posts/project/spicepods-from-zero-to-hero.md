@@ -146,7 +146,7 @@ The manifest now has defined data, actions, and rewards. The Spicepod can get da
 
 If the Spice.ai runtime is running, the Spicepod automatically trains each time the manifest file is saved. As this happens reward performance can be monitored in the dashboard.
 
-Once each training run completes, the application can query the Spicepod for a decision recommendation by calling the recommendations API http://localhost:8000/api/v0.1/pods/serverops/recommendation. The API returns a JSON document that provides the recommended action, the confidence of taking that action, and when that recommendation is valid.
+Once a training run completes, the application can query the Spicepod for a decision recommendation by calling the recommendations API http://localhost:8000/api/v0.1/pods/serverops/recommendation. The API returns a JSON document that provides the recommended action, the confidence of taking that action, and when that recommendation is valid.
 
 In the [ServerOps Quickstart](https://github.com/spiceai/quickstarts/tree/trunk/serverops/README.md), this API is called from the server maintenance PowerShell script to make an intelligent decision on when to run maintenance. The [ServerOps Sample](https://github.com/spiceai/samples/tree/trunk/serverops/README.md), which uses live data, can be continuously trained to learn and adapt even as the live data changes due to load patterns changing. 
 
