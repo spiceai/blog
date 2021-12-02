@@ -77,7 +77,7 @@ Let's add a dataspace to the Spicepod manifest to load CPU metric data from a CS
   </div>
 </div>
 
-We can see this dataspace is identified by its source `hostmertrics` a name `cpu`. It includes a `data` section with a file data connector, the path to the file, and a data processor to know how to process it. In addition, it defines a single measurement `usage_idle` under the measurements section, which is a measurement of CPU load. In Spice.ai, measurements are the core primitive the AI engine uses to learn and is always numerical data. Spice.ai includes a growing library of community contributable data connectors and data processors you can consist of in your Spicepod to access data. You can also contribute your own.
+We can see this dataspace is identified by its source `hostmetrics` and name `cpu`. It includes a `data` section with a file data connector, the path to the file, and a data processor to know how to process it. In addition, it defines a single measurement `usage_idle` under the measurements section, which is a measurement of CPU load. In Spice.ai, measurements are the core primitive the AI engine uses to learn and is always numerical data. Spice.ai includes a growing library of community contributable data connectors and data processors you can consist of in your Spicepod to access data. You can also contribute your own.
 
 Finally, because the data is a snapshot of live data loaded from a file, we must set a Spicepod `epoch_time` that defines the data's start Unix time.
 
