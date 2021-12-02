@@ -29,7 +29,7 @@ You would normally do this by opening two terminal windows side-by-side, one tha
 
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
-    <img style="max-width: 400px;" alt="Figure 1. Spice.ai's modern development workflow" src="https://user-images.githubusercontent.com/80174/144368808-1b1ce9dc-e296-42ff-a65d-44b8aa97605f.png">
+    <img style="max-width: 600px;" alt="Figure 1. Spice.ai's modern development workflow" src="https://user-images.githubusercontent.com/80174/144368808-1b1ce9dc-e296-42ff-a65d-44b8aa97605f.png">
   </div>
 </div>
 
@@ -39,7 +39,7 @@ The easiest way to create a Spicepod is to use the Spice.ai CLI command: `spice 
  
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
-    <img max-width="400" alt="Figure 2. Creating a Spicepod." src="https://user-images.githubusercontent.com/80174/144368947-2698d7e2-e451-4961-a289-d84f4f328eae.png">
+    <img style="max-width: 600px;" alt="Figure 2. Creating a Spicepod." src="https://user-images.githubusercontent.com/80174/144368947-2698d7e2-e451-4961-a289-d84f4f328eae.png">
   </div>
 </div>
 
@@ -47,7 +47,7 @@ The CLI saves the Spicepod manifest file in the `spicepods` directory of your ap
 
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
-    <img max-width="400" alt="Figure 3. Spicepod manifest." src="https://user-images.githubusercontent.com/80174/144369087-59022f3d-84cc-4f8f-bceb-c60351ac69b7.png">
+    <img style="max-width: 600px;" alt="Figure 3. Spicepod manifest." src="https://user-images.githubusercontent.com/80174/144369087-59022f3d-84cc-4f8f-bceb-c60351ac69b7.png">
   </div>
 </div>
 
@@ -73,7 +73,7 @@ Let's add a dataspace to the Spicepod manifest to load CPU metric data from a CS
 
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
-    <img max-width="400" alt="Figure 4. Adding a dataspace." src="https://user-images.githubusercontent.com/80174/144369723-4336a4d5-1637-42c8-94aa-369531d6d1f7.png">
+    <img style="max-width: 600px;" alt="Figure 4. Adding a dataspace." src="https://user-images.githubusercontent.com/80174/144369723-4336a4d5-1637-42c8-94aa-369531d6d1f7.png">
   </div>
 </div>
 
@@ -89,7 +89,7 @@ Now that the Spicepod has data, let's define some data-driven actions so the Ser
 
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
-    <img max-width="400" alt="Figure 5. Adding actions." src="https://user-images.githubusercontent.com/80174/144369840-1dcea686-9661-408a-a8a4-c62e3d84093f.png">
+    <img style="max-width: 600px;" alt="Figure 5. Adding actions." src="https://user-images.githubusercontent.com/80174/144369840-1dcea686-9661-408a-a8a4-c62e3d84093f.png">
   </div>
 </div>
 
@@ -97,7 +97,7 @@ And in the manifest:
 
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
-    <img max-width="400" alt="Figure 6. Actions added to the manifest" src="https://user-images.githubusercontent.com/80174/144371117-5eb816aa-e088-4160-8f33-9dabf1a5bb7c.png">
+    <img style="max-width: 600px;" alt="Figure 6. Actions added to the manifest" src="https://user-images.githubusercontent.com/80174/144371117-5eb816aa-e088-4160-8f33-9dabf1a5bb7c.png">
   </div>
 </div>
 
@@ -107,7 +107,7 @@ The Spicepod now has data and possible actions, so we can now define how it shou
 
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
-     <img max-width="400" alt="Figure 7. Adding rewards" src="https://user-images.githubusercontent.com/80174/144371214-86803184-5100-45cb-a592-ac3114176dba.png">
+     <img style="max-width: 600px;" alt="Figure 7. Adding rewards" src="https://user-images.githubusercontent.com/80174/144371214-86803184-5100-45cb-a592-ac3114176dba.png">
   </div>
 </div>
 
@@ -115,7 +115,7 @@ We now have rewards set for each action. The rewards are uniform (all the same),
 
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
-     <img max-width="400" alt="Figure 8. Rewards added to the manifest" src="https://user-images.githubusercontent.com/80174/144371299-70b40d99-85e1-4ab8-b1e1-f4f40aa27fc7.png">
+     <img style="max-width: 600px;" alt="Figure 8. Rewards added to the manifest" src="https://user-images.githubusercontent.com/80174/144371299-70b40d99-85e1-4ab8-b1e1-f4f40aa27fc7.png">
   </div>
 </div>
 
@@ -134,7 +134,7 @@ This code takes the CPU usage (100 minus the idle time) deltas between the previ
 
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
-     <img max-width="400" alt="Figure 9. Reward code" src="https://user-images.githubusercontent.com/80174/144371629-497f0ed4-1217-4e55-b7dd-0eec3eb187ae.png">
+     <img style="max-width: 600px;" alt="Figure 9. Reward code" src="https://user-images.githubusercontent.com/80174/144371629-497f0ed4-1217-4e55-b7dd-0eec3eb187ae.png">
   </div>
 </div>
 
