@@ -93,17 +93,31 @@ Now that the Spicepod has data, let's define some data-driven actions so the Ser
   </div>
 </div>
 
+And in the manifest:
+
+<div style="display: flex; justify-content: center; padding: 5px;">
+  <div style="display: flex; flex-direction: column;">
+    <img max-width="400" alt="Figure 6. Actions added to the manifest" src="https://user-images.githubusercontent.com/80174/144371117-5eb816aa-e088-4160-8f33-9dabf1a5bb7c.png">
+  </div>
+</div>
+
 ## Adding rewards
 
 The Spicepod now has data and possible actions, so we can now define how it should learn when to take them. Similar to how humans learn, we can set rewards or punishments for actions taken based on their effect and the data. Let's add scaffold rewards for all actions using the `spice rewards add` command.
 
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
-    <img max-width="400" alt="Figure 6. Adding rewards." src="https://user-images.githubusercontent.com/80174/144369859-27a72935-e859-4341-9fe3-2eb30ce9269a.png">
+     <img max-width="400" alt="Figure 7. Adding rewards" src="https://user-images.githubusercontent.com/80174/144371214-86803184-5100-45cb-a592-ac3114176dba.png">
   </div>
 </div>
 
 We now have rewards set for each action. The rewards are uniform (all the same), meaning the Spicepod is rewarded the same for each action. Higher rewards are better, so if we change `perform_maintenance` to 2, the Spicepod will learn to perform maintenance more often than the other actions. Of course, instead of setting these arbitrarily, we want to learn from data, and we can do that by referencing the state of data at each time-step in the time-series data as the AI engine trains.
+
+<div style="display: flex; justify-content: center; padding: 5px;">
+  <div style="display: flex; flex-direction: column;">
+     <img max-width="400" alt="Figure 8. Rewards added to the manifest" src="https://user-images.githubusercontent.com/80174/144371299-70b40d99-85e1-4ab8-b1e1-f4f40aa27fc7.png">
+  </div>
+</div>
 
 The rewards themselves are just code. Currently, we currently support Python code, either inline or in a .py [external code file](https://docs.spiceai.org/concepts/rewards/external/) and we plan to support several other languages. The reward code can access the time-step state through the `prev_state` and `new_state` variables and the dataspace name. For the full documentation, see [Rewards](https://docs.spiceai.org/concepts/rewards/).
 
@@ -116,9 +130,15 @@ cpu_usage_delta = cpu_usage_prev - cpu_usage_new
 reward = cpu_usage_delta / 100
 ```
 
-This code takes the CPU usage (100 minus the idle time) deltas between the previous time state and the current time state, and sets the reward to be a normalized delta value between 0 and 1. When the CPU usage is moving from higher `cpu_usage_prev` to lower `cpu_usage_low`, its a better time to run server maintenance and so we reward the inverse of the delta. E.g. `80% - 50% = 30% = 0.3`. However, if the CPU moves lower to higher, `50% - 80% = -30% = -0.3`, it's a bad time to run maintenance, so we provide a negative reward or "punish" the action. Through these rewards and punishments and the CPU metric data, the Spicepod will when it is a good time to perform maintence and be the decision engine for the ServerOps application.
+This code takes the CPU usage (100 minus the idle time) deltas between the previous time state and the current time state, and sets the reward to be a normalized delta value between 0 and 1. When the CPU usage is moving from higher `cpu_usage_prev` to lower `cpu_usage_low`, its a better time to run server maintenance and so we reward the inverse of the delta. E.g. `80% - 50% = 30% = 0.3`. However, if the CPU moves lower to higher, `50% - 80% = -30% = -0.3`, it's a bad time to run maintenance, so we provide a negative reward or "punish" the action.
 
-Of course, you might be thinking you could write code without AI to do this, which is true, but handling the variety of cases, like CPU spikes, or patterns in the data, like cyclical server load, would take a lot of code and a development time. Applying AI helps you build faster.
+<div style="display: flex; justify-content: center; padding: 5px;">
+  <div style="display: flex; flex-direction: column;">
+     <img max-width="400" alt="Figure 9. Reward code" src="https://user-images.githubusercontent.com/80174/144371629-497f0ed4-1217-4e55-b7dd-0eec3eb187ae.png">
+  </div>
+</div>
+
+Through these rewards and punishments and the CPU metric data, the Spicepod will when it is a good time to perform maintence and be the decision engine for the ServerOps application. You might be thinking you could write code without AI to do this, which is true, but handling the variety of cases, like CPU spikes, or patterns in the data, like cyclical server load, would take a lot of code and a development time. Applying AI helps you build faster.
 
 ## Putting it all together
 
