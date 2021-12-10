@@ -76,7 +76,7 @@ The sparsity of reward or the long-term calculation of total reward (non-greedy 
 
 ## Temporal difference: TD-Learning
 
-TD-learning is a clever way to account for potential future value without knowing them yet. TD is a model-free class of algorithms: it does not simulate future states. The main idea is to take into account all the rewards of a sequence of actions to give a better value than just the reward of the next action.
+TD-learning is a clever way to account for potential future value without knowing them yet. TD is a model-free class of algorithms: it does not simulate future states. The main idea is to consider all the rewards of a sequence of actions to give a better value than just the reward of the next action.
 
 We can, for instance, sum all the future rewards:
 
@@ -151,7 +151,7 @@ The expected reward can be replaced by the Q function we used earlier, which now
 
 ### TD-0
 
-We previously discussed the problem of not being able to go through all the states exhaustively and that the evaluation of the Q value from a neural network could help. Now we want to use the TD method to have a better value estimation that will consider potential future rewards.
+We previously discussed the problem of not being able to go through all the states exhaustively and that the evaluation of the Q value from a neural network could help. We want to use the TD method to have a better value estimation that will consider potential future rewards.
 
 The TD(0) method is elegant as we can, in fact, only use the next state's expected value instead of all future ones. The idea is that with successive evaluations, we build a chain of dependencies as each states' value depends on the next one.
 
