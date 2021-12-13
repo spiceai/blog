@@ -1,15 +1,15 @@
 ---
 date: 2021-12-09
-title: "Q-learning: a reward is all you need"
+title: "Understanding Q-learning: How a Reward Is All You Need"
 type: blog
-linkTitle: "Q-learning: a reward is all you need"
+linkTitle: "Understanding Q-learning: How a Reward Is All You Need"
 author: Corentin Risselin
 ---
 There are two general ways to train an AI to match a given expectation: we can either give it the expected outputs (commonly named labels) for differents inputs; we call this supervised learning. Or we can provide a reward for each output as a score: this is reinforcement learning (RL).
 
-Supervised learning works by tweaking all the parameters (weights in neural networks) to fit the desired outputs, usually hoping that given enough input/label pairs the AI will average to common rules that generalize for any input.
+Supervised learning works by tweaking all the parameters (weights in neural networks) to fit the desired outputs, expecting that given enough input/label pairs the AI will find common rules that generalize for any input.
 
-Reinforcement learning's reward is often provided from a simple function that can score any output: we don't know what specific output we want, but we can recognize how good is the result. In this latter statement there are two underlying concepts we will address in this post:
+Reinforcement learning's reward is often provided from a simple function that can score any output: we don't know what specific output would be best, but we can recognize how good is the result. In this latter statement there are two underlying concepts we will address in this post:
 
 * Can we only tell if the output is good in a binary way, or do we have to quantify the output to train our AI?
 * Do we have to give a reward for every AI's output? Can we give a reward only at specific times?
@@ -70,7 +70,7 @@ When the number of variables of the environment relevant to our actions/rewards 
 
 In this case, we do not need to give the state/action pairs but only the state, as the neural network would exhaustively return all the Q values associated with each action. Outputting all actions' Q value is a common method as the general cases have a complex environment but a smaller number of possible actions.
 
-This method works very well. It is similar to supervised learning with states as inputs and rewards as labels. We assumed so far that we had a reward for each action, and we chose the next action with the best reward (called a greedy policy). In many cases this is not enough: even if an action would yield the best reward at a given state, this may affect the next state so that we wouldn't optimize the reward in the long term. Also, if we can't have a reward for each action, we usually give 0 as a reward. We will not be able to choose the right action if they affect latter states despite not yielding different rewards at the current state.
+This method works very well. It is similar to supervised learning with states as inputs and rewards as labels. We assumed so far that we had a reward for each action, and we chose the next action with the best reward (called a greedy policy). In many cases this is not enough: even if an action would yield the best reward at a given state, this may affect the next state so that we wouldn't optimize the reward in the long term. Also, if we can't have a reward for each action, we usually give 0 as a reward. We will not be able to choose the right action if they affect later states despite not yielding different rewards at the current state.
 
 The sparsity of reward or the long-term calculation of total reward (non-greedy policies) leads us to diverge from supervised learning and learn potential future rewards.
 
@@ -214,15 +214,15 @@ Finally, as we train a neural network to estimate the Q function, we need to upd
   </div>
 </div>
 
-That is it! We now understand all the parts of this formula. Over multiple training steps with different sates+actions, the training should find a good average Q function. While training, the estimator uses its own output to train itself (commonly referred to as bootstrapping): it is like it is chasing itself. Bootstrapping can lead to instability in the training process. There are many additional methods to help against such instability.
+That is it! We now understand all the parts of this formula. Over multiple training steps with different sates, the training should find a good average Q function. While training, the estimator uses its own output to train itself (commonly referred to as bootstrapping): it is like it is chasing itself. Bootstrapping can lead to instability in the training process. There are many additional methods to help against such instability.
 
 From giving rewards, sparse or not, binary or fine-grained, we have a smooth space of values for all our states/actions so the AI can follow a greedy policy to the best outcome.
 
-This way of training is not a silver bullet and there is no guaranty that the AI will find a mathematical operation from the information given as state to the returned reward.
+This way of training is not a silver bullet and there is no guaranty that the AI will find a correlation from the information given as state to the returned reward.
 
 ## Conclusion
 
-We can see how our rewards are used to train AI's policy using Q-learning. By understanding the many iterations required and the bootstrapping issues, we can help our AI by carefully giving relevant state information and reward:
+We can see how our rewards are used to train AI's policies using Q-learning. By understanding the many iterations required and the bootstrapping issues, we can help our AI by carefully giving relevant state information and reward:
 
 * There needs to be a correlation between the state information and the reward: the simpler the relationship, the easier/faster the AI will find it.
 * Sparse and binary rewards make the training problem long and arduous. Giving more information through the reward can tremendously increase the speed/accuracy of the learned Q-estimator.
