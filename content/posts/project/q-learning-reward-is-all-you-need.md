@@ -9,7 +9,7 @@ There are two general ways to train an AI to match a given expectation: we can e
 
 Supervised learning works by tweaking all the parameters (weights in neural networks) to fit the desired outputs, expecting that given enough input/label pairs the AI will find common rules that generalize for any input.
 
-Reinforcement learning's reward is often provided from a simple function that can score any output: we don't know what specific output would be best, but we can recognize how good is the result. In this latter statement there are two underlying concepts we will address in this post:
+Reinforcement learning's reward is often provided from a simple function that can score any output: we don't know what specific output would be best, but we can recognize how good the result is. In this latter statement there are two underlying concepts we will address in this post:
 
 * Can we only tell if the output is good in a binary way, or do we have to quantify the output to train our AI?
 * Do we have to give a reward for every AI's output? Can we give a reward only at specific times?
@@ -19,7 +19,7 @@ Those questions are already mostly answered, and many algorithms deal with those
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
     <img style="max-width: 600px; min-height: 100px; margin: auto" src="/svg/q_learning/q_formula.svg" />
-	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Equation 1. Q estimation at the heart of many RL algorithm, also know as Bellman equation.</div>
+	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Equation 1. Q estimation at the heart of many RL algorithm, also known as the Bellman equation.</div>
   </div>
 </div>
 
@@ -41,13 +41,13 @@ For now, we will assume we can have a reward that gives an objective and perfect
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
     <img style="max-width: 600px; margin: auto" src="https://user-images.githubusercontent.com/19952490/145569847-4be91c13-3ffb-4ad8-83c4-fb841e9d2c96.png" />
-	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 1. Example of reward given for different actions at a specific stae. Here a simple 2D map with a goal.</div>
+	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 1. Example of reward given for different actions at a specific state. Here a simple 2D map with a goal.</div>
   </div>
 </div>
 
 ### Q-Table
 
-We know that actions' outcomes (rewards) will vary depending on the current state we are, otherwise the problem would be trivial to solve. If the states that are relevant to our actions can be numbered, a simple way would be to build a table with all the possible states/action pairs. There are different ways to build such a table depending on how we can interact with our environment. Eventually, we would have a good 'map' to guide us to do the best actions.
+We know that actions' outcomes (rewards) will vary depending on the current state we are in, otherwise the problem would be trivial to solve. If the states that are relevant to our actions can be numbered, a simple way would be to build a table with all the possible states/action pairs. There are different ways to build such a table depending on how we can interact with our environment. Eventually, we would have a good 'map' to guide us to do the best actions.
 
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
@@ -64,7 +64,7 @@ When the number of variables of the environment relevant to our actions/rewards 
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
     <img style="max-width: 600px; margin: auto" src="https://user-images.githubusercontent.com/19952490/145569840-369d4eb0-48c6-44d8-bc5e-bfabdd7713a4.png" />
-	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 3. A neural network can predicts Q values from state information</div>
+	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 3. A neural network can predict Q values from state information</div>
   </div>
 </div>
 
@@ -72,7 +72,7 @@ In this case, we do not need to give the state/action pairs but only the state, 
 
 This method works very well. It is similar to supervised learning with states as inputs and rewards as labels. We assumed so far that we had a reward for each action, and we chose the next action with the best reward (called a greedy policy). In many cases this is not enough: even if an action would yield the best reward at a given state, this may affect the next state so that we wouldn't optimize the reward in the long term. Also, if we can't have a reward for each action, we usually give 0 as a reward. We will not be able to choose the right action if they affect later states despite not yielding different rewards at the current state.
 
-The sparsity of reward or the long-term calculation of total reward (non-greedy policies) leads us to diverge from supervised learning and learn potential future rewards.
+The sparsity of rewards or the long-term calculation of total reward (non-greedy policies) leads us to diverge from supervised learning and learn potential future rewards.
 
 ## Temporal difference: TD-Learning
 
@@ -83,7 +83,7 @@ We can, for instance, sum all the future rewards:
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
     <img style="max-width: 600px; margin: auto" src="https://user-images.githubusercontent.com/19952490/145569849-f528b7df-a240-41d6-b850-fde58334cac5.png" />
-	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 4. Cumulating futre rewards to assign values to each state.</div>
+	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 4. Cumulating future rewards to assign values to each state.</div>
   </div>
 </div>
 
@@ -107,7 +107,7 @@ If a state can have different branches, we can select the best one, and this wou
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
     <img style="max-width: 600px; margin: auto" src="https://user-images.githubusercontent.com/19952490/145569828-f9505a88-1556-4c88-ba43-834daa60e594.png" />
-	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 5. With a greedy policy the associated values to state come from the maximum value of the next state. Here despite the lower branch gives only half the top reward directly the overall valu is greater.</div>
+	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 5. With a greedy policy the associated values to state come from the maximum value of the next state. Here despite the lower branch giving only half the top reward directly the overall value is greater.</div>
   </div>
 </div>
 
@@ -218,7 +218,7 @@ That is it! We now understand all the parts of this formula. Over multiple train
 
 From giving rewards, sparse or not, binary or fine-grained, we have a smooth space of values for all our states/actions so the AI can follow a greedy policy to the best outcome.
 
-This way of training is not a silver bullet and there is no guaranty that the AI will find a correlation from the information given as state to the returned reward.
+This way of training is not a silver bullet and there is no guarantee that the AI will find a correlation from the information given as state to the returned reward.
 
 ## Conclusion
 
@@ -228,7 +228,7 @@ We can see how our rewards are used to train AI's policies using Q-learning. By 
 * Sparse and binary rewards make the training problem long and arduous. Giving more information through the reward can tremendously increase the speed/accuracy of the learned Q-estimator.
 * The longer the chain of actions, the more complex the Q-value will be to estimate.
 
-We didn't see how the AI's algorithm can explore different actions given an environment here. SpiceAI's technology focuses exclusively on off-policy training where we only have past data and cannot interact with the environment. RL is a vast topic and currently quickly growing. Robotics is a fantastic field of application; many other areas are yet to be explored with such a technology. We hope to push forward the technology and its field of application with our platform.
+We didn't see how the AI's algorithm can explore different actions given an environment here. Spice.ai's technology focuses exclusively on off-policy training where we only have past data and cannot interact with the environment. RL is a vast topic and currently quickly growing. Robotics is a fantastic field of application; many other areas are yet to be explored with such a technology. We hope to push forward the technology and its field of application with our platform.
 
 If you'd like to partner with us on the mission of making new applications by leveraging RL, we invite you to discuss with us on [Discord](https://discord.gg/kZnTfneP5u), reach out on [Twitter](https://twitter.com/SpiceAIHQ) or [email us](mailto:hey@spiceai.io).
 
