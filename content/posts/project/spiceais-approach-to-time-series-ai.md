@@ -31,7 +31,7 @@ While not a complete representation of classes of neural networks, this list rep
 
 ### Reinforcement Learning
 
-Reinforcement Learning (RL) has grown steadily, especially in fields like robotics. Usually, RL doesn't require as much data processing as Supervised Learning, where large datasets can be demanding for hardware and people alike. RL is more dynamic: agents are trained to replicate behaviors/outputs and explore and 'optimize' themselves with their environment to maximize a reward.
+Reinforcement Learning (RL) has grown steadily, especially in fields like robotics. Usually, RL doesn't require as much data processing as Supervised Learning, where large datasets can be demanding for hardware and people alike. RL is more dynamic: agents aren't trained to replicate a specific behaviors/output but explore and 'exploit' their environment to maximize a given reward.
 
 Most of today's research is based on environments the agent can interact with during the training process, known as online learning. Usually, efficient training processes have multiple agent/environment pairs training together and sharing their experiences. Having an environment for agents to interact enables different actions from the actual historical state known as **on-policy learning**, and using only past experiences without an environment is **off-policy learning**.
 
