@@ -20,11 +20,11 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="/posts/2021/11/18/spice.ais-approach-to-time-series-ai/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-11-18T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-12-05T13:44:52+09:00">
+<meta property="article:modified_time" content="2021-12-15T16:53:47+09:00">
 <meta itemprop=name content="Spice.ai's approach to Time-Series AI">
 <meta itemprop=description content="The Spice.ai project strives to help developers build applications that leverage new AI advances which can be easily trained, deployed, and integrated. A previous blog post introduced Spicepods: a declarative way to create AI applications with Spice.ai technology. While there are many libraries and platforms in the space, Spice.ai is focused on time-series data aligning to application-centric and frequently time-dependent data, and a Reinforcement Learning approach, which can be more developer-friendly than expensive, labeled supervised learning."><meta itemprop=datePublished content="2021-11-18T00:00:00+00:00">
-<meta itemprop=dateModified content="2021-12-05T13:44:52+09:00">
-<meta itemprop=wordCount content="916">
+<meta itemprop=dateModified content="2021-12-15T16:53:47+09:00">
+<meta itemprop=wordCount content="917">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Spice.ai's approach to Time-Series AI">
 <meta name=twitter:description content="The Spice.ai project strives to help developers build applications that leverage new AI advances which can be easily trained, deployed, and integrated. A previous blog post introduced Spicepods: a declarative way to create AI applications with Spice.ai technology. While there are many libraries and platforms in the space, Spice.ai is focused on time-series data aligning to application-centric and frequently time-dependent data, and a Reinforcement Learning approach, which can be more developer-friendly than expensive, labeled supervised learning.">
@@ -63,7 +63,9 @@
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-posts-li>
 <a href=/posts/ title="Spice.ai blog" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-posts><span>Blog</span></a>
 <ul class=ul-1>
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211206announcing-the-release-of-spiceai-v05-alpha-li>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211215understanding-q-learning-how-a-reward-is-all-you-need-li>
+<a href=/posts/2021/12/15/understanding-q-learning-how-a-reward-is-all-you-need/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211215understanding-q-learning-how-a-reward-is-all-you-need><span>Understanding Q-learning: How a Reward Is All You Need</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211206announcing-the-release-of-spiceai-v05-alpha-li>
 <a href=/posts/2021/12/06/announcing-the-release-of-spice.ai-v0.5-alpha/ title="Announcing the release of Spice.ai v0.5-alpha" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211206announcing-the-release-of-spiceai-v05-alpha><span>Spice.ai v0.5-alpha is now available</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211205ai-needs-ai-ready-data-li>
 <a href=/posts/2021/12/05/ai-needs-ai-ready-data/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211205ai-needs-ai-ready-data><span>AI needs AI-ready data</span></a>
@@ -137,7 +139,7 @@ By <b>Corentin Risselin</b> |
 </ul>
 <p>While not a complete representation of classes of neural networks, this list represents the areas of the most potential for Spice.ai&rsquo;s time-series AI technology. We also see other interesting paradigms to explore when improving the core technology like Memory Augmented Neural Networks (MANN) or neural network-based Genetical Algorithms.</p>
 <h3 id=reinforcement-learning>Reinforcement Learning</h3>
-<p>Reinforcement Learning (RL) has grown steadily, especially in fields like robotics. Usually, RL doesn&rsquo;t require as much data processing as Supervised Learning, where large datasets can be demanding for hardware and people alike. RL is more dynamic: agents are trained to replicate behaviors/outputs and explore and &lsquo;optimize&rsquo; themselves with their environment to maximize a reward.</p>
+<p>Reinforcement Learning (RL) has grown steadily, especially in fields like robotics. Usually, RL doesn&rsquo;t require as much data processing as Supervised Learning, where large datasets can be demanding for hardware and people alike. RL is more dynamic: agents aren&rsquo;t trained to replicate a specific behaviors/output but explore and &lsquo;exploit&rsquo; their environment to maximize a given reward.</p>
 <p>Most of today&rsquo;s research is based on environments the agent can interact with during the training process, known as online learning. Usually, efficient training processes have multiple agent/environment pairs training together and sharing their experiences. Having an environment for agents to interact enables different actions from the actual historical state known as <strong>on-policy learning</strong>, and using only past experiences without an environment is <strong>off-policy learning</strong>.</p>
 <div style=display:flex;justify-content:center;padding:5px>
 <div style=display:flex;flex-direction:column>
