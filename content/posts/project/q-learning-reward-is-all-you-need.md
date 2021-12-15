@@ -1,5 +1,5 @@
 ---
-date: 2021-12-09
+date: 2021-12-15
 title: "Understanding Q-learning: How a Reward Is All You Need"
 type: blog
 linkTitle: "Understanding Q-learning: How a Reward Is All You Need"
