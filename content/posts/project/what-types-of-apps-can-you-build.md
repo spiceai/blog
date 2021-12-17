@@ -40,7 +40,7 @@ Another example of an application that Spice.ai can power the intelligence behin
 <div style="display: flex; justify-content: center; padding: 5px; margin-bottom: 20px;">
   <div style="display: grid;">
     <img style="max-width: 563px; margin: auto" alt="Normalizing raw data" src="https://user-images.githubusercontent.com/879445/146544134-2e969e9d-aa71-4f89-80a8-e5bc4c991bd2.png">
-    	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Delivering food. Photo: Shuttle Korea</div>
+    	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Routing customer orders to delivery drivers can leverage a decision engine. Photo: Shuttle Korea</div>
   </div>
 </div>
 
