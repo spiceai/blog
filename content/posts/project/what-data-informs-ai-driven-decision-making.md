@@ -1,5 +1,5 @@
 ---
-date: 2021-12-23
+date: 2021-12-24
 title: "What Data Informs AI-driven Decision Making?"
 type: blog
 linkTitle: "What Data Informs AI-driven Decision Making?"
