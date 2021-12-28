@@ -1,5 +1,5 @@
 ---
-date: 2022-1-4
+date: 2021-12-30
 title: "A New Class of Applications That Learn and Adapt"
 type: blog
 linkTitle: "A New Class of Applications That Learn and Adapt"
@@ -10,9 +10,9 @@ A new class of applications that learn and adapt is becoming possible through ma
 
 ## History of decision engines
 
-The idea to make intelligent decision-making applications is not new. Developers first created these applications around the 1970s [[1]](http://aima.cs.berkeley.edu/), and they are some of the earliest examples of using artificial intelligence to solve real-world problems.
+The idea to make intelligent decision-making applications is not new. Developers first created these applications around the 1970s[^1], and they are some of the earliest examples of using artificial intelligence to solve real-world problems.
 
-The first applications used a class of decision engines called "[expert systems](https://en.wikipedia.org/wiki/Expert_system)." A distinguishing trait of expert systems is that they encode human expertise in rules for decision-making. Domain experts created combinations of rules that powered decision-making capabilities. One famous use of an expert system was NASA's [Space Shuttle Mission Control](https://www.researchgate.net/publication/4702412_The_INCO_Expert_System_Project_CLIPS_in_Shuttle_mission_control) system.
+The first applications used a class of decision engines called "[expert systems](https://en.wikipedia.org/wiki/Expert_system)." A distinguishing trait of expert systems is that they encode human expertise in rules for decision-making. Domain experts created combinations of rules that powered decision-making capabilities.
 
 Some uses of expert systems include:
 
@@ -21,7 +21,7 @@ Some uses of expert systems include:
 - [Recovery from extreme conditions](https://www.gregstanleyandassociates.com/whitepapers/IFAC91objectPaper.pdf)
 - [Emergency shutdown](https://www.gregstanleyandassociates.com/whitepapers/IFAC91objectPaper.pdf)
 
-However, the resources required to build expert systems make employing them infeasible for many applications [[2]](https://www.worldcat.org/title/introduction-to-knowledge-engineering/oclc/70987401). They often need a significant time and resource investment to capture and encode expertise into complex rule sets. These systems also do not automatically learn from experience, relying on experts to write more rules to improve decision-making.
+However, the resources required to build expert systems make employing them infeasible for many applications[^2]. They often need a significant time and resource investment to capture and encode expertise into complex rule sets. These systems also do not automatically learn from experience, relying on experts to write more rules to improve decision-making.
 
 With the advent of modern deep-learning techniques and the ability to access significantly more data, it is now possible for the computer, not only the developer, to learn and encode the rules to power a decision engine and improve them over time. The vision for Spice.ai is to make it easy for developers to build this new class of applications. So what are some use-cases for these applications?
 
@@ -52,3 +52,6 @@ A new class of applications that can learn and adapt are made possible by integr
 If you'd like to partner with us in creating this new generation of intelligent decision-making applications, we invite you to join us on [Discord](https://discord.gg/kZnTfneP5u), reach out on [Twitter](https://twitter.com/SpiceAIHQ) or [email](mailto:hey@spiceai.io) us.
 
 Phillip
+
+[^1]: Russell, Stuart; Norvig, Peter (1995). [Artificial Intelligence: A Modern Approach](http://aima.cs.berkeley.edu/). Simon & Schuster. pp. 22–23. ISBN 978-0-13-103805-9.
+[^2]: Kendal, S. L., & Creen, M. (2007). [An introduction to knowledge engineering](https://www.worldcat.org/title/introduction-to-knowledge-engineering/oclc/70987401). London: Springer. ISBN 978-1-84628-475-5
