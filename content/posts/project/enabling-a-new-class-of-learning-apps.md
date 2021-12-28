@@ -1,12 +1,12 @@
 ---
-date: 2021-12-17
+date: 2021-12-30
 title: "Enabling a new class of learning apps"
 type: blog
 linkTitle: "Enabling a new class of learning apps"
 author: Phillip LeBlanc ([@leblancphill](https://twitter.com/leblancphill))
 ---
 
-Spice.ai is a decision engine that learns from data to recommend actions to achieve an application's goals. This post will explore a brief history of apps that have used decision engines successfully and explore some use-cases for this kind of application.
+Spice.ai is a decision engine that learns from data to recommend actions to achieve an application's goals. This post will explore a brief history of apps that have used decision engines successfully and some use-cases for this kind of application.
 
 But first, what do we mean by "a new class of learning apps"? As Luke mentioned in "[Making apps that learn and adapt](https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/)" these are apps where decision-making AI that learns and adapts is integrated as a core part of the application logic. Spice.ai aims to make building these types of learning apps as simple as building a modern web page.
 
