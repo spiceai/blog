@@ -24,13 +24,13 @@ Highlights in v0.5-alpha Soft Actor-Critic (Discrete) (SAC) Learning Algorithm T
 <meta property="og:type" content="article">
 <meta property="og:url" content="/posts/2021/12/06/announcing-the-release-of-spice.ai-v0.5-alpha/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-06T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-12-08T23:07:00+09:00">
+<meta property="article:modified_time" content="2021-12-28T09:27:14+09:00">
 <meta itemprop=name content="Announcing the release of Spice.ai v0.5-alpha">
 <meta itemprop=description content="We are excited to announce the release of Spice.ai v0.5-alpha! 🥇
 Highlights include a new learning algorithm called &ldquo;Soft Actor-Critic&rdquo; (SAC), fixes to the behavior of spice upgrade, and a more consistent authoring experience for reward functions.
 If you are new to Spice.ai, check out the getting started guide and star spiceai/spiceai on GitHub.
 Highlights in v0.5-alpha Soft Actor-Critic (Discrete) (SAC) Learning Algorithm The addition of the Soft Actor-Critic (Discrete) (SAC) learning algorithm is a significant improvement to the power of the AI engine."><meta itemprop=datePublished content="2021-12-06T00:00:00+00:00">
-<meta itemprop=dateModified content="2021-12-08T23:07:00+09:00">
+<meta itemprop=dateModified content="2021-12-28T09:27:14+09:00">
 <meta itemprop=wordCount content="418">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Announcing the release of Spice.ai v0.5-alpha">
@@ -38,8 +38,8 @@ Highlights in v0.5-alpha Soft Actor-Critic (Discrete) (SAC) Learning Algorithm T
 Highlights include a new learning algorithm called &ldquo;Soft Actor-Critic&rdquo; (SAC), fixes to the behavior of spice upgrade, and a more consistent authoring experience for reward functions.
 If you are new to Spice.ai, check out the getting started guide and star spiceai/spiceai on GitHub.
 Highlights in v0.5-alpha Soft Actor-Critic (Discrete) (SAC) Learning Algorithm The addition of the Soft Actor-Critic (Discrete) (SAC) learning algorithm is a significant improvement to the power of the AI engine.">
-<link rel=preload href=/scss/main.min.82e7f2f18852989aa388d0348fc949381f02a01342c8c9a5155eb5dbae217198.css as=style>
-<link href=/scss/main.min.82e7f2f18852989aa388d0348fc949381f02a01342c8c9a5155eb5dbae217198.css rel=stylesheet integrity>
+<link rel=preload href=/scss/main.min.804dfdb6738c907875f345180971837ab0b5bff9688873aaa2a7b043bcaac01d.css as=style>
+<link href=/scss/main.min.804dfdb6738c907875f345180971837ab0b5bff9688873aaa2a7b043bcaac01d.css rel=stylesheet integrity>
 <script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
 </head>
 <body class="td-page td-blog">
@@ -73,7 +73,9 @@ Highlights in v0.5-alpha Soft Actor-Critic (Discrete) (SAC) Learning Algorithm T
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-posts-li>
 <a href=/posts/ title="Spice.ai blog" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-posts><span>Blog</span></a>
 <ul class=ul-1>
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211215understanding-q-learning-how-a-reward-is-all-you-need-li>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211228announcing-the-release-of-spiceai-v051-alpha-li>
+<a href=/posts/2021/12/28/announcing-the-release-of-spice.ai-v0.5.1-alpha/ title="Announcing the release of Spice.ai v0.5.1-alpha" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211228announcing-the-release-of-spiceai-v051-alpha><span>Spice.ai v0.5.1-alpha is now available</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211215understanding-q-learning-how-a-reward-is-all-you-need-li>
 <a href=/posts/2021/12/15/understanding-q-learning-how-a-reward-is-all-you-need/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211215understanding-q-learning-how-a-reward-is-all-you-need><span>Understanding Q-learning: How a Reward Is All You Need</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-posts20211206announcing-the-release-of-spiceai-v05-alpha-li>
 <a href=/posts/2021/12/06/announcing-the-release-of-spice.ai-v0.5-alpha/ title="Announcing the release of Spice.ai v0.5-alpha" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-posts20211206announcing-the-release-of-spiceai-v05-alpha><span class=td-sidebar-nav-active-item>Spice.ai v0.5-alpha is now available</span></a>
@@ -117,7 +119,7 @@ Highlights in v0.5-alpha Soft Actor-Critic (Discrete) (SAC) Learning Algorithm T
 <ul>
 <li><a href=#soft-actor-critic-discrete-sac-learning-algorithm>Soft Actor-Critic (Discrete) (SAC) Learning Algorithm</a></li>
 <li><a href=#consistent-reward-authoring-experience>Consistent reward authoring experience</a></li>
-<li><a href=#improved-spice-upgrade-behavior>Improved <code>spice upgrade</code> behavior</a></li>
+<li><a href=#improved-spice-upgrade-behavior>Improved spice upgrade behavior</a></li>
 </ul>
 </li>
 <li><a href=#new-in-this-release>New in this release</a></li>
@@ -144,6 +146,7 @@ By <b>Spice AI (<a href=https://twitter.com/SpiceAIHQ>@SpiceAIHQ</a>)</b> |
 <h3 id=consistent-reward-authoring-experience>Consistent reward authoring experience</h3>
 <p>With the addition of the reward function files that allow you to edit your reward function in a Python file, the behavior of starting a new training session by editing the reward function code was lost. With this release, that behavior is restored.</p>
 <p>In addition, there is a breaking change to the variables used to access the observation state and interpretations. This change was made to better reflect the purpose of the variables and make them easier to work with in Python</p>
+<div class=table-wide style=display:grid;justify-content:center;margin:50px>
 <table>
 <thead>
 <tr>
@@ -170,7 +173,8 @@ By <b>Spice AI (<a href=https://twitter.com/SpiceAIHQ>@SpiceAIHQ</a>)</b> |
 </tr>
 </tbody>
 </table>
-<h3 id=improved-spice-upgrade-behavior>Improved <code>spice upgrade</code> behavior</h3>
+</div>
+<h3 id=improved-spice-upgrade-behavior>Improved spice upgrade behavior</h3>
 <p>The Spice.ai CLI will no longer recommend &ldquo;upgrading&rdquo; to an older version. An issue was also fixed where trying to upgrade the Spice.ai CLI using <code>spice upgrade</code> on Linux would return an error.</p>
 <h2 id=new-in-this-release>New in this release</h2>
 <ul>

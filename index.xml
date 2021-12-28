@@ -1,4 +1,51 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Understanding Q-learning: How a Reward Is All You Need</title><link>/posts/2021/12/15/understanding-q-learning-how-a-reward-is-all-you-need/</link><pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/15/understanding-q-learning-how-a-reward-is-all-you-need/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.5.1-alpha</title><link>/posts/2021/12/28/announcing-the-release-of-spice.ai-v0.5.1-alpha/</link><pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/28/announcing-the-release-of-spice.ai-v0.5.1-alpha/</guid><description>
+&lt;p>Announcing the release of Spice.ai v0.5.1-alpha! 📈&lt;/p>
+&lt;p>This minor release builds upon v0.5-alpha adding the ability to start training from the dashboard plus support for monitoring training runs with &lt;a href="https://www.tensorflow.org/tensorboard/">TensorBoard&lt;/a>.&lt;/p>
+&lt;h2 id="highlights-in-v051-alpha">Highlights in v0.5.1-alpha&lt;/h2>
+&lt;h3 id="start-training-from-dashboard">Start training from dashboard&lt;/h3>
+&lt;p>A &amp;ldquo;Start Training&amp;rdquo; button has been added to the pod page on the dashboard so that you can easily start training runs from that context.&lt;/p>
+&lt;p>Training runs can now be started by:&lt;/p>
+&lt;ul>
+&lt;li>Modifications to the Spicepod YAML file.&lt;/li>
+&lt;li>The &lt;a href="https://docs.spiceai.org/cli/reference/#train">spice train &lt;pod name>&lt;/a> command.&lt;/li>
+&lt;li>The &amp;ldquo;Start Training&amp;rdquo; dashboard button.&lt;/li>
+&lt;li>POST &lt;a href="https://docs.spiceai.org/api/">API calls&lt;/a> to &lt;code>/api/v0.1/pods/{pod name}/train&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div style="display: grid; justify-content: center; margin: 50px;">
+&lt;video controls width="800" src="https://user-images.githubusercontent.com/80174/146122241-f8073266-ead6-4628-8563-93e98d74e9f0.mov">&lt;/video>
+&lt;/div>
+&lt;h3 id="tensorboard-monitoring">TensorBoard monitoring&lt;/h3>
+&lt;p>&lt;a href="https://www.tensorflow.org/tensorboard/">TensorBoard&lt;/a> monitoring is now supported when using DQL (default) or the new SACD &lt;a href="https://docs.spiceai.org/deep-learning-ai/">learning algorithms&lt;/a> that was &lt;a href="https://github.com/spiceai/spiceai/releases/tag/v0.5-alpha">announced in v0.5-alpha&lt;/a>.&lt;/p>
+&lt;p>When enabled, TensorBoard logs will automatically be collected and a &amp;ldquo;Open TensorBoard&amp;rdquo; button will be shown on the pod page in the dashboard.&lt;/p>
+&lt;p>Logging can be enabled at the pod level with the &lt;a href="https://docs.spiceai.org/reference/pod/#paramstraining_loggers">training_loggers pod param&lt;/a> or per training run with the CLI &lt;code>--training-loggers&lt;/code> argument.&lt;/p>
+&lt;div style="display: grid; justify-content: center; margin: 50px;">
+&lt;video controls width="800" src="https://user-images.githubusercontent.com/80174/146382503-2bb2570b-5111-4de0-9b80-a1dc4a5dcc35.mov">&lt;/video>
+&lt;/div>
+&lt;p>Support for VPG will be added in v0.6-alpha. The design allows for additional loggers to be added in the future. Let us know what you&amp;rsquo;d like to see!&lt;/p>
+&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Adds&lt;/strong> a start training button on the dashboard pod page.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> TensorBoard logging and monitoring when using DQL and SACD learning algorithms.&lt;/li>
+&lt;/ul>
+&lt;h3 id="dependency-updates">Dependency updates&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Updates&lt;/strong> to Tailwind 3.0.6&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> to Glide Data Grid 3.2.1&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/spiceai/quickstarts/blob/trunk/README.md">Quickstarts&lt;/a> and &lt;a href="https://github.com/spiceai/samples/blob/trunk/README.md">Samples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved. We will also be starting a community call series soon!&lt;/p>
+&lt;ul>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spiceaihq">@SpiceAIHQ&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spiceai.io">hey@spiceai.io&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Understanding Q-learning: How a Reward Is All You Need</title><link>/posts/2021/12/15/understanding-q-learning-how-a-reward-is-all-you-need/</link><pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/15/understanding-q-learning-how-a-reward-is-all-you-need/</guid><description>
 &lt;p>There are two general ways to train an AI to match a given expectation: we can either give it the expected outputs (commonly named labels) for differents inputs; we call this supervised learning. Or we can provide a reward for each output as a score: this is reinforcement learning (RL).&lt;/p>
 &lt;p>Supervised learning works by tweaking all the parameters (weights in neural networks) to fit the desired outputs, expecting that given enough input/label pairs the AI will find common rules that generalize for any input.&lt;/p>
 &lt;p>Reinforcement learning&amp;rsquo;s reward is often provided from a simple function that can score any output: we don&amp;rsquo;t know what specific output would be best, but we can recognize how good the result is. In this latter statement there are two underlying concepts we will address in this post:&lt;/p>
@@ -173,6 +220,7 @@
 &lt;h3 id="consistent-reward-authoring-experience">Consistent reward authoring experience&lt;/h3>
 &lt;p>With the addition of the reward function files that allow you to edit your reward function in a Python file, the behavior of starting a new training session by editing the reward function code was lost. With this release, that behavior is restored.&lt;/p>
 &lt;p>In addition, there is a breaking change to the variables used to access the observation state and interpretations. This change was made to better reflect the purpose of the variables and make them easier to work with in Python&lt;/p>
+&lt;div class="table-wide" style="display: grid; justify-content: center; margin: 50px;">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -199,7 +247,8 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h3 id="improved-spice-upgrade-behavior">Improved &lt;code>spice upgrade&lt;/code> behavior&lt;/h3>
+&lt;/div>
+&lt;h3 id="improved-spice-upgrade-behavior">Improved spice upgrade behavior&lt;/h3>
 &lt;p>The Spice.ai CLI will no longer recommend &amp;ldquo;upgrading&amp;rdquo; to an older version. An issue was also fixed where trying to upgrade the Spice.ai CLI using &lt;code>spice upgrade&lt;/code> on Linux would return an error.&lt;/p>
 &lt;h2 id="new-in-this-release">New in this release&lt;/h2>
 &lt;ul>
