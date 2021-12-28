@@ -1,5 +1,5 @@
 ---
-date: 2021-12-30
+date: 2022-1-4
 title: "A New Class of Applications That Learn and Adapt"
 type: blog
 linkTitle: "A New Class of Applications That Learn and Adapt"
