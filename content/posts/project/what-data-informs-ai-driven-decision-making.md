@@ -22,7 +22,7 @@ Finally, if we're going to make better decisions over time, we need to capture a
 
 <div style="display: flex; justify-content: center; padding: 5px; margin-bottom: 20px;">
   <div style="display: grid;">
-    <img style="max-width: 600px; margin: auto" alt="Normalizing raw data" src="https://user-images.githubusercontent.com/80174/147721731-d7f6a414-1b8c-44cb-83ef-9cca0bc65b61.png">
+    <img style="max-width: 600px; margin: auto" alt="Three data classes." src="https://user-images.githubusercontent.com/80174/147721731-d7f6a414-1b8c-44cb-83ef-9cca0bc65b61.png">
     	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 1. The three data classes.</div>
   </div>
 </div>
@@ -37,8 +37,8 @@ First, you need a way to gather and consume historical information, like stock p
 
 <div style="display: flex; justify-content: center; padding: 5px; margin-bottom: 20px;">
   <div style="display: grid;">
-    <img style="max-width: 600px; margin: auto" alt="Normalizing raw data" src="https://user-images.githubusercontent.com/80174/147721747-4a61f319-0d4c-496a-b186-17fd495b64ca.png">
-    	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 2. Traditional app and data integration</div>
+    <img style="max-width: 600px; margin: auto" alt="Traditional app and data integration." src="https://user-images.githubusercontent.com/80174/147722263-26333f5e-2da0-4c8c-a042-0c88c37d59be.png">
+    	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 2. Traditional app and data integration.</div>
   </div>
 </div>
 
@@ -62,7 +62,7 @@ While Spice.ai focuses on ensuring consistent ML-ready data is available, it doe
 
 <div style="display: flex; justify-content: center; padding: 5px; margin-bottom: 20px;">
   <div style="display: grid;">
-    <img style="max-width: 600px; margin: auto" alt="Normalizing raw data" src="https://user-images.githubusercontent.com/80174/147721797-707d29b2-f93e-42be-809a-921349049895.png">
+    <img style="max-width: 600px; margin: auto" alt="App with Spice.ai." src="https://user-images.githubusercontent.com/80174/147721797-707d29b2-f93e-42be-809a-921349049895.png">
     	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 3. App with Spice.ai.</div>
   </div>
 </div>
