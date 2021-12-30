@@ -20,7 +20,7 @@ Second, you need a real-time updated stream of data as it happens to make a deci
 
 Finally, if we're going to make better decisions over time, we need to capture and learn from the results of those decisions. Whether you make a great or poor trade, you want to incorporate that experience into your historical learning.
 
-<div style="display: flex; justify-content: center; padding: 5px;">
+<div style="display: flex; justify-content: center; padding: 5px; margin-bottom: 20px;">
   <div style="display: grid;">
     <img style="max-width: 600px; margin: auto" alt="Normalizing raw data" src="https://user-images.githubusercontent.com/80174/147721731-d7f6a414-1b8c-44cb-83ef-9cca0bc65b61.png">
     	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 1. The three data classes.</div>
@@ -35,7 +35,7 @@ Consider how you would capture these three data classes and make them available 
 
 First, you need a way to gather and consume historical information, like stock prices, and keep that updated over time. You need to handle streaming constantly updated real-time data to make runtime decisions on how to operate. You need to capture and match the decisions you make and feed that back into learning. And finally, you need a way to provide personal or local context, like holding off on sell trades until next year, to stay within a tax threshold, or identifying a pattern you like to trade. If all this wasn't enough, as we learned from Phillip's [AI needs AI-ready data](https://blog.spiceai.org/posts/2021/12/05/ai-needs-ai-ready-data/) post, all three data classes need to be in a format that ML can use.
 
-<div style="display: flex; justify-content: center; padding: 5px;">
+<div style="display: flex; justify-content: center; padding: 5px; margin-bottom: 20px;">
   <div style="display: grid;">
     <img style="max-width: 600px; margin: auto" alt="Normalizing raw data" src="https://user-images.githubusercontent.com/80174/147721747-4a61f319-0d4c-496a-b186-17fd495b64ca.png">
     	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 2. Traditional app and data integration</div>
@@ -60,7 +60,7 @@ Spice.ai enables personalized learning from personal context and experiences thr
 
 While Spice.ai focuses on ensuring consistent ML-ready data is available, it does not replace traditional data systems or teams. They still have their place, especially for large historical datasets, and Spice.ai can consume data produced by them. Where possible, especially for application and real-time data, Spice.ai keeps runtime data local to create a virtuous cycle of data from the application to the decision engine and back again, enabling faster and more agile learning and adaption.
 
-<div style="display: flex; justify-content: center; padding: 5px;">
+<div style="display: flex; justify-content: center; padding: 5px; margin-bottom: 20px;">
   <div style="display: grid;">
     <img style="max-width: 600px; margin: auto" alt="Normalizing raw data" src="https://user-images.githubusercontent.com/80174/147721797-707d29b2-f93e-42be-809a-921349049895.png">
     	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 3. App with Spice.ai.</div>
