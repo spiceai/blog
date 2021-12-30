@@ -1,5 +1,5 @@
 ---
-date: 2021-12-24
+date: 2022-01-04
 title: "What Data Informs AI-driven Decision Making?"
 type: blog
 linkTitle: "What Data Informs AI-driven Decision Making?"
@@ -8,29 +8,39 @@ author: Luke Kim ([@0xLukeKim](https://twitter.com/0xLukeKim))
 
 AI unlocks a new generation of intelligent [applications that learn and adapt](https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/) from data. These applications use machine learning (ML) to out-perform traditionally developed software. However, the data engineering required to leverage ML is a significant challenge for many product teams. In this post, we'll explore the three classes of data you need to build next-generation applications and how Spice.ai handles runtime data engineering for you.
 
-While ML has many different applications, one way to think about ML in a real-time intelligent application is as a decision engine. This decision engine learns from data and then informs the application how to operate. Of course, applications can and do make decisions without ML, but a developer normally has to code that logic. ML enables a machine to code it for you.
+While ML has many different applications, one way to think about ML in a real-time application that can adapt is as a decision engine. Phillip discussed decision engines and their potential uses in [A New Class of Applications That Learn and Adapt](). This decision engine learns and informs the application how to operate. Of course, applications can and do make decisions without ML, but a developer normally has to code that logic. And the intelligence of that code is fixed, whereas ML enables a machine to constantly find the appropriate logic and evolve the code as it learns. For ML to do this, it needs three classes of data.
 
 ### The three classes of data for informed decision making
 
 We don't want any decision, though. We want high-quality, informed decisions. If you consider making higher quality, informed decisions over time, you need three classes of information. These classes are historical information, real-time or present information, and the results of your decisions.
 
-Stock or crypto trading is something many of us can relate to. To make high-quality, informed stock trading decisions, you first need general historical information on the price, security, financials, industry, previous trades, etc. You study this information and learn what might make a good investment or trade.
+Especially recently, stock or crypto trading is something many of us can relate to. To make high-quality, informed investing decisions, you first need general historical information on the price, security, financials, industry, previous trades, etc. You study this information and learn what might make a good investment or trade.
 
-Second, you need the real-time data set to make a decision. If you were stock trading, this information might be the stock price on the day or hour you want to make the trade. You need to apply what you learned to the information you see now to decide what trade to place.
+Second, you need a real-time updated stream of data as it happens to make a decision. If you were stock trading, this information might be the stock price on the day or hour you want to make the trade. You need to apply what you learned from historical data to the current information to decide what trade to place.
 
 Finally, if we're going to make better decisions over time, we need to capture and learn from the results of those decisions. Whether you make a great or poor trade, you want to incorporate that experience into your historical learning.
 
-_<Image. Three classes of data>_
+<div style="display: flex; justify-content: center; padding: 5px;">
+  <div style="display: grid;">
+    <img style="max-width: 600px; margin: auto" alt="Normalizing raw data" src="https://user-images.githubusercontent.com/80174/147721731-d7f6a414-1b8c-44cb-83ef-9cca0bc65b61.png">
+    	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 1. The three data classes.</div>
+  </div>
+</div>
 
-Using all three data classes together should result in higher quality decisions over time. Broad data across these classes are useful, and we could make some nice trades with that. Still, we can make an even higher quality trading decision if we have personal context. For example, we may want to consider the individual tax consequences or risk level of the trade for our situation. So each of these classes also comes with global or local variants. We combine global information, like what worked well for everyone, and local experience, what worked well for us and our situation, to make the best, overall informed decision.
+Using all three data classes together results in higher quality decisions over time. Broad data across these classes are useful, and we could make some nice trades with that. Still, we can make an even higher quality trading decision with personal context. For example, we may want to consider the individual tax consequences or risk level of the trade for our situation. So each of these classes also comes with global or local variants. We combine global information, like what worked well for everyone, and local experience, what worked well for us and our situation, to make the best, overall informed decision.
 
 ### The waterfall approach to data engineering
 
-Consider how you would capture these three data classes and make them available to both the application and ML in the trading example. Often, this is a pretty big challenge.
+Consider how you would capture these three data classes and make them available to both the application and ML in the trading example. This data engineering can be a pretty big challenge.
 
-First, you need a way to gather and consume historical information, like stock prices, and keep that updated over time. You need to handle streaming real-time data so that the application can make runtime decisions on how to operate. You need to capture and match the results of decisions you do take and feed that back into learning. And finally, you need a way to provide personal context, like holding off on sell trades until next year, staying within a tax threshold, or identifying a pattern you like to trade. If all this wasn't enough, as we learned from Phillip's [AI needs AI-ready data](https://blog.spiceai.org/posts/2021/12/05/ai-needs-ai-ready-data/) post, all three data classes need to be in a format that ML can use.
+First, you need a way to gather and consume historical information, like stock prices, and keep that updated over time. You need to handle streaming constantly updated real-time data to make runtime decisions on how to operate. You need to capture and match the decisions you make and feed that back into learning. And finally, you need a way to provide personal or local context, like holding off on sell trades until next year, to stay within a tax threshold, or identifying a pattern you like to trade. If all this wasn't enough, as we learned from Phillip's [AI needs AI-ready data](https://blog.spiceai.org/posts/2021/12/05/ai-needs-ai-ready-data/) post, all three data classes need to be in a format that ML can use.
 
-_<Image. Traditional data pipeline>_
+<div style="display: flex; justify-content: center; padding: 5px;">
+  <div style="display: grid;">
+    <img style="max-width: 600px; margin: auto" alt="Normalizing raw data" src="https://user-images.githubusercontent.com/80174/147721747-4a61f319-0d4c-496a-b186-17fd495b64ca.png">
+    	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 2. Traditional app and data integration</div>
+  </div>
+</div>
 
 If you can afford a data or ML team, they may do much of this for you. However, this model starts to look quite waterfall-like and is not suited well to applications that want to learn and adapt in real-time. Like a waterfall approach, you would provide requirements to your data team, and they would do the data engineering required to provide you with the first two classes of data, historical and real-time. They may give you ML-ready data or train an ML model for you. However, there is often a large latency to apply that data or model in your application and a long turn-around time if it does not meet your requirements. In addition, to capture the third class of data, you would need to capture and send the results of the decisions your application made as a result of using those models back to the data team to incorporate in future learning. This latency through the data, decision-making, learning, and adaptation process is often infeasible for a real-world app.
 
@@ -42,15 +52,20 @@ Modern software engineering practices have favored agile methodologies to reduce
 
 Spice.ai provides mechanisms for making all three classes of data available to both the application and the decision engine. Developers author Spicepods declaring how data should be captured, consumed, and made ML-ready so that all three classes are consistent and ML available.
 
-The Spice.ai runtime exposes developer-friendly APIs and data connectors for capturing and consuming data and annotating that data with personal context. These APIs also make it easy to capture application decisions and incorporate the resulting learning.
+The Spice.ai runtime exposes developer-friendly APIs and data connectors for capturing and consuming data and annotating that data with personal context. The runtime generates AI-ready data for you and makes it available directly for ML. These APIs also make it easy to capture application decisions and incorporate the resulting learning.
 
-This approach short circuits the traditional waterfall-like data process by keeping as much data as possible application local instead of round-tripping through an external pipeline, especially valuable for real-time data. The application can learn and adapt faster by reducing the latency of decision consequences to learning.
+The Spice.ai approach short circuits the traditional waterfall-like data process by keeping as much data as possible application local instead of round-tripping through an external pipeline or team, especially valuable for real-time data. The application can learn and adapt faster by reducing the latency of decision consequences to learning.
 
 Spice.ai enables personalized learning from personal context and experiences through the interpretations mechanism. Interpretations allow an application to provide additional information or an "interpretation" of a time range as input to learning. The trading example could be as simple as labeling a time range as a good time to buy or providing additional contextual information such as tax considerations, etc. Developers can also use interpretations to record the results of decisions with more context than what might be available in the observation space. You can read more about Interpretations in the [Spice.ai docs](https://docs.spiceai.org/concepts/interpretations/).
 
 While Spice.ai focuses on ensuring consistent ML-ready data is available, it does not replace traditional data systems or teams. They still have their place, especially for large historical datasets, and Spice.ai can consume data produced by them. Where possible, especially for application and real-time data, Spice.ai keeps runtime data local to create a virtuous cycle of data from the application to the decision engine and back again, enabling faster and more agile learning and adaption.
 
-_<Image. Spice.ai data model>_
+<div style="display: flex; justify-content: center; padding: 5px;">
+  <div style="display: grid;">
+    <img style="max-width: 600px; margin: auto" alt="Normalizing raw data" src="https://user-images.githubusercontent.com/80174/147721797-707d29b2-f93e-42be-809a-921349049895.png">
+    	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 3. App with Spice.ai.</div>
+  </div>
+</div>
 
 ### Summary
 
