@@ -4,6 +4,8 @@ title: "Spice.ai's approach to Time-Series AI"
 type: blog
 linkTitle: "Spice.ai's approach to Time-Series AI"
 author: Corentin Risselin
+categories: [time-series ai, reinforcement learning]
+tags: [decision trees, cnn, rnn, transformers]
 ---
 
 The Spice.ai project strives to help developers build applications that leverage new AI advances which can be easily trained, deployed, and integrated. [A previous blog post](/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/) introduced Spicepods: a declarative way to create AI applications with Spice.ai technology. While there are many libraries and platforms in the space, Spice.ai is focused on time-series data aligning to application-centric and frequently time-dependent data, and a [Reinforcement Learning](https://en.wikipedia.org/wiki/Reinforcement_learning) approach, which can be more developer-friendly than expensive, labeled [supervised learning](https://en.wikipedia.org/wiki/Supervised_learning).

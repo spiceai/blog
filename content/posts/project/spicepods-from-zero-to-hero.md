@@ -4,6 +4,8 @@ title: "Spicepods: From Zero To Hero"
 type: blog
 linkTitle: "Spicepods: From Zero To Hero"
 author: Luke Kim ([@0xLukeKim](https://twitter.com/0xLukeKim))
+categories: [applications, learn-and-adapt]
+tags: [spicepod, agile ml]
 ---
 
 In my previous post, [Teaching Apps how to Learn with Spicepods](https://blog.spiceai.org/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/), I introduced Spicepods as packages of configuration that describe an application's data-driven goals and how it should learn from data. To leverage Spice.ai in your application, you can author a Spicepod from scratch or build upon one fetched from the spicerack.org registry. In this post, we'll walk through the creation and authoring of a Spicepod step-by-step from scratch.
@@ -36,7 +38,7 @@ You would normally do this by opening two terminal windows side-by-side, one tha
 ## Creating a Spicepod
 
 The easiest way to create a Spicepod is to use the Spice.ai CLI command: `spice init <Spicepod name>`. We'll make one in the ServerOps Quickstart application called `serverops`.
- 
+
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
     <img style="max-width: 600px;" alt="Figure 2. Creating a Spicepod." src="https://user-images.githubusercontent.com/80174/144368947-2698d7e2-e451-4961-a289-d84f4f328eae.png">
@@ -121,7 +123,7 @@ We now have rewards set for each action. The rewards are uniform (all the same),
 
 The rewards themselves are just code. Currently, we currently support Python code, either inline or in a .py [external code file](https://docs.spiceai.org/concepts/rewards/external/) and we plan to support several other languages. The reward code can access the time-step state through the `prev_state` and `new_state` variables and the dataspace name. For the full documentation, see [Rewards](https://docs.spiceai.org/concepts/rewards/).
 
-Let's add this reward code to perform_maintenance, which will reward performing maintenance when there is low CPU usage. 
+Let's add this reward code to perform_maintenance, which will reward performing maintenance when there is low CPU usage.
 
 ```python
 cpu_usage_prev = 100 - prev_state.hostmetrics_cpu_usage_idle
@@ -148,7 +150,7 @@ If the Spice.ai runtime is running, the Spicepod automatically trains each time 
 
 Once a training run completes, the application can query the Spicepod for a decision recommendation by calling the recommendations API http://localhost:8000/api/v0.1/pods/serverops/recommendation. The API returns a JSON document that provides the recommended action, the confidence of taking that action, and when that recommendation is valid.
 
-In the [ServerOps Quickstart](https://github.com/spiceai/quickstarts/tree/trunk/serverops/README.md), this API is called from the server maintenance PowerShell script to make an intelligent decision on when to run maintenance. The [ServerOps Sample](https://github.com/spiceai/samples/tree/trunk/serverops/README.md), which uses live data, can be continuously trained to learn and adapt even as the live data changes due to load patterns changing. 
+In the [ServerOps Quickstart](https://github.com/spiceai/quickstarts/tree/trunk/serverops/README.md), this API is called from the server maintenance PowerShell script to make an intelligent decision on when to run maintenance. The [ServerOps Sample](https://github.com/spiceai/samples/tree/trunk/serverops/README.md), which uses live data, can be continuously trained to learn and adapt even as the live data changes due to load patterns changing.
 
 The full Spicepod manifest from this walkthrough can be added from [spicerack.org](https://spicerack.org) using the `spice add quickstarts/serverops` command.
 
