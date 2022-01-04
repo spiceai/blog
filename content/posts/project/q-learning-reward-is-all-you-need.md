@@ -4,15 +4,18 @@ title: "Understanding Q-learning: How a Reward Is All You Need"
 type: blog
 linkTitle: "Understanding Q-learning: How a Reward Is All You Need"
 author: Corentin Risselin
+categories: [reinforcement learning, deep learning]
+tags: [q-learning, td-learning]
 ---
+
 There are two general ways to train an AI to match a given expectation: we can either give it the expected outputs (commonly named labels) for differents inputs; we call this supervised learning. Or we can provide a reward for each output as a score: this is reinforcement learning (RL).
 
 Supervised learning works by tweaking all the parameters (weights in neural networks) to fit the desired outputs, expecting that given enough input/label pairs the AI will find common rules that generalize for any input.
 
 Reinforcement learning's reward is often provided from a simple function that can score any output: we don't know what specific output would be best, but we can recognize how good the result is. In this latter statement there are two underlying concepts we will address in this post:
 
-* Can we only tell if the output is good in a binary way, or do we have to quantify the output to train our AI?
-* Do we have to give a reward for every AI's output? Can we give a reward only at specific times?
+- Can we only tell if the output is good in a binary way, or do we have to quantify the output to train our AI?
+- Do we have to give a reward for every AI's output? Can we give a reward only at specific times?
 
 Those questions are already mostly answered, and many algorithms deal with those topics. Our journey here will be to understand how we tackle those questions and end up with a beautiful formula that is at the core of modern approaches of RL:
 
@@ -55,7 +58,6 @@ We know that actions' outcomes (rewards) will vary depending on the current stat
 	<div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 2. Example of Q-table: we can build an exhaustive table for all the possible (state, action) pairs</div>
   </div>
 </div>
-
 
 ### Deep Q-Learning
 
@@ -202,7 +204,6 @@ The sparsity of rewards is also solved: giving only a positive reward after many
   </div>
 </div>
 
-
 ## Q-Learning algorithm
 
 Finally, as we train a neural network to estimate the Q function, we need to update its target with successive iteration. We cannot fully trust the estimator (a neural network here) to give the correct value, so we introduce a learning rate to update the target smoothly.
@@ -224,9 +225,9 @@ This way of training is not a silver bullet and there is no guarantee that the A
 
 We can see how our rewards are used to train AI's policies using Q-learning. By understanding the many iterations required and the bootstrapping issues, we can help our AI by carefully giving relevant state information and reward:
 
-* There needs to be a correlation between the state information and the reward: the simpler the relationship, the easier/faster the AI will find it.
-* Sparse and binary rewards make the training problem long and arduous. Giving more information through the reward can tremendously increase the speed/accuracy of the learned Q-estimator.
-* The longer the chain of actions, the more complex the Q-value will be to estimate.
+- There needs to be a correlation between the state information and the reward: the simpler the relationship, the easier/faster the AI will find it.
+- Sparse and binary rewards make the training problem long and arduous. Giving more information through the reward can tremendously increase the speed/accuracy of the learned Q-estimator.
+- The longer the chain of actions, the more complex the Q-value will be to estimate.
 
 We didn't see how the AI's algorithm can explore different actions given an environment here. Spice.ai's technology focuses exclusively on off-policy training where we only have past data and cannot interact with the environment. RL is a vast topic and currently quickly growing. Robotics is a fantastic field of application; many other areas are yet to be explored with such a technology. We hope to push forward the technology and its field of application with our platform.
 

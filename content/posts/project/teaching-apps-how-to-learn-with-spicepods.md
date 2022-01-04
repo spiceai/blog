@@ -4,6 +4,8 @@ title: "Teaching Apps how to Learn with Spicepods"
 type: blog
 linkTitle: "Teaching Apps how to Learn with Spicepods"
 author: Luke Kim ([@0xLukeKim](https://twitter.com/0xLukeKim))
+categories: [applications, learn-and-adapt]
+tags: [spicepod, agile ml]
 ---
 
 The last post in this series, [Making Apps that Learn and Adapt](https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/), described the shift from building AI/ML solutions to building apps that learn and adapt. But, how does the app learn? And as a developer, how do I teach it what it should learn?
@@ -35,7 +37,7 @@ Here's an example of the [Tweet Recommendation Quickstart](https://github.com/sp
 
 <img width="400" alt="tweet-recommendation-manifest" src="https://user-images.githubusercontent.com/80174/141739579-9cf7b971-7637-43bc-b661-89115e3b1b59.png">
 
-*A screenshot of the Spicepod manifest for the Tweet Recommendation Quickstart*
+_A screenshot of the Spicepod manifest for the Tweet Recommendation Quickstart_
 
 You can see the data definitions under `dataspaces`, the actions the application may take under `actions`, and their rewards when training.
 
@@ -47,7 +49,7 @@ On disk, Spicepods are generally layouts of a manifest file, seed data, and trai
 
 <img width="235" alt="spicepod-layout" src="https://user-images.githubusercontent.com/80174/141739662-7be361fe-aa79-4408-bb3d-311fd0f849eb.png">
 
-*A screenshot of the Spicepod layout for the trader quickstart application*
+_A screenshot of the Spicepod layout for the trader quickstart application_
 
 When the runtime exports a Spicepod using the `spice export` command, it is saved with a `.spicepod` extension. It can then be shared, archived, or imported into another instance of the Spice.ai runtime.
 
@@ -58,6 +60,7 @@ Treating Spicepods as packages and enabling their sharing and distribution throu
 In the next post, we'll dive deeper into authoring a Spicepod manifest to create an intelligent application. Follow [@SpiceAIHQ](https://twitter.com/SpiceAIHQ) on Twitter to get an update when we post.
 
 If you haven't already, read the next the first post in the series, [Making Apps that Learn and Adapt](https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/).
+
 ### Learn more and contribute
 
 Building intelligent apps that leverage AI is still way too hard, even for advanced developers. Our mission is to make this as easy as creating a modern web page. If the vision resonates with you, join us!

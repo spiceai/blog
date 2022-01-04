@@ -13,7 +13,11 @@ enableGitInfo = true
 # Language settings
 contentDir = "content"
 
-disableKinds = ["taxonomy", "taxonomyTerm"]
+# disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[taxonomies]
+   tag = "tags"
+   category = "categories"
 
 # Highlighting config
 pygmentsCodeFences = true
@@ -58,14 +62,14 @@ anchor = "smart"
 [[menu.main]]
     name = "GitHub"
     weight = 50
-    url = "https://github.com/spiceai"
+    url = "https://github.com/spiceai/spiceai"
 
 # Comment out if you don't want the "print entire section" link enabled.
 [outputs]
-section = ["HTML"]
+section = ["HTML", "PRINT"]
 
 [params]
-copyright = "Spice AI"
+copyright = "Spice AI, Inc."
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 github_project_repo = "https://github.com/spiceai/spiceai"
 
@@ -110,12 +114,21 @@ footer_about_disable = false
         desc = "Follow us on Twitter to get the latest news!"
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
-	name = "GitHub"
-	url = "https://github.com/spiceai/spiceai"
-	icon = "fab fa-github"
-        desc = "Development takes place here!"
-[[params.links.developer]]
 	name = "Discord"
 	url = "https://discord.com/channels/803820740868571196/803820740868571199"
 	icon = "fab fa-discord"
         desc = "Chat with other project developers"
+[[params.links.developer]]
+	name = "Reddit"
+	url = "https://reddit.com/r/spiceai"
+	icon = "fab fa-reddit"
+        desc = "Discuss Spice.ai on Reddit"
+[[params.links.developer]]
+	name = "GitHub"
+	url = "https://github.com/spiceai/spiceai"
+	icon = "fab fa-github"
+        desc = "Development takes place here!"
+
+[params.widgets]
+        categories = true
+        tags = true

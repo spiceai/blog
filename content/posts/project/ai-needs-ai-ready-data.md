@@ -4,6 +4,8 @@ title: "AI needs AI-ready data"
 type: blog
 linkTitle: "AI needs AI-ready data"
 author: Phillip LeBlanc ([@leblancphill](https://twitter.com/leblancphill))
+categories: [data]
+tags: [numpy, pandas, spicepod, tensors]
 ---
 
 A significant challenge when developing an app powered by AI is providing the machine learning (ML) engine with data in a format that it can use to learn. To do that, you need to normalize the numerical data, one-hot encode categorical data, and decide what to do with incomplete data - among other things.
@@ -49,7 +51,7 @@ It becomes trickier if the team responsible for the initial training of the mach
 
 How data is loaded and processed in a static dataset is likely very different from how the data is loaded and processed in real-time as your app is live. The result often is two separate codebases that are maintained by different teams that are both responsible for doing the same thing! Ensuring that those codebases stay consistent and evolve together is another challenge to tackle.
 
-## Spice.ai helps developers build apps with real-time ML.
+## Spice.ai helps developers build apps with real-time ML
 
 Spice.ai handles the "compilation" of data for you.
 

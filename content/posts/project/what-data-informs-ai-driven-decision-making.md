@@ -4,6 +4,8 @@ title: "What Data Informs AI-driven Decision Making?"
 type: blog
 linkTitle: "What Data Informs AI-driven Decision Making?"
 author: Luke Kim ([@0xLukeKim](https://twitter.com/0xLukeKim))
+categories: [data, data engineering]
+tags: [decision engines, agile ml]
 ---
 
 AI unlocks a new generation of intelligent [applications that learn and adapt](https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/) from data. These applications use machine learning (ML) to out-perform traditionally developed software. However, the data engineering required to leverage ML is a significant challenge for many product teams. In this post, we'll explore the three classes of data you need to build next-generation applications and how Spice.ai handles runtime data engineering for you.
