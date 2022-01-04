@@ -1,0 +1,200 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – learn-and-adapt</title><link>/categories/learn-and-adapt/</link><description>Recent content in learn-and-adapt on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/learn-and-adapt/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: A New Class of Applications That Learn and Adapt</title><link>/posts/2021/12/30/a-new-class-of-applications-that-learn-and-adapt/</link><pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/30/a-new-class-of-applications-that-learn-and-adapt/</guid><description>
+&lt;p>A new class of applications that learn and adapt is becoming possible through machine learning (ML). These applications learn from data and make decisions to achieve the application&amp;rsquo;s goals. In the post &lt;a href="https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/">Making apps that learn and adapt&lt;/a>, Luke described how developers integrate this ability to learn and adapt as a core part of the application&amp;rsquo;s logic. You can think of the component that does this as a &amp;ldquo;decision engine.&amp;rdquo; This post will explore a brief history of decision engines and use-cases for this application class.&lt;/p>
+&lt;h2 id="history-of-decision-engines">History of decision engines&lt;/h2>
+&lt;p>The idea to make intelligent decision-making applications is not new. Developers first created these applications around the 1970s&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>, and they are some of the earliest examples of using artificial intelligence to solve real-world problems.&lt;/p>
+&lt;p>The first applications used a class of decision engines called &amp;ldquo;&lt;a href="https://en.wikipedia.org/wiki/Expert_system">expert systems&lt;/a>.&amp;rdquo; A distinguishing trait of expert systems is that they encode human expertise in rules for decision-making. Domain experts created combinations of rules that powered decision-making capabilities.&lt;/p>
+&lt;p>Some uses of expert systems include:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://ieeexplore.ieee.org/document/9549566">Fault diagnosis&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.gregstanleyandassociates.com/whitepapers/IFAC91objectPaper.pdf">&amp;ldquo;Smart&amp;rdquo; operator and troubleshooting manual&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.gregstanleyandassociates.com/whitepapers/IFAC91objectPaper.pdf">Recovery from extreme conditions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.gregstanleyandassociates.com/whitepapers/IFAC91objectPaper.pdf">Emergency shutdown&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>However, the resources required to build expert systems make employing them infeasible for many applications&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>. They often need a significant time and resource investment to capture and encode expertise into complex rule sets. These systems also do not automatically learn from experience, relying on experts to write more rules to improve decision-making.&lt;/p>
+&lt;p>With the advent of modern deep-learning techniques and the ability to access significantly more data, it is now possible for the computer, not only the developer, to learn and encode the rules to power a decision engine and improve them over time. The vision for Spice.ai is to make it easy for developers to build this new class of applications. So what are some use-cases for these applications?&lt;/p>
+&lt;h2 id="use-cases-of-decision-making-applications">Use cases of decision-making applications&lt;/h2>
+&lt;h3 id="reduce-energy-costs-by-optimizing-air-conditioning">Reduce energy costs by optimizing air conditioning&lt;/h3>
+&lt;p>&lt;strong>Today&lt;/strong>: The air conditioning system for an office building runs on a fixed schedule and is set to a fixed temperature in business hours, only adjusting using in-room sensor data, if at all. This behavior potentially over cools at business close as the outside temperature lowers and the building starts vacating.&lt;/p>
+&lt;p>&lt;strong>With Spice.ai&lt;/strong>: Using Spice.ai, the application combines time-series data from multiple data sources, including the time of day and day of the week, building/room occupancy, and outside temperature, energy consumption, and pricing. The A/C controller application learns how to adjust the air conditioning system as the room naturally cools towards the end of the day. As the occupancy decreases, the decision engine is rewarded for maintaining the desired temperature and minimizing energy consumption/cost.&lt;/p>
+&lt;h3 id="food-delivery-order-dispatching">Food delivery order dispatching&lt;/h3>
+&lt;p>&lt;strong>Today:&lt;/strong> Customers order food delivery with a mobile app. When the order is ready to be picked up from the restaurant, the order is dispatched to a delivery driver by a simple heuristic that chooses the nearest available driver. As the app gets more popular with customers and the number of restaurants, drivers, and customers increases, the heuristic needs to be constantly tuned or supplemented with human operators to handle the demand.&lt;/p>
+&lt;p>&lt;strong>With Spice.ai&lt;/strong>: The application learns which driver to dispatch to minimize delivery time and maximize customer star ratings. It considers several factors from data, including patterns in both the restaurant and driver&amp;rsquo;s order histories. As the number of users, drivers, and customers increases over time, the app adapts to keep up with the changing patterns and demands of the business.&lt;/p>
+&lt;h3 id="routing-stock-or-crypto-trades-to-the-best-exchange">Routing stock or crypto trades to the best exchange&lt;/h3>
+&lt;p>&lt;strong>Today:&lt;/strong> When trading stocks through a broker like Fidelity or TD Ameritrade, your broker will likely route your order to an exchange like the NYSE. And in the emerging world of crypto, you can place your trade or swap directly on a decentralized exchange (DEX) like &lt;a href="https://uniswap.org">Uniswap&lt;/a> or &lt;a href="https://pancakeswap.finance/">Pancake Swap&lt;/a>. In both cases, the routing of orders is likely to be either a form of traditional expert system based upon rules or even manually routed.&lt;/p>
+&lt;p>&lt;strong>With Spice.ai:&lt;/strong> A smart order routing application learns from data such as pending transactions, time of day, day of the week, transaction size, and the recent history of transactions. It finds patterns to determine the most optimal route or exchange to execute the transaction and get you the best trade.&lt;/p>
+&lt;h2 id="summary">Summary&lt;/h2>
+&lt;p>A new class of applications that can learn and adapt are made possible by integrating AI-powered decision engines. Spice.ai is a decision engine that makes it easy for developers to build these applications.&lt;/p>
+&lt;p>If you&amp;rsquo;d like to partner with us in creating this new generation of intelligent decision-making applications, we invite you to join us on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, reach out on &lt;a href="https://twitter.com/SpiceAIHQ">Twitter&lt;/a> or &lt;a href="mailto:hey@spiceai.io">email&lt;/a> us.&lt;/p>
+&lt;p>Phillip&lt;/p>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>Russell, Stuart; Norvig, Peter (1995). &lt;a href="http://aima.cs.berkeley.edu/">Artificial Intelligence: A Modern Approach&lt;/a>. Simon &amp;amp; Schuster. pp. 22–23. ISBN 978-0-13-103805-9.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2" role="doc-endnote">
+&lt;p>Kendal, S. L., &amp;amp; Creen, M. (2007). &lt;a href="https://www.worldcat.org/title/introduction-to-knowledge-engineering/oclc/70987401">An introduction to knowledge engineering&lt;/a>. London: Springer. ISBN 978-1-84628-475-5&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item><item><title>Posts: Spicepods: From Zero To Hero</title><link>/posts/2021/12/02/spicepods-from-zero-to-hero/</link><pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/02/spicepods-from-zero-to-hero/</guid><description>
+&lt;p>In my previous post, &lt;a href="https://blog.spiceai.org/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/">Teaching Apps how to Learn with Spicepods&lt;/a>, I introduced Spicepods as packages of configuration that describe an application&amp;rsquo;s data-driven goals and how it should learn from data. To leverage Spice.ai in your application, you can author a Spicepod from scratch or build upon one fetched from the spicerack.org registry. In this post, we&amp;rsquo;ll walk through the creation and authoring of a Spicepod step-by-step from scratch.&lt;/p>
+&lt;p>As a refresher, a Spicepod consists of:&lt;/p>
+&lt;ul>
+&lt;li>A required YAML manifest that describes how the pod should learn from data&lt;/li>
+&lt;li>Optional seed data&lt;/li>
+&lt;li>Learned model/state&lt;/li>
+&lt;li>Performance telemetry and metrics&lt;/li>
+&lt;/ul>
+&lt;p>We&amp;rsquo;ll create the Spicepod for the &lt;a href="https://github.com/spiceai/quickstarts/tree/trunk/serverops/README.md">ServerOps Quickstart&lt;/a>, an application that learns when to optimally run server maintenance operations based upon the CPU-usage patterns of a server machine.&lt;/p>
+&lt;p>We&amp;rsquo;ll also use the Spice CLI, which you can install by following the &lt;a href="https://docs.spiceai.org/getting-started/">Getting Started guide&lt;/a> or &lt;a href="https://www.youtube.com/watch?v=DKBLjuAz_lI">Getting Started YouTube video&lt;/a>.&lt;/p>
+&lt;h2 id="fast-iterations">Fast iterations&lt;/h2>
+&lt;p>Modern web development workflows often include a file watcher to hot-reload so you can iteratively see the effect of your change with a live preview.&lt;/p>
+&lt;p>Spice.ai takes inspiration and enables a similar Spicepod manifest authoring experience. If you first start the Spice.ai runtime in your application root before creating your Spicepod, it will watch for changes and apply them continuously so that you can develop in a fast, iterative workflow.&lt;/p>
+&lt;p>You would normally do this by opening two terminal windows side-by-side, one that runs the runtime using the command &lt;code>spice run&lt;/code> and one where you enter CLI commands. In addition, developers would open the Spice.ai dashboard located at &lt;a href="http://localhost:8000">http://localhost:8000&lt;/a> to preview changes they make.&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 600px;" alt="Figure 1. Spice.ai's modern development workflow" src="https://user-images.githubusercontent.com/80174/144368808-1b1ce9dc-e296-42ff-a65d-44b8aa97605f.png">
+&lt;/div>
+&lt;/div>
+&lt;h2 id="creating-a-spicepod">Creating a Spicepod&lt;/h2>
+&lt;p>The easiest way to create a Spicepod is to use the Spice.ai CLI command: &lt;code>spice init &amp;lt;Spicepod name&amp;gt;&lt;/code>. We&amp;rsquo;ll make one in the ServerOps Quickstart application called &lt;code>serverops&lt;/code>.&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 600px;" alt="Figure 2. Creating a Spicepod." src="https://user-images.githubusercontent.com/80174/144368947-2698d7e2-e451-4961-a289-d84f4f328eae.png">
+&lt;/div>
+&lt;/div>
+&lt;p>The CLI saves the Spicepod manifest file in the &lt;code>spicepods&lt;/code> directory of your application. You can see it created a new serverops.yaml file, which should be included in your application and be committed to your source repository. Let&amp;rsquo;s take a look at it.&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 600px;" alt="Figure 3. Spicepod manifest." src="https://user-images.githubusercontent.com/80174/144369087-59022f3d-84cc-4f8f-bceb-c60351ac69b7.png">
+&lt;/div>
+&lt;/div>
+&lt;p>The initialized manifest file is very simple. It contains a name and three main sections being:&lt;/p>
+&lt;ul>
+&lt;li>dataspaces&lt;/li>
+&lt;li>actions&lt;/li>
+&lt;li>training&lt;/li>
+&lt;/ul>
+&lt;p>We&amp;rsquo;ll walk through each of these in detail, and as a Spicepod author, you can always reference the documentation for the &lt;a href="https://docs.spiceai.org/reference/pod/">Spicepod manifest syntax&lt;/a>.&lt;/p>
+&lt;h2 id="authoring-a-spicepod-manifest">Authoring a Spicepod manifest&lt;/h2>
+&lt;p>You author and edit Spicepod manifest files in your favorite text editor with a combination of Spice.ai CLI helper commands. We eventually plan to have a VS Code extension and dashboard/portal editing abilities to make this even easier.&lt;/p>
+&lt;h2 id="adding-a-dataspace">Adding a dataspace&lt;/h2>
+&lt;p>To build an intelligent, data-driven application, we must first start with data.&lt;/p>
+&lt;p>A Spice.ai &lt;strong>dataspace&lt;/strong> is a logical grouping of data with definitions of how that data should be loaded and processed, usually from a single source. A combination of its data source and its name identifies it, for example, nasdaq/msft or twitter/tweets. Read more about Dataspaces in the &lt;a href="https://docs.spiceai.org/concepts/dataspaces/">Core Concepts&lt;/a> documentation.&lt;/p>
+&lt;p>Let&amp;rsquo;s add a dataspace to the Spicepod manifest to load CPU metric data from a CSV file. This file is a snapshot of data from &lt;a href="https://www.influxdata.com/products/influxdb/">InfluxDB&lt;/a>, a time-series database we like.&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 600px;" alt="Figure 4. Adding a dataspace." src="https://user-images.githubusercontent.com/80174/144369723-4336a4d5-1637-42c8-94aa-369531d6d1f7.png">
+&lt;/div>
+&lt;/div>
+&lt;p>We can see this dataspace is identified by its source &lt;code>hostmetrics&lt;/code> and name &lt;code>cpu&lt;/code>. It includes a &lt;code>data&lt;/code> section with a file data connector, the path to the file, and a data processor to know how to process it. In addition, it defines a single measurement &lt;code>usage_idle&lt;/code> under the measurements section, which is a measurement of CPU load. In Spice.ai, measurements are the core primitive the AI engine uses to learn and is always numerical data. Spice.ai includes a growing library of community contributable data connectors and data processors you can consist of in your Spicepod to access data. You can also contribute your own.&lt;/p>
+&lt;p>Finally, because the data is a snapshot of live data loaded from a file, we must set a Spicepod &lt;code>epoch_time&lt;/code> that defines the data&amp;rsquo;s start Unix time.&lt;/p>
+&lt;p>Now we have a dataspace, called &lt;code>hostmetrics/cpu&lt;/code>, that loads CSV data from a file and processes the data into a &lt;code>usage_idle&lt;/code> measurement. The file connector might be swapped out with the InfluxDB connector in a production application to stream real-time CPU metrics into Spice.ai. And in addition, applications can always send real-time data to the Spice.ai runtime through its API with a simple HTTP POST (and in the future, using Web Sockets and gRPC).&lt;/p>
+&lt;h2 id="adding-actions">Adding actions&lt;/h2>
+&lt;p>Now that the Spicepod has data, let&amp;rsquo;s define some data-driven actions so the ServerOps application can learn when is the best time to take them. We&amp;rsquo;ll add three actions using the CLI helper command, &lt;code>spice action add&lt;/code>.&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 600px;" alt="Figure 5. Adding actions." src="https://user-images.githubusercontent.com/80174/144369840-1dcea686-9661-408a-a8a4-c62e3d84093f.png">
+&lt;/div>
+&lt;/div>
+&lt;p>And in the manifest:&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 600px;" alt="Figure 6. Actions added to the manifest" src="https://user-images.githubusercontent.com/80174/144371117-5eb816aa-e088-4160-8f33-9dabf1a5bb7c.png">
+&lt;/div>
+&lt;/div>
+&lt;h2 id="adding-rewards">Adding rewards&lt;/h2>
+&lt;p>The Spicepod now has data and possible actions, so we can now define how it should learn when to take them. Similar to how humans learn, we can set rewards or punishments for actions taken based on their effect and the data. Let&amp;rsquo;s add scaffold rewards for all actions using the &lt;code>spice rewards add&lt;/code> command.&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 600px;" alt="Figure 7. Adding rewards" src="https://user-images.githubusercontent.com/80174/144371214-86803184-5100-45cb-a592-ac3114176dba.png">
+&lt;/div>
+&lt;/div>
+&lt;p>We now have rewards set for each action. The rewards are uniform (all the same), meaning the Spicepod is rewarded the same for each action. Higher rewards are better, so if we change &lt;code>perform_maintenance&lt;/code> to 2, the Spicepod will learn to perform maintenance more often than the other actions. Of course, instead of setting these arbitrarily, we want to learn from data, and we can do that by referencing the state of data at each time-step in the time-series data as the AI engine trains.&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 600px;" alt="Figure 8. Rewards added to the manifest" src="https://user-images.githubusercontent.com/80174/144371299-70b40d99-85e1-4ab8-b1e1-f4f40aa27fc7.png">
+&lt;/div>
+&lt;/div>
+&lt;p>The rewards themselves are just code. Currently, we currently support Python code, either inline or in a .py &lt;a href="https://docs.spiceai.org/concepts/rewards/external/">external code file&lt;/a> and we plan to support several other languages. The reward code can access the time-step state through the &lt;code>prev_state&lt;/code> and &lt;code>new_state&lt;/code> variables and the dataspace name. For the full documentation, see &lt;a href="https://docs.spiceai.org/concepts/rewards/">Rewards&lt;/a>.&lt;/p>
+&lt;p>Let&amp;rsquo;s add this reward code to perform_maintenance, which will reward performing maintenance when there is low CPU usage.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#000">cpu_usage_prev&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">100&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">-&lt;/span> &lt;span style="color:#000">prev_state&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">hostmetrics_cpu_usage_idle&lt;/span>
+&lt;span style="color:#000">cpu_usage_new&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">100&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">-&lt;/span> &lt;span style="color:#000">new_state&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">hostmetrics_cpu_usage_idle&lt;/span>
+&lt;span style="color:#000">cpu_usage_delta&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">cpu_usage_prev&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">-&lt;/span> &lt;span style="color:#000">cpu_usage_new&lt;/span>
+&lt;span style="color:#000">reward&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">cpu_usage_delta&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">/&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">100&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This code takes the CPU usage (100 minus the idle time) deltas between the previous time state and the current time state, and sets the reward to be a normalized delta value between 0 and 1. When the CPU usage is moving from higher &lt;code>cpu_usage_prev&lt;/code> to lower &lt;code>cpu_usage_low&lt;/code>, its a better time to run server maintenance and so we reward the inverse of the delta. E.g. &lt;code>80% - 50% = 30% = 0.3&lt;/code>. However, if the CPU moves lower to higher, &lt;code>50% - 80% = -30% = -0.3&lt;/code>, it&amp;rsquo;s a bad time to run maintenance, so we provide a negative reward or &amp;ldquo;punish&amp;rdquo; the action.&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 600px;" alt="Figure 9. Reward code" src="https://user-images.githubusercontent.com/80174/144371629-497f0ed4-1217-4e55-b7dd-0eec3eb187ae.png">
+&lt;/div>
+&lt;/div>
+&lt;p>Through these rewards and punishments and the CPU metric data, the Spicepod will when it is a good time to perform maintence and be the decision engine for the ServerOps application. You might be thinking you could write code without AI to do this, which is true, but handling the variety of cases, like CPU spikes, or patterns in the data, like cyclical server load, would take a lot of code and a development time. Applying AI helps you build faster.&lt;/p>
+&lt;h2 id="putting-it-all-together">Putting it all together&lt;/h2>
+&lt;p>The manifest now has defined data, actions, and rewards. The Spicepod can get data to learn which actions to take and when based on the rewards provided.&lt;/p>
+&lt;p>If the Spice.ai runtime is running, the Spicepod automatically trains each time the manifest file is saved. As this happens reward performance can be monitored in the dashboard.&lt;/p>
+&lt;p>Once a training run completes, the application can query the Spicepod for a decision recommendation by calling the recommendations API http://localhost:8000/api/v0.1/pods/serverops/recommendation. The API returns a JSON document that provides the recommended action, the confidence of taking that action, and when that recommendation is valid.&lt;/p>
+&lt;p>In the &lt;a href="https://github.com/spiceai/quickstarts/tree/trunk/serverops/README.md">ServerOps Quickstart&lt;/a>, this API is called from the server maintenance PowerShell script to make an intelligent decision on when to run maintenance. The &lt;a href="https://github.com/spiceai/samples/tree/trunk/serverops/README.md">ServerOps Sample&lt;/a>, which uses live data, can be continuously trained to learn and adapt even as the live data changes due to load patterns changing.&lt;/p>
+&lt;p>The full Spicepod manifest from this walkthrough can be added from &lt;a href="https://spicerack.org">spicerack.org&lt;/a> using the &lt;code>spice add quickstarts/serverops&lt;/code> command.&lt;/p>
+&lt;h2 id="summary">Summary&lt;/h2>
+&lt;p>Leveraging Spice.ai to be the decision engine for your server maintenance application helps you build smarter applications, faster that will continue to learn and adapt over time, even as usage patterns change over time.&lt;/p>
+&lt;h3 id="learn-more-and-contribute">Learn more and contribute&lt;/h3>
+&lt;p>Building intelligent apps that leverage AI is still way too hard, even for advanced developers. Our mission is to make this as easy as creating a modern web page. If the vision resonates with you, join us!&lt;/p>
+&lt;p>Our &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md">Spice.ai Roadmap&lt;/a> is public, and now that we have launched, the project and work are open for collaboration.&lt;/p>
+&lt;p>If you are interested in partnering, we&amp;rsquo;d love to talk. Try out &lt;a href="https://spiceai.org">Spice.ai&lt;/a>, &lt;a href="mailto:hey@spiceai.io">email us&lt;/a> &amp;ldquo;hey,&amp;rdquo; get in touch on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, or reach out on &lt;a href="https://twitter.com/SpiceAIHQ">Twitter&lt;/a>.&lt;/p>
+&lt;p>We are just getting started! 🚀&lt;/p>
+&lt;p>Luke&lt;/p></description></item><item><title>Posts: Teaching Apps how to Learn with Spicepods</title><link>/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/</link><pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/</guid><description>
+&lt;p>The last post in this series, &lt;a href="https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/">Making Apps that Learn and Adapt&lt;/a>, described the shift from building AI/ML solutions to building apps that learn and adapt. But, how does the app learn? And as a developer, how do I teach it what it should learn?&lt;/p>
+&lt;p>With &lt;a href="https://spiceai.org">Spice.ai&lt;/a>, we teach the app how to learn using a Spicepod.&lt;/p>
+&lt;p>Imagine you own a restaurant. You created a menu, hired staff, constructed the kitchen and dining room, and got off to a great start when it first opened. However, over the years, your customers' tastes changed, you&amp;rsquo;ve had to make compromises on ingredients, and there&amp;rsquo;s a hot new place down the street&amp;hellip; business is stagnating, and you know that you need to make some changes to stay competitive.&lt;/p>
+&lt;p>You have a few options. First, you could gather all the data, such as customer surveys, seasonal produce metrics, and staff performance profiles. You may even hire outside consultants. You then take this data to your office, and after spending some time organizing, filtering, and collating it, you&amp;rsquo;ve discovered an insight! Your seafood dishes sell poorly and cost the most&amp;hellip; you are losing money! You spend several weeks or months perfecting a new menu, which you roll out with much fanfare! And then… business is still poor. What!? How could this be? It was a data-driven approach! You start the process again. While this approach is a worthy option, it has long latency from data to learning to implementation.&lt;/p>
+&lt;p>Another option is to build real-time learning and adaption directly into the restaurant. Imagine a staff member whose sole job was learning and adapting how the restaurant should operate; lets name them Blue. You write a guide for Blue that defines certain goal metrics, like customer food ratings, staff happiness, and of course, profit. Blue tracks each dish served, from start to finish, from who prepared it to its temperature, its costs, and its final customer taste rating. Blue not only learns from each customer review as each dish is consumed but also how dish preparation affects other goal metrics, like profitability. The restaurant staff consults Blue to determine any adjustments to improve goal metrics as they work. The latency from data to learning, to adaption, has been reduced, from weeks or months to minutes. This option, of course, is not feasible for most restaurants, but software applications can use this approach. Blue and his instructions are analogous to the Spice.ai runtime and manifest.&lt;/p>
+&lt;p>In the Spice.ai model, developers teach the app how to learn by describing goals and rewarding its actions, much like how a parent might teach a child. As these rewards are applied in training, the app learns what actions maximize its rewards towards the defined goals.&lt;/p>
+&lt;p>Returning to the restaurant example, you can think of the Spice.ai runtime as Blue, and Spicepod manifests as the guide on how Blue should learn. Individual staff members would consult with Blue for ongoing recommendations on decisions to make and how to act. These goals and rewards are defined in &lt;strong>Spicepods&lt;/strong> or &amp;ldquo;pods&amp;rdquo; for short. Spicepods are packages of configuration that describe the application&amp;rsquo;s goals and how it should learn from data. Although it&amp;rsquo;s not a direct analogy, Spicepods and their manifests can be conceptualized similar to Docker containers and Dockerfiles. In contrast, Dockerfiles define the packaging of your app, Spicepods specify the packaging of your app&amp;rsquo;s learning and data.&lt;/p>
+&lt;p>&lt;strong>Anatomy of a Spicepod&lt;/strong>&lt;/p>
+&lt;p>A Spicepod consists of:&lt;/p>
+&lt;ul>
+&lt;li>A required YAML manifest that describes how the pod should learn from data&lt;/li>
+&lt;li>Optional seed data&lt;/li>
+&lt;li>Learned model/state&lt;/li>
+&lt;li>Performance telemetry and metrics&lt;/li>
+&lt;/ul>
+&lt;p>Developers author Spicepods using the &lt;code>spice&lt;/code> CLI command such as with &lt;code>spice pod init &amp;lt;name&amp;gt;&lt;/code> or simply by creating a manifest file such as &lt;code>mypod.yaml&lt;/code> in the &lt;code>spicepods&lt;/code> directory of their application.&lt;/p>
+&lt;p>Here&amp;rsquo;s an example of the &lt;a href="https://github.com/spiceai/quickstarts/tree/trunk/tweet-recommendation/README.md">Tweet Recommendation Quickstart&lt;/a> Spicepod manifest.&lt;/p>
+&lt;img width="400" alt="tweet-recommendation-manifest" src="https://user-images.githubusercontent.com/80174/141739579-9cf7b971-7637-43bc-b661-89115e3b1b59.png">
+&lt;p>&lt;em>A screenshot of the Spicepod manifest for the Tweet Recommendation Quickstart&lt;/em>&lt;/p>
+&lt;p>You can see the data definitions under &lt;code>dataspaces&lt;/code>, the actions the application may take under &lt;code>actions&lt;/code>, and their rewards when training.&lt;/p>
+&lt;p>In the next post, I&amp;rsquo;ll walk through in detail each section of the pod manifest. In the meantime, you can review the documentation for a complete reference of the &lt;a href="https://docs.spiceai.org/reference/pod/">Spicepod manifest syntax&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Spicepods as packages&lt;/strong>&lt;/p>
+&lt;p>On disk, Spicepods are generally layouts of a manifest file, seed data, and trained models, but they can also be exported as zipped packages.&lt;/p>
+&lt;img width="235" alt="spicepod-layout" src="https://user-images.githubusercontent.com/80174/141739662-7be361fe-aa79-4408-bb3d-311fd0f849eb.png">
+&lt;p>&lt;em>A screenshot of the Spicepod layout for the trader quickstart application&lt;/em>&lt;/p>
+&lt;p>When the runtime exports a Spicepod using the &lt;code>spice export&lt;/code> command, it is saved with a &lt;code>.spicepod&lt;/code> extension. It can then be shared, archived, or imported into another instance of the Spice.ai runtime.&lt;/p>
+&lt;p>Soon, we also expect to enable publishing of &lt;code>.spicepods&lt;/code> to spicerack.org, from where community-created Spicepods can easily be added to your application using &lt;code>spice add &amp;lt;pod name&amp;gt;&lt;/code> (currently, only Spice AI published pods are available on spicerack.org).&lt;/p>
+&lt;p>Treating Spicepods as packages and enabling their sharing and distribution through spicerack.org will help developers share their &amp;ldquo;restaurant guides&amp;rdquo; and build upon each other&amp;rsquo;s work, much like they do with npmjs.org or pypi.org. In this way, developers can together build better and more intelligent applications.&lt;/p>
+&lt;p>In the next post, we&amp;rsquo;ll dive deeper into authoring a Spicepod manifest to create an intelligent application. Follow &lt;a href="https://twitter.com/SpiceAIHQ">@SpiceAIHQ&lt;/a> on Twitter to get an update when we post.&lt;/p>
+&lt;p>If you haven&amp;rsquo;t already, read the next the first post in the series, &lt;a href="https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/">Making Apps that Learn and Adapt&lt;/a>.&lt;/p>
+&lt;h3 id="learn-more-and-contribute">Learn more and contribute&lt;/h3>
+&lt;p>Building intelligent apps that leverage AI is still way too hard, even for advanced developers. Our mission is to make this as easy as creating a modern web page. If the vision resonates with you, join us!&lt;/p>
+&lt;p>Our &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md">Spice.ai Roadmap&lt;/a> is public, and now that we have launched, the project and work are open for collaboration.&lt;/p>
+&lt;p>If you are interested in partnering, we&amp;rsquo;d love to talk. Try out &lt;a href="https://spiceai.org">Spice.ai&lt;/a>, &lt;a href="mailto:hey@spiceai.io">email us&lt;/a> &amp;ldquo;hey,&amp;rdquo; get in touch on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, or reach out on &lt;a href="https://twitter.com/SpiceAIHQ">Twitter&lt;/a>.&lt;/p>
+&lt;p>We are just getting started! 🚀&lt;/p>
+&lt;p>Luke&lt;/p></description></item><item><title>Posts: Making Apps That Learn And Adapt</title><link>/posts/2021/11/05/making-apps-that-learn-and-adapt/</link><pubDate>Fri, 05 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/05/making-apps-that-learn-and-adapt/</guid><description>
+&lt;p>In the &lt;a href="https://blog.spiceai.org/posts/2021/09/07/introducing-spice.ai-open-source-time-series-ai-for-developers/">Spice.ai announcement blog post&lt;/a>, we shared some of the inspiration for the project stemming from challenges in applying and integrating AI/ML into a neurofeedback application. Building upon those ideas, in this post, we explore the shift in approach from a focus of data science and machine learning (ML) to apps that learn and adapt.&lt;/p>
+&lt;p>As a developer, I&amp;rsquo;ve followed the AI/ML space with keen interest and been impressed with the advances and announcements that only seem to be increasing. &lt;a href="https://stateof.ai">stateof.ai&lt;/a> recently published its 2021 report, and once again, it&amp;rsquo;s been another great year of progress. At the same time, it&amp;rsquo;s still more challenging than ever for mainstream developers to integrate AI/ML into their applications. For most developers, where AI/ML is not their full-time job, and without the support of a dedicated ML team, creating and developing an intelligent application that learns and adapts is still too hard.&lt;/p>
+&lt;p>Most solutions on the market, even those that claim they are for developers, focus on helping make ML easier instead of making it easier to build applications. These solutions have been great for advancing ML itself but have not helped developers leverage ML in their apps to make them intelligent. Even when a developer successfully integrates ML into an application, it might make that application smart, but often does not help the app continue to learn and adapt over time.&lt;/p>
+&lt;p>Traditionally, the industry has viewed AI/ML as separate from the application. A pipeline, service, or team is provided with data, which trains on that data, and can then provide answers or insights. These solutions are often created with a waterfall-like approach, gathering and defining requirements, designing, implementing, testing, and deploying. Sometimes this process can take months or even years.&lt;/p>
+&lt;p>With Spice.ai, we propose a new approach to building applications. By bringing AI/ML alongside your compute and data and incorporating it as part of your application, the app can incrementally adopt recommendations from the AI engine and in addition the AI engine can learn from the application&amp;rsquo;s data and actions. This approach shifts from waterfall-like to agile-like, where the AI engine ingests streams of application and external data, along with the results of the application&amp;rsquo;s actions, to continuously learn. This virtuous feedback cycle from the app to the AI engine and back again enables the app to get smarter and adapt over time. In this approach, building your application &lt;em>is&lt;/em> developing the ML.&lt;/p>
+&lt;p>Being part of the application is not just conceptual. Development teams deploy the Spice.ai runtime and AI engine with the application as a sidecar or microservice, enabling the app services and runtime to work together and for data to be kept application local. A developer teaches the AI engine how to learn by defining application goals and rewards for actions the application takes. The AI Engine observes the application and the consequences of its actions, which feeds into its experience. As the AI engine learns, the application can adapt.&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 400px;" src="https://user-images.githubusercontent.com/80174/140449760-97974f3c-8a78-4ea2-9ec5-843dc3cff5b6.png" />
+&lt;/div>
+&lt;/div>
+&lt;p>As developers shift from thinking about disparate applications and ML to building applications where AI that learns and adapts is integrated as a core part of the application logic, a new class of intelligent applications will emerge. And as technical talent becomes even more scarce, applications built this way will be necessary, not just to be competitive but to be even built at all.&lt;/p>
+&lt;p>In the next post, I&amp;rsquo;ll discuss the concept of Spicepods, bundles of configuration that describes how the application should learn, and how the Spice.ai runtime hosts and uses them to help developers make applications that learn.&lt;/p>
+&lt;h3 id="learn-more-and-contribute">Learn more and contribute&lt;/h3>
+&lt;p>Building intelligent apps that leverage AI is still way too hard, even for advanced developers. Our mission is to make this as easy as creating a modern web page. If the vision resonates with you, join us!&lt;/p>
+&lt;p>Our &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md">Spice.ai Roadmap&lt;/a> is public, and now that we have launched, the project and work are open for collaboration.&lt;/p>
+&lt;p>If you are interested in partnering, we&amp;rsquo;d love to talk. Try out &lt;a href="https://spiceai.org">Spice.ai&lt;/a>, &lt;a href="mailto:hey@spiceai.io">email us&lt;/a> &amp;ldquo;hey,&amp;rdquo; get in touch on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, or reach out on &lt;a href="https://twitter.com/SpiceAIHQ">Twitter&lt;/a>.&lt;/p>
+&lt;p>We are just getting started! 🚀&lt;/p>
+&lt;p>Luke&lt;/p></description></item></channel></rss>

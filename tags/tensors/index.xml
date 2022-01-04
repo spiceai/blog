@@ -1,0 +1,47 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – tensors</title><link>/tags/tensors/</link><description>Recent content in tensors on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 05 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/tensors/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: AI needs AI-ready data</title><link>/posts/2021/12/05/ai-needs-ai-ready-data/</link><pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/05/ai-needs-ai-ready-data/</guid><description>
+&lt;p>A significant challenge when developing an app powered by AI is providing the machine learning (ML) engine with data in a format that it can use to learn. To do that, you need to normalize the numerical data, one-hot encode categorical data, and decide what to do with incomplete data - among other things.&lt;/p>
+&lt;p>This data handling is often challenging! For example, to learn from Bitcoin price data, the prices are better if normalized to a range between -1 and 1. Being close to 0 is also a problem because of the lack of precision in floating-point representations (usually under 1e-5).&lt;/p>
+&lt;p>As a developer, if you are new to AI and machine learning, a great talk that explains the basics is &lt;a href="https://www.youtube.com/watch?v=VwVg9jCtqaU">Machine Learning Zero to Hero&lt;/a>. Spice.ai makes the process of getting the data into an AI-ready format easy by doing it for you!&lt;/p>
+&lt;h2 id="what-is-ai-ready-data">What is AI-ready data?&lt;/h2>
+&lt;p>You write code with if statements and functions, but your machine only understands 1s and 0s. When you write code, you leverage tools, like a compiler, to translate that human-readable code into a machine-readable format.&lt;/p>
+&lt;p>Similarly, data for AI needs to be translated or &amp;ldquo;compiled&amp;rdquo; to be understood by the ML engine. You may have heard of &lt;a href="https://www.tensorflow.org/guide/tensor">tensors&lt;/a> before; they are simply another word for a multi-dimensional array and they are the language of ML engines. All inputs to and all outputs from the engine are in tensors. You could use the following techniques when converting (or &amp;ldquo;compiling&amp;rdquo;) source data to a tensor.&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Normalization/standardization of the numerical input data.&lt;/strong> Many of the inputs and outputs in machine learning are interpreted as probability distributions. Much of the math that powers machine learning, such as softmax, tanh, sigmoid, etc., is meant to work in the [-1, 1] range.&lt;/li>
+&lt;/ol>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: grid;">
+&lt;img style="max-width: 563px; margin: auto" alt="Normalizing raw data" src="https://user-images.githubusercontent.com/879445/144733722-46baa2f7-5e94-4113-9770-735987d6a390.png">
+&lt;div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 1. Normalizing Bitcoin price data.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;ol start="2">
+&lt;li>&lt;strong>Conversion of categorical data into numerical data.&lt;/strong> For categorical data (i.e., colors such as &amp;ldquo;red,&amp;rdquo; &amp;ldquo;blue,&amp;rdquo; or &amp;ldquo;green&amp;rdquo;), you can achieve this through a technique called &lt;a href="https://www.educative.io/blog/one-hot-encoding">&amp;ldquo;One Hot Encoding.&amp;quot;&lt;/a> In one hot encoding, each possible value in the category appears as a column. The values in the column are assigned a binary value of 1 or 0 depending on whether the value exists or not.&lt;/li>
+&lt;/ol>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 300px; margin: auto" src="https://user-images.githubusercontent.com/879445/144733213-bd162dc0-7ac9-4bbb-9115-1dc46d2084cf.png" />
+&lt;div style="font-size: 0.8rem; font-style: italic;">Figure 2. A visualization of one-hot encoding&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;ol start="3">
+&lt;li>Several advanced techniques exist for &amp;ldquo;compiling&amp;rdquo; this source data - this process is known in the AI world as &amp;ldquo;feature engineering.&amp;rdquo; &lt;a href="https://developers.google.com/machine-learning/crash-course/representation/feature-engineering">This article&lt;/a> goes into more detail on feature engineering techniques if you are interested in learning more.&lt;/li>
+&lt;/ol>
+&lt;p>There are excellent tools like &lt;a href="https://pandas.pydata.org/">Pandas&lt;/a>, &lt;a href="https://numpy.org/">Numpy&lt;/a>, &lt;a href="https://scipy.org/">scipy&lt;/a>, and others that make the process of data transformation easier. However, most of these tools are Python libraries and frameworks - which means having to learn Python if you don&amp;rsquo;t know it already. Plus, when building intelligent apps (instead of just doing pure data analysis), this all needs to work on real-time data in production.&lt;/p>
+&lt;h2 id="building-intelligent-apps">Building intelligent apps&lt;/h2>
+&lt;p>The tools mentioned above are not designed for building real-time apps. They are often designed for analytics/data science.&lt;/p>
+&lt;p>In your app, you will need to do this data compilation in real-time - and you can&amp;rsquo;t rely on a local script to help process your data.
+It becomes trickier if the team responsible for the initial training of the machine learning model is not the team responsible for deploying it out into production.&lt;/p>
+&lt;p>How data is loaded and processed in a static dataset is likely very different from how the data is loaded and processed in real-time as your app is live. The result often is two separate codebases that are maintained by different teams that are both responsible for doing the same thing! Ensuring that those codebases stay consistent and evolve together is another challenge to tackle.&lt;/p>
+&lt;h2 id="spiceai-helps-developers-build-apps-with-real-time-ml">Spice.ai helps developers build apps with real-time ML&lt;/h2>
+&lt;p>Spice.ai handles the &amp;ldquo;compilation&amp;rdquo; of data for you.&lt;/p>
+&lt;p>You specify the data that your ML should learn from in a &lt;a href="https://blog.spiceai.org/posts/2021/12/02/spicepods-from-zero-to-hero/">Spicepod&lt;/a>. The Spice.ai runtime handles the logistics of gathering the data and compiling it into an AI-ready format.&lt;/p>
+&lt;p>It does this by using many techniques described earlier, such as normalization and one-hot encoding. And because we&amp;rsquo;re continuing to evolve Spice.ai, our data compilation will only get better over time.&lt;/p>
+&lt;p>In addition, the design of the Spice.ai runtime naturally ensures that the data used for both the training and real-time cases are consistent. Spice.ai uses the same data-components and runtime logic to produce the data. And not only that, you can take this a step further and share your Spicepod with someone else, and they would be able to use the same AI-ready data for their applications.&lt;/p>
+&lt;h2 id="summary">Summary&lt;/h2>
+&lt;p>Spice.ai handles the process of compiling your data into an AI-ready format in a way that is consistent both during the training and real-time stages of the ML engine. A Spicepod defines which data to get and where to get it. Sharing this Spicepod allows someone else to use the same AI-ready data format in their application.&lt;/p>
+&lt;h3 id="learn-more-and-contribute">Learn more and contribute&lt;/h3>
+&lt;p>Building intelligent apps that leverage AI is still way too hard, even for advanced developers. Our mission is to make this as easy as creating a modern web page. If the vision resonates with you, join us!&lt;/p>
+&lt;p>Our &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md">Spice.ai Roadmap&lt;/a> is public, and now that we have launched, the project and work are open for collaboration.&lt;/p>
+&lt;p>If you are interested in partnering, we&amp;rsquo;d love to talk. Try out &lt;a href="https://spiceai.org">Spice.ai&lt;/a>, &lt;a href="mailto:hey@spiceai.io">email us&lt;/a> &amp;ldquo;hey,&amp;rdquo; get in touch on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, or reach out on &lt;a href="https://twitter.com/SpiceAIHQ">Twitter&lt;/a>.&lt;/p>
+&lt;p>We are just getting started! 🚀&lt;/p>
+&lt;p>Phillip&lt;/p></description></item></channel></rss>

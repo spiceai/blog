@@ -1,0 +1,44 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – performance</title><link>/tags/performance/</link><description>Recent content in performance on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 22 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/performance/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.4.1-alpha</title><link>/posts/2021/11/22/announcing-the-release-of-spice.ai-v0.4.1-alpha/</link><pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/22/announcing-the-release-of-spice.ai-v0.4.1-alpha/</guid><description>
+&lt;p>Announcing the release of Spice.ai v0.4.1-alpha! ✅&lt;/p>
+&lt;p>This point release focuses on fixes and improvements to v0.4-alpha. Highlights include AI engine performance improvements, updates to the dashboard observations data grid, notification of new CLI versions, and several bug fixes.&lt;/p>
+&lt;p>A special acknowledgment to &lt;a href="https://github.com/Adm28">@Adm28&lt;/a>, who added the CLI upgrade detection and prompt, which notifies users of new CLI versions and prompts to upgrade.&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 400px;" src="https://user-images.githubusercontent.com/80174/142827883-c3791f8b-82dc-4e66-80d7-899268396f32.png" />
+&lt;/div>
+&lt;/div>
+&lt;h2 id="highlights-in-v041-alpha">Highlights in v0.4.1-alpha&lt;/h2>
+&lt;h3 id="ai-engine-performance-improvements">AI engine performance improvements&lt;/h3>
+&lt;p>Overall training performance has been improved up to 13% by removing a lock in the AI engine.&lt;/p>
+&lt;p>In versions before v0.4.1-alpha, performance was especially impacted when streaming new data during a training run.&lt;/p>
+&lt;h3 id="dashboard-observations-datagrid">Dashboard Observations Datagrid&lt;/h3>
+&lt;p>The dashboard observations datagrid now automatically resizes to the window width, and headers are easier to read, with automatic grouping into dataspaces. In addition, column widths are also resizable.&lt;/p>
+&lt;h3 id="cli-version-detection-and-upgrade-prompt">CLI version detection and upgrade prompt&lt;/h3>
+&lt;p>When it is run, the Spice.ai CLI will now automatically check for new CLI versions once a day maximum.&lt;/p>
+&lt;p>If it detects a new version, it will print a notification to the console on &lt;code>spice version&lt;/code>, &lt;code>spice run&lt;/code> or &lt;code>spice add&lt;/code> commands prompting the user to upgrade using the new &lt;code>spice upgrade&lt;/code> command.&lt;/p>
+&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Adds&lt;/strong> automatic resizing of the observations datagrid.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> header group by dataspace to the observations datagrid.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> CLI version detection and prompt for upgrade on version, run, and add commands.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Support for parsing hex-encoded times and measurements. Use the &lt;code>time_format&lt;/code> of &lt;code>hex&lt;/code> or prefix with &lt;code>0x&lt;/code>.&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> AI engine with improved training performance.&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> Go and NPM dependencies.&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> detection of Spicepods in the &lt;code>Spicepods&lt;/code> directory, and a resulting error when loading a non-Spicepod file.&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> a potential &amp;ldquo;zip slip&amp;rdquo; security issue.&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> an issue where the AI engine may not gracefully shutdown.&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/spiceai/quickstarts/blob/trunk/README.md">Quickstarts&lt;/a> and &lt;a href="https://github.com/spiceai/samples/blob/trunk/README.md">Samples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved. We will also be starting a community call series soon!&lt;/p>
+&lt;ul>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spiceaihq">@SpiceAIHQ&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spiceai.io">hey@spiceai.io&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

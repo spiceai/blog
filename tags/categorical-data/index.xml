@@ -1,0 +1,83 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – categorical data</title><link>/tags/categorical-data/</link><description>Recent content in categorical data on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 26 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/categorical-data/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice.ai v0.3-alpha is now available</title><link>/posts/2021/10/26/spice.ai-v0.3-alpha-is-now-available/</link><pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/26/spice.ai-v0.3-alpha-is-now-available/</guid><description>
+&lt;p>We are excited to announce the release of Spice.ai v0.3-alpha! 🎉&lt;/p>
+&lt;p>This release adds support for ingestion, automatic encoding, and training of categorical data, enabling more use-cases and datasets beyond just numerical measurements. For example, perhaps you want to learn from data that includes a category of t-shirt sizes, with discrete values, such as small, medium, and large. The v0.3 engine now supports this and automatically encodes the categorical string values into numerical values that the AI engine can use. Also included is a preview of data visualizations in the dashboard, which is helpful for developers as they author Spicepods and dataspaces.&lt;/p>
+&lt;div style="display: flex; justify-content: center;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 500px;" src="https://user-images.githubusercontent.com/80174/138641533-612d1541-a90e-4279-b4f9-2872e02619d6.png" />
+&lt;em style="text-align: center">A screenshot of the data visualization preview&lt;/em>
+&lt;/div>
+&lt;/div>
+&lt;p>A special acknowledgment to &lt;a href="https://github.com/sboorlagadda">@sboorlagadda&lt;/a>, who submitted the first Spice.ai feature contribution from the community ever! He added the ability to list pods from the CLI with the new &lt;code>spice pods list&lt;/code> command. Thank you, &lt;a href="https://github.com/sboorlagadda">@sboorlagadda&lt;/a>!!!&lt;/p>
+&lt;div style="display: flex; justify-content: center;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 500px;" src="https://user-images.githubusercontent.com/80174/138642457-a8f254ce-6b4f-4836-b921-f0eb0feadeab.png" />
+&lt;em style="text-align: center">A screenshot of the new spice pods list command and output.&lt;/em>
+&lt;/div>
+&lt;/div>
+&lt;p>If you are new to Spice.ai, check out the &lt;a href="https://docs.spiceai.org/getting-started/">getting started guide&lt;/a> and star &lt;a href="https://github.com/spiceai/spiceai">spiceai/spiceai&lt;/a> on GitHub.&lt;/p>
+&lt;h2 id="highlights-in-v03-alpha">Highlights in v0.3-alpha&lt;/h2>
+&lt;h3 id="categorical-data">Categorical data&lt;/h3>
+&lt;p>In v0.1, the runtime and AI engine only supported ingesting numerical data. In v0.2, tagged data was accepted and automatically encoded into fields available for learning. In this release, v0.3, categorical data can now also be ingested and automatically encoded into fields available for learning. This is a &lt;em>breaking change&lt;/em> with the format of the manifest changing separating numerical measurements and categorical data.&lt;/p>
+&lt;p>Pre-v0.3, the manifest author specified numerical data using the &lt;code>fields&lt;/code> node.&lt;/p>
+&lt;p>In v0.3, numerical data is now specified under &lt;code>measurements&lt;/code> and categorical data under &lt;code>categories&lt;/code>. E.g.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">dataspaces&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">event&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">stream&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">measurements&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">duration&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">selector&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">length_of_time&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">fill&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">none&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">guest_count&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">selector&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">num_guests&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">fill&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">none&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">categories&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">event_type&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">values&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">dinner&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">party&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">target_audience&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">values&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">employees&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">investors&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">tags&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">tagA&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">tagB&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="data-visualizations-preview">Data visualizations preview&lt;/h3>
+&lt;p>A top piece of community feedback was the ability to visualize data. After first running Spice.ai, we&amp;rsquo;d often hear from developers, &amp;ldquo;how do I see the data?&amp;rdquo;. A preview of data visualizations is now included in the dashboard on the pod page.&lt;/p>
+&lt;h3 id="listing-pods">Listing pods&lt;/h3>
+&lt;p>Once the Spice.ai runtime has started, you can view the loaded pods on the dashboard and fetch them via API call &lt;a href="http://localhost:8000/api/v0.1/pods">localhost:8000/api/v0.1/pods&lt;/a>. To make it even easier, we&amp;rsquo;ve added the ability to list them via the CLI with the new &lt;code>spice pods list&lt;/code> command, which shows the list of pods and their manifest paths.&lt;/p>
+&lt;h3 id="coinbase-data-connector">Coinbase data connector&lt;/h3>
+&lt;p>A new &lt;a href="https://github.com/spiceai/data-components-contrib/blob/trunk/dataconnectors/coinbase/README.md">Coinbase data connector&lt;/a> is included in v0.3, enabling the streaming of live market ticker prices from Coinbase Pro. Enable it by specifying the &lt;code>coinbase&lt;/code> data connector and providing a list of Coinbase Pro product ids. E.g. &amp;ldquo;BTC-USD&amp;rdquo;. A new sample which demonstrates is also available with its associated Spicepod available from the spicerack.org registry. Get it with &lt;code>spice add samples/trader&lt;/code>&lt;/p>
+&lt;h3 id="tweet-recommendation-quickstart">Tweet Recommendation Quickstart&lt;/h3>
+&lt;p>A new &lt;a href="https://github.com/spiceai/quickstarts/blob/trunk/tweet-recommendation/README.md">Tweet Recommendation Quickstart&lt;/a> has been added. Given past tweet activity and metrics of a given account, this app can recommend when to tweet, comment, or retweet to maximize for like count, interaction rates, and outreach of said given Twitter account.&lt;/p>
+&lt;h3 id="trader-sample">Trader Sample&lt;/h3>
+&lt;p>A new &lt;a href="https://github.com/spiceai/samples/blob/trunk/trader/README.md">Trader Sample&lt;/a> has been added in addition to the Trader Quickstart. The sample uses the new &lt;a href="https://github.com/spiceai/data-components-contrib/blob/trunk/dataconnectors/coinbase/README.md">Coinbase data connector&lt;/a> to stream live Coinbase Pro ticker data for learning.&lt;/p>
+&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Adds&lt;/strong> support for ingesting, encoding, and training on categorical data. v0.3 uses one-hot-encoding.&lt;/li>
+&lt;li>&lt;strong>Changes&lt;/strong> Spicepod manifest fields node to &lt;a href="docs.spiceai.org/reference/pod/#dataspacesmeasurements">measurements&lt;/a> and add the &lt;a href="docs.spiceai.org/reference/pod/#dataspacescategories">categories&lt;/a> node.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> the ability to select a field from the source data and map it to a different field name in the dataspace. See &lt;a href="docs.spiceai.org/reference/pod/#dataspacesmeasurementsselector">an example for measurements&lt;/a> in docs.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> support for JSON content type when fetching from the &lt;code>/observations&lt;/code> API. Previously, only CSV was supported.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> a preview version of data visualizations to the dashboard. The grid has several limitations, one of which is it currently cannot be resized.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> the ability to select which learning algorithm to use via the CLI, the API, and specified in the Spicepod manifest. Possible choices are currently &amp;ldquo;vpg&amp;rdquo;, Vanilla Policy Gradient and &amp;ldquo;dql&amp;rdquo;, Deep Q-Learning. Shout out to &lt;a href="https://github.com/corentin-pro">@corentin-pro&lt;/a>, who added this feature on his second day on the team!&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> the ability to list loaded pods with the CLI command spice pods list.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> a new &lt;a href="https://github.com/spiceai/data-components-contrib/blob/trunk/dataconnectors/coinbase/README.md">coinbase data connector&lt;/a> for Coinbase Pro market prices.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> a new &lt;a href="https://github.com/spiceai/quickstarts/blob/trunk/tweet-recommendation/README.md">Tweet Recommendation Quickstart&lt;/a>.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> a new &lt;a href="https://github.com/spiceai/samples/blob/trunk/trader/README.md">Trader Sample&lt;/a>.&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> bug where the &lt;code>/observations&lt;/code> endpoint was not providing fully qualified field names.&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> issue where debugging messages were printed when using spice add.&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/spiceai/quickstarts/blob/trunk/README.md">Quickstarts&lt;/a> and &lt;a href="https://github.com/spiceai/samples/blob/trunk/README.md">Samples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved. We will also be starting a community call series soon!&lt;/p>
+&lt;ul>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spiceaihq">@SpiceAIHQ&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spiceai.io">hey@spiceai.io&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

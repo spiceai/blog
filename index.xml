@@ -389,7 +389,7 @@
 &lt;p>In your app, you will need to do this data compilation in real-time - and you can&amp;rsquo;t rely on a local script to help process your data.
 It becomes trickier if the team responsible for the initial training of the machine learning model is not the team responsible for deploying it out into production.&lt;/p>
 &lt;p>How data is loaded and processed in a static dataset is likely very different from how the data is loaded and processed in real-time as your app is live. The result often is two separate codebases that are maintained by different teams that are both responsible for doing the same thing! Ensuring that those codebases stay consistent and evolve together is another challenge to tackle.&lt;/p>
-&lt;h2 id="spiceai-helps-developers-build-apps-with-real-time-ml">Spice.ai helps developers build apps with real-time ML.&lt;/h2>
+&lt;h2 id="spiceai-helps-developers-build-apps-with-real-time-ml">Spice.ai helps developers build apps with real-time ML&lt;/h2>
 &lt;p>Spice.ai handles the &amp;ldquo;compilation&amp;rdquo; of data for you.&lt;/p>
 &lt;p>You specify the data that your ML should learn from in a &lt;a href="https://blog.spiceai.org/posts/2021/12/02/spicepods-from-zero-to-hero/">Spicepod&lt;/a>. The Spice.ai runtime handles the logistics of gathering the data and compiling it into an AI-ready format.&lt;/p>
 &lt;p>It does this by using many techniques described earlier, such as normalization and one-hot encoding. And because we&amp;rsquo;re continuing to evolve Spice.ai, our data compilation will only get better over time.&lt;/p>
