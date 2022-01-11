@@ -1,5 +1,5 @@
 ---
-date: 2022-01-07
+date: 2022-01-12
 title: "Adding Soft Actor-Critic"
 type: blog
 linkTitle: "Adding Soft Actor-Critic"
@@ -16,7 +16,7 @@ The previous article [Understanding Q-learning: How a Reward Is All You Need]({{
 
 ### Actor-Critic
 
-The actor-critic approach in deep learning was first introduced in a [Deepmind paper](https://arxiv.org/abs/1602.01783) in 2016. We can think of this approach as having 2 tasks:
+Deepmind first introduced the actor-critic approach in deep learning in a [2016 paper](https://arxiv.org/abs/1602.01783). We can think of this approach as having 2 tasks:
 
 * Choosing actions to take: giving probabilities for each possible action (the policy)
 * Evaluating values for each action: the estimated reward from those actions (the Q-values)
@@ -30,7 +30,7 @@ Those tasks will be made by 2 different neural networks or a single network that
   </div>
 </div>
 
-This model was proven to perform very well, better than Deep Q-Learning in most cases. The actor is trained to prefer actions associated with the best values from the critic. The critic is trained to correctly estimate rewards (current and future ones) of the actions.
+In most cases, this model was proven to perform very well, better than Deep Q-Learning. The actor is trained to prefer actions associated with the best values from the critic. The critic is trained to correctly estimate rewards (current and future ones) of the actions.
 
 Both will improve over time though we have to keep in mind that the critic is unlikely to evaluate all possible actions in the environment as it will only see actions from states that the actor is likely to take (the policy).
 
@@ -80,12 +80,8 @@ For the new agent, inheriting from the main `SpiceAIAgent` class, 5 functions ne
 
 ## Conclusion
 
-Soft Actor-Critic is a fascinating algorithm that makes Spice.ai able to deal with complex environments. Nevertheless, no algorithm can be a solution to every case, and this is only a step for improving the platform.
+Soft Actor-Critic is a fascinating algorithm that performs well in complex environments. We now support Soft Actor Critic in Spice.ai, which is another step forward in constantly improving the performance of the AI engine. Additionally, we'll continue improving existing algorithms and adding newer ones over time. We designed the platform for ease of implementation and experimentation so if you'd like to try building your own agent, you can get the source code on [Github](https://github.com/spiceai/spiceai) and contribute to the platform. Say hi on [Discord](https://discord.gg/kZnTfneP5u), reach out on [Twitter](https://twitter.com/SpiceAIHQ) or [email us](mailto:hey@spiceai.io).
 
-The existing algorithm will be improved over time, and new ones will also be included. The platform was designed for ease of implementation and experimentation.
-
-If you'd like to try your own agent, you can get the source code on [Github](https://github.com/spiceai/spiceai) and contribute to the platform. You can also discuss with us on [Discord](https://discord.gg/kZnTfneP5u), reach out on [Twitter](https://twitter.com/SpiceAIHQ) or [email us](mailto:hey@spiceai.io).
-
-I hope you enjoy this post and learn new things.
+I hope you enjoy this post and something new.
 
 Corentin
