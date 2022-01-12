@@ -61,7 +61,9 @@ Files in these directories will be listed in reverse chronological order.
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-posts-li>
 <a href=/posts/ title="Spice.ai blog" class="align-left pl-0 active td-sidebar-link td-sidebar-link__section tree-root" id=m-posts><span class=td-sidebar-nav-active-item>Blog</span></a>
 <ul class=ul-1>
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20220104what-data-informs-ai-driven-decision-making-li>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20220112adding-soft-actor-critic-li>
+<a href=/posts/2022/01/12/adding-soft-actor-critic/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20220112adding-soft-actor-critic><span>Adding Soft Actor-Critic</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20220104what-data-informs-ai-driven-decision-making-li>
 <a href=/posts/2022/01/04/what-data-informs-ai-driven-decision-making/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20220104what-data-informs-ai-driven-decision-making><span>What Data Informs AI-driven Decision Making?</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211230a-new-class-of-applications-that-learn-and-adapt-li>
 <a href=/posts/2021/12/30/a-new-class-of-applications-that-learn-and-adapt/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211230a-new-class-of-applications-that-learn-and-adapt><span>A New Class of Applications That Learn and Adapt</span></a>
@@ -112,9 +114,9 @@ Files in these directories will be listed in reverse chronological order.
 <li><a class=taxonomy-term href=/categories/applications/ data-taxonomy-term=applications><span class=taxonomy-label>applications</span><span class=taxonomy-count>4</span></a></li>
 <li><a class=taxonomy-term href=/categories/data/ data-taxonomy-term=data><span class=taxonomy-label>data</span><span class=taxonomy-count>2</span></a></li>
 <li><a class=taxonomy-term href=/categories/data-engineering/ data-taxonomy-term=data-engineering><span class=taxonomy-label>data engineering</span><span class=taxonomy-count>1</span></a></li>
-<li><a class=taxonomy-term href=/categories/deep-learning/ data-taxonomy-term=deep-learning><span class=taxonomy-label>deep learning</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=/categories/deep-learning/ data-taxonomy-term=deep-learning><span class=taxonomy-label>deep learning</span><span class=taxonomy-count>2</span></a></li>
 <li><a class=taxonomy-term href=/categories/learn-and-adapt/ data-taxonomy-term=learn-and-adapt><span class=taxonomy-label>learn-and-adapt</span><span class=taxonomy-count>4</span></a></li>
-<li><a class=taxonomy-term href=/categories/reinforcement-learning/ data-taxonomy-term=reinforcement-learning><span class=taxonomy-label>reinforcement learning</span><span class=taxonomy-count>2</span></a></li>
+<li><a class=taxonomy-term href=/categories/reinforcement-learning/ data-taxonomy-term=reinforcement-learning><span class=taxonomy-label>reinforcement learning</span><span class=taxonomy-count>3</span></a></li>
 <li><a class=taxonomy-term href=/categories/release/ data-taxonomy-term=release><span class=taxonomy-label>release</span><span class=taxonomy-count>8</span></a></li>
 <li><a class=taxonomy-term href=/categories/time-series-ai/ data-taxonomy-term=time-series-ai><span class=taxonomy-label>time-series ai</span><span class=taxonomy-count>1</span></a></li>
 </ul>
@@ -122,6 +124,7 @@ Files in these directories will be listed in reverse chronological order.
 <div class="taxonomy taxonomy-terms-cloud taxo-tags">
 <h5 class=taxonomy-title>Tags</h5>
 <ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=/tags/actor-critic/ data-taxonomy-term=actor-critic><span class=taxonomy-label>actor-critic</span><span class=taxonomy-count>1</span></a></li>
 <li><a class=taxonomy-term href=/tags/agile-ml/ data-taxonomy-term=agile-ml><span class=taxonomy-label>agile ml</span><span class=taxonomy-count>4</span></a></li>
 <li><a class=taxonomy-term href=/tags/categorical-data/ data-taxonomy-term=categorical-data><span class=taxonomy-label>categorical data</span><span class=taxonomy-count>1</span></a></li>
 <li><a class=taxonomy-term href=/tags/cnn/ data-taxonomy-term=cnn><span class=taxonomy-label>cnn</span><span class=taxonomy-count>1</span></a></li>
@@ -151,6 +154,31 @@ Files in these directories will be listed in reverse chronological order.
 <div class=col-12>
 <h2>Posts in 2021</h2>
 <ul class="list-unstyled mt-4">
+<li class="media mb-4">
+<div class=media-body>
+<h5 class="mt-0 mb-1"><a href=/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/>Teaching Apps how to Learn with Spicepods</a></h5>
+<p class="mb-2 mb-md-3"><small class=text-muted>Monday, November 15, 2021 in Blog</small></p>
+<header class=article-meta>
+<div class="taxonomy taxonomy-terms-article taxo-categories">
+<h5 class=taxonomy-title>Categories:</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=/categories/applications/ data-taxonomy-term=applications><span class=taxonomy-label>applications</span></a></li>
+<li><a class=taxonomy-term href=/categories/learn-and-adapt/ data-taxonomy-term=learn-and-adapt><span class=taxonomy-label>learn-and-adapt</span></a></li>
+</ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+<h5 class=taxonomy-title>Tags:</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=/tags/spicepod/ data-taxonomy-term=spicepod><span class=taxonomy-label>spicepod</span></a></li>
+<li><a class=taxonomy-term href=/tags/agile-ml/ data-taxonomy-term=agile-ml><span class=taxonomy-label>agile ml</span></a></li>
+</ul>
+</div>
+</header>
+<p class="pt-0 mt-0">The last post in this series, Making Apps that Learn and Adapt, described the shift from building AI/ML solutions to building apps that learn and adapt. But, how does the app learn? And as a developer, how do I teach it what it should learn?
+With …</p>
+<p class=pt-0><a href=/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/ aria-label="Read more - Teaching Apps how to Learn with Spicepods">Read more</a></p>
+</div>
+</li>
 <li class="media mb-4">
 <div class=media-body>
 <h5 class="mt-0 mb-1"><a href=/posts/2021/11/15/announcing-the-release-of-spice.ai-v0.4-alpha/>Spice.ai v0.4-alpha is now available</a></h5>

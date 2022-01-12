@@ -1,0 +1,53 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – actor-critic</title><link>/tags/actor-critic/</link><description>Recent content in actor-critic on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 12 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/actor-critic/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Adding Soft Actor-Critic</title><link>/posts/2022/01/12/adding-soft-actor-critic/</link><pubDate>Wed, 12 Jan 2022 00:00:00 +0000</pubDate><guid>/posts/2022/01/12/adding-soft-actor-critic/</guid><description>
+&lt;p>Last month in the v0.5-alpha version, a new learning algorithm was added to Spice.ai: Soft Actor-Critic. This is a very popular algorithm in the Reinforcement Learning field. Let&amp;rsquo;s see what it is and why this is an interesting addition.&lt;/p>
+&lt;p>The previous article &lt;a href="/posts/2021/12/15/understanding-q-learning-how-a-reward-is-all-you-need/">Understanding Q-learning: How a Reward Is All You Need&lt;/a> is not necessary but can be helpful to understand this article.&lt;/p>
+&lt;h2 id="what-is-soft-actor-critic">What is Soft Actor-Critic&lt;/h2>
+&lt;h3 id="actor-critic">Actor-Critic&lt;/h3>
+&lt;p>Deepmind first introduced the actor-critic approach in deep learning in a &lt;a href="https://arxiv.org/abs/1602.01783">2016 paper&lt;/a>. We can think of this approach as having 2 tasks:&lt;/p>
+&lt;ul>
+&lt;li>Choosing actions to take: giving probabilities for each possible action (the policy)&lt;/li>
+&lt;li>Evaluating values for each action: the estimated reward from those actions (the Q-values)&lt;/li>
+&lt;/ul>
+&lt;p>Those tasks will be made by 2 different neural networks or a single network that branches out in 2 heads. The actor is the part that outputs the policy, while the critic outputs the values.&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 300px; margin: auto" alt="Actor-Critic Diagram" src="https://user-images.githubusercontent.com/19952490/148524970-e5fab55c-7364-4cb9-870c-7f5b8b58cc6f.png">
+&lt;div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 1. Actor-Critic struture&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>In most cases, this model was proven to perform very well, better than Deep Q-Learning. The actor is trained to prefer actions associated with the best values from the critic. The critic is trained to correctly estimate rewards (current and future ones) of the actions.&lt;/p>
+&lt;p>Both will improve over time though we have to keep in mind that the critic is unlikely to evaluate all possible actions in the environment as it will only see actions from states that the actor is likely to take (the policy).&lt;/p>
+&lt;p>This bias of the system toward its policy is important: the algorithm is meant to train &lt;em>on-policy&lt;/em>. The duo actor-critic works together: trying to train it with inputs and outputs from another system (humans or even itself in past iterations of its own training) will not work.&lt;/p>
+&lt;p>Multiple improvements were made to limit the bias of the actor-critic approach but the necessity to train on-policy remains. This is very limiting as being able to train from any experience can be very valuable for time and data efficiency.&lt;/p>
+&lt;h3 id="soft-actor-critic">Soft Actor-Critic&lt;/h3>
+&lt;p>Soft Actor-Critic allows an Actor-Critic network to train off-policy. It was introduced in &lt;a href="https://arxiv.org/abs/1801.01290">a paper&lt;/a> in 2018 and included multiple additions to improve its parent algorithm. The main difference is the introduction of the entropy of the actor outputs during the training phase.&lt;/p>
+&lt;p>The entropy measures the chaos/order of a system (or uncertainty). If a system always acts the same way, the entropy is minimal. Here the actor&amp;rsquo;s entropy is maximum if all possible actions have the same weight (same probability) and minimum if the actor always chose only a single action with 100% confidence.&lt;/p>
+&lt;p>During the training phase, the actor is trained to maintain the entropy of its outputs at a specific value.&lt;/p>
+&lt;p>The introduction of the entropy changes the goal of the training not only to find the bests output but to keep exploring the other actions. The critic part will be trained on all actions, even if they may occur only in rare cases.&lt;/p>
+&lt;p>There are other essential parts, such as having 2 critics and being able to output continuous values, but the entropy is the crucial difference in this algorithm&amp;rsquo;s training and potential.&lt;/p>
+&lt;h2 id="adding-choices-to-spiceai-learning-algorithms">Adding choices to Spice.AI learning algorithms&lt;/h2>
+&lt;p>As we saw above, the Actor-Critic algorithm is known to outperform Deep Q-Learning in most cases. If we also want to leverage previous data (off-policy training), Soft Actor-Critic is a natural choice. This approach is heavier despite better theoretical results, making it more suitable for complex tasks. For simpler tasks, Deep Q-Learning will still be an appealing option for its speed of training and its capability to quickly convergence to a good solution.&lt;/p>
+&lt;p>We can think of Soft Actor-Critic as a complex machine designed to take actions while keeping a variety of possibilities. Sometimes several options seem equally rewarding: a simpler algorithm would take what it evaluates as the best one even though the margin is small and the precision of its evaluation shouldn&amp;rsquo;t be enough. This tendency to quickly convergence to a solution has its benefits and inconveniences.&lt;/p>
+&lt;h2 id="implementation-in-the-source-code">Implementation in the source code&lt;/h2>
+&lt;p>Adding new algorithms is essential to Spice.ai, so the procedure was designed to be straightforward.&lt;/p>
+&lt;p>Looking a the &lt;a href="https://github.com/spiceai/spiceai">source code&lt;/a>, the code related to training agents is in the &lt;code>ai/src&lt;/code> folder. This part of the code uses the python language as most modern AI libraries are distributed in this language.&lt;/p>
+&lt;p>In this folder, every agent is in the &lt;code>algorithms&lt;/code> folder, and each has its subfolder. There is an &lt;code>agent_interface&lt;/code> file that defines the main class that the different agents should inherit from and a &lt;code>factory&lt;/code> script responsible for creating instances of an agent from a given algorithm name.&lt;/p>
+&lt;p>Adding a new agent is simple:&lt;/p>
+&lt;ul>
+&lt;li>making a new folder in the &lt;code>algorithms&lt;/code>&lt;/li>
+&lt;li>adding a json file describing the &lt;code>algorithm_id&lt;/code>, &lt;code>name&lt;/code>, and &lt;code>docs_link&lt;/code> (see other json as an example) in the folder&lt;/li>
+&lt;li>adding a new python file with a class that would inherit from the &lt;code>SpiceAIAgent&lt;/code> defined in the &lt;code>agent_interface&lt;/code> script&lt;/li>
+&lt;li>adding a line in the &lt;code>factory&lt;/code> script to instantiate the new implementation when its name is called.&lt;/li>
+&lt;/ul>
+&lt;p>For the new agent, inheriting from the main &lt;code>SpiceAIAgent&lt;/code> class, 5 functions need to be implemented:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>add_experience&lt;/strong>: storing inputs and outputs (used during the training)&lt;/li>
+&lt;li>&lt;strong>act&lt;/strong>: returning the action to be taken from a given input&lt;/li>
+&lt;li>&lt;strong>save&lt;/strong>: saving the agent to a given a path&lt;/li>
+&lt;li>&lt;strong>load&lt;/strong>: restoring the agent from a given path&lt;/li>
+&lt;li>&lt;strong>learn&lt;/strong>: train iteration (from the accumulated experiences)&lt;/li>
+&lt;/ul>
+&lt;h2 id="conclusion">Conclusion&lt;/h2>
+&lt;p>Soft Actor-Critic is a fascinating algorithm that performs well in complex environments. We now &lt;a href="/posts/2021/12/06/announcing-the-release-of-spice.ai-v0.5-alpha/">support Soft Actor Critic&lt;/a> in Spice.ai, which is another step forward in constantly improving the performance of the AI engine. Additionally, we&amp;rsquo;ll continue improving existing algorithms and adding newer ones over time. We designed the platform for ease of implementation and experimentation so if you&amp;rsquo;d like to try building your own agent, you can get the source code on &lt;a href="https://github.com/spiceai/spiceai">Github&lt;/a> and contribute to the platform. Say hi on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, reach out on &lt;a href="https://twitter.com/SpiceAIHQ">Twitter&lt;/a> or &lt;a href="mailto:hey@spiceai.io">email us&lt;/a>.&lt;/p>
+&lt;p>I hope you enjoy this post and something new.&lt;/p>
+&lt;p>Corentin&lt;/p></description></item></channel></rss>
