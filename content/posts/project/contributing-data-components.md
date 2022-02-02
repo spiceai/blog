@@ -75,3 +75,23 @@ Here's the we've got the final code for the for the directory data connector.
 [final code file for directory.go]
 
 Now let's go wire this up to Spice.ai and create a Spicepod that uses it.
+
+### Integration with Spice.ai
+
+We're already replaced the go module for `spiceai/spiceai` that points to our local `data-components-contrib` repo so we just need to run the same command we ran before to build Spice.ai and it will include our new directory data component.
+
+While that is buildiing, we can go ahead and create our Spicepod that will leverage our new directory data connector. Here is a Spicepod we can use:
+
+[show the Spicepod]
+
+I will add a few CSV files to a directory on my machine, and since we're using the built-in CSV data processor we will be able to get it working end-to-end.
+
+After running the local Spice.ai and pointing it to our Spicepod, we can open the dashboard and see that the data from our CSV files is being populated! You can also drop a new CSV file in that directory and see that reflected in the dashboard as well.
+
+### Conclusion
+
+So that's it! In a few minutes we were able to create a new data connector that connects to a directory and reads any files that are in that directory and then pass them along to a data processor in the pipeline. The data processor is responsible for converting the data it gets into the Apache Arrow format, which then gets passed along to the Spice.ai runtime. And now any project that leverages the `data-components-contrib` for streaming time-series data will now have the ability to monitor a directory and process files into any of the data processor formats that we support. As more data connectors and data processors are added over time, this will become a powerful resource that the community can leverage.
+
+You can imagine we could also extend our directory connector in a few different ways. We might want to be able to set a filter so we only look at CSV files within the directory, or we might want to support an array of paths to listen on multiple directories at once.
+
+So thank you for reading and I hope that you learned how to contribute to data components and you are inspired to add one yourself. Drop by in discord and let us know if you have an idea for a new data connector and we'll help out. If you get stuck along the way, or have any questions you can reach out for help. Thank you very much.
