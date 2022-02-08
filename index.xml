@@ -1,4 +1,224 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Adding Soft Actor-Critic</title><link>/posts/2022/01/12/adding-soft-actor-critic/</link><pubDate>Wed, 12 Jan 2022 00:00:00 +0000</pubDate><guid>/posts/2022/01/12/adding-soft-actor-critic/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.6-alpha</title><link>/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/</link><pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate><guid>/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/</guid><description>
+&lt;p>Announcing the release of Spice.ai v0.6-alpha! 🏹&lt;/p>
+&lt;p>Spice.ai now scales to datasets 10-100 larger enabling new classes of uses cases and applications! 🚀 We&amp;rsquo;ve completely rebuilt Spice.ai&amp;rsquo;s data processing and transport upon &lt;a href="https://arrow.apache.org/">Apache Arrow&lt;/a>, a high-performance platform that uses an in-memory columnar format. Spice.ai joins other major projects including Apache Spark, pandas, and InfluxDB in being powered by Apache Arrow. This also paves the way for high-performance data connections to the Spice.ai runtime using Apache Arrow Flight and import/export of data using &lt;a href="https://parquet.apache.org/">Apache Parquet&lt;/a>. We&amp;rsquo;re incredibly excited about the potential this architecture has for building intelligent applications on top of a high-performance transport between application data sources the Spice.ai AI engine.&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 400px;" width="400" src="https://user-images.githubusercontent.com/80174/153089981-cd4fcf9e-53d4-4063-ae96-1354c8c6af6b.png" />
+&lt;/div>
+&lt;/div>
+&lt;h2 id="highlights-in-v06-alpha">Highlights in v0.6-alpha&lt;/h2>
+&lt;h3 id="massive-improvement-in-data-loading-performance-and-dataset-scale">Massive improvement in data loading performance and dataset scale&lt;/h3>
+&lt;p>From &lt;a href="https://github.com/spiceai/data-components-contrib/tree/trunk/dataconnectors">data connectors&lt;/a>, to &lt;a href="https://docs.spiceai.org/api/">REST API&lt;/a>, to AI engine, we&amp;rsquo;ve now rebuilt Spice.ai&amp;rsquo;s data processing and transport on the Apache Arrow project. Specifically, using the &lt;a href="https://github.com/apache/arrow/tree/master/go">Apache Arrow for Go&lt;/a> implementation. Many thanks to &lt;a href="https://github.com/zeroshade">Matt Topol&lt;/a> for his contributions to the project and guidance on using it.&lt;/p>
+&lt;p>This release includes a change to the Spice.ai runtime to AI Engine transport from sending text CSV over gGPC to Apache Arrow Records over IPC (Unix sockets).&lt;/p>
+&lt;p>This is a breaking change to the &lt;a href="https://github.com/spiceai/data-components-contrib/tree/trunk/dataprocessors#contribution-guide">Data Processor interface&lt;/a>, as it now uses &lt;code>arrow.Record&lt;/code> instead of &lt;code>Observation&lt;/code>.&lt;/p>
+&lt;h4 id="benchmarking-v06">Benchmarking v0.6&lt;/h4>
+&lt;p>Before v0.6, Spice.ai would not scale into the 100s of 1000s of rows.&lt;/p>
+&lt;div class="table-wide" style="display: grid; justify-content: center; margin: 50px;">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Format&lt;/th>
+&lt;th>Row Number&lt;/th>
+&lt;th>Data Size&lt;/th>
+&lt;th>Process Time&lt;/th>
+&lt;th>Load Time&lt;/th>
+&lt;th>Transport time&lt;/th>
+&lt;th>Memory Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>csv&lt;/td>
+&lt;td>2,000&lt;/td>
+&lt;td>163.15KiB&lt;/td>
+&lt;td>3.0005s&lt;/td>
+&lt;td>0.0000s&lt;/td>
+&lt;td>0.0100s&lt;/td>
+&lt;td>423.754MiB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>csv&lt;/td>
+&lt;td>20,000&lt;/td>
+&lt;td>1.61MiB&lt;/td>
+&lt;td>2.9765s&lt;/td>
+&lt;td>0.0000s&lt;/td>
+&lt;td>0.0938s&lt;/td>
+&lt;td>479.644MiB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>csv&lt;/td>
+&lt;td>200,000&lt;/td>
+&lt;td>16.31MiB&lt;/td>
+&lt;td>0.2778s&lt;/td>
+&lt;td>0.0000s&lt;/td>
+&lt;td>NA (error)&lt;/td>
+&lt;td>0.000MiB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>csv&lt;/td>
+&lt;td>2,000,000&lt;/td>
+&lt;td>164.97MiB&lt;/td>
+&lt;td>0.2573s&lt;/td>
+&lt;td>0.0050s&lt;/td>
+&lt;td>NA (error)&lt;/td>
+&lt;td>0.000MiB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>json&lt;/td>
+&lt;td>2,000&lt;/td>
+&lt;td>301.79KiB&lt;/td>
+&lt;td>3.0261s&lt;/td>
+&lt;td>0.0000s&lt;/td>
+&lt;td>0.0282s&lt;/td>
+&lt;td>422.135MiB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>json&lt;/td>
+&lt;td>20,000&lt;/td>
+&lt;td>2.97MiB&lt;/td>
+&lt;td>2.9020s&lt;/td>
+&lt;td>0.0000s&lt;/td>
+&lt;td>0.2541s&lt;/td>
+&lt;td>459.138MiB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>json&lt;/td>
+&lt;td>200,000&lt;/td>
+&lt;td>29.85MiB&lt;/td>
+&lt;td>0.2782s&lt;/td>
+&lt;td>0.0010s&lt;/td>
+&lt;td>NA (error)&lt;/td>
+&lt;td>0.000MiB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>json&lt;/td>
+&lt;td>2,000,000&lt;/td>
+&lt;td>300.39MiB&lt;/td>
+&lt;td>0.3353s&lt;/td>
+&lt;td>0.0080s&lt;/td>
+&lt;td>NA (error)&lt;/td>
+&lt;td>0.000MiB&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;p>After building on Arrow, Spice.ai now easily scales beyond millions of rows.&lt;/p>
+&lt;div class="table-wide" style="display: grid; justify-content: center; margin: 50px;">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Format&lt;/th>
+&lt;th>Row Number&lt;/th>
+&lt;th>Data Size&lt;/th>
+&lt;th>Process Time&lt;/th>
+&lt;th>Load Time&lt;/th>
+&lt;th>Transport time&lt;/th>
+&lt;th>Memory Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>csv&lt;/td>
+&lt;td>2,000&lt;/td>
+&lt;td>163.14KiB&lt;/td>
+&lt;td>2.8281s&lt;/td>
+&lt;td>0.0000s&lt;/td>
+&lt;td>0.0194s&lt;/td>
+&lt;td>439.580MiB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>csv&lt;/td>
+&lt;td>20,000&lt;/td>
+&lt;td>1.61MiB&lt;/td>
+&lt;td>2.7297s&lt;/td>
+&lt;td>0.0000s&lt;/td>
+&lt;td>0.0658s&lt;/td>
+&lt;td>461.836MiB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>csv&lt;/td>
+&lt;td>200,000&lt;/td>
+&lt;td>16.30MiB&lt;/td>
+&lt;td>2.8072s&lt;/td>
+&lt;td>0.0020s&lt;/td>
+&lt;td>0.4830s&lt;/td>
+&lt;td>639.763MiB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>csv&lt;/td>
+&lt;td>2,000,000&lt;/td>
+&lt;td>164.97MiB&lt;/td>
+&lt;td>2.8707s&lt;/td>
+&lt;td>0.0400s&lt;/td>
+&lt;td>4.2680s&lt;/td>
+&lt;td>1897.738MiB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>json&lt;/td>
+&lt;td>2,000&lt;/td>
+&lt;td>301.80KiB&lt;/td>
+&lt;td>2.7275s&lt;/td>
+&lt;td>0.0000s&lt;/td>
+&lt;td>0.0367s&lt;/td>
+&lt;td>436.238MiB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>json&lt;/td>
+&lt;td>20,000&lt;/td>
+&lt;td>2.97MiB&lt;/td>
+&lt;td>2.8284s&lt;/td>
+&lt;td>0.0000s&lt;/td>
+&lt;td>0.2334s&lt;/td>
+&lt;td>473.550MiB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>json&lt;/td>
+&lt;td>200,000&lt;/td>
+&lt;td>29.85MiB&lt;/td>
+&lt;td>2.8862s&lt;/td>
+&lt;td>0.0100s&lt;/td>
+&lt;td>1.7725s&lt;/td>
+&lt;td>824.089MiB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>json&lt;/td>
+&lt;td>2,000,000&lt;/td>
+&lt;td>300.39MiB&lt;/td>
+&lt;td>2.7437s&lt;/td>
+&lt;td>0.0920s&lt;/td>
+&lt;td>16.5743s&lt;/td>
+&lt;td>4044.118MiB&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Adds&lt;/strong> Apache Arrow data processing and transport.&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> &lt;a href="https://docs.spiceai.org/training/monitoring/">TensorBoard logging&lt;/a> and monitoring when using GitHub Codespaces and Docker.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Polling &lt;a href="https://github.com/spiceai/data-components-contrib/blob/trunk/dataconnectors/http/README.md">HTTP Data Connector&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="dependency-updates">Dependency updates&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Updates&lt;/strong> to numpy 1.21.0&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> to marked 3.0.8&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> to follow-redirects 1.14.7&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> nanoid to 3.2.0&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/spiceai/quickstarts/blob/trunk/README.md">Quickstarts&lt;/a> and &lt;a href="https://github.com/spiceai/samples/blob/trunk/README.md">Samples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved. We will also be starting a community call series soon!&lt;/p>
+&lt;ul>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spiceaihq">@SpiceAIHQ&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spiceai.io">hey@spiceai.io&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Adding Soft Actor-Critic</title><link>/posts/2022/01/12/adding-soft-actor-critic/</link><pubDate>Wed, 12 Jan 2022 00:00:00 +0000</pubDate><guid>/posts/2022/01/12/adding-soft-actor-critic/</guid><description>
 &lt;p>Last month in the v0.5-alpha version, a new learning algorithm was added to Spice.ai: Soft Actor-Critic. This is a very popular algorithm in the Reinforcement Learning field. Let&amp;rsquo;s see what it is and why this is an interesting addition.&lt;/p>
 &lt;p>The previous article &lt;a href="/posts/2021/12/15/understanding-q-learning-how-a-reward-is-all-you-need/">Understanding Q-learning: How a Reward Is All You Need&lt;/a> is not necessary but can be helpful to understand this article.&lt;/p>
 &lt;h2 id="what-is-soft-actor-critic">What is Soft Actor-Critic&lt;/h2>

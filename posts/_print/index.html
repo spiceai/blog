@@ -66,6 +66,7 @@ This the multi-page printable view of this section.
 </div>
 <h1 class=title>Spice.ai blog</h1>
 <ul>
+<li><a href=#pg-5dc91d410d86c9c17a47995c5fd22003>Announcing the release of Spice.ai v0.6-alpha</a></li>
 <li><a href=#pg-9194daa44c5adffb7e98971a6107c138>Adding Soft Actor-Critic</a></li>
 <li><a href=#pg-ae8fb18c8afa3eb131ca6817f407e8c7>What Data Informs AI-driven Decision Making?</a></li>
 <li><a href=#pg-76db296a12cbc2a413d997a0f28adf0f>A New Class of Applications That Learn and Adapt</a></li>
@@ -91,6 +92,233 @@ This the multi-page printable view of this section.
 </div>
 </div>
 <div class=td-content>
+<h1 id=pg-5dc91d410d86c9c17a47995c5fd22003>Announcing the release of Spice.ai v0.6-alpha</h1>
+<div class="td-byline mb-4">
+By <b>Spice AI (<a href=https://twitter.com/SpiceAIHQ>@SpiceAIHQ</a>)</b> |
+<time datetime=2022-02-08 class=text-muted>Tuesday, February 08, 2022</time>
+</div>
+<p>Announcing the release of Spice.ai v0.6-alpha! 🏹</p>
+<p>Spice.ai now scales to datasets 10-100 larger enabling new classes of uses cases and applications! 🚀 We&rsquo;ve completely rebuilt Spice.ai&rsquo;s data processing and transport upon <a href=https://arrow.apache.org/>Apache Arrow</a>, a high-performance platform that uses an in-memory columnar format. Spice.ai joins other major projects including Apache Spark, pandas, and InfluxDB in being powered by Apache Arrow. This also paves the way for high-performance data connections to the Spice.ai runtime using Apache Arrow Flight and import/export of data using <a href=https://parquet.apache.org/>Apache Parquet</a>. We&rsquo;re incredibly excited about the potential this architecture has for building intelligent applications on top of a high-performance transport between application data sources the Spice.ai AI engine.</p>
+<div style=display:flex;justify-content:center;padding:5px>
+<div style=display:flex;flex-direction:column>
+<img style=max-width:400px width=400 src=https://user-images.githubusercontent.com/80174/153089981-cd4fcf9e-53d4-4063-ae96-1354c8c6af6b.png>
+</div>
+</div>
+<h2 id=highlights-in-v06-alpha>Highlights in v0.6-alpha</h2>
+<h3 id=massive-improvement-in-data-loading-performance-and-dataset-scale>Massive improvement in data loading performance and dataset scale</h3>
+<p>From <a href=https://github.com/spiceai/data-components-contrib/tree/trunk/dataconnectors>data connectors</a>, to <a href=https://docs.spiceai.org/api/>REST API</a>, to AI engine, we&rsquo;ve now rebuilt Spice.ai&rsquo;s data processing and transport on the Apache Arrow project. Specifically, using the <a href=https://github.com/apache/arrow/tree/master/go>Apache Arrow for Go</a> implementation. Many thanks to <a href=https://github.com/zeroshade>Matt Topol</a> for his contributions to the project and guidance on using it.</p>
+<p>This release includes a change to the Spice.ai runtime to AI Engine transport from sending text CSV over gGPC to Apache Arrow Records over IPC (Unix sockets).</p>
+<p>This is a breaking change to the <a href=https://github.com/spiceai/data-components-contrib/tree/trunk/dataprocessors#contribution-guide>Data Processor interface</a>, as it now uses <code>arrow.Record</code> instead of <code>Observation</code>.</p>
+<h4 id=benchmarking-v06>Benchmarking v0.6</h4>
+<p>Before v0.6, Spice.ai would not scale into the 100s of 1000s of rows.</p>
+<div class=table-wide style=display:grid;justify-content:center;margin:50px>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Row Number</th>
+<th>Data Size</th>
+<th>Process Time</th>
+<th>Load Time</th>
+<th>Transport time</th>
+<th>Memory Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>csv</td>
+<td>2,000</td>
+<td>163.15KiB</td>
+<td>3.0005s</td>
+<td>0.0000s</td>
+<td>0.0100s</td>
+<td>423.754MiB</td>
+</tr>
+<tr>
+<td>csv</td>
+<td>20,000</td>
+<td>1.61MiB</td>
+<td>2.9765s</td>
+<td>0.0000s</td>
+<td>0.0938s</td>
+<td>479.644MiB</td>
+</tr>
+<tr>
+<td>csv</td>
+<td>200,000</td>
+<td>16.31MiB</td>
+<td>0.2778s</td>
+<td>0.0000s</td>
+<td>NA (error)</td>
+<td>0.000MiB</td>
+</tr>
+<tr>
+<td>csv</td>
+<td>2,000,000</td>
+<td>164.97MiB</td>
+<td>0.2573s</td>
+<td>0.0050s</td>
+<td>NA (error)</td>
+<td>0.000MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>2,000</td>
+<td>301.79KiB</td>
+<td>3.0261s</td>
+<td>0.0000s</td>
+<td>0.0282s</td>
+<td>422.135MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>20,000</td>
+<td>2.97MiB</td>
+<td>2.9020s</td>
+<td>0.0000s</td>
+<td>0.2541s</td>
+<td>459.138MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>200,000</td>
+<td>29.85MiB</td>
+<td>0.2782s</td>
+<td>0.0010s</td>
+<td>NA (error)</td>
+<td>0.000MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>2,000,000</td>
+<td>300.39MiB</td>
+<td>0.3353s</td>
+<td>0.0080s</td>
+<td>NA (error)</td>
+<td>0.000MiB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>After building on Arrow, Spice.ai now easily scales beyond millions of rows.</p>
+<div class=table-wide style=display:grid;justify-content:center;margin:50px>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Row Number</th>
+<th>Data Size</th>
+<th>Process Time</th>
+<th>Load Time</th>
+<th>Transport time</th>
+<th>Memory Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>csv</td>
+<td>2,000</td>
+<td>163.14KiB</td>
+<td>2.8281s</td>
+<td>0.0000s</td>
+<td>0.0194s</td>
+<td>439.580MiB</td>
+</tr>
+<tr>
+<td>csv</td>
+<td>20,000</td>
+<td>1.61MiB</td>
+<td>2.7297s</td>
+<td>0.0000s</td>
+<td>0.0658s</td>
+<td>461.836MiB</td>
+</tr>
+<tr>
+<td>csv</td>
+<td>200,000</td>
+<td>16.30MiB</td>
+<td>2.8072s</td>
+<td>0.0020s</td>
+<td>0.4830s</td>
+<td>639.763MiB</td>
+</tr>
+<tr>
+<td>csv</td>
+<td>2,000,000</td>
+<td>164.97MiB</td>
+<td>2.8707s</td>
+<td>0.0400s</td>
+<td>4.2680s</td>
+<td>1897.738MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>2,000</td>
+<td>301.80KiB</td>
+<td>2.7275s</td>
+<td>0.0000s</td>
+<td>0.0367s</td>
+<td>436.238MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>20,000</td>
+<td>2.97MiB</td>
+<td>2.8284s</td>
+<td>0.0000s</td>
+<td>0.2334s</td>
+<td>473.550MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>200,000</td>
+<td>29.85MiB</td>
+<td>2.8862s</td>
+<td>0.0100s</td>
+<td>1.7725s</td>
+<td>824.089MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>2,000,000</td>
+<td>300.39MiB</td>
+<td>2.7437s</td>
+<td>0.0920s</td>
+<td>16.5743s</td>
+<td>4044.118MiB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id=new-in-this-release>New in this release</h2>
+<ul>
+<li><strong>Adds</strong> Apache Arrow data processing and transport.</li>
+<li><strong>Fixes</strong> <a href=https://docs.spiceai.org/training/monitoring/>TensorBoard logging</a> and monitoring when using GitHub Codespaces and Docker.</li>
+<li><strong>Adds</strong> Polling <a href=https://github.com/spiceai/data-components-contrib/blob/trunk/dataconnectors/http/README.md>HTTP Data Connector</a></li>
+</ul>
+<h3 id=dependency-updates>Dependency updates</h3>
+<ul>
+<li><strong>Updates</strong> to numpy 1.21.0</li>
+<li><strong>Updates</strong> to marked 3.0.8</li>
+<li><strong>Updates</strong> to follow-redirects 1.14.7</li>
+<li><strong>Updates</strong> nanoid to 3.2.0</li>
+</ul>
+<h2 id=resources>Resources</h2>
+<ul>
+<li><a href=https://docs.spiceai.org/getting-started/>Getting started with Spice.ai</a></li>
+<li><a href=https://docs.spiceai.org/>Documentation</a></li>
+<li><a href=https://github.com/spiceai/quickstarts/blob/trunk/README.md>Quickstarts</a> and <a href=https://github.com/spiceai/samples/blob/trunk/README.md>Samples</a></li>
+</ul>
+<h2 id=community>Community</h2>
+<p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved. We will also be starting a community call series soon!</p>
+<ul>
+<li>Discord: <a href=https://discord.gg/kZnTfneP5u>https://discord.gg/kZnTfneP5u</a></li>
+<li>Reddit: <a href=https://www.reddit.com/r/spiceai>https://www.reddit.com/r/spiceai</a></li>
+<li>Twitter: <a href=https://twitter.com/spiceaihq>@SpiceAIHQ</a></li>
+<li>Email: <a href=mailto:hey@spiceai.io>hey@spiceai.io</a></li>
+</ul>
+</div>
+<div class=td-content style=page-break-before:always>
 <h1 id=pg-9194daa44c5adffb7e98971a6107c138>Adding Soft Actor-Critic</h1>
 <div class="td-byline mb-4">
 By <b>Corentin Risselin</b> |

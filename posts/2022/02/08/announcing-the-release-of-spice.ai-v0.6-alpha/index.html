@@ -13,21 +13,25 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>Spice.ai's approach to Time-Series AI | Spice.ai blog</title>
-<meta name=description content="The Spice.ai project strives to help developers build applications that leverage new AI advances which can be easily trained, deployed, and …">
-<meta property="og:title" content="Spice.ai's approach to Time-Series AI">
-<meta property="og:description" content="The Spice.ai project strives to help developers build applications that leverage new AI advances which can be easily trained, deployed, and integrated. A previous blog post introduced Spicepods: a declarative way to create AI applications with Spice.ai technology. While there are many libraries and platforms in the space, Spice.ai is focused on time-series data aligning to application-centric and frequently time-dependent data, and a Reinforcement Learning approach, which can be more developer-friendly than expensive, labeled supervised learning.">
+<title>Announcing the release of Spice.ai v0.6-alpha | Spice.ai blog</title>
+<meta name=description content="Announcing the release of Spice.ai v0.6-alpha! 🏹
+Spice.ai now scales to datasets 10-100 larger enabling new classes of uses cases and applications! 🚀 …">
+<meta property="og:title" content="Announcing the release of Spice.ai v0.6-alpha">
+<meta property="og:description" content="Announcing the release of Spice.ai v0.6-alpha! 🏹
+Spice.ai now scales to datasets 10-100 larger enabling new classes of uses cases and applications! 🚀 We&rsquo;ve completely rebuilt Spice.ai&rsquo;s data processing and transport upon Apache Arrow, a high-performance platform that uses an in-memory columnar format. Spice.ai joins other major projects including Apache Spark, pandas, and InfluxDB in being powered by Apache Arrow. This also paves the way for high-performance data connections to the Spice.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="/posts/2021/11/18/spice.ais-approach-to-time-series-ai/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-11-18T00:00:00+00:00">
-<meta property="article:modified_time" content="2022-01-04T10:49:39+09:00">
-<meta itemprop=name content="Spice.ai's approach to Time-Series AI">
-<meta itemprop=description content="The Spice.ai project strives to help developers build applications that leverage new AI advances which can be easily trained, deployed, and integrated. A previous blog post introduced Spicepods: a declarative way to create AI applications with Spice.ai technology. While there are many libraries and platforms in the space, Spice.ai is focused on time-series data aligning to application-centric and frequently time-dependent data, and a Reinforcement Learning approach, which can be more developer-friendly than expensive, labeled supervised learning."><meta itemprop=datePublished content="2021-11-18T00:00:00+00:00">
-<meta itemprop=dateModified content="2022-01-04T10:49:39+09:00">
-<meta itemprop=wordCount content="917">
-<meta itemprop=keywords content="decision trees,cnn,rnn,transformers,"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Spice.ai's approach to Time-Series AI">
-<meta name=twitter:description content="The Spice.ai project strives to help developers build applications that leverage new AI advances which can be easily trained, deployed, and integrated. A previous blog post introduced Spicepods: a declarative way to create AI applications with Spice.ai technology. While there are many libraries and platforms in the space, Spice.ai is focused on time-series data aligning to application-centric and frequently time-dependent data, and a Reinforcement Learning approach, which can be more developer-friendly than expensive, labeled supervised learning.">
+<meta property="og:url" content="/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-02-08T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-02-09T08:56:49+09:00">
+<meta itemprop=name content="Announcing the release of Spice.ai v0.6-alpha">
+<meta itemprop=description content="Announcing the release of Spice.ai v0.6-alpha! 🏹
+Spice.ai now scales to datasets 10-100 larger enabling new classes of uses cases and applications! 🚀 We&rsquo;ve completely rebuilt Spice.ai&rsquo;s data processing and transport upon Apache Arrow, a high-performance platform that uses an in-memory columnar format. Spice.ai joins other major projects including Apache Spark, pandas, and InfluxDB in being powered by Apache Arrow. This also paves the way for high-performance data connections to the Spice."><meta itemprop=datePublished content="2022-02-08T00:00:00+00:00">
+<meta itemprop=dateModified content="2022-02-09T08:56:49+09:00">
+<meta itemprop=wordCount content="488">
+<meta itemprop=keywords content="arrow,performance,"><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Announcing the release of Spice.ai v0.6-alpha">
+<meta name=twitter:description content="Announcing the release of Spice.ai v0.6-alpha! 🏹
+Spice.ai now scales to datasets 10-100 larger enabling new classes of uses cases and applications! 🚀 We&rsquo;ve completely rebuilt Spice.ai&rsquo;s data processing and transport upon Apache Arrow, a high-performance platform that uses an in-memory columnar format. Spice.ai joins other major projects including Apache Spark, pandas, and InfluxDB in being powered by Apache Arrow. This also paves the way for high-performance data connections to the Spice.">
 <link rel=preload href=/scss/main.min.a648fb06ee87fb08d4b2d5698675182cab33629f1bbc21e5e592a9261834a71d.css as=style>
 <link href=/scss/main.min.a648fb06ee87fb08d4b2d5698675182cab33629f1bbc21e5e592a9261834a71d.css rel=stylesheet integrity>
 <script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
@@ -63,8 +67,8 @@
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-posts-li>
 <a href=/posts/ title="Spice.ai blog" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-posts><span>Blog</span></a>
 <ul class=ul-1>
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20220208announcing-the-release-of-spiceai-v06-alpha-li>
-<a href=/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/ title="Announcing the release of Spice.ai v0.6-alpha" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20220208announcing-the-release-of-spiceai-v06-alpha><span>Spice.ai v0.6-alpha is now available</span></a>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-posts20220208announcing-the-release-of-spiceai-v06-alpha-li>
+<a href=/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/ title="Announcing the release of Spice.ai v0.6-alpha" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-posts20220208announcing-the-release-of-spiceai-v06-alpha><span class=td-sidebar-nav-active-item>Spice.ai v0.6-alpha is now available</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20220112adding-soft-actor-critic-li>
 <a href=/posts/2022/01/12/adding-soft-actor-critic/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20220112adding-soft-actor-critic><span>Adding Soft Actor-Critic</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20220104what-data-informs-ai-driven-decision-making-li>
@@ -83,8 +87,8 @@
 <a href=/posts/2021/12/02/spicepods-from-zero-to-hero/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211202spicepods-from-zero-to-hero><span>Spicepods: From Zero To Hero</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211122announcing-the-release-of-spiceai-v041-alpha-li>
 <a href=/posts/2021/11/22/announcing-the-release-of-spice.ai-v0.4.1-alpha/ title="Announcing the release of Spice.ai v0.4.1-alpha" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211122announcing-the-release-of-spiceai-v041-alpha><span>Spice.ai v0.4.1-alpha is now available</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-posts20211118spiceais-approach-to-time-series-ai-li>
-<a href=/posts/2021/11/18/spice.ais-approach-to-time-series-ai/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-posts20211118spiceais-approach-to-time-series-ai><span class=td-sidebar-nav-active-item>Spice.ai's approach to Time-Series AI</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211118spiceais-approach-to-time-series-ai-li>
+<a href=/posts/2021/11/18/spice.ais-approach-to-time-series-ai/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211118spiceais-approach-to-time-series-ai><span>Spice.ai's approach to Time-Series AI</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211115announcing-the-release-of-spiceai-v04-alpha-li>
 <a href=/posts/2021/11/15/announcing-the-release-of-spice.ai-v0.4-alpha/ title="Announcing the release of Spice.ai v0.4-alpha" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-posts20211115announcing-the-release-of-spiceai-v04-alpha><span>Spice.ai v0.4-alpha is now available</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-posts20211115teaching-apps-how-to-learn-with-spicepods-li>
@@ -114,12 +118,18 @@
 </div>
 <div class=td-toc><nav id=TableOfContents>
 <ul>
-<li>
+<li><a href=#highlights-in-v06-alpha>Highlights in v0.6-alpha</a>
 <ul>
-<li><a href=#time-series>Time Series</a></li>
-<li><a href=#reinforcement-learning>Reinforcement Learning</a></li>
+<li><a href=#massive-improvement-in-data-loading-performance-and-dataset-scale>Massive improvement in data loading performance and dataset scale</a></li>
 </ul>
 </li>
+<li><a href=#new-in-this-release>New in this release</a>
+<ul>
+<li><a href=#dependency-updates>Dependency updates</a></li>
+</ul>
+</li>
+<li><a href=#resources>Resources</a></li>
+<li><a href=#community>Community</a></li>
 </ul>
 </nav></div>
 <div class="taxonomy taxonomy-terms-cloud taxo-categories">
@@ -166,68 +176,251 @@
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5 pr-md-4" role=main>
 <div class=td-content>
-<h1>Spice.ai's approach to Time-Series AI</h1>
+<h1>Announcing the release of Spice.ai v0.6-alpha</h1>
 <div class="td-byline mb-4">
-By <b>Corentin Risselin</b> |
-<time datetime=2021-11-18 class=text-muted>Thursday, November 18, 2021</time>
+By <b>Spice AI (<a href=https://twitter.com/SpiceAIHQ>@SpiceAIHQ</a>)</b> |
+<time datetime=2022-02-08 class=text-muted>Tuesday, February 08, 2022</time>
 </div>
 <header class=article-meta>
 <div class="taxonomy taxonomy-terms-article taxo-categories">
 <h5 class=taxonomy-title>Categories:</h5>
 <ul class=taxonomy-terms>
-<li><a class=taxonomy-term href=/categories/time-series-ai/ data-taxonomy-term=time-series-ai><span class=taxonomy-label>time-series ai</span></a></li>
-<li><a class=taxonomy-term href=/categories/reinforcement-learning/ data-taxonomy-term=reinforcement-learning><span class=taxonomy-label>reinforcement learning</span></a></li>
+<li><a class=taxonomy-term href=/categories/release/ data-taxonomy-term=release><span class=taxonomy-label>release</span></a></li>
 </ul>
 </div>
 <div class="taxonomy taxonomy-terms-article taxo-tags">
 <h5 class=taxonomy-title>Tags:</h5>
 <ul class=taxonomy-terms>
-<li><a class=taxonomy-term href=/tags/decision-trees/ data-taxonomy-term=decision-trees><span class=taxonomy-label>decision trees</span></a></li>
-<li><a class=taxonomy-term href=/tags/cnn/ data-taxonomy-term=cnn><span class=taxonomy-label>cnn</span></a></li>
-<li><a class=taxonomy-term href=/tags/rnn/ data-taxonomy-term=rnn><span class=taxonomy-label>rnn</span></a></li>
-<li><a class=taxonomy-term href=/tags/transformers/ data-taxonomy-term=transformers><span class=taxonomy-label>transformers</span></a></li>
+<li><a class=taxonomy-term href=/tags/arrow/ data-taxonomy-term=arrow><span class=taxonomy-label>arrow</span></a></li>
+<li><a class=taxonomy-term href=/tags/performance/ data-taxonomy-term=performance><span class=taxonomy-label>performance</span></a></li>
 </ul>
 </div>
 </header>
-<p>The Spice.ai project strives to help developers build applications that leverage new AI advances which can be easily trained, deployed, and integrated. <a href=/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/>A previous blog post</a> introduced Spicepods: a declarative way to create AI applications with Spice.ai technology. While there are many libraries and platforms in the space, Spice.ai is focused on time-series data aligning to application-centric and frequently time-dependent data, and a <a href=https://en.wikipedia.org/wiki/Reinforcement_learning>Reinforcement Learning</a> approach, which can be more developer-friendly than expensive, labeled <a href=https://en.wikipedia.org/wiki/Supervised_learning>supervised learning</a>.</p>
-<p>This post will discuss some of the challenges and directions for the technology we are developing.</p>
-<h3 id=time-series>Time Series</h3>
+<p>Announcing the release of Spice.ai v0.6-alpha! 🏹</p>
+<p>Spice.ai now scales to datasets 10-100 larger enabling new classes of uses cases and applications! 🚀 We&rsquo;ve completely rebuilt Spice.ai&rsquo;s data processing and transport upon <a href=https://arrow.apache.org/>Apache Arrow</a>, a high-performance platform that uses an in-memory columnar format. Spice.ai joins other major projects including Apache Spark, pandas, and InfluxDB in being powered by Apache Arrow. This also paves the way for high-performance data connections to the Spice.ai runtime using Apache Arrow Flight and import/export of data using <a href=https://parquet.apache.org/>Apache Parquet</a>. We&rsquo;re incredibly excited about the potential this architecture has for building intelligent applications on top of a high-performance transport between application data sources the Spice.ai AI engine.</p>
 <div style=display:flex;justify-content:center;padding:5px>
 <div style=display:flex;flex-direction:column>
-<img style=max-width:600px;margin:auto src=https://user-images.githubusercontent.com/19952490/142404970-de910848-cdb4-451b-a0d5-302c90215216.png>
-<div style=font-size:.8rem;font-style:italic>Figure 1. Time Series processing visualization: a time window is usually chosen to process part of the data stream</div>
+<img style=max-width:400px width=400 src=https://user-images.githubusercontent.com/80174/153089981-cd4fcf9e-53d4-4063-ae96-1354c8c6af6b.png>
 </div>
 </div>
-<p>Time series AI has become more popular over recent years, and there is extensive literature on the subject, including time-series-focused neural networks. Research in this space points to the likelihood that there is no silver bullet, and a single approach to time series AI will not be sufficient. However, for developers, this can make building a product complex, as it comes with the challenge of exploring and evaluating many algorithms and approaches.</p>
-<p>A fundamental challenge of time series is the data itself. The shape and length are usually variable and can even be infinite (real-time streams of data). The volume of data required is often too much for simple and efficient machine learning algorithms such as <a href=https://en.wikipedia.org/wiki/Decision_tree>Decision Trees</a>. This challenge makes Deep Learning popular to process such data. There are several types of neural networks that have been shown to work well with time series so let&rsquo;s review some of the common classes:</p>
+<h2 id=highlights-in-v06-alpha>Highlights in v0.6-alpha</h2>
+<h3 id=massive-improvement-in-data-loading-performance-and-dataset-scale>Massive improvement in data loading performance and dataset scale</h3>
+<p>From <a href=https://github.com/spiceai/data-components-contrib/tree/trunk/dataconnectors>data connectors</a>, to <a href=https://docs.spiceai.org/api/>REST API</a>, to AI engine, we&rsquo;ve now rebuilt Spice.ai&rsquo;s data processing and transport on the Apache Arrow project. Specifically, using the <a href=https://github.com/apache/arrow/tree/master/go>Apache Arrow for Go</a> implementation. Many thanks to <a href=https://github.com/zeroshade>Matt Topol</a> for his contributions to the project and guidance on using it.</p>
+<p>This release includes a change to the Spice.ai runtime to AI Engine transport from sending text CSV over gGPC to Apache Arrow Records over IPC (Unix sockets).</p>
+<p>This is a breaking change to the <a href=https://github.com/spiceai/data-components-contrib/tree/trunk/dataprocessors#contribution-guide>Data Processor interface</a>, as it now uses <code>arrow.Record</code> instead of <code>Observation</code>.</p>
+<h4 id=benchmarking-v06>Benchmarking v0.6</h4>
+<p>Before v0.6, Spice.ai would not scale into the 100s of 1000s of rows.</p>
+<div class=table-wide style=display:grid;justify-content:center;margin:50px>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Row Number</th>
+<th>Data Size</th>
+<th>Process Time</th>
+<th>Load Time</th>
+<th>Transport time</th>
+<th>Memory Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>csv</td>
+<td>2,000</td>
+<td>163.15KiB</td>
+<td>3.0005s</td>
+<td>0.0000s</td>
+<td>0.0100s</td>
+<td>423.754MiB</td>
+</tr>
+<tr>
+<td>csv</td>
+<td>20,000</td>
+<td>1.61MiB</td>
+<td>2.9765s</td>
+<td>0.0000s</td>
+<td>0.0938s</td>
+<td>479.644MiB</td>
+</tr>
+<tr>
+<td>csv</td>
+<td>200,000</td>
+<td>16.31MiB</td>
+<td>0.2778s</td>
+<td>0.0000s</td>
+<td>NA (error)</td>
+<td>0.000MiB</td>
+</tr>
+<tr>
+<td>csv</td>
+<td>2,000,000</td>
+<td>164.97MiB</td>
+<td>0.2573s</td>
+<td>0.0050s</td>
+<td>NA (error)</td>
+<td>0.000MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>2,000</td>
+<td>301.79KiB</td>
+<td>3.0261s</td>
+<td>0.0000s</td>
+<td>0.0282s</td>
+<td>422.135MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>20,000</td>
+<td>2.97MiB</td>
+<td>2.9020s</td>
+<td>0.0000s</td>
+<td>0.2541s</td>
+<td>459.138MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>200,000</td>
+<td>29.85MiB</td>
+<td>0.2782s</td>
+<td>0.0010s</td>
+<td>NA (error)</td>
+<td>0.000MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>2,000,000</td>
+<td>300.39MiB</td>
+<td>0.3353s</td>
+<td>0.0080s</td>
+<td>NA (error)</td>
+<td>0.000MiB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>After building on Arrow, Spice.ai now easily scales beyond millions of rows.</p>
+<div class=table-wide style=display:grid;justify-content:center;margin:50px>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Row Number</th>
+<th>Data Size</th>
+<th>Process Time</th>
+<th>Load Time</th>
+<th>Transport time</th>
+<th>Memory Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>csv</td>
+<td>2,000</td>
+<td>163.14KiB</td>
+<td>2.8281s</td>
+<td>0.0000s</td>
+<td>0.0194s</td>
+<td>439.580MiB</td>
+</tr>
+<tr>
+<td>csv</td>
+<td>20,000</td>
+<td>1.61MiB</td>
+<td>2.7297s</td>
+<td>0.0000s</td>
+<td>0.0658s</td>
+<td>461.836MiB</td>
+</tr>
+<tr>
+<td>csv</td>
+<td>200,000</td>
+<td>16.30MiB</td>
+<td>2.8072s</td>
+<td>0.0020s</td>
+<td>0.4830s</td>
+<td>639.763MiB</td>
+</tr>
+<tr>
+<td>csv</td>
+<td>2,000,000</td>
+<td>164.97MiB</td>
+<td>2.8707s</td>
+<td>0.0400s</td>
+<td>4.2680s</td>
+<td>1897.738MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>2,000</td>
+<td>301.80KiB</td>
+<td>2.7275s</td>
+<td>0.0000s</td>
+<td>0.0367s</td>
+<td>436.238MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>20,000</td>
+<td>2.97MiB</td>
+<td>2.8284s</td>
+<td>0.0000s</td>
+<td>0.2334s</td>
+<td>473.550MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>200,000</td>
+<td>29.85MiB</td>
+<td>2.8862s</td>
+<td>0.0100s</td>
+<td>1.7725s</td>
+<td>824.089MiB</td>
+</tr>
+<tr>
+<td>json</td>
+<td>2,000,000</td>
+<td>300.39MiB</td>
+<td>2.7437s</td>
+<td>0.0920s</td>
+<td>16.5743s</td>
+<td>4044.118MiB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id=new-in-this-release>New in this release</h2>
 <ul>
-<li><a href=https://en.wikipedia.org/wiki/Convolutional_neural_network>Convolutional Neural Networks (CNN)</a>: CNN&rsquo;s can only accept data with fixed lengths: even with the ability to pad the data, this is a major drawback for time-series data as a specific time window needs to be decided. Despite this limitation, they are the most efficient network to train (computation, data needed, time) and usually the smallest storage. CNN&rsquo;s are very robust and used in image/video processing, making them a very good baseline to start with while also benefiting from refined and mature development over the years, such as with the very efficient MobileNet with depth-wise convolutions.</li>
-<li><a href=https://en.wikipedia.org/wiki/Recurrent_neural_network>Recurrent Neural Networks (RNN)</a>: RNNs have been researched for several decades, and while they aren&rsquo;t as fast to train as CNNs, they can be faster to apply as there is no need to feed a time window like CNNs if the desired input/output is in real-time (in a continuous fashion, also called &lsquo;online). RNNs are proven to be very good in some situations, and many new models are being discovered.</li>
-<li><a href=https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)>Transformers</a>: Most of the state-of-the-art results today have been made from transformers and their variations. They are very good at correlating sparse information. Popularized in the famous paper <a href=https://arxiv.org/pdf/1706.03762.pdf>Attention is all you need</a>, transformers are proven to be flexible with high-performance in many classes (Vision Transformers, Perceiver, etc.). They suffer the same limitation as CNNs for the length of their input (fixed at training time), but they also have a disadvantage of not scaling well with the size of the data (quadratic growth with the length of the time series). They are also the most expensive network to train in general.</li>
+<li><strong>Adds</strong> Apache Arrow data processing and transport.</li>
+<li><strong>Fixes</strong> <a href=https://docs.spiceai.org/training/monitoring/>TensorBoard logging</a> and monitoring when using GitHub Codespaces and Docker.</li>
+<li><strong>Adds</strong> Polling <a href=https://github.com/spiceai/data-components-contrib/blob/trunk/dataconnectors/http/README.md>HTTP Data Connector</a></li>
 </ul>
-<p>While not a complete representation of classes of neural networks, this list represents the areas of the most potential for Spice.ai&rsquo;s time-series AI technology. We also see other interesting paradigms to explore when improving the core technology like Memory Augmented Neural Networks (MANN) or neural network-based Genetical Algorithms.</p>
-<h3 id=reinforcement-learning>Reinforcement Learning</h3>
-<p>Reinforcement Learning (RL) has grown steadily, especially in fields like robotics. Usually, RL doesn&rsquo;t require as much data processing as Supervised Learning, where large datasets can be demanding for hardware and people alike. RL is more dynamic: agents aren&rsquo;t trained to replicate a specific behaviors/output but explore and &lsquo;exploit&rsquo; their environment to maximize a given reward.</p>
-<p>Most of today&rsquo;s research is based on environments the agent can interact with during the training process, known as online learning. Usually, efficient training processes have multiple agent/environment pairs training together and sharing their experiences. Having an environment for agents to interact enables different actions from the actual historical state known as <strong>on-policy learning</strong>, and using only past experiences without an environment is <strong>off-policy learning</strong>.</p>
-<div style=display:flex;justify-content:center;padding:5px>
-<div style=display:flex;flex-direction:column>
-<img style=max-width:600px;margin:auto src=https://user-images.githubusercontent.com/19952490/142404987-cc6f0654-d2bd-496a-b6a4-52da19b9f912.png>
-<div style=font-size:.8rem;font-style:italic> Figure 2. AI training without interacting with the environment (real world nor simulation). Only gathered data is used for training.</div>
-</div>
-</div>
-<p>Spice.ai is initially taking an off-policy approach, where an environment (either pre-made or given by the user) is not required. Despite limiting the exploration of agents, this aligns to an application-centric approach as:</p>
+<h3 id=dependency-updates>Dependency updates</h3>
 <ul>
-<li>Creating a real-world model or environment can be difficult and expensive to create, arguably even impossible.</li>
-<li>Off-policy learning is normally more efficient than on-policy (time/data and computation).</li>
+<li><strong>Updates</strong> to numpy 1.21.0</li>
+<li><strong>Updates</strong> to marked 3.0.8</li>
+<li><strong>Updates</strong> to follow-redirects 1.14.7</li>
+<li><strong>Updates</strong> nanoid to 3.2.0</li>
 </ul>
-<p>The Spice.ai approach to time series AI can be described as &lsquo;Data-Driven&rsquo; Reinforcement Learning. This domain is very exciting, and we are building upon excellent research that is being published. The <a href=https://bair.berkeley.edu/>Berkeley Artificial Intelligence Research</a>&rsquo;s blog shows the potential of this field and many other research entities that have made great discoveries like <a href=https://deepmind.com/>DeepMind</a>, <a href=https://openai.com/>Open AI</a>, <a href=https://ai.facebook.com/>Facebook AI</a> and <a href=https://ai.google/>Google AI</a> (among many others). We are inspired and are building upon all the research in Reinforcement Learning to develop core Spice.ai technology.</p>
-<p>If you are interested in Reinforcement Learning, we recommend following these blogs, and if you&rsquo;d like to partner with us on the mission of making it easier to build intelligent applications by leveraging RL, we invite you to discuss with us on <a href=https://discord.gg/kZnTfneP5u>Discord</a>, reach out on <a href=https://twitter.com/SpiceAIHQ>Twitter</a> or <a href=mailto:hey@spiceai.io>email us</a>.</p>
-<p>Corentin</p>
+<h2 id=resources>Resources</h2>
+<ul>
+<li><a href=https://docs.spiceai.org/getting-started/>Getting started with Spice.ai</a></li>
+<li><a href=https://docs.spiceai.org/>Documentation</a></li>
+<li><a href=https://github.com/spiceai/quickstarts/blob/trunk/README.md>Quickstarts</a> and <a href=https://github.com/spiceai/samples/blob/trunk/README.md>Samples</a></li>
+</ul>
+<h2 id=community>Community</h2>
+<p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved. We will also be starting a community call series soon!</p>
+<ul>
+<li>Discord: <a href=https://discord.gg/kZnTfneP5u>https://discord.gg/kZnTfneP5u</a></li>
+<li>Reddit: <a href=https://www.reddit.com/r/spiceai>https://www.reddit.com/r/spiceai</a></li>
+<li>Twitter: <a href=https://twitter.com/spiceaihq>@SpiceAIHQ</a></li>
+<li>Email: <a href=mailto:hey@spiceai.io>hey@spiceai.io</a></li>
+</ul>
 <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
 <li>
-<a href=/posts/2021/11/15/announcing-the-release-of-spice.ai-v0.4-alpha/ aria-label="Previous - Announcing the release of Spice.ai v0.4-alpha" class="btn btn-primary"><span class=mr-1>←</span> Previous</a>
+<a href=/posts/2022/01/12/adding-soft-actor-critic/ aria-label="Previous - Adding Soft Actor-Critic" class="btn btn-primary"><span class=mr-1>←</span> Previous</a>
 </li>
-<a href=/posts/2021/11/22/announcing-the-release-of-spice.ai-v0.4.1-alpha/ aria-label="Next - Announcing the release of Spice.ai v0.4.1-alpha" class="btn btn-primary">Next <span class=ml-1>→</span></a>
+<a class="btn btn-primary disabled">Next <span class=ml-1>→</span></a>
 </li>
 </ul>
 </div>
