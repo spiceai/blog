@@ -3,7 +3,7 @@
 &lt;p>Spice.ai now scales to datasets 10-100 larger enabling new classes of uses cases and applications! 🚀 We&amp;rsquo;ve completely rebuilt Spice.ai&amp;rsquo;s data processing and transport upon &lt;a href="https://arrow.apache.org/">Apache Arrow&lt;/a>, a high-performance platform that uses an in-memory columnar format. Spice.ai joins other major projects including Apache Spark, pandas, and InfluxDB in being powered by Apache Arrow. This also paves the way for high-performance data connections to the Spice.ai runtime using Apache Arrow Flight and import/export of data using &lt;a href="https://parquet.apache.org/">Apache Parquet&lt;/a>. We&amp;rsquo;re incredibly excited about the potential this architecture has for building intelligent applications on top of a high-performance transport between application data sources the Spice.ai AI engine.&lt;/p>
 &lt;div style="display: flex; justify-content: center; padding: 5px;">
 &lt;div style="display: flex; flex-direction: column;">
-&lt;img style="max-width: 400px;" width="400" src="https://user-images.githubusercontent.com/80174/153089981-cd4fcf9e-53d4-4063-ae96-1354c8c6af6b.png" />
+&lt;a href="https://arrow.apache.org/" target="_blank">&lt;img style="max-width: 350px;" width="350" src="https://user-images.githubusercontent.com/80174/153089981-cd4fcf9e-53d4-4063-ae96-1354c8c6af6b.png" />&lt;/a>
 &lt;/div>
 &lt;/div>
 &lt;h2 id="highlights-in-v06-alpha">Highlights in v0.6-alpha&lt;/h2>
@@ -12,6 +12,11 @@
 &lt;p>This release includes a change to the Spice.ai runtime to AI Engine transport from sending text CSV over gGPC to Apache Arrow Records over IPC (Unix sockets).&lt;/p>
 &lt;p>This is a breaking change to the &lt;a href="https://github.com/spiceai/data-components-contrib/tree/trunk/dataprocessors#contribution-guide">Data Processor interface&lt;/a>, as it now uses &lt;code>arrow.Record&lt;/code> instead of &lt;code>Observation&lt;/code>.&lt;/p>
 &lt;h4 id="benchmarking-v06">Benchmarking v0.6&lt;/h4>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 600px;" width="600" src="https://user-images.githubusercontent.com/80174/153138709-f9ac4a33-5553-4a98-bea9-68e47650cba0.png" />
+&lt;/div>
+&lt;/div>
 &lt;p>Before v0.6, Spice.ai would not scale into the 100s of 1000s of rows.&lt;/p>
 &lt;div class="table-wide" style="display: grid; justify-content: center; margin: 50px;">
 &lt;table>
@@ -197,13 +202,6 @@
 &lt;li>&lt;strong>Adds&lt;/strong> Apache Arrow data processing and transport.&lt;/li>
 &lt;li>&lt;strong>Fixes&lt;/strong> &lt;a href="https://docs.spiceai.org/training/monitoring/">TensorBoard logging&lt;/a> and monitoring when using GitHub Codespaces and Docker.&lt;/li>
 &lt;li>&lt;strong>Adds&lt;/strong> Polling &lt;a href="https://github.com/spiceai/data-components-contrib/blob/trunk/dataconnectors/http/README.md">HTTP Data Connector&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h3 id="dependency-updates">Dependency updates&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>Updates&lt;/strong> to numpy 1.21.0&lt;/li>
-&lt;li>&lt;strong>Updates&lt;/strong> to marked 3.0.8&lt;/li>
-&lt;li>&lt;strong>Updates&lt;/strong> to follow-redirects 1.14.7&lt;/li>
-&lt;li>&lt;strong>Updates&lt;/strong> nanoid to 3.2.0&lt;/li>
 &lt;/ul>
 &lt;h2 id="resources">Resources&lt;/h2>
 &lt;ul>
