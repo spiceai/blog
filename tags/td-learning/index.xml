@@ -161,6 +161,6 @@
 &lt;li>The longer the chain of actions, the more complex the Q-value will be to estimate.&lt;/li>
 &lt;/ul>
 &lt;p>We didn&amp;rsquo;t see how the AI&amp;rsquo;s algorithm can explore different actions given an environment here. Spice.ai&amp;rsquo;s technology focuses exclusively on off-policy training where we only have past data and cannot interact with the environment. RL is a vast topic and currently quickly growing. Robotics is a fantastic field of application; many other areas are yet to be explored with such a technology. We hope to push forward the technology and its field of application with our platform.&lt;/p>
-&lt;p>If you&amp;rsquo;d like to partner with us on the mission of making new applications by leveraging RL, we invite you to discuss with us on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, reach out on &lt;a href="https://twitter.com/SpiceAIHQ">Twitter&lt;/a> or &lt;a href="mailto:hey@spiceai.io">email us&lt;/a>.&lt;/p>
+&lt;p>If you&amp;rsquo;d like to partner with us on the mission of making new applications by leveraging RL, we invite you to discuss with us on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, reach out on &lt;a href="https://twitter.com/spice_ai">Twitter&lt;/a> or &lt;a href="mailto:hey@spice.ai">email us&lt;/a>.&lt;/p>
 &lt;p>I hope you enjoy this post and learn new things.&lt;/p>
 &lt;p>Corentin&lt;/p></description></item></channel></rss>
