@@ -73,7 +73,7 @@
 &lt;div style="font-size: 0.8rem; font-style: italic; text-align: center;">Equation 2. Definition of the Q function.&lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;p>The &lt;code>t&lt;/code> indices show that the state and action aren&amp;rsquo;t constant and will vary, usually with time/action taken. On the other hand, the &lt;code>Q&lt;/code> function and the reward function &lt;code>r&lt;/code> are unique functions that ideally return the &amp;lsquo;expected reward&amp;rsquo; for any (state, action) pairs.&lt;/p>
+&lt;p>The &lt;code>t&lt;/code> indices show that the state and action aren&amp;rsquo;t constant and will vary, usually with time/action taken. On the other hand, the &lt;code>Q&lt;/code> function and the reward function &lt;code>r&lt;/code> are unique functions that ideally return the &amp;rsquo;expected reward&amp;rsquo; for any (state, action) pairs.&lt;/p>
 &lt;p>For now, we will assume we can have a reward that gives an objective and perfect evaluation of each state/action.&lt;/p>
 &lt;div style="display: flex; justify-content: center; padding: 5px;">
 &lt;div style="display: flex; flex-direction: column;">
@@ -82,7 +82,7 @@
 &lt;/div>
 &lt;/div>
 &lt;h3 id="q-table">Q-Table&lt;/h3>
-&lt;p>We know that actions' outcomes (rewards) will vary depending on the current state we are in, otherwise the problem would be trivial to solve. If the states that are relevant to our actions can be numbered, a simple way would be to build a table with all the possible states/action pairs. There are different ways to build such a table depending on how we can interact with our environment. Eventually, we would have a good &amp;lsquo;map&amp;rsquo; to guide us to do the best actions.&lt;/p>
+&lt;p>We know that actions&amp;rsquo; outcomes (rewards) will vary depending on the current state we are in, otherwise the problem would be trivial to solve. If the states that are relevant to our actions can be numbered, a simple way would be to build a table with all the possible states/action pairs. There are different ways to build such a table depending on how we can interact with our environment. Eventually, we would have a good &amp;lsquo;map&amp;rsquo; to guide us to do the best actions.&lt;/p>
 &lt;div style="display: flex; justify-content: center; padding: 5px;">
 &lt;div style="display: flex; flex-direction: column;">
 &lt;img style="max-width: 600px; margin: auto" src="https://user-images.githubusercontent.com/19952490/145569842-298103e3-e7ed-412f-8229-66c745d29807.png" />
@@ -97,7 +97,7 @@
 &lt;div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 3. A neural network can predict Q values from state information&lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;p>In this case, we do not need to give the state/action pairs but only the state, as the neural network would exhaustively return all the Q values associated with each action. Outputting all actions' Q value is a common method as the general cases have a complex environment but a smaller number of possible actions.&lt;/p>
+&lt;p>In this case, we do not need to give the state/action pairs but only the state, as the neural network would exhaustively return all the Q values associated with each action. Outputting all actions&amp;rsquo; Q value is a common method as the general cases have a complex environment but a smaller number of possible actions.&lt;/p>
 &lt;p>This method works very well. It is similar to supervised learning with states as inputs and rewards as labels. We assumed so far that we had a reward for each action, and we chose the next action with the best reward (called a greedy policy). In many cases this is not enough: even if an action would yield the best reward at a given state, this may affect the next state so that we wouldn&amp;rsquo;t optimize the reward in the long term. Also, if we can&amp;rsquo;t have a reward for each action, we usually give 0 as a reward. We will not be able to choose the right action if they affect later states despite not yielding different rewards at the current state.&lt;/p>
 &lt;p>The sparsity of rewards or the long-term calculation of total reward (non-greedy policies) leads us to diverge from supervised learning and learn potential future rewards.&lt;/p>
 &lt;h2 id="temporal-difference-td-learning">Temporal difference: TD-Learning&lt;/h2>
@@ -157,7 +157,7 @@
 &lt;/div>
 &lt;h3 id="td-0">TD-0&lt;/h3>
 &lt;p>We previously discussed the problem of not being able to go through all the states exhaustively and that the evaluation of the Q value from a neural network could help. We want to use the TD method to have a better value estimation that will consider potential future rewards.&lt;/p>
-&lt;p>The TD(0) method is elegant as we can, in fact, only use the next state&amp;rsquo;s expected value instead of all future ones. The idea is that with successive evaluations, we build a chain of dependencies as each states' value depends on the next one.&lt;/p>
+&lt;p>The TD(0) method is elegant as we can, in fact, only use the next state&amp;rsquo;s expected value instead of all future ones. The idea is that with successive evaluations, we build a chain of dependencies as each states&amp;rsquo; value depends on the next one.&lt;/p>
 &lt;div style="display: flex; justify-content: center; padding: 5px;">
 &lt;div style="display: flex; flex-direction: column;">
 &lt;img style="max-width: 600px; min-height: 100px; margin: auto" src="/svg/q_learning/td_0_value.svg" />
@@ -234,7 +234,7 @@
 &lt;/ul>
 &lt;p>While not a complete representation of classes of neural networks, this list represents the areas of the most potential for Spice.ai&amp;rsquo;s time-series AI technology. We also see other interesting paradigms to explore when improving the core technology like Memory Augmented Neural Networks (MANN) or neural network-based Genetical Algorithms.&lt;/p>
 &lt;h3 id="reinforcement-learning">Reinforcement Learning&lt;/h3>
-&lt;p>Reinforcement Learning (RL) has grown steadily, especially in fields like robotics. Usually, RL doesn&amp;rsquo;t require as much data processing as Supervised Learning, where large datasets can be demanding for hardware and people alike. RL is more dynamic: agents aren&amp;rsquo;t trained to replicate a specific behaviors/output but explore and &amp;lsquo;exploit&amp;rsquo; their environment to maximize a given reward.&lt;/p>
+&lt;p>Reinforcement Learning (RL) has grown steadily, especially in fields like robotics. Usually, RL doesn&amp;rsquo;t require as much data processing as Supervised Learning, where large datasets can be demanding for hardware and people alike. RL is more dynamic: agents aren&amp;rsquo;t trained to replicate a specific behaviors/output but explore and &amp;rsquo;exploit&amp;rsquo; their environment to maximize a given reward.&lt;/p>
 &lt;p>Most of today&amp;rsquo;s research is based on environments the agent can interact with during the training process, known as online learning. Usually, efficient training processes have multiple agent/environment pairs training together and sharing their experiences. Having an environment for agents to interact enables different actions from the actual historical state known as &lt;strong>on-policy learning&lt;/strong>, and using only past experiences without an environment is &lt;strong>off-policy learning&lt;/strong>.&lt;/p>
 &lt;div style="display: flex; justify-content: center; padding: 5px;">
 &lt;div style="display: flex; flex-direction: column;">

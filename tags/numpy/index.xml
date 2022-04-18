@@ -15,7 +15,7 @@
 &lt;/div>
 &lt;/div>
 &lt;ol start="2">
-&lt;li>&lt;strong>Conversion of categorical data into numerical data.&lt;/strong> For categorical data (i.e., colors such as &amp;ldquo;red,&amp;rdquo; &amp;ldquo;blue,&amp;rdquo; or &amp;ldquo;green&amp;rdquo;), you can achieve this through a technique called &lt;a href="https://www.educative.io/blog/one-hot-encoding">&amp;ldquo;One Hot Encoding.&amp;quot;&lt;/a> In one hot encoding, each possible value in the category appears as a column. The values in the column are assigned a binary value of 1 or 0 depending on whether the value exists or not.&lt;/li>
+&lt;li>&lt;strong>Conversion of categorical data into numerical data.&lt;/strong> For categorical data (i.e., colors such as &amp;ldquo;red,&amp;rdquo; &amp;ldquo;blue,&amp;rdquo; or &amp;ldquo;green&amp;rdquo;), you can achieve this through a technique called &lt;a href="https://www.educative.io/blog/one-hot-encoding">&amp;ldquo;One Hot Encoding.&amp;rdquo;&lt;/a> In one hot encoding, each possible value in the category appears as a column. The values in the column are assigned a binary value of 1 or 0 depending on whether the value exists or not.&lt;/li>
 &lt;/ol>
 &lt;div style="display: flex; justify-content: center; padding: 5px;">
 &lt;div style="display: flex; flex-direction: column;">
