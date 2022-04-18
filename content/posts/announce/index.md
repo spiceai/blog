@@ -4,7 +4,7 @@ title: "Introducing Spice.ai - open source, time series AI for developers"
 type: blog
 linkTitle: "Introducing Spice.ai - open source, time series AI for developers"
 notoc: true
-author: Spice AI ([@SpiceAIHQ](https://twitter.com/SpiceAIHQ))
+author: Spice AI ([@spice_ai](https://twitter.com/spice_ai))
 ---
 
 AI has recently seen some impressive advances, like with OpenAI [Codex](https://openai.com/blog/openai-codex/) and DeepMind [AlphaFold 2](https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology). And at the same time, for most developers, leveraging AI to create intelligent applications is still way too hard. The [Data Science Hierarchy of Needs](https://hackernoon.com/the-ai-hierarchy-of-needs-18f111fcc007) pyramid from 2017 _still_ illustrates it well; there are too many unmet needs in applying ML in applications.
@@ -50,7 +50,7 @@ Building intelligent apps that leverage AI is still way too hard, even for advan
 
 This mission is a huge undertaking and Spice.ai v0.1-alpha has many gaps, including limited deep learning algorithms and training scale, streaming data, simulated environments, and offline learning modes. Pods aren't searchable or even listed on [spicerack.org](http://spicerack.org) yet. But if the vision resonates with you, join us! Our [Spice.ai Roadmap](https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md) is public, and now that we have launched, the project and work are open for collaboration.
 
-If you are interested in partnering, we'd love to talk. Try out [Spice.ai](https://spiceai.org), [email us](mailto:hey@spiceai.io) "hey," get in touch on [Discord](https://discord.com/channels/803820740868571196/803820740868571199), or reach out on [Twitter](https://twitter.com/0xlukekim).
+If you are interested in partnering, we'd love to talk. Try out [Spice.ai](https://spiceai.org), [email us](mailto:hey@spice.ai) "hey," get in touch on [Discord](https://discord.com/channels/803820740868571196/803820740868571199), or reach out on [Twitter](https://twitter.com/0xlukekim).
 
 We are just getting started! 🚀
 
