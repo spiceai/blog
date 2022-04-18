@@ -51,6 +51,6 @@ Spice.ai is initially taking an off-policy approach, where an environment (eithe
 
 The Spice.ai approach to time series AI can be described as 'Data-Driven' Reinforcement Learning. This domain is very exciting, and we are building upon excellent research that is being published. The [Berkeley Artificial Intelligence Research](https://bair.berkeley.edu/)'s blog shows the potential of this field and many other research entities that have made great discoveries like [DeepMind](https://deepmind.com/), [Open AI](https://openai.com/), [Facebook AI](https://ai.facebook.com/) and [Google AI](https://ai.google/) (among many others). We are inspired and are building upon all the research in Reinforcement Learning to develop core Spice.ai technology.
 
-If you are interested in Reinforcement Learning, we recommend following these blogs, and if you'd like to partner with us on the mission of making it easier to build intelligent applications by leveraging RL, we invite you to discuss with us on [Discord](https://discord.gg/kZnTfneP5u), reach out on [Twitter](https://twitter.com/SpiceAIHQ) or [email us](mailto:hey@spiceai.io).
+If you are interested in Reinforcement Learning, we recommend following these blogs, and if you'd like to partner with us on the mission of making it easier to build intelligent applications by leveraging RL, we invite you to discuss with us on [Discord](https://discord.gg/kZnTfneP5u), reach out on [Twitter](https://twitter.com/spice_ai) or [email us](mailto:hey@spice.ai).
 
 Corentin

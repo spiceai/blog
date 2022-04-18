@@ -231,7 +231,7 @@ We can see how our rewards are used to train AI's policies using Q-learning. By 
 
 We didn't see how the AI's algorithm can explore different actions given an environment here. Spice.ai's technology focuses exclusively on off-policy training where we only have past data and cannot interact with the environment. RL is a vast topic and currently quickly growing. Robotics is a fantastic field of application; many other areas are yet to be explored with such a technology. We hope to push forward the technology and its field of application with our platform.
 
-If you'd like to partner with us on the mission of making new applications by leveraging RL, we invite you to discuss with us on [Discord](https://discord.gg/kZnTfneP5u), reach out on [Twitter](https://twitter.com/SpiceAIHQ) or [email us](mailto:hey@spiceai.io).
+If you'd like to partner with us on the mission of making new applications by leveraging RL, we invite you to discuss with us on [Discord](https://discord.gg/kZnTfneP5u), reach out on [Twitter](https://twitter.com/spice_ai) or [email us](mailto:hey@spice.ai).
 
 I hope you enjoy this post and learn new things.
 

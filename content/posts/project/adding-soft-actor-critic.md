@@ -18,8 +18,8 @@ The previous article [Understanding Q-learning: How a Reward Is All You Need]({{
 
 Deepmind first introduced the actor-critic approach in deep learning in a [2016 paper](https://arxiv.org/abs/1602.01783). We can think of this approach as having 2 tasks:
 
-* Choosing actions to take: giving probabilities for each possible action (the policy)
-* Evaluating values for each action: the estimated reward from those actions (the Q-values)
+- Choosing actions to take: giving probabilities for each possible action (the policy)
+- Evaluating values for each action: the estimated reward from those actions (the Q-values)
 
 Those tasks will be made by 2 different neural networks or a single network that branches out in 2 heads. The actor is the part that outputs the policy, while the critic outputs the values.
 
@@ -34,7 +34,7 @@ In most cases, this model was proven to perform very well, better than Deep Q-Le
 
 Both will improve over time though we have to keep in mind that the critic is unlikely to evaluate all possible actions in the environment as it will only see actions from states that the actor is likely to take (the policy).
 
-This bias of the system toward its policy is important: the algorithm is meant to train *on-policy*. The duo actor-critic works together: trying to train it with inputs and outputs from another system (humans or even itself in past iterations of its own training) will not work.
+This bias of the system toward its policy is important: the algorithm is meant to train _on-policy_. The duo actor-critic works together: trying to train it with inputs and outputs from another system (humans or even itself in past iterations of its own training) will not work.
 
 Multiple improvements were made to limit the bias of the actor-critic approach but the necessity to train on-policy remains. This is very limiting as being able to train from any experience can be very valuable for time and data efficiency.
 
@@ -65,22 +65,23 @@ Looking a the [source code](https://github.com/spiceai/spiceai), the code relate
 In this folder, every agent is in the `algorithms` folder, and each has its subfolder. There is an `agent_interface` file that defines the main class that the different agents should inherit from and a `factory` script responsible for creating instances of an agent from a given algorithm name.
 
 Adding a new agent is simple:
-* making a new folder in the `algorithms`
-* adding a json file describing the `algorithm_id`, `name`, and `docs_link` (see other json as an example) in the folder
-* adding a new python file with a class that would inherit from the `SpiceAIAgent` defined in the `agent_interface` script
-* adding a line in the `factory` script to instantiate the new implementation when its name is called.
+
+- making a new folder in the `algorithms`
+- adding a json file describing the `algorithm_id`, `name`, and `docs_link` (see other json as an example) in the folder
+- adding a new python file with a class that would inherit from the `SpiceAIAgent` defined in the `agent_interface` script
+- adding a line in the `factory` script to instantiate the new implementation when its name is called.
 
 For the new agent, inheriting from the main `SpiceAIAgent` class, 5 functions need to be implemented:
-* **add_experience**: storing inputs and outputs (used during the training)
-* **act**: returning the action to be taken from a given input
-* **save**: saving the agent to a given a path
-* **load**: restoring the agent from a given path
-* **learn**: train iteration (from the accumulated experiences)
 
+- **add_experience**: storing inputs and outputs (used during the training)
+- **act**: returning the action to be taken from a given input
+- **save**: saving the agent to a given a path
+- **load**: restoring the agent from a given path
+- **learn**: train iteration (from the accumulated experiences)
 
 ## Conclusion
 
-Soft Actor-Critic is a fascinating algorithm that performs well in complex environments. We now [support Soft Actor Critic]({{< relref "../releases/v0.5-alpha.md" >}}) in Spice.ai, which is another step forward in constantly improving the performance of the AI engine. Additionally, we'll continue improving existing algorithms and adding newer ones over time. We designed the platform for ease of implementation and experimentation so if you'd like to try building your own agent, you can get the source code on [Github](https://github.com/spiceai/spiceai) and contribute to the platform. Say hi on [Discord](https://discord.gg/kZnTfneP5u), reach out on [Twitter](https://twitter.com/SpiceAIHQ) or [email us](mailto:hey@spiceai.io).
+Soft Actor-Critic is a fascinating algorithm that performs well in complex environments. We now [support Soft Actor Critic]({{< relref "../releases/v0.5-alpha.md" >}}) in Spice.ai, which is another step forward in constantly improving the performance of the AI engine. Additionally, we'll continue improving existing algorithms and adding newer ones over time. We designed the platform for ease of implementation and experimentation so if you'd like to try building your own agent, you can get the source code on [Github](https://github.com/spiceai/spiceai) and contribute to the platform. Say hi on [Discord](https://discord.gg/kZnTfneP5u), reach out on [Twitter](https://twitter.com/spice_ai) or [email us](mailto:hey@spice.ai).
 
 I hope you enjoy this post and something new.
 
