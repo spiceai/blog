@@ -1,4 +1,44 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – arrow</title><link>/tags/arrow/</link><description>Recent content in arrow on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 08 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/arrow/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.6-alpha</title><link>/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/</link><pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate><guid>/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – arrow</title><link>/tags/arrow/</link><description>Recent content in arrow on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/arrow/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.6.1-alpha</title><link>/posts/2022/04/21/announcing-the-release-of-spice.ai-v0.6.1-alpha/</link><pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate><guid>/posts/2022/04/21/announcing-the-release-of-spice.ai-v0.6.1-alpha/</guid><description>
+&lt;p>Announcing the release of Spice.ai v0.6.1-alpha! 🌶&lt;/p>
+&lt;p>Building upon the &lt;a href="https://blog.spiceai.org/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/">Apache Arrow support in v0.6-alpha&lt;/a>, Spice.ai now includes new &lt;a href="https://github.com/spiceai/data-components-contrib/tree/trunk/dataprocessors/arrow#readme">Apache Arrow data processor&lt;/a> and &lt;a href="https://github.com/spiceai/data-components-contrib/tree/trunk/dataconnectors/flight#readme">Apache Arrow Flight data connector&lt;/a> components! Together, these create a high-performance bulk-data transport directly into the Spice.ai ML engine. Coupled with big data systems from the &lt;a href="https://arrow.apache.org/">Apache Arrow&lt;/a> ecosystem like Hive, Drill, Spark, Snowflake, and BigQuery, it&amp;rsquo;s now easier than ever to combine big data with Spice.ai.&lt;/p>
+&lt;p>And we&amp;rsquo;re also excited to announce the release of &lt;a href="https://spice.xyz">Spice.xyz&lt;/a>! 🎉&lt;/p>
+&lt;p>&lt;a href="https://spice.xyz">Spice.xyz&lt;/a> is data and AI infrastructure for web3. It’s web3 data made easy. Insanely fast and purpose designed for applications and ML.&lt;/p>
+&lt;p>Spice.xyz delivers data in &lt;a href="https://arrow.apache.org/">Apache Arrow&lt;/a> format, over high-performance &lt;a href="https://arrow.apache.org/blog/2019/10/13/introducing-arrow-flight/">Apache Arrow Flight APIs&lt;/a> to your application, notebook, ML pipeline, and of course through these new data components, to the Spice.ai runtime.&lt;/p>
+&lt;p>Read the announcement post at &lt;a href="https://medium.com/spice-ai/announcing-spice-xyz-94323159cd2b">blog.spice.ai&lt;/a>.&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 5px;">
+&lt;div style="display: flex; flex-direction: column;">
+&lt;img style="max-width: 400px;" width="400" src="https://miro.medium.com/max/1400/1*-SXXeycmH0haRsG3Wv3u6w.png" />
+&lt;/div>
+&lt;/div>
+&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Adds&lt;/strong> &lt;a href="https://github.com/spiceai/data-components-contrib/tree/trunk/dataprocessors/arrow#readme">Apache Arrow Data Processor&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> &lt;a href="https://github.com/spiceai/data-components-contrib/tree/trunk/dataconnectors/flight#readme">Apache Arrow Flight Data Connector&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Now built with &lt;a href="https://go.dev/blog/go1.18">Go 1.18&lt;/a>.&lt;/p>
+&lt;h3 id="dependency-updates">Dependency updates&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Updates&lt;/strong> to React 18&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> to CRA 5&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> to Glide DataGrid 4&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> to SWR 1.2&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> to TypeScript 4.6&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/spiceai/quickstarts/blob/trunk/README.md">Quickstarts&lt;/a> and &lt;a href="https://github.com/spiceai/samples/blob/trunk/README.md">Samples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved. We will also be starting a community call series soon!&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.6-alpha</title><link>/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/</link><pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate><guid>/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/</guid><description>
 &lt;p>Announcing the release of Spice.ai v0.6-alpha! 🏹&lt;/p>
 &lt;p>Spice.ai now scales to datasets 10-100 larger enabling new classes of uses cases and applications! 🚀 We&amp;rsquo;ve completely rebuilt Spice.ai&amp;rsquo;s data processing and transport upon &lt;a href="https://arrow.apache.org/">Apache Arrow&lt;/a>, a high-performance platform that uses an in-memory columnar format. Spice.ai joins other major projects including Apache Spark, pandas, and InfluxDB in being powered by Apache Arrow. This also paves the way for high-performance data connections to the Spice.ai runtime using Apache Arrow Flight and import/export of data using &lt;a href="https://parquet.apache.org/">Apache Parquet&lt;/a>. We&amp;rsquo;re incredibly excited about the potential this architecture has for building intelligent applications on top of a high-performance transport between application data sources the Spice.ai AI engine.&lt;/p>
 &lt;div style="display: flex; justify-content: center; padding: 5px;">
