@@ -10,7 +10,7 @@ tags: [agile ml arrow flight SQL]
 
 In February, we announced [Spice.ai OSS v0.6](https://blog.spiceai.org/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/) with its data processing and transport completely rebuilt upon Apache [Flight](https://arrow.apache.org/blog/2019/10/13/introducing-arrow-flight/). This enables [Spice.ai OSS](https://spiceai.org) to scale to datasets 10-100 times larger and brings Spice.ai into the [Apache Arrow ecosystem](https://arrow.apache.org/) paving the way for integrations with many [popular projects](https://arrow.apache.org/powered_by/), like [Apache Parquet](https://parquet.apache.org/), [pandas](https://pandas.pydata.org/) and big data systems like Hive, Drill, Spark, Snowflake, BigQuery, and many more.
 
-So today, we’re excited to announce a new big data system integration… our own, [Spice.xyz](https://spice.xyz)!
+And today, we’re excited to announce a new big data system integration… our own, [Spice.xyz](https://spice.xyz)!
 
 <div style="display: flex; justify-content: center; padding: 5px;">
   <div style="display: flex; flex-direction: column;">
@@ -27,7 +27,7 @@ It’s web3 data made easy. Insanely fast and purpose designed for applications 
 
 Spice.xyz delivers data in [Apache Arrow](https://arrow.apache.org/) format, over high-performance [Apache Arrow Flight APIs](https://arrow.apache.org/blog/2019/10/13/introducing-arrow-flight/) to your application, notebook, ML pipeline, and of course, to the Spice.ai runtime.
 
-In addition, a new [Apache Arrow Flight data connector](https://https://github.com/spiceai/data-components-contrib/tree/trunk/dataconnectors/arrow-flight) is now available, creating a high-performance bulk-data transport directly into the Spice.ai ML engine. Coupled with Spice.xyz, developers can quickly and easily build web3 data-driven applications that learn and adapt using Spice.ai.
+With [Spice.ai OSS v0.6.1](https://blog.spiceai.org/posts/2022/04/21/announcing-the-release-of-spice.ai-v0.6.1-alpha/), a new [Apache Arrow Flight data connector](https://https://github.com/spiceai/data-components-contrib/tree/trunk/dataconnectors/arrow-flight) was made available, creating a high-performance bulk-data transport directly into the Spice.ai ML engine. Coupled with Spice.xyz, developers can quickly and easily build web3 data-driven applications that learn and adapt using Spice.ai.
 
 To read the announcement post for [Spice.xyz](https://spice.xyz), visit [blog.spice.xyz](https://medium.com/spice-ai/announcing-spice-xyz-94323159cd2b).
 
