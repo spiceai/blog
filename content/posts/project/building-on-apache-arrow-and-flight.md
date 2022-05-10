@@ -8,7 +8,7 @@ categories: [applications, learn-and-adapt, spice.xyz, data, web3]
 tags: [agile ml arrow flight SQL]
 ---
 
-In February, we announced [Spice.ai v0.6](https://blog.spiceai.org/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/) with its data processing and transport completely rebuilt upon Apache [Flight](https://arrow.apache.org/blog/2019/10/13/introducing-arrow-flight/). This enables [Spice.ai](https://spiceai.org) to scale to datasets 10-100 times larger and brings Spice.ai into the [Apache Arrow ecosystem](https://arrow.apache.org/) paving the way for integrations with many [popular projects](https://arrow.apache.org/powered_by/), like [Apache Parquet](https://parquet.apache.org/), [pandas](https://pandas.pydata.org/) and big data systems like Hive, Drill, Spark, Snowflake, BigQuery, and many more.
+In February, we announced [Spice.ai OSS v0.6](https://blog.spiceai.org/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/) with its data processing and transport completely rebuilt upon Apache [Flight](https://arrow.apache.org/blog/2019/10/13/introducing-arrow-flight/). This enables [Spice.ai OSS](https://spiceai.org) to scale to datasets 10-100 times larger and brings Spice.ai into the [Apache Arrow ecosystem](https://arrow.apache.org/) paving the way for integrations with many [popular projects](https://arrow.apache.org/powered_by/), like [Apache Parquet](https://parquet.apache.org/), [pandas](https://pandas.pydata.org/) and big data systems like Hive, Drill, Spark, Snowflake, BigQuery, and many more.
 
 So today, we’re excited to announce a new big data system integration… our own, [Spice.xyz](https://spice.xyz)!
 
@@ -30,7 +30,7 @@ To read the announcement post for [Spice.xyz](https://spice.xyz), visit [blog.sp
 
 Paul Dix, CTO of InfluxData wrote a fantastic post on the [Arrow ecosystem](https://www.influxdata.com/blog/apache-arrow-parquet-flight-and-their-ecosystem-are-a-game-changer-for-olap/) and why the [future core of InfluxDB is built with Arrow](https://www.influxdata.com/blog/announcing-influxdb-iox/). Sam Crowder also wrote [A (Recent) History of Batch Data](https://cloudconstructed.substack.com/p/a-recent-history-of-batch-data?s=r) showing how Arrow is a cornerstone of modern data architecture.
 
-Joining projects like InfluxDB, the core of both [Spice.ai](https://spiceai.org) and [Spice.xyz](https://spice.xyz) are built with a foundation of Arrow and Flight. This means they benefit from the same high-performance data operations, they work great with each other and other projects in the ecosystem.
+Joining projects like InfluxDB, the core of both [Spice.ai OSS](https://spiceai.org) and [Spice.xyz](https://spice.xyz) are built with a foundation of Arrow and Flight. This means they benefit from the same high-performance data operations, they work great with each other and other projects in the ecosystem.
 
 ### Exciting New Use Cases
 
@@ -48,7 +48,7 @@ To get somewhere you need a goal or destination, a vehicle to get there, and fue
 
 When it comes to intelligent, AI-driven applications, [Spice.xyz](https://spice.xyz) now provides the Spice.ai vehicle with a massive pipeline of web3 data fuel.
 
-The next step is to make it easier for developers to define the destination for the vehicle. Upcoming on the [Spice.ai roadmap](https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md) is the ability for developers to define goals for how the decision-engine should learn. Like learning to maximize measurement “A” or optimizing to a target of “B”.
+The next step is to make it easier for developers to define the destination for the vehicle. Upcoming on the [Spice.ai OSS roadmap](https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md) is the ability for developers to define goals for how the decision-engine should learn. Like learning to maximize measurement “A” or optimizing to a target of “B”.
 
 For example, in web3, this might be to build a client that can learn and adapt to optimize Ethereum Gas Fee prices for token swaps. The goal would be to minimize the gas fee, a problem we experienced first-hand when we built [defly.ai](https://defly.ai). Today you have to encode that goal into your [reward function](https://docs.spiceai.org/concepts/rewards/), but our plan is to help do that for you, and all you have to do is tell us the end goal.
 
@@ -58,6 +58,6 @@ Goal-oriented learning applies to many domains, whether it be minimizing fees in
 
 Even for advanced developers, building intelligent apps that leverage AI is still way too hard. Our mission is to make this as easy as creating a modern web page. If that vision resonates with you, join us!
 
-If you’d like to get involved, we’d love to talk. Try out [Spice.ai](http://Spice.ai), [Spice.xyz](https://spice.xyz), [email us “hey,”](mailto:hey@spiceai.io?subject=hey) get in touch on [Discord](https://discord.gg/kZnTfneP5u), or reach out on [Twitter](https://twitter.com/spiceaihq).
+If you’d like to get involved, we’d love to talk. Try out [Spice.ai OSS](http://Spice.ai), [Spice.xyz](https://spice.xyz), [email us “hey,”](mailto:hey@spiceai.io?subject=hey) get in touch on [Discord](https://discord.gg/kZnTfneP5u), or reach out on [Twitter](https://twitter.com/spiceaihq).
 
 Luke
