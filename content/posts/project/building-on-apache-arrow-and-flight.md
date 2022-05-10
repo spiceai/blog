@@ -12,6 +12,13 @@ In February, we announced [Spice.ai OSS v0.6](https://blog.spiceai.org/posts/202
 
 So today, we’re excited to announce a new big data system integration… our own, [Spice.xyz](https://spice.xyz)!
 
+<div style="display: flex; justify-content: center; padding: 5px;">
+  <div style="display: flex; flex-direction: column;">
+    <img style="max-width: 600px; margin: auto" src="https://user-images.githubusercontent.com/80174/167584679-115c26ff-74ea-48b7-9c26-4bd4feae2afa.jpg" />
+	<div style="font-size: 0.8rem; font-style: italic;">Figure 1. Spice.xyz - Data and AI infrastructure for web3</div>
+  </div>
+</div>
+
 ### Integration with Spice.xyz
 
 [Spice.xyz](https://spice.xyz) is data and AI infrastructure for web3.
