@@ -1,10 +1,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – data</title><link>/categories/data/</link><description>Recent content in data on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/data/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Building on Apache Arrow and Flight</title><link>/posts/2022/05/10/building-on-apache-arrow-and-flight/</link><pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate><guid>/posts/2022/05/10/building-on-apache-arrow-and-flight/</guid><description>
 &lt;p>In February, we announced &lt;a href="https://blog.spiceai.org/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/">Spice.ai OSS v0.6&lt;/a> with its data processing and transport completely rebuilt upon Apache &lt;a href="https://arrow.apache.org/blog/2019/10/13/introducing-arrow-flight/">Flight&lt;/a>. This enables &lt;a href="https://spiceai.org">Spice.ai OSS&lt;/a> to scale to datasets 10-100 times larger and brings Spice.ai into the &lt;a href="https://arrow.apache.org/">Apache Arrow ecosystem&lt;/a> paving the way for integrations with many &lt;a href="https://arrow.apache.org/powered_by/">popular projects&lt;/a>, like &lt;a href="https://parquet.apache.org/">Apache Parquet&lt;/a>, &lt;a href="https://pandas.pydata.org/">pandas&lt;/a> and big data systems like Hive, Drill, Spark, Snowflake, BigQuery, and many more.&lt;/p>
-&lt;p>And today, we’re excited to announce a new big data system integration… our own, &lt;a href="https://spice.xyz">Spice.xyz&lt;/a>!&lt;/p>
-&lt;div style="display: flex; justify-content: center; padding: 5px;">
-&lt;div style="display: flex; flex-direction: column;">
+&lt;p>In &lt;a href="https://blog.spiceai.org/posts/2022/04/21/announcing-the-release-of-spice.ai-v0.6.1-alpha/">Spice.ai OSS v0.6.1&lt;/a> we announced a new big data system integration… our own, &lt;a href="https://spice.xyz">Spice.xyz&lt;/a>!&lt;/p>
+&lt;div style="display: flex; justify-content: center; padding: 10px;">
+&lt;div style="display: flex; flex-direction: column; text-align: center;">
 &lt;img style="max-width: 600px; margin: auto" src="https://user-images.githubusercontent.com/80174/167584679-115c26ff-74ea-48b7-9c26-4bd4feae2afa.jpg" />
-&lt;div style="font-size: 0.8rem; font-style: italic;">Figure 1. Spice.xyz - Data and AI infrastructure for web3&lt;/div>
+&lt;div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 1. Spice.xyz - Data and AI infrastructure for web3&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;h3 id="integration-with-spicexyz">Integration with Spice.xyz&lt;/h3>
