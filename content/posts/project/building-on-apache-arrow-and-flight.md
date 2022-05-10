@@ -10,12 +10,12 @@ tags: [agile ml arrow flight SQL]
 
 In February, we announced [Spice.ai OSS v0.6](https://blog.spiceai.org/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/) with its data processing and transport completely rebuilt upon Apache [Flight](https://arrow.apache.org/blog/2019/10/13/introducing-arrow-flight/). This enables [Spice.ai OSS](https://spiceai.org) to scale to datasets 10-100 times larger and brings Spice.ai into the [Apache Arrow ecosystem](https://arrow.apache.org/) paving the way for integrations with many [popular projects](https://arrow.apache.org/powered_by/), like [Apache Parquet](https://parquet.apache.org/), [pandas](https://pandas.pydata.org/) and big data systems like Hive, Drill, Spark, Snowflake, BigQuery, and many more.
 
-And today, we’re excited to announce a new big data system integration… our own, [Spice.xyz](https://spice.xyz)!
+In [Spice.ai OSS v0.6.1](https://blog.spiceai.org/posts/2022/04/21/announcing-the-release-of-spice.ai-v0.6.1-alpha/) we announced a new big data system integration… our own, [Spice.xyz](https://spice.xyz)!
 
-<div style="display: flex; justify-content: center; padding: 5px;">
-  <div style="display: flex; flex-direction: column;">
+<div style="display: flex; justify-content: center; padding: 10px;">
+  <div style="display: flex; flex-direction: column; text-align: center;">
     <img style="max-width: 600px; margin: auto" src="https://user-images.githubusercontent.com/80174/167584679-115c26ff-74ea-48b7-9c26-4bd4feae2afa.jpg" />
-	<div style="font-size: 0.8rem; font-style: italic;">Figure 1. Spice.xyz - Data and AI infrastructure for web3</div>
+	  <div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 1. Spice.xyz - Data and AI infrastructure for web3</div>
   </div>
 </div>
 
