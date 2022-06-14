@@ -57,7 +57,7 @@ Soon, we also expect to enable publishing of `.spicepods` to spicerack.org, from
 
 Treating Spicepods as packages and enabling their sharing and distribution through spicerack.org will help developers share their "restaurant guides" and build upon each other's work, much like they do with npmjs.org or pypi.org. In this way, developers can together build better and more intelligent applications.
 
-In the next post, we'll dive deeper into authoring a Spicepod manifest to create an intelligent application. Follow [@SpiceAIHQ](https://twitter.com/SpiceAIHQ) on Twitter to get an update when we post.
+In the next post, we'll dive deeper into authoring a Spicepod manifest to create an intelligent application. Follow [@spice_ai](https://twitter.com/spice_ai) on Twitter to get an update when we post.
 
 If you haven't already, read the next the first post in the series, [Making Apps that Learn and Adapt](https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/).
 
@@ -67,7 +67,7 @@ Building intelligent apps that leverage AI is still way too hard, even for advan
 
 Our [Spice.ai Roadmap](https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md) is public, and now that we have launched, the project and work are open for collaboration.
 
-If you are interested in partnering, we'd love to talk. Try out [Spice.ai](https://spiceai.org), [email us](mailto:hey@spiceai.io) "hey," get in touch on [Discord](https://discord.gg/kZnTfneP5u), or reach out on [Twitter](https://twitter.com/SpiceAIHQ).
+If you are interested in partnering, we'd love to talk. Try out [Spice.ai](https://spiceai.org), [email us](mailto:hey@spice.ai) "hey," get in touch on [Discord](https://discord.gg/kZnTfneP5u), or reach out on [Twitter](https://twitter.com/spice_ai).
 
 We are just getting started! 🚀
 

@@ -51,7 +51,7 @@ With the advent of modern deep-learning techniques and the ability to access sig
 
 A new class of applications that can learn and adapt are made possible by integrating AI-powered decision engines. Spice.ai is a decision engine that makes it easy for developers to build these applications.
 
-If you'd like to partner with us in creating this new generation of intelligent decision-making applications, we invite you to join us on [Discord](https://discord.gg/kZnTfneP5u), reach out on [Twitter](https://twitter.com/SpiceAIHQ) or [email](mailto:hey@spiceai.io) us.
+If you'd like to partner with us in creating this new generation of intelligent decision-making applications, we invite you to join us on [Discord](https://discord.gg/kZnTfneP5u), reach out on [Twitter](https://twitter.com/spice_ai) or [email](mailto:hey@spice.ai) us.
 
 Phillip
 
