@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – learn-and-adapt</title><link>/categories/learn-and-adapt/</link><description>Recent content in learn-and-adapt on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/learn-and-adapt/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Building on Apache Arrow and Flight</title><link>/posts/2022/05/10/building-on-apache-arrow-and-flight/</link><pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate><guid>/posts/2022/05/10/building-on-apache-arrow-and-flight/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Learn-and-Adapt</title><link>/categories/learn-and-adapt/</link><description>Recent content in Learn-and-Adapt on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/learn-and-adapt/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Building on Apache Arrow and Flight</title><link>/posts/2022/05/10/building-on-apache-arrow-and-flight/</link><pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate><guid>/posts/2022/05/10/building-on-apache-arrow-and-flight/</guid><description>
 &lt;p>In February, we announced &lt;a href="https://blog.spiceai.org/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/">Spice.ai OSS v0.6&lt;/a> with its data processing and transport completely rebuilt upon Apache &lt;a href="https://arrow.apache.org/blog/2019/10/13/introducing-arrow-flight/">Flight&lt;/a>. This enables &lt;a href="https://spiceai.org">Spice.ai OSS&lt;/a> to scale to datasets 10-100 times larger and brings Spice.ai into the &lt;a href="https://arrow.apache.org/">Apache Arrow ecosystem&lt;/a> paving the way for integrations with many &lt;a href="https://arrow.apache.org/powered_by/">popular projects&lt;/a>, like &lt;a href="https://parquet.apache.org/">Apache Parquet&lt;/a>, &lt;a href="https://pandas.pydata.org/">pandas&lt;/a> and big data systems like Hive, Drill, Spark, Snowflake, BigQuery, and many more.&lt;/p>
 &lt;p>In &lt;a href="https://blog.spiceai.org/posts/2022/04/21/announcing-the-release-of-spice.ai-v0.6.1-alpha/">Spice.ai OSS v0.6.1&lt;/a> we announced a new big data system integration… our own, &lt;a href="https://spice.xyz">Spice.xyz&lt;/a>!&lt;/p>
 &lt;div style="display: flex; justify-content: center; padding: 10px;">
@@ -59,17 +59,17 @@
 &lt;p>A new class of applications that can learn and adapt are made possible by integrating AI-powered decision engines. Spice.ai is a decision engine that makes it easy for developers to build these applications.&lt;/p>
 &lt;p>If you&amp;rsquo;d like to partner with us in creating this new generation of intelligent decision-making applications, we invite you to join us on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, reach out on &lt;a href="https://twitter.com/spice_ai">Twitter&lt;/a> or &lt;a href="mailto:hey@spice.ai">email&lt;/a> us.&lt;/p>
 &lt;p>Phillip&lt;/p>
-&lt;section class="footnotes" role="doc-endnotes">
+&lt;div class="footnotes" role="doc-endnotes">
 &lt;hr>
 &lt;ol>
-&lt;li id="fn:1" role="doc-endnote">
+&lt;li id="fn:1">
 &lt;p>Russell, Stuart; Norvig, Peter (1995). &lt;a href="http://aima.cs.berkeley.edu/">Artificial Intelligence: A Modern Approach&lt;/a>. Simon &amp;amp; Schuster. pp. 22–23. ISBN 978-0-13-103805-9.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
-&lt;li id="fn:2" role="doc-endnote">
+&lt;li id="fn:2">
 &lt;p>Kendal, S. L., &amp;amp; Creen, M. (2007). &lt;a href="https://www.worldcat.org/title/introduction-to-knowledge-engineering/oclc/70987401">An introduction to knowledge engineering&lt;/a>. London: Springer. ISBN 978-1-84628-475-5&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>Posts: Spicepods: From Zero To Hero</title><link>/posts/2021/12/02/spicepods-from-zero-to-hero/</link><pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/02/spicepods-from-zero-to-hero/</guid><description>
+&lt;/div></description></item><item><title>Posts: Spicepods: From Zero To Hero</title><link>/posts/2021/12/02/spicepods-from-zero-to-hero/</link><pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/02/spicepods-from-zero-to-hero/</guid><description>
 &lt;p>In my previous post, &lt;a href="https://blog.spiceai.org/posts/2021/11/15/teaching-apps-how-to-learn-with-spicepods/">Teaching Apps how to Learn with Spicepods&lt;/a>, I introduced Spicepods as packages of configuration that describe an application&amp;rsquo;s data-driven goals and how it should learn from data. To leverage Spice.ai in your application, you can author a Spicepod from scratch or build upon one fetched from the spicerack.org registry. In this post, we&amp;rsquo;ll walk through the creation and authoring of a Spicepod step-by-step from scratch.&lt;/p>
 &lt;p>As a refresher, a Spicepod consists of:&lt;/p>
 &lt;ul>

@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – decision engines</title><link>/tags/decision-engines/</link><description>Recent content in decision engines on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 04 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/decision-engines/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: What Data Informs AI-driven Decision Making?</title><link>/posts/2022/01/04/what-data-informs-ai-driven-decision-making/</link><pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate><guid>/posts/2022/01/04/what-data-informs-ai-driven-decision-making/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Decision Engines</title><link>/tags/decision-engines/</link><description>Recent content in Decision Engines on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 04 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/decision-engines/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: What Data Informs AI-driven Decision Making?</title><link>/posts/2022/01/04/what-data-informs-ai-driven-decision-making/</link><pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate><guid>/posts/2022/01/04/what-data-informs-ai-driven-decision-making/</guid><description>
 &lt;p>AI unlocks a new generation of intelligent &lt;a href="https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/">applications that learn and adapt&lt;/a> from data. These applications use machine learning (ML) to out-perform traditionally developed software. However, the data engineering required to leverage ML is a significant challenge for many product teams. In this post, we&amp;rsquo;ll explore the three classes of data you need to build next-generation applications and how Spice.ai handles runtime data engineering for you.&lt;/p>
 &lt;p>While ML has many different applications, one way to think about ML in a real-time application that can adapt is as a decision engine. Phillip discussed decision engines and their potential uses in &lt;a href="https://blog.spiceai.org/posts/2021/12/30/a-new-class-of-applications-that-learn-and-adapt/">A New Class of Applications That Learn and Adapt&lt;/a>. This decision engine learns and informs the application how to operate. Of course, applications can and do make decisions without ML, but a developer normally has to code that logic. And the intelligence of that code is fixed, whereas ML enables a machine to constantly find the appropriate logic and evolve the code as it learns. For ML to do this, it needs three classes of data.&lt;/p>
 &lt;h3 id="the-three-classes-of-data-for-informed-decision-making">The three classes of data for informed decision making&lt;/h3>
@@ -71,14 +71,14 @@
 &lt;p>A new class of applications that can learn and adapt are made possible by integrating AI-powered decision engines. Spice.ai is a decision engine that makes it easy for developers to build these applications.&lt;/p>
 &lt;p>If you&amp;rsquo;d like to partner with us in creating this new generation of intelligent decision-making applications, we invite you to join us on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, reach out on &lt;a href="https://twitter.com/spice_ai">Twitter&lt;/a> or &lt;a href="mailto:hey@spice.ai">email&lt;/a> us.&lt;/p>
 &lt;p>Phillip&lt;/p>
-&lt;section class="footnotes" role="doc-endnotes">
+&lt;div class="footnotes" role="doc-endnotes">
 &lt;hr>
 &lt;ol>
-&lt;li id="fn:1" role="doc-endnote">
+&lt;li id="fn:1">
 &lt;p>Russell, Stuart; Norvig, Peter (1995). &lt;a href="http://aima.cs.berkeley.edu/">Artificial Intelligence: A Modern Approach&lt;/a>. Simon &amp;amp; Schuster. pp. 22–23. ISBN 978-0-13-103805-9.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
-&lt;li id="fn:2" role="doc-endnote">
+&lt;li id="fn:2">
 &lt;p>Kendal, S. L., &amp;amp; Creen, M. (2007). &lt;a href="https://www.worldcat.org/title/introduction-to-knowledge-engineering/oclc/70987401">An introduction to knowledge engineering&lt;/a>. London: Springer. ISBN 978-1-84628-475-5&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item></channel></rss>
+&lt;/div></description></item></channel></rss>

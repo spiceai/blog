@@ -1,4 +1,37 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – release</title><link>/categories/release/</link><description>Recent content in release on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.6.1-alpha</title><link>/posts/2022/04/21/announcing-the-release-of-spice.ai-v0.6.1-alpha/</link><pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate><guid>/posts/2022/04/21/announcing-the-release-of-spice.ai-v0.6.1-alpha/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Release</title><link>/categories/release/</link><description>Recent content in Release on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 23 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.7-alpha</title><link>/posts/2024/02/23/announcing-the-release-of-spice.ai-v0.7-alpha/</link><pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate><guid>/posts/2024/02/23/announcing-the-release-of-spice.ai-v0.7-alpha/</guid><description>
+&lt;p>Announcing the release of Spice v0.7-alpha! 🏹&lt;/p>
+&lt;p>Spice v0.7-alpha is an all new implementation of Spice written in Rust. The Spice v0.7 runtime provides developers with a unified SQL query interface to locally accelerate and query data tables sourced from any database, data warehouse, or data lake.&lt;/p>
+&lt;p>Learn more and get started in minutes with the updated Quickstart in the repository &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/README.md">README&lt;/a>!&lt;/p>
+&lt;h2 id="highlights-in-v07-alpha">Highlights in v0.7-alpha&lt;/h2>
+&lt;p>&lt;a href="https://github.com/apache/arrow-datafusion">DataFusion SQL Query Engine&lt;/a>: Spice v0.7 leverages the Apache DataFusion query engine to provide very fast, high quality SQL query across one or more local or remote data sources.&lt;/p>
+&lt;p>Data tables can be locally accelerated using Apache Arrow in-memory or by &lt;a href="https://duckdb.org/">DuckDB&lt;/a>.&lt;/p>
+&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Adds&lt;/strong> runtime rewritten in Rust for high-performance.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Apache DataFusion SQL query engine.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> The Spice.ai platform as a data source.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Dremio as a data source.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> OpenTelemetry (OTEL) collector.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> local data table acceleration.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> DuckDB file or in-memory as a data table acceleration engine.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> In-memory Apache Arrow as a data table acceleration engine.&lt;/li>
+&lt;li>&lt;strong>Removes&lt;/strong> the built-in AI training engine; now cloud-based and provided by the Spice.ai platform.&lt;/li>
+&lt;li>&lt;strong>Removes&lt;/strong> the built-in dashboard and web-interface; now cloud-based and provided by the Spice.ai platform.&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.6.1-alpha</title><link>/posts/2022/04/21/announcing-the-release-of-spice.ai-v0.6.1-alpha/</link><pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate><guid>/posts/2022/04/21/announcing-the-release-of-spice.ai-v0.6.1-alpha/</guid><description>
 &lt;p>Announcing the release of Spice.ai v0.6.1-alpha! 🌶&lt;/p>
 &lt;p>Building upon the &lt;a href="https://blog.spiceai.org/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/">Apache Arrow support in v0.6-alpha&lt;/a>, Spice.ai now includes new &lt;a href="https://github.com/spiceai/data-components-contrib/tree/trunk/dataprocessors/arrow#readme">Apache Arrow data processor&lt;/a> and &lt;a href="https://github.com/spiceai/data-components-contrib/tree/trunk/dataconnectors/flight#readme">Apache Arrow Flight data connector&lt;/a> components! Together, these create a high-performance bulk-data transport directly into the Spice.ai ML engine. Coupled with big data systems from the &lt;a href="https://arrow.apache.org/">Apache Arrow&lt;/a> ecosystem like Hive, Drill, Spark, Snowflake, and BigQuery, it&amp;rsquo;s now easier than ever to combine big data with Spice.ai.&lt;/p>
 &lt;p>And we&amp;rsquo;re also excited to announce the release of &lt;a href="https://spice.xyz">Spice.xyz&lt;/a>! 🎉&lt;/p>

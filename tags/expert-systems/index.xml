@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – expert systems</title><link>/tags/expert-systems/</link><description>Recent content in expert systems on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/expert-systems/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: A New Class of Applications That Learn and Adapt</title><link>/posts/2021/12/30/a-new-class-of-applications-that-learn-and-adapt/</link><pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/30/a-new-class-of-applications-that-learn-and-adapt/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Expert Systems</title><link>/tags/expert-systems/</link><description>Recent content in Expert Systems on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/expert-systems/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: A New Class of Applications That Learn and Adapt</title><link>/posts/2021/12/30/a-new-class-of-applications-that-learn-and-adapt/</link><pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/30/a-new-class-of-applications-that-learn-and-adapt/</guid><description>
 &lt;p>A new class of applications that learn and adapt is becoming possible through machine learning (ML). These applications learn from data and make decisions to achieve the application&amp;rsquo;s goals. In the post &lt;a href="https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/">Making apps that learn and adapt&lt;/a>, Luke described how developers integrate this ability to learn and adapt as a core part of the application&amp;rsquo;s logic. You can think of the component that does this as a &amp;ldquo;decision engine.&amp;rdquo; This post will explore a brief history of decision engines and use-cases for this application class.&lt;/p>
 &lt;h2 id="history-of-decision-engines">History of decision engines&lt;/h2>
 &lt;p>The idea to make intelligent decision-making applications is not new. Developers first created these applications around the 1970s&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>, and they are some of the earliest examples of using artificial intelligence to solve real-world problems.&lt;/p>
@@ -26,14 +26,14 @@
 &lt;p>A new class of applications that can learn and adapt are made possible by integrating AI-powered decision engines. Spice.ai is a decision engine that makes it easy for developers to build these applications.&lt;/p>
 &lt;p>If you&amp;rsquo;d like to partner with us in creating this new generation of intelligent decision-making applications, we invite you to join us on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, reach out on &lt;a href="https://twitter.com/spice_ai">Twitter&lt;/a> or &lt;a href="mailto:hey@spice.ai">email&lt;/a> us.&lt;/p>
 &lt;p>Phillip&lt;/p>
-&lt;section class="footnotes" role="doc-endnotes">
+&lt;div class="footnotes" role="doc-endnotes">
 &lt;hr>
 &lt;ol>
-&lt;li id="fn:1" role="doc-endnote">
+&lt;li id="fn:1">
 &lt;p>Russell, Stuart; Norvig, Peter (1995). &lt;a href="http://aima.cs.berkeley.edu/">Artificial Intelligence: A Modern Approach&lt;/a>. Simon &amp;amp; Schuster. pp. 22–23. ISBN 978-0-13-103805-9.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
-&lt;li id="fn:2" role="doc-endnote">
+&lt;li id="fn:2">
 &lt;p>Kendal, S. L., &amp;amp; Creen, M. (2007). &lt;a href="https://www.worldcat.org/title/introduction-to-knowledge-engineering/oclc/70987401">An introduction to knowledge engineering&lt;/a>. London: Springer. ISBN 978-1-84628-475-5&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item></channel></rss>
+&lt;/div></description></item></channel></rss>
