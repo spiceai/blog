@@ -24,6 +24,7 @@ jobs:
       - name: Install requirements
         run: |
           npm install
+          cd themes/docsy && npm install
 
       - name: Build
         run: hugo --minify
