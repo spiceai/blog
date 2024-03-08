@@ -2,10 +2,10 @@
 &lt;p>Announcing the release of Spice v0.8-alpha! 🏹&lt;/p>
 &lt;p>This is a minor release that builds on the new Rust-based runtime, adding stability and a preview of new features for the first major release.&lt;/p>
 &lt;h2 id="highlights-in-v08-alpha">Highlights in v0.8-alpha&lt;/h2>
-&lt;p>Secrets management: Spice 0.8 runtime can now configure and retrieve secrets from local environment variables and in a kubernetes cluster.&lt;/p>
-&lt;p>Data tables can be locally accelerated using &lt;a href="https://www.postgresql.org/">Postgresql&lt;/a>&lt;/p>
+&lt;p>Secrets management: Spice 0.8 runtime can now configure and retrieve secrets from local environment variables and in a Kubernetes cluster.&lt;/p>
+&lt;p>Data tables can be locally accelerated using &lt;a href="https://www.postgresql.org/">PostgreSQL&lt;/a>&lt;/p>
 &lt;h2 id="new-in-this-release">New in this release&lt;/h2>
 &lt;ul>
-&lt;li>&lt;strong>Adds&lt;/strong> Secrets management in local environment variables and kubernetes clusters.&lt;/li>
-&lt;li>&lt;strong>Adds&lt;/strong> (Preview) Postgresql as a data table acceleration engine.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Secrets management in local environment variables and Kubernetes clusters.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> (Preview) PostgreSQL as a data table acceleration engine.&lt;/li>
 &lt;/ul></description></item></channel></rss>
