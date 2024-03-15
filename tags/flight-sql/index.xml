@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Secrets</title><link>/tags/secrets/</link><description>Recent content in Secrets on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 15 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/secrets/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.9-alpha</title><link>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</link><pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Flight-Sql</title><link>/tags/flight-sql/</link><description>Recent content in Flight-Sql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 15 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/flight-sql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.9-alpha</title><link>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</link><pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</guid><description>
 &lt;p>Announcing the release of Spice v0.9-alpha! 🧙‍♂️&lt;/p>
 &lt;p>The v0.9 release adds several data connectors including the Spice data connector for the ability to connect to other Spice instances. Improved observability for the Spice runtime has been added with the new &lt;code>/metrics&lt;/code> endpoint for monitoring deployed instances.&lt;/p>
 &lt;h2 id="highlights-in-v09-alpha">Highlights in v0.9-alpha&lt;/h2>
@@ -41,30 +41,6 @@
 &lt;li>&lt;strong>Adds&lt;/strong> &lt;code>/v1/models&lt;/code> API.&lt;/li>
 &lt;li>&lt;strong>Adds&lt;/strong> &lt;code>/v1/status&lt;/code> API.&lt;/li>
 &lt;li>&lt;strong>Adds&lt;/strong> &lt;code>/metrics&lt;/code> API.&lt;/li>
-&lt;/ul>
-&lt;h2 id="resources">Resources&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="community">Community&lt;/h2>
-&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
-&lt;ul>
-&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
-&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
-&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
-&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
-&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.8-alpha</title><link>/posts/2024/03/08/announcing-the-release-of-spice.ai-v0.8-alpha/</link><pubDate>Fri, 08 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/08/announcing-the-release-of-spice.ai-v0.8-alpha/</guid><description>
-&lt;p>Announcing the release of Spice v0.8-alpha! 🏹&lt;/p>
-&lt;p>This is a minor release that builds on the new Rust-based runtime, adding stability and a preview of new features for the first major release.&lt;/p>
-&lt;h2 id="highlights-in-v08-alpha">Highlights in v0.8-alpha&lt;/h2>
-&lt;p>Secrets management: Spice 0.8 runtime can now configure and retrieve secrets from local environment variables and in a Kubernetes cluster.&lt;/p>
-&lt;p>Data tables can be locally accelerated using &lt;a href="https://www.postgresql.org/">PostgreSQL&lt;/a>&lt;/p>
-&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Adds&lt;/strong> Secrets management in local environment variables and Kubernetes clusters.&lt;/li>
-&lt;li>&lt;strong>Adds&lt;/strong> (Preview) PostgreSQL as a data table acceleration engine.&lt;/li>
 &lt;/ul>
 &lt;h2 id="resources">Resources&lt;/h2>
 &lt;ul>

@@ -1,4 +1,61 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Postgresql</title><link>/tags/postgresql/</link><description>Recent content in Postgresql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 08 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.8-alpha</title><link>/posts/2024/03/08/announcing-the-release-of-spice.ai-v0.8-alpha/</link><pubDate>Fri, 08 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/08/announcing-the-release-of-spice.ai-v0.8-alpha/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Postgresql</title><link>/tags/postgresql/</link><description>Recent content in Postgresql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 15 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.9-alpha</title><link>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</link><pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</guid><description>
+&lt;p>Announcing the release of Spice v0.9-alpha! 🧙‍♂️&lt;/p>
+&lt;p>The v0.9 release adds several data connectors including the Spice data connector for the ability to connect to other Spice instances. Improved observability for the Spice runtime has been added with the new &lt;code>/metrics&lt;/code> endpoint for monitoring deployed instances.&lt;/p>
+&lt;h2 id="highlights-in-v09-alpha">Highlights in v0.9-alpha&lt;/h2>
+&lt;p>&lt;strong>Arrow Flight SQL endpoint&lt;/strong>: The Arrow Flight endpoint now supports Flight SQL, including JDBC, ODBC, and ADBC enabling database clients like DBeaver or BI applications like Tableau to connect to and query the Spice runtime.&lt;/p>
+&lt;p>&lt;strong>Spice.ai data connector&lt;/strong>: Use other Spice runtime instances as data connectors for federated SQL query across Spice deployments and for chaining Spice runtimes.&lt;/p>
+&lt;p>&lt;strong>Keyring secret store&lt;/strong>: Use the operating system native credential store, like macOS keychain for storing secrets used by the Spice runtime.&lt;/p>
+&lt;p>&lt;strong>PostgreSQL data connector&lt;/strong>: &lt;a href="https://www.postgresql.org/">PostgreSQL&lt;/a> can now be used as both a data store for acceleration and as a connector for federated SQL query.&lt;/p>
+&lt;p>&lt;strong>Databricks data connector&lt;/strong>: &lt;a href="https://www.databricks.com">Databricks&lt;/a> as a connector for federated SQL query across Delta Lake tables.&lt;/p>
+&lt;p>&lt;strong>S3 data connector&lt;/strong>: &lt;a href="https://aws.amazon.com/s3/">S3&lt;/a> as a connector for federated SQL query across Parquet files stored in S3.&lt;/p>
+&lt;p>&lt;strong>Metrics endpoint&lt;/strong>: Added new &lt;code>/metrics&lt;/code> endpoint for Spice runtime observability and monitoring with the following metrics:&lt;/p>
+&lt;pre tabindex="0">&lt;code>- spiced_runtime_http_server_start counter
+- spiced_runtime_flight_server_start counter
+- datasets_count gauge
+- load_dataset summary
+- load_secrets summary
+- datasets/load_error counter
+- datasets/count counter
+- models/load_error counter
+- models/count counter
+&lt;/code>&lt;/pre>&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/phillipleblanc">@phillipleblanc&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/mitchdevenport">@mitchdevenport&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/Jeadie">@Jeadie&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/ewgenius">@ewgenius&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/sgrebnov">@sgrebnov&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/Sevenannn">@Sevenannn&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/y-f-u">@y-f-u&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/digadeesh">@digadeesh&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/lukekim">@lukekim&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Adds&lt;/strong> Keyring secret store (&lt;code>keyring&lt;/code>).&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> PostgreSQL data connector (&lt;code>postgres&lt;/code>).&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Spice.ai data connector (&lt;code>spiceai&lt;/code>).&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Arrow Flight SQL (JDBC/ODBC/ADBC) support.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Databricks data connector (&lt;code>databricks&lt;/code>) - Delta Lake support.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> S3 data connector (&lt;code>s3&lt;/code>) - Parquet support.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> &lt;code>/v1/models&lt;/code> API.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> &lt;code>/v1/status&lt;/code> API.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> &lt;code>/metrics&lt;/code> API.&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.8-alpha</title><link>/posts/2024/03/08/announcing-the-release-of-spice.ai-v0.8-alpha/</link><pubDate>Fri, 08 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/08/announcing-the-release-of-spice.ai-v0.8-alpha/</guid><description>
 &lt;p>Announcing the release of Spice v0.8-alpha! 🏹&lt;/p>
 &lt;p>This is a minor release that builds on the new Rust-based runtime, adding stability and a preview of new features for the first major release.&lt;/p>
 &lt;h2 id="highlights-in-v08-alpha">Highlights in v0.8-alpha&lt;/h2>
@@ -8,4 +65,18 @@
 &lt;ul>
 &lt;li>&lt;strong>Adds&lt;/strong> Secrets management in local environment variables and Kubernetes clusters.&lt;/li>
 &lt;li>&lt;strong>Adds&lt;/strong> (Preview) PostgreSQL as a data table acceleration engine.&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
 &lt;/ul></description></item></channel></rss>
