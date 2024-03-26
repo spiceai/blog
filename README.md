@@ -12,6 +12,7 @@ npm install -D postcss
 git submodule init
 git submodule update --init --recursive
 npm install
+cd themes/docsy && npm install
 ```
 
 - Hugo install reference: [gohugo.io/getting-started/installing/](https://gohugo.io/getting-started/installing/)
