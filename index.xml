@@ -1,4 +1,48 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.9-alpha</title><link>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</link><pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.9.1-alpha</title><link>/posts/2024/03/25/announcing-the-release-of-spice.ai-v0.9.1-alpha/</link><pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/25/announcing-the-release-of-spice.ai-v0.9.1-alpha/</guid><description>
+&lt;p>Announcing the release of Spice v0.9-alpha! 🧙‍♂️&lt;/p>
+&lt;p>The v0.9.1 release focused on stability, bug fixes, and usability by adding &lt;code>spice&lt;/code> CLI commands for listing Spicepods (&lt;code>spice pods&lt;/code>), Models (&lt;code>spice models&lt;/code>), Datasets (&lt;code>spice datasets&lt;/code>), and improved status (&lt;code>spice status&lt;/code>) details. In addition, the Arrow Flight SQL (&lt;code>flightsql&lt;/code>) data connector and SQLite (&lt;code>sqlite&lt;/code>) data store were added.&lt;/p>
+&lt;h2 id="highlights-in-v091-alpha">Highlights in v0.9.1-alpha&lt;/h2>
+&lt;p>&lt;strong>FlightSQL data connector&lt;/strong>: &lt;a href="https://arrow.apache.org/docs/format/FlightSql.html">Arrow Flight SQL&lt;/a> can now be used as a connector for federated SQL query.&lt;/p>
+&lt;p>&lt;strong>SQLite data backend&lt;/strong>: &lt;a href="https://www.sqlite.org/">SQLite&lt;/a> can now be used as a data store for acceleration.&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@mitchdevenport&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@y-f-u&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Adds&lt;/strong> FlightSQL data connector (&lt;code>flightsql&lt;/code>).&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> SQLite data store, supports both in-memory and file based (&lt;code>sqlite&lt;/code>).&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> support for date, varchar, bpchar, and primitive list types for the PostgreSQL data connector and data store.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> &lt;code>spice pods&lt;/code>, &lt;code>spice status&lt;/code>, &lt;code>spice datasets&lt;/code>, and &lt;code>spice models&lt;/code> CLI commands.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> &lt;code>GET /v1/spicepods&lt;/code> API for listing loaded Spicepods.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> &lt;code>spiced&lt;/code> Docker CI build and release.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> E2E tests for release installation and local acceleration.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> E2E tests and instructions to run basic TPC-H benchmark tests.&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> &lt;code>linux/arm64&lt;/code> binary build.&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> &lt;code>spice sql&lt;/code> REPL panics when query result is too large. (&lt;a href="https://github.com/spiceai/spiceai/pull/875">https://github.com/spiceai/spiceai/pull/875&lt;/a>)&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> &lt;code>--access-secret&lt;/code> in &lt;code>spice s3 login&lt;/code>. (&lt;a href="https://github.com/spiceai/spiceai/pull/894">https://github.com/spiceai/spiceai/pull/894&lt;/a>)&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> version check upgrade logic.&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.9-alpha</title><link>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</link><pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</guid><description>
 &lt;p>Announcing the release of Spice v0.9-alpha! 🧙‍♂️&lt;/p>
 &lt;p>The v0.9 release adds several data connectors including the Spice data connector for the ability to connect to other Spice instances. Improved observability for the Spice runtime has been added with the new &lt;code>/metrics&lt;/code> endpoint for monitoring deployed instances.&lt;/p>
 &lt;h2 id="highlights-in-v09-alpha">Highlights in v0.9-alpha&lt;/h2>
