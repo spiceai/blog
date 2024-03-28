@@ -8,7 +8,7 @@ categories: [spiceai]
 tags: [spiceai, data, infra, oss, rust]
 ---
 
-**TL;DR:** We rebuilt [Spice.ai OSS](https://github.com/spiceai/spiceai) from the ground up in Rust, as a unified SQL query interface and portable runtime to locally materialize, accelerate, and query data tables sourced from any database, data warehouse or data lake. Learn more at [github.com/spiceai/spiceai](https://github.com/spiceai/spiceai).
+**TL;DR:** We've rebuilt [Spice.ai OSS](https://github.com/spiceai/spiceai) from the ground up in Rust, as a unified SQL query interface and portable runtime to locally materialize, accelerate, and query datasets sourced from any database, data warehouse or data lake. Learn more at [github.com/spiceai/spiceai](https://github.com/spiceai/spiceai).
 
 In September, 2021, we [introduced](https://blog.spiceai.org/posts/2021/09/07/introducing-spice.ai-open-source-time-series-ai-for-developers/) Spice.ai OSS as a runtime for building AI-driven applications using time-series data.
 
