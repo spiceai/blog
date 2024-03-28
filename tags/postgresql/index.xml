@@ -1,4 +1,58 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Postgresql</title><link>/tags/postgresql/</link><description>Recent content in Postgresql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 15 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.9-alpha</title><link>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</link><pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Postgresql</title><link>/tags/postgresql/</link><description>Recent content in Postgresql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 27 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.10-alpha</title><link>/posts/2024/03/27/announcing-the-release-of-spice.ai-v0.10-alpha/</link><pubDate>Wed, 27 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/27/announcing-the-release-of-spice.ai-v0.10-alpha/</guid><description>
+&lt;p>Announcing the release of Spice v0.10-alpha! 🧙‍♂️&lt;/p>
+&lt;p>The Spice.ai v0.10-alpha release focused on additions and updates to improve stability, usability, and the overall Spice developer experience.&lt;/p>
+&lt;h2 id="highlights-in-v010-alpha">Highlights in v0.10-alpha&lt;/h2>
+&lt;p>&lt;strong>Public Bucket Support for S3 Data Connector&lt;/strong>: The S3 Data Connector now supports public buckets in addition to buckets requiring an access id and key.&lt;/p>
+&lt;p>&lt;strong>JDBC-Client Connectivity&lt;/strong>: Improved connectivity for JDBC clients, like Tableau.&lt;/p>
+&lt;p>&lt;strong>User Experience Improvements&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Friendlier error messages across the board to make debugging and development better.&lt;/li>
+&lt;li>Added a &lt;code>spice login postgres&lt;/code> command, streamlining the process for connecting to PostgreSQL databases.&lt;/li>
+&lt;li>Added PostgreSQL connection verification and connection string support, enhancing usability for PostgreSQL users.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Grafana Dashboard&lt;/strong>: Improving the ability to monitor Spice deployments, a standard Grafana dashboard is now available.&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@mitchdevenport&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@y-f-u&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@digadeesh&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Fixes&lt;/strong> Gracefully handle Arrow Flight DoExchange connection resets&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Grafana Dashboard&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Flight SQL CommandGetTableTypes Command support (improves JDBC-client connectivity)&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Friendlier error messages&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> &lt;code>spice login postgres&lt;/code> command&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> PostgreSQL connection verification&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> PostgreSQL connection string support&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Linux aarch64 build&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> Improves &lt;code>spice status&lt;/code> with dataset metrics&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> CLI REPL improved &lt;code>show tables&lt;/code> output&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> CLI REPL limit output to 500 rows&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> Improved README.md with architecture diagram updates&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> Improved CI run time.&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> Use macOS hosted Actions runner&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.9-alpha</title><link>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</link><pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</guid><description>
 &lt;p>Announcing the release of Spice v0.9-alpha! 🧙‍♂️&lt;/p>
 &lt;p>The v0.9 release adds several data connectors including the Spice data connector for the ability to connect to other Spice instances. Improved observability for the Spice runtime has been added with the new &lt;code>/metrics&lt;/code> endpoint for monitoring deployed instances.&lt;/p>
 &lt;h2 id="highlights-in-v09-alpha">Highlights in v0.9-alpha&lt;/h2>
