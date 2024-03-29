@@ -3,7 +3,7 @@ date: 2024-03-28
 title: 'Adding Spice - The Next Generation of Spice.ai OSS'
 type: blog
 linkTitle: 'Adding Spice'
-author: Phillip LeBlanc ([@phillipleblanc](https://twitter.com/phillipleblanc))
+author: Phillip LeBlanc ([@leblancphill](https://x.com/leblancphill))
 categories: [spiceai]
 tags: [spiceai, data, infra, oss, rust]
 ---
