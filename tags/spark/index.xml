@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Mysql</title><link>/tags/mysql/</link><description>Recent content in Mysql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 15 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/mysql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.11-alpha</title><link>/posts/2024/04/15/announcing-the-release-of-spice.ai-v0.11-alpha/</link><pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/15/announcing-the-release-of-spice.ai-v0.11-alpha/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spark</title><link>/tags/spark/</link><description>Recent content in Spark on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 15 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/spark/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.11-alpha</title><link>/posts/2024/04/15/announcing-the-release-of-spice.ai-v0.11-alpha/</link><pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/15/announcing-the-release-of-spice.ai-v0.11-alpha/</guid><description>
 &lt;h1 id="spice-v011-alpha-apr-15-2024">Spice v0.11-alpha (Apr 15, 2024)&lt;/h1>
 &lt;p>The Spice v0.11-alpha release significantly improves the Databricks data connector with &lt;a href="https://docs.databricks.com/en/dev-tools/databricks-connect/index.html">Databricks Connect&lt;/a> (Spark Connect) support, adds the DuckDB data connector, and adds the AWS Secrets Manager secret store. In addition, enhanced control over accelerated dataset refreshes, improved SSL security for MySQL and PostgreSQL connections, and overall stability improvements have been added.&lt;/p>
 &lt;h2 id="highlights-in-v011-alpha">Highlights in v0.11-alpha&lt;/h2>
@@ -54,65 +54,6 @@ Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root c
 &lt;li>&lt;strong>Removes&lt;/strong> &lt;code>pg_insecure&lt;/code> parameter support from Postgres by ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1081">https://github.com/spiceai/spiceai/pull/1081&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.10.2-alpha...v0.11.0-alpha">https://github.com/spiceai/spiceai/compare/v0.10.2-alpha...v0.11.0-alpha&lt;/a>&lt;/p>
-&lt;h2 id="resources">Resources&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="community">Community&lt;/h2>
-&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
-&lt;ul>
-&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
-&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
-&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
-&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
-&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.10.2-alpha</title><link>/posts/2024/04/08/announcing-the-release-of-spice.ai-v0.10.2-alpha/</link><pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/08/announcing-the-release-of-spice.ai-v0.10.2-alpha/</guid><description>
-&lt;p>Announcing the release of Spice v0.10.2-alpha (Apr 9, 2024)! 🔥&lt;/p>
-&lt;p>The v0.10.2-alpha release adds the MySQL data connector and makes external data connections more robust on initialization.&lt;/p>
-&lt;h2 id="highlights-in-v0102-alpha">Highlights in v0.10.2-alpha&lt;/h2>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>MySQL data connector&lt;/strong>: Connect to any MySQL server, including SSL support.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Data connections verified at initialization&lt;/strong>: Verify endpoints and authorization for external data connections (e.g. databricks, spice.ai) at initialization.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="new-contributors">New Contributors&lt;/h2>
-&lt;ul>
-&lt;li>@rthomas made their first contribution in &lt;a href="https://github.com/spiceai/spiceai/pull/1022">https://github.com/spiceai/spiceai/pull/1022&lt;/a>&lt;/li>
-&lt;li>@ahirner made their first contribution in &lt;a href="https://github.com/spiceai/spiceai/pull/1029">https://github.com/spiceai/spiceai/pull/1029&lt;/a>&lt;/li>
-&lt;li>@gloomweaver made their first contribution in &lt;a href="https://github.com/spiceai/spiceai/pull/1004">https://github.com/spiceai/spiceai/pull/1004&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="contributors">Contributors&lt;/h2>
-&lt;ul>
-&lt;li>@phillipleblanc&lt;/li>
-&lt;li>@y-f-u&lt;/li>
-&lt;li>@ewgenius&lt;/li>
-&lt;li>@sgrebnov&lt;/li>
-&lt;li>@lukekim&lt;/li>
-&lt;li>@digadeesh&lt;/li>
-&lt;li>@jeadie&lt;/li>
-&lt;/ul>
-&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Adds&lt;/strong> MySQL data connector by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1004">https://github.com/spiceai/spiceai/pull/1004&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Fixes&lt;/strong> &lt;code>show tables;&lt;/code> parsing in the Spice SQL repl.&lt;/li>
-&lt;li>&lt;strong>Adds&lt;/strong> data connector verification at initialization
-&lt;ul>
-&lt;li>For Dremio by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1017">https://github.com/spiceai/spiceai/pull/1017&lt;/a>&lt;/li>
-&lt;li>For Databricks by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1019">https://github.com/spiceai/spiceai/pull/1019&lt;/a>&lt;/li>
-&lt;li>For Spice.ai by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1020">https://github.com/spiceai/spiceai/pull/1020&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>Fixes&lt;/strong> Ensures unit and doc tests compile and run by @rthomas in &lt;a href="https://github.com/spiceai/spiceai/pull/1022">https://github.com/spiceai/spiceai/pull/1022&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Improves&lt;/strong> Helm chart + Grafana dashboard by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1030">https://github.com/spiceai/spiceai/pull/1030&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Fixes&lt;/strong> Makes data connectors optional features by @ahirner in &lt;a href="https://github.com/spiceai/spiceai/pull/1029">https://github.com/spiceai/spiceai/pull/1029&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Fixes&lt;/strong> Fixes SpiceAI E2E for external contributors in Github actions by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1023">https://github.com/spiceai/spiceai/pull/1023&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Fixes&lt;/strong> remove hardcoded &lt;code>lookback_size&lt;/code> (&amp;amp; improve SpiceAI&amp;rsquo;s ModelSource) by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1016">https://github.com/spiceai/spiceai/pull/1016&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.10.1-alpha...v0.10.2-alpha">https://github.com/spiceai/spiceai/compare/v0.10.1-alpha...v0.10.2-alpha&lt;/a>&lt;/p>
 &lt;h2 id="resources">Resources&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>

@@ -1,4 +1,73 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.10.2-alpha</title><link>/posts/2024/04/08/announcing-the-release-of-spice.ai-v0.10.2-alpha/</link><pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/08/announcing-the-release-of-spice.ai-v0.10.2-alpha/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.11-alpha</title><link>/posts/2024/04/15/announcing-the-release-of-spice.ai-v0.11-alpha/</link><pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/15/announcing-the-release-of-spice.ai-v0.11-alpha/</guid><description>
+&lt;h1 id="spice-v011-alpha-apr-15-2024">Spice v0.11-alpha (Apr 15, 2024)&lt;/h1>
+&lt;p>The Spice v0.11-alpha release significantly improves the Databricks data connector with &lt;a href="https://docs.databricks.com/en/dev-tools/databricks-connect/index.html">Databricks Connect&lt;/a> (Spark Connect) support, adds the DuckDB data connector, and adds the AWS Secrets Manager secret store. In addition, enhanced control over accelerated dataset refreshes, improved SSL security for MySQL and PostgreSQL connections, and overall stability improvements have been added.&lt;/p>
+&lt;h2 id="highlights-in-v011-alpha">Highlights in v0.11-alpha&lt;/h2>
+&lt;p>&lt;strong>DuckDB data connector&lt;/strong>: Use DuckDB databases or connections as a data source.&lt;/p>
+&lt;p>&lt;strong>AWS Secrets Manager Secret Store&lt;/strong>: Use AWS Secrets Managers as a secret store.&lt;/p>
+&lt;p>&lt;strong>Custom Refresh SQL&lt;/strong>: Specify a custom SQL query for dataset refresh using &lt;code>refresh_sql&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Dataset Refresh API&lt;/strong>: Trigger a dataset refresh using the new CLI command &lt;code>spice refresh&lt;/code> or via API.&lt;/p>
+&lt;p>&lt;strong>Expanded SSL support for Postgres&lt;/strong>: SSL mode now supports &lt;code>disable&lt;/code>, &lt;code>require&lt;/code>, &lt;code>prefer&lt;/code>, &lt;code>verify-ca&lt;/code>, &lt;code>verify-full&lt;/code> options with the default mode changed to &lt;code>require&lt;/code>. Added &lt;code>pg_sslrootcert&lt;/code> parameter for setting a custom root certificate and the &lt;code>pg_insecure&lt;/code> parameter is no longer supported.&lt;/p>
+&lt;p>&lt;strong>Databricks Connect&lt;/strong>: Choose between using Spark Connect or Delta Lake when using the Databricks data connector for improved performance.&lt;/p>
+&lt;p>&lt;strong>Improved SSL support for Postgres&lt;/strong>: ssl mode now supports &lt;code>disable&lt;/code>, &lt;code>require&lt;/code>, &lt;code>prefer&lt;/code>, &lt;code>verify-ca&lt;/code>, &lt;code>verify-full&lt;/code> options with default mode changed to &lt;code>require&lt;/code>.
+Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root cert for postgres connector, &lt;code>pg_insecure&lt;/code> parameter is no longer supported as redundant.&lt;/p>
+&lt;p>&lt;strong>Internal architecture refactor&lt;/strong>: The internal architecture of &lt;code>spiced&lt;/code> was refactored to simplify the creation data components and to improve alignment with DataFusion concepts.&lt;/p>
+&lt;h2 id="new-contributors">New Contributors&lt;/h2>
+&lt;p>@edmondop&amp;rsquo;s first contribution &lt;a href="https://github.com/spiceai/spiceai/pull/1110">github.com/spiceai/spiceai/pull/1110&lt;/a>!&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@y-f-u&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@digadeesh&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@gloomweaver&lt;/li>
+&lt;li>@ahirner&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Fixes&lt;/strong> MySQL &lt;code>NULL&lt;/code> values by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1067">https://github.com/spiceai/spiceai/pull/1067&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Fixes&lt;/strong> PostgreSQL &lt;code>NULL&lt;/code> values for &lt;code>NUMERIC&lt;/code> by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1068">https://github.com/spiceai/spiceai/pull/1068&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Custom Refresh SQL support by @lukekim and @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1073">https://github.com/spiceai/spiceai/pull/1073&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> DuckDB data connector by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/1085">https://github.com/spiceai/spiceai/pull/1085&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> AWS Secrets Manager secret store by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1063">https://github.com/spiceai/spiceai/pull/1063&lt;/a>, &lt;a href="https://github.com/spiceai/spiceai/pull/1064">https://github.com/spiceai/spiceai/pull/1064&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Dataset refresh API by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1075">https://github.com/spiceai/spiceai/pull/1075&lt;/a>, &lt;a href="https://github.com/spiceai/spiceai/pull/1078">https://github.com/spiceai/spiceai/pull/1078&lt;/a>, &lt;a href="https://github.com/spiceai/spiceai/pull/1083">https://github.com/spiceai/spiceai/pull/1083&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> &lt;code>spice refresh&lt;/code> CLI command for dataset refresh by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1112">https://github.com/spiceai/spiceai/pull/1112&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> &lt;code>TEXT&lt;/code> and &lt;code>DECIMAL&lt;/code> types support and properly handling &lt;code>NULL&lt;/code> for MySQL by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1067">https://github.com/spiceai/spiceai/pull/1067&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> MySQL &lt;code>DATE&lt;/code> and &lt;code>TINYINT&lt;/code> types support for MySQL by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1065">https://github.com/spiceai/spiceai/pull/1065&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> &lt;code>ssl_rootcert_path&lt;/code> parameter for MySql data connector by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1079">https://github.com/spiceai/spiceai/pull/1079&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> &lt;code>LargeUtf8&lt;/code> support and explicitly passing the schema to data accelerator &lt;code>SqlTable&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1077">https://github.com/spiceai/spiceai/pull/1077&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Ability to configure data retention for accelerated datasets by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/issues/1086">https://github.com/spiceai/spiceai/issues/1086&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Custom SSL certificates for PostgreSQL data connector by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1081">https://github.com/spiceai/spiceai/pull/1081&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Conditional compile for Dremio by @ahirner in &lt;a href="https://github.com/spiceai/spiceai/pull/1100">https://github.com/spiceai/spiceai/pull/1100&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Ability for Databricks connector to use spark-connect-rs as the mechanism to execute queries against the Databricks by @edmondop in &lt;a href="https://github.com/spiceai/spiceai/pull/1110">https://github.com/spiceai/spiceai/pull/1110&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Adds&lt;/strong> Ability to choose between Spark Connect and Delta Lake implementation for Databricks by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1115/files">https://github.com/spiceai/spiceai/pull/1115/files&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> Databricks login parameters by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1113">https://github.com/spiceai/spiceai/pull/1113&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> Architecture to simplify data components development by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1040">https://github.com/spiceai/spiceai/pull/1040&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> Improved readability of GitHub Actions test job names by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1071">https://github.com/spiceai/spiceai/pull/1071&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> Upgrade Arrow, DataFusion, Tonic dependencies by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1097">https://github.com/spiceai/spiceai/pull/1097&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> Handling non-string spicepod params by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1098">https://github.com/spiceai/spiceai/pull/1098&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> Optional features compile: duckdb, databricks by @ahirner in &lt;a href="https://github.com/spiceai/spiceai/pull/1100">https://github.com/spiceai/spiceai/pull/1100&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Updates&lt;/strong> Helm version to 0.1.3 by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1120">https://github.com/spiceai/spiceai/pull/1120&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Removes&lt;/strong> &lt;code>pg_insecure&lt;/code> parameter support from Postgres by ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1081">https://github.com/spiceai/spiceai/pull/1081&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.10.2-alpha...v0.11.0-alpha">https://github.com/spiceai/spiceai/compare/v0.10.2-alpha...v0.11.0-alpha&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.10.2-alpha</title><link>/posts/2024/04/08/announcing-the-release-of-spice.ai-v0.10.2-alpha/</link><pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/08/announcing-the-release-of-spice.ai-v0.10.2-alpha/</guid><description>
 &lt;p>Announcing the release of Spice v0.10.2-alpha (Apr 9, 2024)! 🔥&lt;/p>
 &lt;p>The v0.10.2-alpha release adds the MySQL data connector and makes external data connections more robust on initialization.&lt;/p>
 &lt;h2 id="highlights-in-v0102-alpha">Highlights in v0.10.2-alpha&lt;/h2>
