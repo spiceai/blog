@@ -1,0 +1,73 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Windows</title><link>/tags/windows/</link><description>Recent content in Windows on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 22 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.11.1-alpha</title><link>/posts/2024/04/22/announcing-the-release-of-spice.ai-v0.11.1-alpha/</link><pubDate>Mon, 22 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/22/announcing-the-release-of-spice.ai-v0.11.1-alpha/</guid><description>
+&lt;h1 id="spice-v0111-alpha-apr-22-2024">Spice v0.11.1-alpha (Apr 22, 2024)&lt;/h1>
+&lt;p>The v0.11.1-alpha release introduces retention policies for accelerated datasets, native Windows installation support, and integration of catalog and schema settings for the Databricks Spark connector. Several bugs have also been fixed for improved stability.&lt;/p>
+&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Retention Policies for Accelerated Datasets&lt;/strong>: Automatic eviction of data from accelerated time-series datasets when a specified temporal column exceeds the retention period, optimizing resource utilization.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Windows Installation Support&lt;/strong>: Native Windows installation support, including upgrades.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Databricks Spark Connect Catalog and Schema Settings&lt;/strong>: Improved translation between DataFusion and Spark, providing better Spark Catalog support.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@y-f-u&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@digadeesh&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@gloomweaver&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
+&lt;ul>
+&lt;li>PowerShell script to install Spice on Windows by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1128">https://github.com/spiceai/spiceai/pull/1128&lt;/a>&lt;/li>
+&lt;li>Support catalog and schema in Databricks Spark Connect by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1137">https://github.com/spiceai/spiceai/pull/1137&lt;/a>&lt;/li>
+&lt;li>Retention handlers by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1096">https://github.com/spiceai/spiceai/pull/1096&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Update CONTRIBUTING with new dependencies by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1121">https://github.com/spiceai/spiceai/pull/1121&lt;/a>&lt;/li>
+&lt;li>Fix the Helm tag by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1122">https://github.com/spiceai/spiceai/pull/1122&lt;/a>&lt;/li>
+&lt;li>Upgrade Spice version to 0.11.1 by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1123">https://github.com/spiceai/spiceai/pull/1123&lt;/a>&lt;/li>
+&lt;li>Remove 0.11 from roadmap by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1124">https://github.com/spiceai/spiceai/pull/1124&lt;/a>&lt;/li>
+&lt;li>Include &lt;code>refresh_sql&lt;/code> and manual refresh to e2e tests by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1125">https://github.com/spiceai/spiceai/pull/1125&lt;/a>&lt;/li>
+&lt;li>Respect executables file extension on Windows by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1130">https://github.com/spiceai/spiceai/pull/1130&lt;/a>&lt;/li>
+&lt;li>Use quoted strings when performing federated SQL queries by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1129">https://github.com/spiceai/spiceai/pull/1129&lt;/a>&lt;/li>
+&lt;li>Make Windows artifact names consistent with other platforms by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1132">https://github.com/spiceai/spiceai/pull/1132&lt;/a>&lt;/li>
+&lt;li>Make Windows installation less verbose by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1138">https://github.com/spiceai/spiceai/pull/1138&lt;/a>&lt;/li>
+&lt;li>Document Windows installation and add test by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1134">https://github.com/spiceai/spiceai/pull/1134&lt;/a>&lt;/li>
+&lt;li>Use transaction for DuckDB Table Writer by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/1135">https://github.com/spiceai/spiceai/pull/1135&lt;/a>&lt;/li>
+&lt;li>Update Windows installation script url by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1143">https://github.com/spiceai/spiceai/pull/1143&lt;/a>&lt;/li>
+&lt;li>Update roadmap Apr 18, 2024 by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1142">https://github.com/spiceai/spiceai/pull/1142&lt;/a>&lt;/li>
+&lt;li>Test connection when new connection pool created by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1126">https://github.com/spiceai/spiceai/pull/1126&lt;/a>&lt;/li>
+&lt;li>Enable clippy::clone_on_ref_ptr by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1146">https://github.com/spiceai/spiceai/pull/1146&lt;/a>&lt;/li>
+&lt;li>Allow only alphanumeric dataset names when using &lt;code>spice dataset configure&lt;/code> by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1140">https://github.com/spiceai/spiceai/pull/1140&lt;/a>&lt;/li>
+&lt;li>Extend PR check to build with no default features, and each individual feature by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1156">https://github.com/spiceai/spiceai/pull/1156&lt;/a>&lt;/li>
+&lt;li>Bump rustls from 0.21.10 to 0.21.11 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/1150">https://github.com/spiceai/spiceai/pull/1150&lt;/a>&lt;/li>
+&lt;li>Serde rule for ISO8601 time format by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1151">https://github.com/spiceai/spiceai/pull/1151&lt;/a>&lt;/li>
+&lt;li>Add static linking for vcruntime dependencies on Windows by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1152">https://github.com/spiceai/spiceai/pull/1152&lt;/a>&lt;/li>
+&lt;li>Use clearer retention param key - retention_check_enabled instead by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1158">https://github.com/spiceai/spiceai/pull/1158&lt;/a>&lt;/li>
+&lt;li>&lt;code>spice upgrade&lt;/code> on Windows by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1155">https://github.com/spiceai/spiceai/pull/1155&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.11.0-alpha...v0.11.1-alpha">https://github.com/spiceai/spiceai/compare/v0.11.0-alpha...v0.11.1-alpha&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
