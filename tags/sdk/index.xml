@@ -1,0 +1,103 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Sdk</title><link>/tags/sdk/</link><description>Recent content in Sdk on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 29 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/sdk/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.12-alpha</title><link>/posts/2024/04/29/announcing-the-release-of-spice.ai-v0.12-alpha/</link><pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/29/announcing-the-release-of-spice.ai-v0.12-alpha/</guid><description>
+&lt;h1 id="spice-v012-alpha-apr-29-2024">Spice v0.12-alpha (Apr 29, 2024)&lt;/h1>
+&lt;p>The v0.12-alpha release introduces Clickhouse and Apache Spark data connectors, adds support for limiting refresh data periods for temporal datasets, and includes upgraded Spice Client SDKs compatible with Spice OSS.&lt;/p>
+&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Clickhouse data connector&lt;/strong>: Use &lt;a href="https://clickhouse.com">Clickhouse&lt;/a> as a data source with the &lt;code>clickhouse:&lt;/code> scheme.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Apache Spark Connect data connector&lt;/strong>: Use Apache &lt;a href="https://spark.apache.org/spark-connect/">Spark Connect&lt;/a> connections as a data source using the &lt;code>spark:&lt;/code> scheme.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Refresh data window&lt;/strong>: Limit accelerated dataset data refreshes to the specified window, as a duration from now configuration setting, for faster and more efficient refreshes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>ODBC data connector&lt;/strong>: Use ODBC connections as a data source using the &lt;code>odbc:&lt;/code> scheme. The ODBC data connector is currently optional and not included in default builds. It can be conditionally compiled using the &lt;code>odbc&lt;/code> cargo feature when building from source.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Spice Client SDK Support&lt;/strong>: The official Spice SDKs have been upgraded with support for Spice OSS.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/spiceai/spice-rs/releases/tag/v2.0.0">spice-rs v2.0.0&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/spiceai/spice.js/releases/tag/v2.0.0">spice.js v2.0.0&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/spiceai/gospice/releases/tag/v6.0.0">gospice v6.0.0&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/spiceai/spicepy/releases/tag/v2.0.0">spicepy v2.0.0&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Refresh interval:&lt;/strong> The &lt;code>refresh_interval&lt;/code> acceleration setting and been changed to &lt;code>refresh_check_interval&lt;/code> to make it clearer it is the check versus the data interval.&lt;/li>
+&lt;/ul>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@y-f-u&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@digadeesh&lt;/li>
+&lt;li>@gloomweaver&lt;/li>
+&lt;li>@edmondop&lt;/li>
+&lt;li>@mach-kernel&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-contributors">New Contributors&lt;/h2>
+&lt;ul>
+&lt;li>Thanks to @mach-kernel who made their first contribution in &lt;a href="https://github.com/spiceai/spiceai/pull/1204">https://github.com/spiceai/spiceai/pull/1204&lt;/a> by adding the ODBC data connector!&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Update helm version by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1167">https://github.com/spiceai/spiceai/pull/1167&lt;/a>&lt;/li>
+&lt;li>Handle and trace errors in secret stores by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1149">https://github.com/spiceai/spiceai/pull/1149&lt;/a>&lt;/li>
+&lt;li>bump the release versions to 0.12.0 by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1171">https://github.com/spiceai/spiceai/pull/1171&lt;/a>&lt;/li>
+&lt;li>Don&amp;rsquo;t fail acknowledgments flow if no changes detected by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1170">https://github.com/spiceai/spiceai/pull/1170&lt;/a>&lt;/li>
+&lt;li>Allow Spice CLI to control runtime installation on Windows by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1173">https://github.com/spiceai/spiceai/pull/1173&lt;/a>&lt;/li>
+&lt;li>Allow &lt;code>SELECT count(*)&lt;/code> for Sqlite Data Accelerator by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1166">https://github.com/spiceai/spiceai/pull/1166&lt;/a>&lt;/li>
+&lt;li>add refresh_period param in acceleration by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1180">https://github.com/spiceai/spiceai/pull/1180&lt;/a>&lt;/li>
+&lt;li>Properly support Spark Connect filter pushdown by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1186">https://github.com/spiceai/spiceai/pull/1186&lt;/a>&lt;/li>
+&lt;li>Avoid rate-limiting on arduino/setup-protoc@v3 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1189">https://github.com/spiceai/spiceai/pull/1189&lt;/a>&lt;/li>
+&lt;li>Clickhouse DataConnector base implementation by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1168">https://github.com/spiceai/spiceai/pull/1168&lt;/a>&lt;/li>
+&lt;li>rename refresh_interval to refresh_check_interval by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1190">https://github.com/spiceai/spiceai/pull/1190&lt;/a>&lt;/li>
+&lt;li>Fix timestamp &amp;amp; add support for Decimal to Databricks/Spark by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1194">https://github.com/spiceai/spiceai/pull/1194&lt;/a>&lt;/li>
+&lt;li>Convert temporal column and refresh period to datafusion expr by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1187">https://github.com/spiceai/spiceai/pull/1187&lt;/a>&lt;/li>
+&lt;li>Hot reload accelerated table on dataset update by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1195">https://github.com/spiceai/spiceai/pull/1195&lt;/a>&lt;/li>
+&lt;li>Upgrade DataFusion to 37.1 &amp;amp; DuckDB to 10.2 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1200">https://github.com/spiceai/spiceai/pull/1200&lt;/a>&lt;/li>
+&lt;li>Update version.txt for 0.11.2 release by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1199">https://github.com/spiceai/spiceai/pull/1199&lt;/a>&lt;/li>
+&lt;li>Clickhouse E2E by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1193">https://github.com/spiceai/spiceai/pull/1193&lt;/a>&lt;/li>
+&lt;li>Clickhouse: fix darwin ci pipeline by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1201">https://github.com/spiceai/spiceai/pull/1201&lt;/a>&lt;/li>
+&lt;li>Add table_type to &lt;code>show tables&lt;/code> in Spice SQL &amp;amp; update next version to &lt;code>v0.12.0-alpha&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1206">https://github.com/spiceai/spiceai/pull/1206&lt;/a>&lt;/li>
+&lt;li>print WARN if time_column does not exists in federated schema by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1207">https://github.com/spiceai/spiceai/pull/1207&lt;/a>&lt;/li>
+&lt;li>Add FallbackOnZeroResultsScanExec for executing an input ExecutionPlan and optionally falling back to a TableProvider.scan() if the input has zero results by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1196">https://github.com/spiceai/spiceai/pull/1196&lt;/a>&lt;/li>
+&lt;li>Clickhouse refactor connection code and set secure option by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1198">https://github.com/spiceai/spiceai/pull/1198&lt;/a>&lt;/li>
+&lt;li>E2E: reusable Spice installation by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1205">https://github.com/spiceai/spiceai/pull/1205&lt;/a>&lt;/li>
+&lt;li>Clickhouse block_to_arrow unit test by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1202">https://github.com/spiceai/spiceai/pull/1202&lt;/a>&lt;/li>
+&lt;li>rename refresh_period to refresh_data_period by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1210">https://github.com/spiceai/spiceai/pull/1210&lt;/a>&lt;/li>
+&lt;li>Refactor E2E tests: dataset verification and PostgreSQL installation by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1211">https://github.com/spiceai/spiceai/pull/1211&lt;/a>&lt;/li>
+&lt;li>Add BI dashboard acceleration video to README.md by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1219">https://github.com/spiceai/spiceai/pull/1219&lt;/a>&lt;/li>
+&lt;li>Improve clarity and consistency of output messages by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1214">https://github.com/spiceai/spiceai/pull/1214&lt;/a>&lt;/li>
+&lt;li>Update ROADMAP Apr 29, 2024 by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1220">https://github.com/spiceai/spiceai/pull/1220&lt;/a>&lt;/li>
+&lt;li>Stand-alone Spark Connect: Isolate Spark Connect from Databricks Connect to make it reusable by @edmondop in &lt;a href="https://github.com/spiceai/spiceai/pull/1213">https://github.com/spiceai/spiceai/pull/1213&lt;/a>&lt;/li>
+&lt;li>Optimize build time in dev mode by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1215">https://github.com/spiceai/spiceai/pull/1215&lt;/a>&lt;/li>
+&lt;li>Feature: Support ODBC reads using unixodbc by @mach-kernel in &lt;a href="https://github.com/spiceai/spiceai/pull/1204">https://github.com/spiceai/spiceai/pull/1204&lt;/a>&lt;/li>
+&lt;li>Use non-fork deltalake by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1223">https://github.com/spiceai/spiceai/pull/1223&lt;/a>&lt;/li>
+&lt;li>Support Date32 &amp;amp; Date64 in arrow_sql_gen by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1217">https://github.com/spiceai/spiceai/pull/1217&lt;/a>&lt;/li>
+&lt;li>Update REPL output to be consistent with the latest Spice version by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1231">https://github.com/spiceai/spiceai/pull/1231&lt;/a>&lt;/li>
+&lt;li>rename refresh_data_period to refresh_data_window by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1233">https://github.com/spiceai/spiceai/pull/1233&lt;/a>&lt;/li>
+&lt;li>Update README.md to include ODBC, Spark Connect, and Clickhouse data connectors in support data connector matrix. by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1234">https://github.com/spiceai/spiceai/pull/1234&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.11.1-alpha...v0.12.0-alpha">https://github.com/spiceai/spiceai/compare/v0.11.1-alpha...v0.12.0-alpha&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
