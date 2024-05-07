@@ -1,0 +1,86 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Tables</title><link>/tags/tables/</link><description>Recent content in Tables on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 06 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/tables/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.12.1-alpha</title><link>/posts/2024/05/06/announcing-the-release-of-spice.ai-v0.12.1-alpha/</link><pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate><guid>/posts/2024/05/06/announcing-the-release-of-spice.ai-v0.12.1-alpha/</guid><description>
+&lt;h1 id="spice-v0121-alpha-may-6-2024">Spice v0.12.1-alpha (May 6, 2024)&lt;/h1>
+&lt;p>The v0.12.1-alpha release introduces a new Snowflake data connector, support for UUID and TimestampTZ types in the PostgreSQL connector, and improved error messages across all data connectors. The Clickhouse data connector enables data streaming by default. The public SQL interface now restricts DML and DDL queries. Additionally, accelerated tables now fully support NULL values, and issues with schema conversion in these tables have been resolved.&lt;/p>
+&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Snowflake Data Connector&lt;/strong>: Initial support for &lt;a href="https://www.snowflake.com/">Snowflake&lt;/a> as a data source.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Clickhouse Data Streaming&lt;/strong>: Enables data streaming by default, eliminating in-memory result collection.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Read-only SQL Interface&lt;/strong>: Disables DML (INSERT/UPDATE/DELETE) and DDL (CREATE/ALTER TABLE) queries for improved data source security.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Error Message Improvements&lt;/strong>: Improved the error messages for commonly encountered issues with data connectors.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Accelerated Tables&lt;/strong>: Supports NULL values across all data types and fixes schema conversion errors for consistent type handling.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@ahirner&lt;/li>
+&lt;li>@y-f-u&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@gloomweaver&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@digadeesh&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Add schema types check for query result by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1212">https://github.com/spiceai/spiceai/pull/1212&lt;/a>&lt;/li>
+&lt;li>helm chart for v0.12.0-alpha by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1235">https://github.com/spiceai/spiceai/pull/1235&lt;/a>&lt;/li>
+&lt;li>Update acknowledgements by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/1232">https://github.com/spiceai/spiceai/pull/1232&lt;/a>&lt;/li>
+&lt;li>Bump spiceai version to v0.12.1-alpha by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1239">https://github.com/spiceai/spiceai/pull/1239&lt;/a>&lt;/li>
+&lt;li>Update ROADMAP.md - remove v0.12.0-alpha by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1241">https://github.com/spiceai/spiceai/pull/1241&lt;/a>&lt;/li>
+&lt;li>Raise errors in InsertBuilder by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1242">https://github.com/spiceai/spiceai/pull/1242&lt;/a>&lt;/li>
+&lt;li>Update endgame template by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1240">https://github.com/spiceai/spiceai/pull/1240&lt;/a>&lt;/li>
+&lt;li>Add E2E tests for acceleration engines types support by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1218">https://github.com/spiceai/spiceai/pull/1218&lt;/a>&lt;/li>
+&lt;li>Stream blocks to arrow by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1203">https://github.com/spiceai/spiceai/pull/1203&lt;/a>&lt;/li>
+&lt;li>Update enhancement.md to include a checklist item have a release notes entry for each enhancement. by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1245">https://github.com/spiceai/spiceai/pull/1245&lt;/a>&lt;/li>
+&lt;li>arrow_sql_gen data column conversion by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/1230">https://github.com/spiceai/spiceai/pull/1230&lt;/a>&lt;/li>
+&lt;li>Implement the Localhost Data Connector &amp;amp; fix DoPut by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1266">https://github.com/spiceai/spiceai/pull/1266&lt;/a>&lt;/li>
+&lt;li>Update postgres parameter check by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/1244">https://github.com/spiceai/spiceai/pull/1244&lt;/a>&lt;/li>
+&lt;li>Record batch casting to fix SQLite data type issues by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1261">https://github.com/spiceai/spiceai/pull/1261&lt;/a>&lt;/li>
+&lt;li>typo fix on Decimal in postgres arrow_sql_gen by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1277">https://github.com/spiceai/spiceai/pull/1277&lt;/a>&lt;/li>
+&lt;li>Move verify_schema to arrow_tools by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1284">https://github.com/spiceai/spiceai/pull/1284&lt;/a>&lt;/li>
+&lt;li>Support UUID and TimestampTZ type for Postgres as Data Connector by @ahirner &amp;amp; @y-f-u &lt;a href="https://github.com/spiceai/spiceai/pull/1276">https://github.com/spiceai/spiceai/pull/1276&lt;/a>&lt;/li>
+&lt;li>Fix linter warnings by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1286">https://github.com/spiceai/spiceai/pull/1286&lt;/a>&lt;/li>
+&lt;li>Add Snowflake data connector by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1278">https://github.com/spiceai/spiceai/pull/1278&lt;/a>&lt;/li>
+&lt;li>Add Snowflake login support (username and password) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1272">https://github.com/spiceai/spiceai/pull/1272&lt;/a>&lt;/li>
+&lt;li>convert timestamp properly in sql gen by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1291">https://github.com/spiceai/spiceai/pull/1291&lt;/a>&lt;/li>
+&lt;li>Add if not exists clause to create statement on when creating a table using duckdb acceleration. by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1290">https://github.com/spiceai/spiceai/pull/1290&lt;/a>&lt;/li>
+&lt;li>Disable DML &amp;amp; DDL queries in the public SQL interface by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1294">https://github.com/spiceai/spiceai/pull/1294&lt;/a>&lt;/li>
+&lt;li>Refactor duckdb to properly set access_mode for connection by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1285">https://github.com/spiceai/spiceai/pull/1285&lt;/a>&lt;/li>
+&lt;li>do not insert batch for sqlite and postgres if no records in the record batch by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1293">https://github.com/spiceai/spiceai/pull/1293&lt;/a>&lt;/li>
+&lt;li>Postgres - add custom error message for invalid error table by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1295">https://github.com/spiceai/spiceai/pull/1295&lt;/a>&lt;/li>
+&lt;li>SQLite/Accelerators handle null values by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1298">https://github.com/spiceai/spiceai/pull/1298&lt;/a>&lt;/li>
+&lt;li>Add command to attach to running process by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1297">https://github.com/spiceai/spiceai/pull/1297&lt;/a>&lt;/li>
+&lt;li>Use the &lt;code>GITHUB_TOKEN&lt;/code> environment variable in the installation script, if available, to avoid rate limiting in CI workflows by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1302">https://github.com/spiceai/spiceai/pull/1302&lt;/a>&lt;/li>
+&lt;li>Fix unsupported SSL mode options for PostgreSQL connection string by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1300">https://github.com/spiceai/spiceai/pull/1300&lt;/a>&lt;/li>
+&lt;li>Add CLI cmd &lt;code>spice login spark&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1303">https://github.com/spiceai/spiceai/pull/1303&lt;/a>&lt;/li>
+&lt;li>Check only the latest published release to avoid installing pre-release versions by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1301">https://github.com/spiceai/spiceai/pull/1301&lt;/a>&lt;/li>
+&lt;li>Postgres data connector - handle invalid host/port and username/password errors by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1292">https://github.com/spiceai/spiceai/pull/1292&lt;/a>&lt;/li>
+&lt;li>Fix the panic on bad clickhouse connection by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1306">https://github.com/spiceai/spiceai/pull/1306&lt;/a>&lt;/li>
+&lt;li>Improve Snowflake Data Connector by @sgrebnov &lt;a href="https://github.com/spiceai/spiceai/pull/1296">https://github.com/spiceai/spiceai/pull/1296&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.12.0-alpha...v0.12.1-alpha">https://github.com/spiceai/spiceai/compare/v0.12.0-alpha...v0.12.1-alpha&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
