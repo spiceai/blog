@@ -1,5 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Postgresql</title><link>/tags/postgresql/</link><description>Recent content in Postgresql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.10.1-alpha</title><link>/posts/2024/04/01/announcing-the-release-of-spice.ai-v0.10.1-alpha/</link><pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/01/announcing-the-release-of-spice.ai-v0.10.1-alpha/</guid><description>
-&lt;p>Announcing the release of Spice v0.10.1-alpha! 🔥&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Postgresql</title><link>/tags/postgresql/</link><description>Recent content in Postgresql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.10.1-alpha (April 1, 2024)</title><link>/posts/2024/04/01/spice-v0.10.1-alpha-april-1-2024/</link><pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/01/spice-v0.10.1-alpha-april-1-2024/</guid><description>
 &lt;p>The v0.10.1-alpha release focuses on stability, bug fixes, and usability by improving error messages when using SQLite data accelerators, improving the PostgreSQL support, and adding a basic Helm chart.&lt;/p>
 &lt;h2 id="highlights-in-v0101-alpha">Highlights in v0.10.1-alpha&lt;/h2>
 &lt;p>&lt;strong>Improved PostgreSQL support for Data Connectors&lt;/strong> TLS is now supported with PostgreSQL Data Connectors and there is improved VARCHAR and BPCHAR conversions through Spice.&lt;/p>
@@ -51,8 +50,7 @@
 &lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.10-alpha</title><link>/posts/2024/03/27/announcing-the-release-of-spice.ai-v0.10-alpha/</link><pubDate>Wed, 27 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/27/announcing-the-release-of-spice.ai-v0.10-alpha/</guid><description>
-&lt;p>Announcing the release of Spice v0.10-alpha! 🧙‍♂️&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.10-alpha (March 27, 2024)</title><link>/posts/2024/03/27/spice-v0.10-alpha-march-27-2024/</link><pubDate>Wed, 27 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/27/spice-v0.10-alpha-march-27-2024/</guid><description>
 &lt;p>The Spice.ai v0.10-alpha release focused on additions and updates to improve stability, usability, and the overall Spice developer experience.&lt;/p>
 &lt;h2 id="highlights-in-v010-alpha">Highlights in v0.10-alpha&lt;/h2>
 &lt;p>&lt;strong>Public Bucket Support for S3 Data Connector&lt;/strong>: The S3 Data Connector now supports public buckets in addition to buckets requiring an access id and key.&lt;/p>
@@ -105,8 +103,7 @@
 &lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.9-alpha</title><link>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</link><pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</guid><description>
-&lt;p>Announcing the release of Spice v0.9-alpha! 🧙‍♂️&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.9-alpha (March 15, 2024)</title><link>/posts/2024/03/15/spice-v0.9-alpha-march-15-2024/</link><pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/15/spice-v0.9-alpha-march-15-2024/</guid><description>
 &lt;p>The v0.9 release adds several data connectors including the Spice data connector for the ability to connect to other Spice instances. Improved observability for the Spice runtime has been added with the new &lt;code>/metrics&lt;/code> endpoint for monitoring deployed instances.&lt;/p>
 &lt;h2 id="highlights-in-v09-alpha">Highlights in v0.9-alpha&lt;/h2>
 &lt;p>&lt;strong>Arrow Flight SQL endpoint&lt;/strong>: The Arrow Flight endpoint now supports Flight SQL, including JDBC, ODBC, and ADBC enabling database clients like DBeaver or BI applications like Tableau to connect to and query the Spice runtime.&lt;/p>
@@ -162,8 +159,7 @@
 &lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.8-alpha</title><link>/posts/2024/03/08/announcing-the-release-of-spice.ai-v0.8-alpha/</link><pubDate>Fri, 08 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/08/announcing-the-release-of-spice.ai-v0.8-alpha/</guid><description>
-&lt;p>Announcing the release of Spice v0.8-alpha! 🏹&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.8-alpha (March 8, 2024)</title><link>/posts/2024/03/08/spice-v0.8-alpha-march-8-2024/</link><pubDate>Fri, 08 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/08/spice-v0.8-alpha-march-8-2024/</guid><description>
 &lt;p>This is a minor release that builds on the new Rust-based runtime, adding stability and a preview of new features for the first major release.&lt;/p>
 &lt;h2 id="highlights-in-v08-alpha">Highlights in v0.8-alpha&lt;/h2>
 &lt;p>Secrets management: Spice 0.8 runtime can now configure and retrieve secrets from local environment variables and in a Kubernetes cluster.&lt;/p>

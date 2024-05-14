@@ -43,8 +43,7 @@
 &lt;p>For developers this translates to less time wrangling data and more time creating innovative applications and business value.&lt;/p>
 &lt;p>Check out and &lt;a href="https://github.com/spiceai/spiceai">star the project on GitHub&lt;/a>!&lt;/p>
 &lt;p>Thank you,&lt;/p>
-&lt;p>Phillip&lt;/p></description></item><item><title>Posts: Announcing the release of Spice.ai v0.3.1-alpha</title><link>/posts/2021/11/02/announcing-the-release-of-spice.ai-v0.3.1-alpha/</link><pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/02/announcing-the-release-of-spice.ai-v0.3.1-alpha/</guid><description>
-&lt;p>We are excited to announce the release of Spice.ai v0.3.1-alpha! 🎃&lt;/p>
+&lt;p>Phillip&lt;/p></description></item><item><title>Posts: Spice v0.3.1-alpha (November 2, 2021)</title><link>/posts/2021/11/02/spice-v0.3.1-alpha-november-2-2021/</link><pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/02/spice-v0.3.1-alpha-november-2-2021/</guid><description>
 &lt;p>This point release focuses on fixes and improvements to v0.3-alpha. Highlights include the ability to specify both seed and runtime data, to select custom named fields for &lt;code>time&lt;/code> and &lt;code>tags&lt;/code>, a new &lt;code>spice upgrade&lt;/code> command and several bug fixes.&lt;/p>
 &lt;p>A special acknowledgment to &lt;a href="https://github.com/Adm28">@Adm28&lt;/a>, who added the new &lt;code>spice upgrade&lt;/code> command, which enables the CLI to self-update, which in turn will auto-update the runtime.&lt;/p>
 &lt;h2 id="highlights-in-v031-alpha">Highlights in v0.3.1-alpha&lt;/h2>
@@ -112,8 +111,7 @@
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Spice.ai v0.3-alpha is now available</title><link>/posts/2021/10/26/spice.ai-v0.3-alpha-is-now-available/</link><pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/26/spice.ai-v0.3-alpha-is-now-available/</guid><description>
-&lt;p>We are excited to announce the release of Spice.ai v0.3-alpha! 🎉&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.3-alpha (October 26, 2021)</title><link>/posts/2021/10/26/spice-v0.3-alpha-october-26-2021/</link><pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/26/spice-v0.3-alpha-october-26-2021/</guid><description>
 &lt;p>This release adds support for ingestion, automatic encoding, and training of categorical data, enabling more use-cases and datasets beyond just numerical measurements. For example, perhaps you want to learn from data that includes a category of t-shirt sizes, with discrete values, such as small, medium, and large. The v0.3 engine now supports this and automatically encodes the categorical string values into numerical values that the AI engine can use. Also included is a preview of data visualizations in the dashboard, which is helpful for developers as they author Spicepods and dataspaces.&lt;/p>
 &lt;div style="display: flex; justify-content: center;">
 &lt;div style="display: flex; flex-direction: column;">
@@ -194,8 +192,7 @@
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Spice.ai v0.2-alpha is now available</title><link>/posts/2021/10/04/spice.ai-v0.2-alpha-is-now-available/</link><pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/04/spice.ai-v0.2-alpha-is-now-available/</guid><description>
-&lt;p>We are excited to announce the release of Spice.ai v0.2-alpha! 🎉&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.2-alpha (October 4, 2021)</title><link>/posts/2021/10/04/spice-v0.2-alpha-october-4-2021/</link><pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/04/spice-v0.2-alpha-october-4-2021/</guid><description>
 &lt;p>This release is the first major version since the &lt;a href="https://blog.spiceai.org/posts/2021/09/07/introducing-spice.ai-open-source-time-series-ai-for-developers/">initial v0.1 announcement&lt;/a> and includes significant improvements based upon community and customer feedback. If you are new to Spice.ai, check out the &lt;a href="https://docs.spiceai.org/getting-started/">getting started guide&lt;/a> and star &lt;a href="https://github.com/spiceai/spiceai">spiceai/spiceai&lt;/a> on GitHub.&lt;/p>
 &lt;h2 id="highlights-in-v02-alpha">Highlights in v0.2-alpha&lt;/h2>
 &lt;h3 id="tagged-data">Tagged data&lt;/h3>

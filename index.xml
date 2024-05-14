@@ -1,5 +1,90 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.12.1-alpha</title><link>/posts/2024/05/06/announcing-the-release-of-spice.ai-v0.12.1-alpha/</link><pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate><guid>/posts/2024/05/06/announcing-the-release-of-spice.ai-v0.12.1-alpha/</guid><description>
-&lt;h1 id="spice-v0121-alpha-may-6-2024">Spice v0.12.1-alpha (May 6, 2024)&lt;/h1>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.12.2-alpha (May 13, 2024)</title><link>/posts/2024/05/13/spice-v0.12.2-alpha-may-13-2024/</link><pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate><guid>/posts/2024/05/13/spice-v0.12.2-alpha-may-13-2024/</guid><description>
+&lt;p>The v0.12.2-alpha release introduces data streaming and key-pair authentication for the Snowflake data connector, enables general &lt;code>append&lt;/code> mode data refreshes for time-series data, improves connectivity error messages, adds nested folders support for the S3 data connector, and exposes nodeSelector and affinity keys in the Helm chart for better Kubernetes management.&lt;/p>
+&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Improved Connectivity Error Messages&lt;/strong>: Error messages provide clearer, actionable guidance for misconfigured settings or unreachable data connectors.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Snowflake Data Connector Improvements&lt;/strong>: Enables data streaming by default and adds support for &lt;a href="https://docs.snowflake.com/en/user-guide/key-pair-auth">key-pair&lt;/a> authentication in addition to passwords.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>API for Refresh SQL Updates&lt;/strong>: Update dataset Refresh SQL via API.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Append Data Refresh&lt;/strong>: Append mode data refreshes for time-series data are now supported for all data connectors. Specify a dataset &lt;code>time_column&lt;/code> with &lt;code>refresh_mode: append&lt;/code> to only fetch data more recent than the latest local data.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Docker Image Update&lt;/strong>: The &lt;code>spiceai/spiceai:latest&lt;/code> Docker image now includes the ODBC data connector. For a smaller footprint, use &lt;code>spiceai/spiceai:latest-slim&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Helm Chart Improvements&lt;/strong>: &lt;code>nodeSelector&lt;/code> and &lt;code>affinity&lt;/code> keys are now supported in the Helm chart for improved Kubernetes deployment management.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
+&lt;ul>
+&lt;li>API to trigger accelerated dataset refreshes has changed from &lt;code>POST /v1/datasets/:name/refresh&lt;/code> to &lt;code>POST /v1/datasets/:name/acceleration/refresh&lt;/code> to be consistent with the &lt;code>Spicepod.yaml&lt;/code> structure.&lt;/li>
+&lt;/ul>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@mach-kernel&lt;/li>
+&lt;li>@y-f-u&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@digadeesh&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Fix list type support in spark connect by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1341">https://github.com/spiceai/spiceai/pull/1341&lt;/a>&lt;/li>
+&lt;li>Add nested folder support in S3 Parquet connector by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1342">https://github.com/spiceai/spiceai/pull/1342&lt;/a>&lt;/li>
+&lt;li>Improves S3 connector using DataFusion ListingTable table provider by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1326">https://github.com/spiceai/spiceai/pull/1326&lt;/a>&lt;/li>
+&lt;li>Update ROADMAP May 6, 2024 by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1315">https://github.com/spiceai/spiceai/pull/1315&lt;/a>&lt;/li>
+&lt;li>List flightsql and snowflake as supported connectors in README.md by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1317">https://github.com/spiceai/spiceai/pull/1317&lt;/a>&lt;/li>
+&lt;li>Helm chart for v0.12.1-alpha by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1323">https://github.com/spiceai/spiceai/pull/1323&lt;/a>&lt;/li>
+&lt;li>Read sqlite_file param and use it as path by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/1309">https://github.com/spiceai/spiceai/pull/1309&lt;/a>&lt;/li>
+&lt;li>Compile spiced with &lt;code>release&lt;/code> feature in docker image by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1324">https://github.com/spiceai/spiceai/pull/1324&lt;/a>&lt;/li>
+&lt;li>Add support for Snowflake key-pair authentication by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1314">https://github.com/spiceai/spiceai/pull/1314&lt;/a>&lt;/li>
+&lt;li>Wrap postgres errors in common DataConnectorError by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1327">https://github.com/spiceai/spiceai/pull/1327&lt;/a>&lt;/li>
+&lt;li>Fix TPCH tests runner by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1330">https://github.com/spiceai/spiceai/pull/1330&lt;/a>&lt;/li>
+&lt;li>Spice CLI support for Snowflake key-pair auth by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1325">https://github.com/spiceai/spiceai/pull/1325&lt;/a>&lt;/li>
+&lt;li>sql_provider_datafusion: Support TimestampMicrosecond, Date32, Date64 by @mach-kernel in &lt;a href="https://github.com/spiceai/spiceai/pull/1329">https://github.com/spiceai/spiceai/pull/1329&lt;/a>&lt;/li>
+&lt;li>Resolve dangling reference for SQLite by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/1312">https://github.com/spiceai/spiceai/pull/1312&lt;/a>&lt;/li>
+&lt;li>Select columns from Spark Dataframe according to projected_schema by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/1336">https://github.com/spiceai/spiceai/pull/1336&lt;/a>&lt;/li>
+&lt;li>Expose nodeselector and affinity keys in Helm chart by @mach-kernel in &lt;a href="https://github.com/spiceai/spiceai/pull/1338">https://github.com/spiceai/spiceai/pull/1338&lt;/a>&lt;/li>
+&lt;li>Use streaming for Snowflake queries by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1337">https://github.com/spiceai/spiceai/pull/1337&lt;/a>&lt;/li>
+&lt;li>Publish ODBC images by @mach-kernel in &lt;a href="https://github.com/spiceai/spiceai/pull/1271">https://github.com/spiceai/spiceai/pull/1271&lt;/a>&lt;/li>
+&lt;li>Include Postgres acceleration engine to types support tests by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1343">https://github.com/spiceai/spiceai/pull/1343&lt;/a>&lt;/li>
+&lt;li>Refactor dataconnector providers getters to return common &lt;code>DataConnectorResult&lt;/code> and &lt;code>DataConnectorError&lt;/code> by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1339">https://github.com/spiceai/spiceai/pull/1339&lt;/a>&lt;/li>
+&lt;li>s3 csv support to validate the listing table extensibility by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1344">https://github.com/spiceai/spiceai/pull/1344&lt;/a>&lt;/li>
+&lt;li>Move model code into separate, feature-flagged crate by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1335">https://github.com/spiceai/spiceai/pull/1335&lt;/a>&lt;/li>
+&lt;li>Initial setup for federated queries by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1350">https://github.com/spiceai/spiceai/pull/1350&lt;/a>&lt;/li>
+&lt;li>Refactor dbconnection errors, and catch invalid postgres table name case by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1353">https://github.com/spiceai/spiceai/pull/1353&lt;/a>&lt;/li>
+&lt;li>Rename default datafusion catalog to &amp;ldquo;spice&amp;rdquo;, add internal &amp;ldquo;spice.runtime&amp;rdquo; schema by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1359">https://github.com/spiceai/spiceai/pull/1359&lt;/a>&lt;/li>
+&lt;li>Add API to set Refresh SQL for accelerated table by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1356">https://github.com/spiceai/spiceai/pull/1356&lt;/a>&lt;/li>
+&lt;li>Set next version to v0.12.2 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1367">https://github.com/spiceai/spiceai/pull/1367&lt;/a>&lt;/li>
+&lt;li>Upgrade to DataFusion 38 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1368">https://github.com/spiceai/spiceai/pull/1368&lt;/a>&lt;/li>
+&lt;li>Incremental append based on time column by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1360">https://github.com/spiceai/spiceai/pull/1360&lt;/a>&lt;/li>
+&lt;li>Update README.md to include correct output when running show tables from quickstart by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1371">https://github.com/spiceai/spiceai/pull/1371&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.12.1-alpha...v0.12.2-alpha">https://github.com/spiceai/spiceai/compare/v0.12.1-alpha...v0.12.2-alpha&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.12.1-alpha (May 6, 2024)</title><link>/posts/2024/05/06/spice-v0.12.1-alpha-may-6-2024/</link><pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate><guid>/posts/2024/05/06/spice-v0.12.1-alpha-may-6-2024/</guid><description>
 &lt;p>The v0.12.1-alpha release introduces a new Snowflake data connector, support for UUID and TimestampTZ types in the PostgreSQL connector, and improved error messages across all data connectors. The Clickhouse data connector enables data streaming by default. The public SQL interface now restricts DML and DDL queries. Additionally, accelerated tables now fully support NULL values, and issues with schema conversion in these tables have been resolved.&lt;/p>
 &lt;h2 id="highlights">Highlights&lt;/h2>
 &lt;ul>
@@ -83,8 +168,7 @@
 &lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.12-alpha</title><link>/posts/2024/04/29/announcing-the-release-of-spice.ai-v0.12-alpha/</link><pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/29/announcing-the-release-of-spice.ai-v0.12-alpha/</guid><description>
-&lt;h1 id="spice-v012-alpha-apr-29-2024">Spice v0.12-alpha (Apr 29, 2024)&lt;/h1>
+&lt;/ul></description></item><item><title>Posts: Spice v0.12-alpha (Apr 29, 2024)</title><link>/posts/2024/04/29/spice-v0.12-alpha-apr-29-2024/</link><pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/29/spice-v0.12-alpha-apr-29-2024/</guid><description>
 &lt;p>The v0.12-alpha release introduces Clickhouse and Apache Spark data connectors, adds support for limiting refresh data periods for temporal datasets, and includes upgraded Spice Client SDKs compatible with Spice OSS.&lt;/p>
 &lt;h2 id="highlights">Highlights&lt;/h2>
 &lt;ul>
@@ -185,8 +269,7 @@
 &lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.11.1-alpha</title><link>/posts/2024/04/22/announcing-the-release-of-spice.ai-v0.11.1-alpha/</link><pubDate>Mon, 22 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/22/announcing-the-release-of-spice.ai-v0.11.1-alpha/</guid><description>
-&lt;h1 id="spice-v0111-alpha-apr-22-2024">Spice v0.11.1-alpha (Apr 22, 2024)&lt;/h1>
+&lt;/ul></description></item><item><title>Posts: Spice v0.11.1-alpha (Apr 22, 2024)</title><link>/posts/2024/04/22/spice-v0.11.1-alpha-apr-22-2024/</link><pubDate>Mon, 22 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/22/spice-v0.11.1-alpha-apr-22-2024/</guid><description>
 &lt;p>The v0.11.1-alpha release introduces retention policies for accelerated datasets, native Windows installation support, and integration of catalog and schema settings for the Databricks Spark connector. Several bugs have also been fixed for improved stability.&lt;/p>
 &lt;h2 id="highlights">Highlights&lt;/h2>
 &lt;ul>
@@ -257,8 +340,7 @@
 &lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.11-alpha</title><link>/posts/2024/04/15/announcing-the-release-of-spice.ai-v0.11-alpha/</link><pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/15/announcing-the-release-of-spice.ai-v0.11-alpha/</guid><description>
-&lt;h1 id="spice-v011-alpha-apr-15-2024">Spice v0.11-alpha (Apr 15, 2024)&lt;/h1>
+&lt;/ul></description></item><item><title>Posts: Spice v0.11-alpha (Apr 15, 2024)</title><link>/posts/2024/04/15/spice-v0.11-alpha-apr-15-2024/</link><pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/15/spice-v0.11-alpha-apr-15-2024/</guid><description>
 &lt;p>The Spice v0.11-alpha release significantly improves the Databricks data connector with &lt;a href="https://docs.databricks.com/en/dev-tools/databricks-connect/index.html">Databricks Connect&lt;/a> (Spark Connect) support, adds the DuckDB data connector, and adds the AWS Secrets Manager secret store. In addition, enhanced control over accelerated dataset refreshes, improved SSL security for MySQL and PostgreSQL connections, and overall stability improvements have been added.&lt;/p>
 &lt;h2 id="highlights-in-v011-alpha">Highlights in v0.11-alpha&lt;/h2>
 &lt;p>&lt;strong>DuckDB data connector&lt;/strong>: Use DuckDB databases or connections as a data source.&lt;/p>
@@ -326,8 +408,7 @@ Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root c
 &lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.10.2-alpha</title><link>/posts/2024/04/08/announcing-the-release-of-spice.ai-v0.10.2-alpha/</link><pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/08/announcing-the-release-of-spice.ai-v0.10.2-alpha/</guid><description>
-&lt;p>Announcing the release of Spice v0.10.2-alpha (Apr 9, 2024)! 🔥&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.10.2-alpha (April 8, 2024)</title><link>/posts/2024/04/08/spice-v0.10.2-alpha-april-8-2024/</link><pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/08/spice-v0.10.2-alpha-april-8-2024/</guid><description>
 &lt;p>The v0.10.2-alpha release adds the MySQL data connector and makes external data connections more robust on initialization.&lt;/p>
 &lt;h2 id="highlights-in-v0102-alpha">Highlights in v0.10.2-alpha&lt;/h2>
 &lt;ul>
@@ -385,8 +466,7 @@ Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root c
 &lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.10.1-alpha</title><link>/posts/2024/04/01/announcing-the-release-of-spice.ai-v0.10.1-alpha/</link><pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/01/announcing-the-release-of-spice.ai-v0.10.1-alpha/</guid><description>
-&lt;p>Announcing the release of Spice v0.10.1-alpha! 🔥&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.10.1-alpha (April 1, 2024)</title><link>/posts/2024/04/01/spice-v0.10.1-alpha-april-1-2024/</link><pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/01/spice-v0.10.1-alpha-april-1-2024/</guid><description>
 &lt;p>The v0.10.1-alpha release focuses on stability, bug fixes, and usability by improving error messages when using SQLite data accelerators, improving the PostgreSQL support, and adding a basic Helm chart.&lt;/p>
 &lt;h2 id="highlights-in-v0101-alpha">Highlights in v0.10.1-alpha&lt;/h2>
 &lt;p>&lt;strong>Improved PostgreSQL support for Data Connectors&lt;/strong> TLS is now supported with PostgreSQL Data Connectors and there is improved VARCHAR and BPCHAR conversions through Spice.&lt;/p>
@@ -483,8 +563,7 @@ Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root c
 &lt;p>For developers this translates to less time wrangling data and more time creating innovative applications and business value.&lt;/p>
 &lt;p>Check out and &lt;a href="https://github.com/spiceai/spiceai">star the project on GitHub&lt;/a>!&lt;/p>
 &lt;p>Thank you,&lt;/p>
-&lt;p>Phillip&lt;/p></description></item><item><title>Posts: Announcing the release of Spice.ai v0.10-alpha</title><link>/posts/2024/03/27/announcing-the-release-of-spice.ai-v0.10-alpha/</link><pubDate>Wed, 27 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/27/announcing-the-release-of-spice.ai-v0.10-alpha/</guid><description>
-&lt;p>Announcing the release of Spice v0.10-alpha! 🧙‍♂️&lt;/p>
+&lt;p>Phillip&lt;/p></description></item><item><title>Posts: Spice v0.10-alpha (March 27, 2024)</title><link>/posts/2024/03/27/spice-v0.10-alpha-march-27-2024/</link><pubDate>Wed, 27 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/27/spice-v0.10-alpha-march-27-2024/</guid><description>
 &lt;p>The Spice.ai v0.10-alpha release focused on additions and updates to improve stability, usability, and the overall Spice developer experience.&lt;/p>
 &lt;h2 id="highlights-in-v010-alpha">Highlights in v0.10-alpha&lt;/h2>
 &lt;p>&lt;strong>Public Bucket Support for S3 Data Connector&lt;/strong>: The S3 Data Connector now supports public buckets in addition to buckets requiring an access id and key.&lt;/p>
@@ -537,8 +616,7 @@ Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root c
 &lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.9.1-alpha</title><link>/posts/2024/03/25/announcing-the-release-of-spice.ai-v0.9.1-alpha/</link><pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/25/announcing-the-release-of-spice.ai-v0.9.1-alpha/</guid><description>
-&lt;p>Announcing the release of Spice v0.9.1-alpha! 🧙‍♂️&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.9.1-alpha (March 25, 2024)</title><link>/posts/2024/03/25/spice-v0.9.1-alpha-march-25-2024/</link><pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/25/spice-v0.9.1-alpha-march-25-2024/</guid><description>
 &lt;p>The v0.9.1 release focused on stability, bug fixes, and usability by adding &lt;code>spice&lt;/code> CLI commands for listing Spicepods (&lt;code>spice pods&lt;/code>), Models (&lt;code>spice models&lt;/code>), Datasets (&lt;code>spice datasets&lt;/code>), and improved status (&lt;code>spice status&lt;/code>) details. In addition, the Arrow Flight SQL (&lt;code>flightsql&lt;/code>) data connector and SQLite (&lt;code>sqlite&lt;/code>) data store were added.&lt;/p>
 &lt;h2 id="highlights-in-v091-alpha">Highlights in v0.9.1-alpha&lt;/h2>
 &lt;p>&lt;strong>FlightSQL data connector&lt;/strong>: &lt;a href="https://arrow.apache.org/docs/format/FlightSql.html">Arrow Flight SQL&lt;/a> can now be used as a connector for federated SQL query.&lt;/p>
@@ -581,8 +659,7 @@ Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root c
 &lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.9-alpha</title><link>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</link><pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/15/announcing-the-release-of-spice.ai-v0.9-alpha/</guid><description>
-&lt;p>Announcing the release of Spice v0.9-alpha! 🧙‍♂️&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.9-alpha (March 15, 2024)</title><link>/posts/2024/03/15/spice-v0.9-alpha-march-15-2024/</link><pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/15/spice-v0.9-alpha-march-15-2024/</guid><description>
 &lt;p>The v0.9 release adds several data connectors including the Spice data connector for the ability to connect to other Spice instances. Improved observability for the Spice runtime has been added with the new &lt;code>/metrics&lt;/code> endpoint for monitoring deployed instances.&lt;/p>
 &lt;h2 id="highlights-in-v09-alpha">Highlights in v0.9-alpha&lt;/h2>
 &lt;p>&lt;strong>Arrow Flight SQL endpoint&lt;/strong>: The Arrow Flight endpoint now supports Flight SQL, including JDBC, ODBC, and ADBC enabling database clients like DBeaver or BI applications like Tableau to connect to and query the Spice runtime.&lt;/p>
@@ -638,8 +715,7 @@ Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root c
 &lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.8-alpha</title><link>/posts/2024/03/08/announcing-the-release-of-spice.ai-v0.8-alpha/</link><pubDate>Fri, 08 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/08/announcing-the-release-of-spice.ai-v0.8-alpha/</guid><description>
-&lt;p>Announcing the release of Spice v0.8-alpha! 🏹&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.8-alpha (March 8, 2024)</title><link>/posts/2024/03/08/spice-v0.8-alpha-march-8-2024/</link><pubDate>Fri, 08 Mar 2024 00:00:00 +0000</pubDate><guid>/posts/2024/03/08/spice-v0.8-alpha-march-8-2024/</guid><description>
 &lt;p>This is a minor release that builds on the new Rust-based runtime, adding stability and a preview of new features for the first major release.&lt;/p>
 &lt;h2 id="highlights-in-v08-alpha">Highlights in v0.8-alpha&lt;/h2>
 &lt;p>Secrets management: Spice 0.8 runtime can now configure and retrieve secrets from local environment variables and in a Kubernetes cluster.&lt;/p>
@@ -662,8 +738,7 @@ Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root c
 &lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.7-alpha</title><link>/posts/2024/02/23/announcing-the-release-of-spice.ai-v0.7-alpha/</link><pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate><guid>/posts/2024/02/23/announcing-the-release-of-spice.ai-v0.7-alpha/</guid><description>
-&lt;p>Announcing the release of Spice v0.7-alpha! 🏹&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.7-alpha (February 23, 2024)</title><link>/posts/2024/02/23/spice-v0.7-alpha-february-23-2024/</link><pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate><guid>/posts/2024/02/23/spice-v0.7-alpha-february-23-2024/</guid><description>
 &lt;p>Spice v0.7-alpha is an all new implementation of Spice written in Rust. The Spice v0.7 runtime provides developers with a unified SQL query interface to locally accelerate and query data tables sourced from any database, data warehouse, or data lake.&lt;/p>
 &lt;p>Learn more and get started in minutes with the updated Quickstart in the repository &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/README.md">README&lt;/a>!&lt;/p>
 &lt;h2 id="highlights-in-v07-alpha">Highlights in v0.7-alpha&lt;/h2>
@@ -728,8 +803,7 @@ Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root c
 &lt;h3 id="learn-more-and-contribute">Learn More and Contribute&lt;/h3>
 &lt;p>Even for advanced developers, building intelligent apps that leverage AI is still way too hard. Our mission is to make this as easy as creating a modern web page. If that vision resonates with you, join us!&lt;/p>
 &lt;p>If you’d like to get involved, we’d love to talk. Try out &lt;a href="http://Spice.ai">Spice.ai OSS&lt;/a>, &lt;a href="https://spice.xyz">Spice.xyz&lt;/a>, &lt;a href="mailto:hey@spiceai.io?subject=hey">email us “hey,”&lt;/a> get in touch on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, or reach out on &lt;a href="https://twitter.com/spiceaihq">Twitter&lt;/a>.&lt;/p>
-&lt;p>Luke&lt;/p></description></item><item><title>Posts: Announcing the release of Spice.ai v0.6.1-alpha</title><link>/posts/2022/04/21/announcing-the-release-of-spice.ai-v0.6.1-alpha/</link><pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate><guid>/posts/2022/04/21/announcing-the-release-of-spice.ai-v0.6.1-alpha/</guid><description>
-&lt;p>Announcing the release of Spice.ai v0.6.1-alpha! 🌶&lt;/p>
+&lt;p>Luke&lt;/p></description></item><item><title>Posts: Spice v0.6.1-alpha (April 21, 2022)</title><link>/posts/2022/04/21/spice-v0.6.1-alpha-april-21-2022/</link><pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate><guid>/posts/2022/04/21/spice-v0.6.1-alpha-april-21-2022/</guid><description>
 &lt;p>Building upon the &lt;a href="https://blog.spiceai.org/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/">Apache Arrow support in v0.6-alpha&lt;/a>, Spice.ai now includes new &lt;a href="https://github.com/spiceai/data-components-contrib/tree/trunk/dataprocessors/arrow#readme">Apache Arrow data processor&lt;/a> and &lt;a href="https://github.com/spiceai/data-components-contrib/tree/trunk/dataconnectors/flight#readme">Apache Arrow Flight data connector&lt;/a> components! Together, these create a high-performance bulk-data transport directly into the Spice.ai ML engine. Coupled with big data systems from the &lt;a href="https://arrow.apache.org/">Apache Arrow&lt;/a> ecosystem like Hive, Drill, Spark, Snowflake, and BigQuery, it&amp;rsquo;s now easier than ever to combine big data with Spice.ai.&lt;/p>
 &lt;p>And we&amp;rsquo;re also excited to announce the release of &lt;a href="https://spice.xyz">Spice.xyz&lt;/a>! 🎉&lt;/p>
 &lt;p>&lt;a href="https://spice.xyz">Spice.xyz&lt;/a> is data and AI infrastructure for web3. It’s web3 data made easy. Insanely fast and purpose designed for applications and ML.&lt;/p>
@@ -768,8 +842,7 @@ Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root c
 &lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.6-alpha</title><link>/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/</link><pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate><guid>/posts/2022/02/08/announcing-the-release-of-spice.ai-v0.6-alpha/</guid><description>
-&lt;p>Announcing the release of Spice.ai v0.6-alpha! 🏹&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.6-alpha (February 8, 2022)</title><link>/posts/2022/02/08/spice-v0.6-alpha-february-8-2022/</link><pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate><guid>/posts/2022/02/08/spice-v0.6-alpha-february-8-2022/</guid><description>
 &lt;p>Spice.ai now scales to datasets 10-100 larger enabling new classes of uses cases and applications! 🚀 We&amp;rsquo;ve completely rebuilt Spice.ai&amp;rsquo;s data processing and transport upon &lt;a href="https://arrow.apache.org/">Apache Arrow&lt;/a>, a high-performance platform that uses an in-memory columnar format. Spice.ai joins other major projects including Apache Spark, pandas, and InfluxDB in being powered by Apache Arrow. This also paves the way for high-performance data connections to the Spice.ai runtime using Apache Arrow Flight and import/export of data using &lt;a href="https://parquet.apache.org/">Apache Parquet&lt;/a>. We&amp;rsquo;re incredibly excited about the potential this architecture has for building intelligent applications on top of a high-performance transport between application data sources the Spice.ai AI engine.&lt;/p>
 &lt;div style="display: flex; justify-content: center; padding: 5px;">
 &lt;div style="display: flex; flex-direction: column;">
@@ -1036,7 +1109,7 @@ Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root c
 &lt;li>&lt;strong>learn&lt;/strong>: train iteration (from the accumulated experiences)&lt;/li>
 &lt;/ul>
 &lt;h2 id="conclusion">Conclusion&lt;/h2>
-&lt;p>Soft Actor-Critic is a fascinating algorithm that performs well in complex environments. We now &lt;a href="/posts/2021/12/06/announcing-the-release-of-spice.ai-v0.5-alpha/">support Soft Actor Critic&lt;/a> in Spice.ai, which is another step forward in constantly improving the performance of the AI engine. Additionally, we&amp;rsquo;ll continue improving existing algorithms and adding newer ones over time. We designed the platform for ease of implementation and experimentation so if you&amp;rsquo;d like to try building your own agent, you can get the source code on &lt;a href="https://github.com/spiceai/spiceai">Github&lt;/a> and contribute to the platform. Say hi on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, reach out on &lt;a href="https://twitter.com/spice_ai">Twitter&lt;/a> or &lt;a href="mailto:hey@spice.ai">email us&lt;/a>.&lt;/p>
+&lt;p>Soft Actor-Critic is a fascinating algorithm that performs well in complex environments. We now &lt;a href="/posts/2021/12/06/spice-v0.5-alpha-december-6-2021/">support Soft Actor Critic&lt;/a> in Spice.ai, which is another step forward in constantly improving the performance of the AI engine. Additionally, we&amp;rsquo;ll continue improving existing algorithms and adding newer ones over time. We designed the platform for ease of implementation and experimentation so if you&amp;rsquo;d like to try building your own agent, you can get the source code on &lt;a href="https://github.com/spiceai/spiceai">Github&lt;/a> and contribute to the platform. Say hi on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, reach out on &lt;a href="https://twitter.com/spice_ai">Twitter&lt;/a> or &lt;a href="mailto:hey@spice.ai">email us&lt;/a>.&lt;/p>
 &lt;p>I hope you enjoy this post and something new.&lt;/p>
 &lt;p>Corentin&lt;/p></description></item><item><title>Posts: What Data Informs AI-driven Decision Making?</title><link>/posts/2022/01/04/what-data-informs-ai-driven-decision-making/</link><pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate><guid>/posts/2022/01/04/what-data-informs-ai-driven-decision-making/</guid><description>
 &lt;p>AI unlocks a new generation of intelligent &lt;a href="https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/">applications that learn and adapt&lt;/a> from data. These applications use machine learning (ML) to out-perform traditionally developed software. However, the data engineering required to leverage ML is a significant challenge for many product teams. In this post, we&amp;rsquo;ll explore the three classes of data you need to build next-generation applications and how Spice.ai handles runtime data engineering for you.&lt;/p>
@@ -1121,8 +1194,7 @@ Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root c
 &lt;p>Kendal, S. L., &amp;amp; Creen, M. (2007). &lt;a href="https://www.worldcat.org/title/introduction-to-knowledge-engineering/oclc/70987401">An introduction to knowledge engineering&lt;/a>. London: Springer. ISBN 978-1-84628-475-5&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Posts: Announcing the release of Spice.ai v0.5.1-alpha</title><link>/posts/2021/12/28/announcing-the-release-of-spice.ai-v0.5.1-alpha/</link><pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/28/announcing-the-release-of-spice.ai-v0.5.1-alpha/</guid><description>
-&lt;p>Announcing the release of Spice.ai v0.5.1-alpha! 📈&lt;/p>
+&lt;/div></description></item><item><title>Posts: Spice v0.5.1-alpha (December 28, 2021)</title><link>/posts/2021/12/28/spice-v0.5.1-alpha-december-28-2021/</link><pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/28/spice-v0.5.1-alpha-december-28-2021/</guid><description>
 &lt;p>This minor release builds upon v0.5-alpha adding the ability to start training from the dashboard plus support for monitoring training runs with &lt;a href="https://www.tensorflow.org/tensorboard/">TensorBoard&lt;/a>.&lt;/p>
 &lt;h2 id="highlights-in-v051-alpha">Highlights in v0.5.1-alpha&lt;/h2>
 &lt;h3 id="start-training-from-dashboard">Start training from dashboard&lt;/h3>
@@ -1333,8 +1405,7 @@ Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root c
 &lt;p>We didn&amp;rsquo;t see how the AI&amp;rsquo;s algorithm can explore different actions given an environment here. Spice.ai&amp;rsquo;s technology focuses exclusively on off-policy training where we only have past data and cannot interact with the environment. RL is a vast topic and currently quickly growing. Robotics is a fantastic field of application; many other areas are yet to be explored with such a technology. We hope to push forward the technology and its field of application with our platform.&lt;/p>
 &lt;p>If you&amp;rsquo;d like to partner with us on the mission of making new applications by leveraging RL, we invite you to discuss with us on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, reach out on &lt;a href="https://twitter.com/spice_ai">Twitter&lt;/a> or &lt;a href="mailto:hey@spice.ai">email us&lt;/a>.&lt;/p>
 &lt;p>I hope you enjoy this post and learn new things.&lt;/p>
-&lt;p>Corentin&lt;/p></description></item><item><title>Posts: Announcing the release of Spice.ai v0.5-alpha</title><link>/posts/2021/12/06/announcing-the-release-of-spice.ai-v0.5-alpha/</link><pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/06/announcing-the-release-of-spice.ai-v0.5-alpha/</guid><description>
-&lt;p>We are excited to announce the release of Spice.ai v0.5-alpha! 🥇&lt;/p>
+&lt;p>Corentin&lt;/p></description></item><item><title>Posts: Spice v0.5-alpha (December 6, 2021)</title><link>/posts/2021/12/06/spice-v0.5-alpha-december-6-2021/</link><pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/06/spice-v0.5-alpha-december-6-2021/</guid><description>
 &lt;p>Highlights include a new learning algorithm called &amp;ldquo;Soft Actor-Critic&amp;rdquo; (SAC), fixes to the behavior of &lt;code>spice upgrade&lt;/code>, and a more consistent authoring experience for reward functions.&lt;/p>
 &lt;p>If you are new to Spice.ai, check out the &lt;a href="https://docs.spiceai.org/getting-started/">getting started guide&lt;/a> and star &lt;a href="https://github.com/spiceai/spiceai">spiceai/spiceai&lt;/a> on GitHub.&lt;/p>
 &lt;h2 id="highlights-in-v05-alpha">Highlights in v0.5-alpha&lt;/h2>
@@ -1547,8 +1618,7 @@ It becomes trickier if the team responsible for the initial training of the mach
 &lt;p>Our &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md">Spice.ai Roadmap&lt;/a> is public, and now that we have launched, the project and work are open for collaboration.&lt;/p>
 &lt;p>If you are interested in partnering, we&amp;rsquo;d love to talk. Try out &lt;a href="https://spiceai.org">Spice.ai&lt;/a>, &lt;a href="mailto:hey@spice.ai">email us&lt;/a> &amp;ldquo;hey,&amp;rdquo; get in touch on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, or reach out on &lt;a href="https://twitter.com/spice_ai">Twitter&lt;/a>.&lt;/p>
 &lt;p>We are just getting started! 🚀&lt;/p>
-&lt;p>Luke&lt;/p></description></item><item><title>Posts: Announcing the release of Spice.ai v0.4.1-alpha</title><link>/posts/2021/11/22/announcing-the-release-of-spice.ai-v0.4.1-alpha/</link><pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/22/announcing-the-release-of-spice.ai-v0.4.1-alpha/</guid><description>
-&lt;p>Announcing the release of Spice.ai v0.4.1-alpha! ✅&lt;/p>
+&lt;p>Luke&lt;/p></description></item><item><title>Posts: Spice v0.4.1-alpha (November 22, 2021)</title><link>/posts/2021/11/22/spice-v0.4.1-alpha-november-22-2021/</link><pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/22/spice-v0.4.1-alpha-november-22-2021/</guid><description>
 &lt;p>This point release focuses on fixes and improvements to v0.4-alpha. Highlights include AI engine performance improvements, updates to the dashboard observations data grid, notification of new CLI versions, and several bug fixes.&lt;/p>
 &lt;p>A special acknowledgment to &lt;a href="https://github.com/Adm28">@Adm28&lt;/a>, who added the CLI upgrade detection and prompt, which notifies users of new CLI versions and prompts to upgrade.&lt;/p>
 &lt;div style="display: flex; justify-content: center; padding: 5px;">
@@ -1624,8 +1694,7 @@ It becomes trickier if the team responsible for the initial training of the mach
 &lt;/ul>
 &lt;p>The Spice.ai approach to time series AI can be described as &amp;lsquo;Data-Driven&amp;rsquo; Reinforcement Learning. This domain is very exciting, and we are building upon excellent research that is being published. The &lt;a href="https://bair.berkeley.edu/">Berkeley Artificial Intelligence Research&lt;/a>&amp;rsquo;s blog shows the potential of this field and many other research entities that have made great discoveries like &lt;a href="https://deepmind.com/">DeepMind&lt;/a>, &lt;a href="https://openai.com/">Open AI&lt;/a>, &lt;a href="https://ai.facebook.com/">Facebook AI&lt;/a> and &lt;a href="https://ai.google/">Google AI&lt;/a> (among many others). We are inspired and are building upon all the research in Reinforcement Learning to develop core Spice.ai technology.&lt;/p>
 &lt;p>If you are interested in Reinforcement Learning, we recommend following these blogs, and if you&amp;rsquo;d like to partner with us on the mission of making it easier to build intelligent applications by leveraging RL, we invite you to discuss with us on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, reach out on &lt;a href="https://twitter.com/spice_ai">Twitter&lt;/a> or &lt;a href="mailto:hey@spice.ai">email us&lt;/a>.&lt;/p>
-&lt;p>Corentin&lt;/p></description></item><item><title>Posts: Announcing the release of Spice.ai v0.4-alpha</title><link>/posts/2021/11/15/announcing-the-release-of-spice.ai-v0.4-alpha/</link><pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/15/announcing-the-release-of-spice.ai-v0.4-alpha/</guid><description>
-&lt;p>We are excited to announce the release of Spice.ai v0.4-alpha! 🏄‍♂️&lt;/p>
+&lt;p>Corentin&lt;/p></description></item><item><title>Posts: Spice v0.4-alpha (November 15, 2021)</title><link>/posts/2021/11/15/spice-v0.4-alpha-november-15-2021/</link><pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/15/spice-v0.4-alpha-november-15-2021/</guid><description>
 &lt;p>Highlights include support for authoring reward functions in a code file, the ability to specify the time of recommendation, and ingestion support for transaction/correlation ids. Authoring reward functions in a code file is a significant improvement to the developer experience than specifying functions inline in the YAML manifest, and we are looking forward to your feedback on it!&lt;/p>
 &lt;p>If you are new to Spice.ai, check out the &lt;a href="https://docs.spiceai.org/getting-started/">getting started guide&lt;/a> and star &lt;a href="https://github.com/spiceai/spiceai">spiceai/spiceai&lt;/a> on GitHub.&lt;/p>
 &lt;h2 id="highlights-in-v04-alpha">Highlights in v0.4-alpha&lt;/h2>
@@ -1756,8 +1825,7 @@ It becomes trickier if the team responsible for the initial training of the mach
 &lt;p>Our &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md">Spice.ai Roadmap&lt;/a> is public, and now that we have launched, the project and work are open for collaboration.&lt;/p>
 &lt;p>If you are interested in partnering, we&amp;rsquo;d love to talk. Try out &lt;a href="https://spiceai.org">Spice.ai&lt;/a>, &lt;a href="mailto:hey@spice.ai">email us&lt;/a> &amp;ldquo;hey,&amp;rdquo; get in touch on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, or reach out on &lt;a href="https://twitter.com/spice_ai">Twitter&lt;/a>.&lt;/p>
 &lt;p>We are just getting started! 🚀&lt;/p>
-&lt;p>Luke&lt;/p></description></item><item><title>Posts: Announcing the release of Spice.ai v0.3.1-alpha</title><link>/posts/2021/11/02/announcing-the-release-of-spice.ai-v0.3.1-alpha/</link><pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/02/announcing-the-release-of-spice.ai-v0.3.1-alpha/</guid><description>
-&lt;p>We are excited to announce the release of Spice.ai v0.3.1-alpha! 🎃&lt;/p>
+&lt;p>Luke&lt;/p></description></item><item><title>Posts: Spice v0.3.1-alpha (November 2, 2021)</title><link>/posts/2021/11/02/spice-v0.3.1-alpha-november-2-2021/</link><pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/02/spice-v0.3.1-alpha-november-2-2021/</guid><description>
 &lt;p>This point release focuses on fixes and improvements to v0.3-alpha. Highlights include the ability to specify both seed and runtime data, to select custom named fields for &lt;code>time&lt;/code> and &lt;code>tags&lt;/code>, a new &lt;code>spice upgrade&lt;/code> command and several bug fixes.&lt;/p>
 &lt;p>A special acknowledgment to &lt;a href="https://github.com/Adm28">@Adm28&lt;/a>, who added the new &lt;code>spice upgrade&lt;/code> command, which enables the CLI to self-update, which in turn will auto-update the runtime.&lt;/p>
 &lt;h2 id="highlights-in-v031-alpha">Highlights in v0.3.1-alpha&lt;/h2>
@@ -1825,8 +1893,7 @@ It becomes trickier if the team responsible for the initial training of the mach
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Spice.ai v0.3-alpha is now available</title><link>/posts/2021/10/26/spice.ai-v0.3-alpha-is-now-available/</link><pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/26/spice.ai-v0.3-alpha-is-now-available/</guid><description>
-&lt;p>We are excited to announce the release of Spice.ai v0.3-alpha! 🎉&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.3-alpha (October 26, 2021)</title><link>/posts/2021/10/26/spice-v0.3-alpha-october-26-2021/</link><pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/26/spice-v0.3-alpha-october-26-2021/</guid><description>
 &lt;p>This release adds support for ingestion, automatic encoding, and training of categorical data, enabling more use-cases and datasets beyond just numerical measurements. For example, perhaps you want to learn from data that includes a category of t-shirt sizes, with discrete values, such as small, medium, and large. The v0.3 engine now supports this and automatically encodes the categorical string values into numerical values that the AI engine can use. Also included is a preview of data visualizations in the dashboard, which is helpful for developers as they author Spicepods and dataspaces.&lt;/p>
 &lt;div style="display: flex; justify-content: center;">
 &lt;div style="display: flex; flex-direction: column;">
@@ -1907,8 +1974,7 @@ It becomes trickier if the team responsible for the initial training of the mach
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.2.1-alpha</title><link>/posts/2021/10/12/announcing-the-release-of-spice.ai-v0.2.1-alpha/</link><pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/12/announcing-the-release-of-spice.ai-v0.2.1-alpha/</guid><description>
-&lt;p>Announcing the release of Spice.ai v0.2.1-alpha! 🚚&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.2.1-alpha (October 12, 2021)</title><link>/posts/2021/10/12/spice-v0.2.1-alpha-october-12-2021/</link><pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/12/spice-v0.2.1-alpha-october-12-2021/</guid><description>
 &lt;p>This point release focuses on fixes and improvements to v0.2-alpha. Highlights include the ability to specify how missing data should be treated and a new production mode for &lt;code>spiced&lt;/code>.&lt;/p>
 &lt;p>This release supports the ability to specify how the runtime should treat missing data. Previous releases filled missing data with the last value (or initial value) in the series. While this makes sense for some data, i.e., market prices of a stock or cryptocurrency, it does not make sense for discrete data, i.e., ratings. In v0.2.1, developers can now add the &lt;code>fill&lt;/code> parameter on a dataspace field to specify the behavior. This release supports fill types &lt;code>previous&lt;/code> and &lt;code>none&lt;/code>. The default is &lt;code>previous&lt;/code>.&lt;/p>
 &lt;p>Example in a manifest:&lt;/p>
@@ -1941,8 +2007,7 @@ It becomes trickier if the team responsible for the initial training of the mach
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Spice.ai v0.2-alpha is now available</title><link>/posts/2021/10/04/spice.ai-v0.2-alpha-is-now-available/</link><pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/04/spice.ai-v0.2-alpha-is-now-available/</guid><description>
-&lt;p>We are excited to announce the release of Spice.ai v0.2-alpha! 🎉&lt;/p>
+&lt;/ul></description></item><item><title>Posts: Spice v0.2-alpha (October 4, 2021)</title><link>/posts/2021/10/04/spice-v0.2-alpha-october-4-2021/</link><pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/04/spice-v0.2-alpha-october-4-2021/</guid><description>
 &lt;p>This release is the first major version since the &lt;a href="https://blog.spiceai.org/posts/2021/09/07/introducing-spice.ai-open-source-time-series-ai-for-developers/">initial v0.1 announcement&lt;/a> and includes significant improvements based upon community and customer feedback. If you are new to Spice.ai, check out the &lt;a href="https://docs.spiceai.org/getting-started/">getting started guide&lt;/a> and star &lt;a href="https://github.com/spiceai/spiceai">spiceai/spiceai&lt;/a> on GitHub.&lt;/p>
 &lt;h2 id="highlights-in-v02-alpha">Highlights in v0.2-alpha&lt;/h2>
 &lt;h3 id="tagged-data">Tagged data&lt;/h3>
