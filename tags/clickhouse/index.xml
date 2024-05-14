@@ -1,4 +1,5 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Clickhouse</title><link>/tags/clickhouse/</link><description>Recent content in Clickhouse on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 06 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/clickhouse/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.12.1-alpha (May 6, 2024)</title><link>/posts/2024/05/06/spice-v0.12.1-alpha-may-6-2024/</link><pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate><guid>/posts/2024/05/06/spice-v0.12.1-alpha-may-6-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Clickhouse</title><link>/tags/clickhouse/</link><description>Recent content in Clickhouse on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 06 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/clickhouse/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Announcing the release of Spice.ai v0.12.1-alpha</title><link>/posts/2024/05/06/announcing-the-release-of-spice.ai-v0.12.1-alpha/</link><pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate><guid>/posts/2024/05/06/announcing-the-release-of-spice.ai-v0.12.1-alpha/</guid><description>
+&lt;h1 id="spice-v0121-alpha-may-6-2024">Spice v0.12.1-alpha (May 6, 2024)&lt;/h1>
 &lt;p>The v0.12.1-alpha release introduces a new Snowflake data connector, support for UUID and TimestampTZ types in the PostgreSQL connector, and improved error messages across all data connectors. The Clickhouse data connector enables data streaming by default. The public SQL interface now restricts DML and DDL queries. Additionally, accelerated tables now fully support NULL values, and issues with schema conversion in these tables have been resolved.&lt;/p>
 &lt;h2 id="highlights">Highlights&lt;/h2>
 &lt;ul>
@@ -82,7 +83,8 @@
 &lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Spice v0.12-alpha (Apr 29, 2024)</title><link>/posts/2024/04/29/spice-v0.12-alpha-apr-29-2024/</link><pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/29/spice-v0.12-alpha-apr-29-2024/</guid><description>
+&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.12-alpha</title><link>/posts/2024/04/29/announcing-the-release-of-spice.ai-v0.12-alpha/</link><pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/29/announcing-the-release-of-spice.ai-v0.12-alpha/</guid><description>
+&lt;h1 id="spice-v012-alpha-apr-29-2024">Spice v0.12-alpha (Apr 29, 2024)&lt;/h1>
 &lt;p>The v0.12-alpha release introduces Clickhouse and Apache Spark data connectors, adds support for limiting refresh data periods for temporal datasets, and includes upgraded Spice Client SDKs compatible with Spice OSS.&lt;/p>
 &lt;h2 id="highlights">Highlights&lt;/h2>
 &lt;ul>
