@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Helm</title><link>/tags/helm/</link><description>Recent content in Helm on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 13 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/helm/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.12.2-alpha (May 13, 2024)</title><link>/posts/2024/05/13/spice-v0.12.2-alpha-may-13-2024/</link><pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate><guid>/posts/2024/05/13/spice-v0.12.2-alpha-may-13-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Data Refresh</title><link>/tags/data-refresh/</link><description>Recent content in Data Refresh on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 13 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/data-refresh/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.12.2-alpha (May 13, 2024)</title><link>/posts/2024/05/13/spice-v0.12.2-alpha-may-13-2024/</link><pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate><guid>/posts/2024/05/13/spice-v0.12.2-alpha-may-13-2024/</guid><description>
 &lt;p>The v0.12.2-alpha release introduces data streaming and key-pair authentication for the Snowflake data connector, enables general &lt;code>append&lt;/code> mode data refreshes for time-series data, improves connectivity error messages, adds nested folders support for the S3 data connector, and exposes nodeSelector and affinity keys in the Helm chart for better Kubernetes management.&lt;/p>
 &lt;h2 id="highlights">Highlights&lt;/h2>
 &lt;ul>
@@ -71,59 +71,6 @@
 &lt;li>Update README.md to include correct output when running show tables from quickstart by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1371">https://github.com/spiceai/spiceai/pull/1371&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.12.1-alpha...v0.12.2-alpha">https://github.com/spiceai/spiceai/compare/v0.12.1-alpha...v0.12.2-alpha&lt;/a>&lt;/p>
-&lt;h2 id="resources">Resources&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="community">Community&lt;/h2>
-&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
-&lt;ul>
-&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
-&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
-&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
-&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
-&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Announcing the release of Spice.ai v0.10.1-alpha</title><link>/posts/2024/04/01/announcing-the-release-of-spice.ai-v0.10.1-alpha/</link><pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/01/announcing-the-release-of-spice.ai-v0.10.1-alpha/</guid><description>
-&lt;p>Announcing the release of Spice v0.10.1-alpha! 🔥&lt;/p>
-&lt;p>The v0.10.1-alpha release focuses on stability, bug fixes, and usability by improving error messages when using SQLite data accelerators, improving the PostgreSQL support, and adding a basic Helm chart.&lt;/p>
-&lt;h2 id="highlights-in-v0101-alpha">Highlights in v0.10.1-alpha&lt;/h2>
-&lt;p>&lt;strong>Improved PostgreSQL support for Data Connectors&lt;/strong> TLS is now supported with PostgreSQL Data Connectors and there is improved VARCHAR and BPCHAR conversions through Spice.&lt;/p>
-&lt;p>&lt;strong>Improved Error messages&lt;/strong> Simplified error messages from Spice when propagating errors from Data Connectors and Accelerator Engines.&lt;/p>
-&lt;p>&lt;strong>Spice Pods Command&lt;/strong> The &lt;code>spice pods&lt;/code> command can give you quick statistics about models, dependencies, and datasets that are loaded by the Spice runtime.&lt;/p>
-&lt;h2 id="kubernetes-helm-deployment">Kubernetes Helm Deployment&lt;/h2>
-&lt;p>Spice.ai can be deployed to Kubernetes using Helm. Here&amp;rsquo;s a quick guide to get started:&lt;/p>
-&lt;p>&lt;strong>Step 1.&lt;/strong> (Optional) Start a local &lt;a href="https://kind.sigs.k8s.io/">&lt;code>kind&lt;/code>&lt;/a> cluster:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>go install sigs.k8s.io/kind@v0.22.0
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kind create cluster
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Step 2.&lt;/strong> Install Spice in your Kubernetes cluster using Helm:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>helm repo add spiceai https://helm.spiceai.org
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>helm install spiceai spiceai/spiceai
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Step 3.&lt;/strong> Verify that the Spice pods are running:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl get pods
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl logs deploy/spiceai
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Step 4.&lt;/strong> Run the Spice SQL REPL inside the running pod:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl &lt;span style="color:#204a87">exec&lt;/span> -it deploy/spiceai -- spiced --repl
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://docs.spiceai.org/deployment/kubernetes">Learn more about deploying Spice.ai to Kubernetes&lt;/a>&lt;/p>
-&lt;h2 id="contributors">Contributors&lt;/h2>
-&lt;ul>
-&lt;li>@phillipleblanc&lt;/li>
-&lt;li>@mitchdevenport&lt;/li>
-&lt;li>@ewgenius&lt;/li>
-&lt;li>@sgrebnov&lt;/li>
-&lt;li>@lukekim&lt;/li>
-&lt;li>@digadeesh&lt;/li>
-&lt;/ul>
-&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Adds&lt;/strong> Basic Helm Chart for spiceai (&lt;a href="https://github.com/spiceai/spiceai/pull/1002">https://github.com/spiceai/spiceai/pull/1002&lt;/a>)&lt;/li>
-&lt;li>&lt;strong>Adds&lt;/strong> Support for &lt;code>spice login&lt;/code> in environments with no browser. (&lt;a href="https://github.com/spiceai/spiceai/pull/994">https://github.com/spiceai/spiceai/pull/994&lt;/a>)&lt;/li>
-&lt;li>&lt;strong>Adds&lt;/strong> TLS support in Postgres connector. (&lt;a href="https://github.com/spiceai/spiceai/pull/970">https://github.com/spiceai/spiceai/pull/970&lt;/a>)&lt;/li>
-&lt;li>&lt;strong>Fixes&lt;/strong> Improve Postgres VARCHAR and BPCHAR conversion. (&lt;a href="https://github.com/spiceai/spiceai/pull/993">https://github.com/spiceai/spiceai/pull/993&lt;/a>)&lt;/li>
-&lt;li>&lt;strong>Fixes&lt;/strong> &lt;code>spice pods&lt;/code> Returns incorrect counts. (&lt;a href="https://github.com/spiceai/spiceai/pull/998">https://github.com/spiceai/spiceai/pull/998&lt;/a>)&lt;/li>
-&lt;li>&lt;strong>Fixes&lt;/strong> Return friendly error messages for unsupported types in sqlite. (&lt;a href="https://github.com/spiceai/spiceai/pull/982">https://github.com/spiceai/spiceai/pull/982&lt;/a>)&lt;/li>
-&lt;li>&lt;strong>Fixes&lt;/strong> Pass Tonic errors when receiving errors from dependencies. (&lt;a href="https://github.com/spiceai/spiceai/pull/995">https://github.com/spiceai/spiceai/pull/995&lt;/a>)&lt;/li>
-&lt;/ul>
 &lt;h2 id="resources">Resources&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
