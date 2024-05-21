@@ -1,0 +1,95 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Arrow Flight</title><link>/tags/arrow-flight/</link><description>Recent content in Arrow Flight on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 20 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/arrow-flight/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.13-alpha (May 20, 2024)</title><link>/posts/2024/05/20/spice-v0.13-alpha-may-20-2024/</link><pubDate>Mon, 20 May 2024 00:00:00 +0000</pubDate><guid>/posts/2024/05/20/spice-v0.13-alpha-may-20-2024/</guid><description>
+&lt;p>The v0.13.0-alpha release significantly improves federated query performance and efficiency with Query Push-Down. Query push-down allows SQL queries to be directly executed by underlying data sources, such as joining tables using the same data connector. Query push-down is supported for all SQL-based and Arrow Flight data connectors. Additionally, runtime metrics, including query duration, collected and accessed in the &lt;code>spice.runtime.metrics&lt;/code> table. This release also includes a new FTP/SFTP data connector and improved CSV support for the S3 data connector.&lt;/p>
+&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Federated Query Push-Down (#1394):&lt;/strong> All SQL and Arrow Flight data connectors support federated query push-down.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Runtime Metrics (#1361):&lt;/strong> Runtime metric collection can be enabled using the &lt;code>--metrics&lt;/code> flag and accessed by the &lt;code>spice.runtime.metrics&lt;/code> table.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>FTP &amp;amp; SFTP data connector (#1355) (#1399):&lt;/strong> Added support for using FTP and SFTP as data sources.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Improved CSV support (#1411) (#1414):&lt;/strong> S3/FTP/SFTP data connectors support CSV files with expanded CSV options.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@digadeesh&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@gloomweaver&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@y-f-u&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Remove milestones from Enhancement template by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1373">https://github.com/spiceai/spiceai/pull/1373&lt;/a>&lt;/li>
+&lt;li>Update version.txt and Cargo.toml to 0.13.0-alpha by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1375">https://github.com/spiceai/spiceai/pull/1375&lt;/a>&lt;/li>
+&lt;li>Helm chart for Spice v0.12.2-alpha by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1374">https://github.com/spiceai/spiceai/pull/1374&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>release&lt;/code> cargo feature to docker builds by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1377">https://github.com/spiceai/spiceai/pull/1377&lt;/a>&lt;/li>
+&lt;li>FTP connector by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1355">https://github.com/spiceai/spiceai/pull/1355&lt;/a>&lt;/li>
+&lt;li>Provide ability to specify timeout for s3 data connector by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1378">https://github.com/spiceai/spiceai/pull/1378&lt;/a>&lt;/li>
+&lt;li>clickhouse-rs use tag instead of branch by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1313">https://github.com/spiceai/spiceai/pull/1313&lt;/a>&lt;/li>
+&lt;li>Store runtime metrics in &lt;code>spice.runtime.metrics&lt;/code> table by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1361">https://github.com/spiceai/spiceai/pull/1361&lt;/a>&lt;/li>
+&lt;li>Update bug_report.md to include the kind/bug label by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1381">https://github.com/spiceai/spiceai/pull/1381&lt;/a>&lt;/li>
+&lt;li>Remove redundant [refresh] in log by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1384">https://github.com/spiceai/spiceai/pull/1384&lt;/a>&lt;/li>
+&lt;li>Implement federation for DuckDB Data Connector (POC) by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1380">https://github.com/spiceai/spiceai/pull/1380&lt;/a>&lt;/li>
+&lt;li>Update wording for spice cloud connection by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1386">https://github.com/spiceai/spiceai/pull/1386&lt;/a>&lt;/li>
+&lt;li>fix dataset refreshing status by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1387">https://github.com/spiceai/spiceai/pull/1387&lt;/a>&lt;/li>
+&lt;li>clickhouse friendly error by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1388">https://github.com/spiceai/spiceai/pull/1388&lt;/a>&lt;/li>
+&lt;li>Initial work for NQL crate and API by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1366">https://github.com/spiceai/spiceai/pull/1366&lt;/a>&lt;/li>
+&lt;li>Fully implement federation for all SqlTable-based Data Connectors by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1394">https://github.com/spiceai/spiceai/pull/1394&lt;/a>&lt;/li>
+&lt;li>use df logical plan to query latest timestamp when refreshing incrementally by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1393">https://github.com/spiceai/spiceai/pull/1393&lt;/a>&lt;/li>
+&lt;li>Refactor datafusion.write_data to use table reference by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1402">https://github.com/spiceai/spiceai/pull/1402&lt;/a>&lt;/li>
+&lt;li>Add federation to FlightTable based DataConnectors by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1401">https://github.com/spiceai/spiceai/pull/1401&lt;/a>&lt;/li>
+&lt;li>SFTP Data Connector by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1399">https://github.com/spiceai/spiceai/pull/1399&lt;/a>&lt;/li>
+&lt;li>Use GPT3.5 for NSQL task by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1400">https://github.com/spiceai/spiceai/pull/1400&lt;/a>&lt;/li>
+&lt;li>Update ROADMAP May 16, 2024 by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1405">https://github.com/spiceai/spiceai/pull/1405&lt;/a>&lt;/li>
+&lt;li>Add ftp/sftp connector to readme by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1404">https://github.com/spiceai/spiceai/pull/1404&lt;/a>&lt;/li>
+&lt;li>Add FlightSQL federation provider by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1403">https://github.com/spiceai/spiceai/pull/1403&lt;/a>&lt;/li>
+&lt;li>Refactor runtime metrics to use localhost accelerated table by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1395">https://github.com/spiceai/spiceai/pull/1395&lt;/a>&lt;/li>
+&lt;li>Use JSON response in OpenAI, text -&amp;gt; SQL model by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1407">https://github.com/spiceai/spiceai/pull/1407&lt;/a>&lt;/li>
+&lt;li>support more common csv options by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1411">https://github.com/spiceai/spiceai/pull/1411&lt;/a>&lt;/li>
+&lt;li>add a TLS error message in data connector and implement it for clickhouse by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1413">https://github.com/spiceai/spiceai/pull/1413&lt;/a>&lt;/li>
+&lt;li>Add CSV to s3 data formats by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1414">https://github.com/spiceai/spiceai/pull/1414&lt;/a>&lt;/li>
+&lt;li>fix up dependencies now 0.5.0 disappeared by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1417">https://github.com/spiceai/spiceai/pull/1417&lt;/a>&lt;/li>
+&lt;li>Add NSQL to FlightRepl by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1409">https://github.com/spiceai/spiceai/pull/1409&lt;/a>&lt;/li>
+&lt;li>Update Cargo.lock by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1418">https://github.com/spiceai/spiceai/pull/1418&lt;/a>&lt;/li>
+&lt;li>Enable spice.ai replication for &lt;code>runtime.metrics&lt;/code> table by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1408">https://github.com/spiceai/spiceai/pull/1408&lt;/a>&lt;/li>
+&lt;li>Restructure the runtime struct to make it easier to test by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1420">https://github.com/spiceai/spiceai/pull/1420&lt;/a>&lt;/li>
+&lt;li>Make it easier to construct an App programatically by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1421">https://github.com/spiceai/spiceai/pull/1421&lt;/a>&lt;/li>
+&lt;li>Add an integration test for federation by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1426">https://github.com/spiceai/spiceai/pull/1426&lt;/a>&lt;/li>
+&lt;li>wait 2 seconds for the status to turn ready in refreshing status test by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1419">https://github.com/spiceai/spiceai/pull/1419&lt;/a>&lt;/li>
+&lt;li>Add functional tests for federation push-down by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1428">https://github.com/spiceai/spiceai/pull/1428&lt;/a>&lt;/li>
+&lt;li>Enable push-down federation by default by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1429">https://github.com/spiceai/spiceai/pull/1429&lt;/a>&lt;/li>
+&lt;li>Add guides and examples about error handling by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1427">https://github.com/spiceai/spiceai/pull/1427&lt;/a>&lt;/li>
+&lt;li>Add LRU cache support for http-based queries by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1410">https://github.com/spiceai/spiceai/pull/1410&lt;/a>&lt;/li>
+&lt;li>Update README.md - Remove bigquery from tablet of connectors by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1434">https://github.com/spiceai/spiceai/pull/1434&lt;/a>&lt;/li>
+&lt;li>Update acknowledgements by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/1433">https://github.com/spiceai/spiceai/pull/1433&lt;/a>&lt;/li>
+&lt;li>CLI wording and logs change reflected on readme by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1435">https://github.com/spiceai/spiceai/pull/1435&lt;/a>&lt;/li>
+&lt;li>Add databricks_use_ssl parameter by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/1406">https://github.com/spiceai/spiceai/pull/1406&lt;/a>&lt;/li>
+&lt;li>Update helm version and use v0.13.0-alpha by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1436">https://github.com/spiceai/spiceai/pull/1436&lt;/a>&lt;/li>
+&lt;li>Don&amp;rsquo;t include feature &amp;rsquo;llms/candles&amp;rsquo; by default by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1437">https://github.com/spiceai/spiceai/pull/1437&lt;/a>&lt;/li>
+&lt;li>Correctly map NullBuilder for Null arrow types by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1438">https://github.com/spiceai/spiceai/pull/1438&lt;/a>&lt;/li>
+&lt;li>Propagate object store error by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1415">https://github.com/spiceai/spiceai/pull/1415&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.12.2-alpha...v0.13.0-alpha">https://github.com/spiceai/spiceai/compare/v0.12.2-alpha...v0.13.0-alpha&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
