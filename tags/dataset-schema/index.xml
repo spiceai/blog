@@ -1,0 +1,92 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Dataset Schema</title><link>/tags/dataset-schema/</link><description>Recent content in Dataset Schema on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 27 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/dataset-schema/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.13.1-alpha (May 27, 2024)</title><link>/posts/2024/05/27/spice-v0.13.1-alpha-may-27-2024/</link><pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate><guid>/posts/2024/05/27/spice-v0.13.1-alpha-may-27-2024/</guid><description>
+&lt;p>The v0.13.1-alpha release of Spice is a minor update focused on stability, quality, and operability. Query result caching provides protection against bursts of queries and schema support for datasets has been added logical grouping. An issue where Refresh SQL predicates were not pushed down underlying data sources has been resolved along with improved Acceleration Refresh logging.&lt;/p>
+&lt;h2 id="highlights-in-v0131-alpha">Highlights in v0.13.1-alpha&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Results Caching:&lt;/strong> Introduced query results caching to handle bursts of requests and support caching of non-accelerated results, such as refresh data returned &lt;a href="https://docs.spiceai.org/data-accelerators/data-refresh#behavior-on-zero-results">on zero results&lt;/a>. Results caching is enabled by default with a &lt;code>1s&lt;/code> item time-to-live (TTL). &lt;a href="https://docs.spiceai.org/features/caching">Learn more&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Query History Logging:&lt;/strong> Recent queries are now logged in the new &lt;code>spice.runtime.query_history&lt;/code> dataset with a default retention of 24-hours. Query history is initially enabled for HTTP queries only (not Arrow Flight queries).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Dataset Schemas:&lt;/strong> Added support for dataset schemas, allowing logical grouping of datasets by separating the schema name from the table name with a &lt;code>.&lt;/code>. E.g.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">datasets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">mysql:app1.identities&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">app.users&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">postgres:app2.purchases&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">app.purchases&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this example, queries against &lt;code>app.users&lt;/code> will be federated to &lt;code>my_schema.my_table&lt;/code>, and &lt;code>app.purchases&lt;/code> will be federated to &lt;code>app2.purchases&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;p>@y-f-u
+@Jeadie
+@sgrebnov
+@ewgenius
+@phillipleblanc
+@lukekim
+@gloomweaver
+@Sevenannn&lt;/p>
+&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
+&lt;ul>
+&lt;li>Add more type support on mysql connector by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1449">https://github.com/spiceai/spiceai/pull/1449&lt;/a>&lt;/li>
+&lt;li>Add in-memory caching support for Arrow Flight queries by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1450">https://github.com/spiceai/spiceai/pull/1450&lt;/a>&lt;/li>
+&lt;li>Fix the table reference to use the full table reference, not just the table by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1460">https://github.com/spiceai/spiceai/pull/1460&lt;/a>&lt;/li>
+&lt;li>Make &lt;code>file_format&lt;/code> parameter required for S3/FTP/SFTP connector by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1455">https://github.com/spiceai/spiceai/pull/1455&lt;/a>&lt;/li>
+&lt;li>Add more verbose logging when acceleration refresh update is finished by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1453">https://github.com/spiceai/spiceai/pull/1453&lt;/a>&lt;/li>
+&lt;li>Fix snowflake dataset path when using federation query by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1474">https://github.com/spiceai/spiceai/pull/1474&lt;/a>&lt;/li>
+&lt;li>Update cargo to use spiceai datafusion fork by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1475">https://github.com/spiceai/spiceai/pull/1475&lt;/a>&lt;/li>
+&lt;li>Enable in-memory results caching by default by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1473">https://github.com/spiceai/spiceai/pull/1473&lt;/a>&lt;/li>
+&lt;li>Add basic integration test for MySQL federation by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1477">https://github.com/spiceai/spiceai/pull/1477&lt;/a>&lt;/li>
+&lt;li>Update results_cache config names per final spec by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1487">https://github.com/spiceai/spiceai/pull/1487&lt;/a>&lt;/li>
+&lt;li>Add DuckDB quickstart to E2E tests by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1461">https://github.com/spiceai/spiceai/pull/1461&lt;/a>&lt;/li>
+&lt;li>Add X-Cache header for http queries by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1472">https://github.com/spiceai/spiceai/pull/1472&lt;/a>&lt;/li>
+&lt;li>Add telemetry for in-memory caching by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1456">https://github.com/spiceai/spiceai/pull/1456&lt;/a>&lt;/li>
+&lt;li>Pin Git dependencies to a specific commit hash by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1490">https://github.com/spiceai/spiceai/pull/1490&lt;/a>&lt;/li>
+&lt;li>Detect &lt;code>file_format&lt;/code> from dataset path by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1489">https://github.com/spiceai/spiceai/pull/1489&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>file_format&lt;/code> to helm chart sample dataset by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1493">https://github.com/spiceai/spiceai/pull/1493&lt;/a>&lt;/li>
+&lt;li>Improve duckdb data connector error messages by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/1486">https://github.com/spiceai/spiceai/pull/1486&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>file_format&lt;/code> prompt for s3 and ftp datasets in Dataset Configure CLI if no extension detected by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1494">https://github.com/spiceai/spiceai/pull/1494&lt;/a>&lt;/li>
+&lt;li>Add llms to the spicepod definition and use throughout by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1447">https://github.com/spiceai/spiceai/pull/1447&lt;/a>&lt;/li>
+&lt;li>Fix duckdb acceleration converting null into default values. by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1500">https://github.com/spiceai/spiceai/pull/1500&lt;/a>&lt;/li>
+&lt;li>Separate runtime Dataset from spicepod Dataset by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1503">https://github.com/spiceai/spiceai/pull/1503&lt;/a>&lt;/li>
+&lt;li>Duckdb e2e test OSX support by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1505">https://github.com/spiceai/spiceai/pull/1505&lt;/a>&lt;/li>
+&lt;li>Use TableReference for dataset name by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1506">https://github.com/spiceai/spiceai/pull/1506&lt;/a>&lt;/li>
+&lt;li>Tweak Results Cache naming and output by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1509">https://github.com/spiceai/spiceai/pull/1509&lt;/a>&lt;/li>
+&lt;li>Fix refresh_sql not properly passing down filters by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1510">https://github.com/spiceai/spiceai/pull/1510&lt;/a>&lt;/li>
+&lt;li>Allow datasets to specify a schema by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1507">https://github.com/spiceai/spiceai/pull/1507&lt;/a>&lt;/li>
+&lt;li>Cache invalidation for accelerated tables by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1498">https://github.com/spiceai/spiceai/pull/1498&lt;/a>&lt;/li>
+&lt;li>Improve spark data connector error messages by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/1497">https://github.com/spiceai/spiceai/pull/1497&lt;/a>&lt;/li>
+&lt;li>Parse postgres table schema from prepare statement to support empty tables by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1445">https://github.com/spiceai/spiceai/pull/1445&lt;/a>&lt;/li>
+&lt;li>Improve clarity of README and add FAQ by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1512">https://github.com/spiceai/spiceai/pull/1512&lt;/a>&lt;/li>
+&lt;li>Use binary data transfer for ftp by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1517">https://github.com/spiceai/spiceai/pull/1517&lt;/a>&lt;/li>
+&lt;li>Add support for time64 for SQL insertion statement by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1519">https://github.com/spiceai/spiceai/pull/1519&lt;/a>&lt;/li>
+&lt;li>Add Spice Extensions PoC by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1476">https://github.com/spiceai/spiceai/pull/1476&lt;/a>&lt;/li>
+&lt;li>Add results cache metrics, pod and quantile filters to Grafana dashboard by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1513">https://github.com/spiceai/spiceai/pull/1513&lt;/a>&lt;/li>
+&lt;li>Add unit tests for results caching utils by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1514">https://github.com/spiceai/spiceai/pull/1514&lt;/a>&lt;/li>
+&lt;li>Add E2E tests for results caching by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1515">https://github.com/spiceai/spiceai/pull/1515&lt;/a>&lt;/li>
+&lt;li>Pass table_reference full string into spark_session table so it can query across schemas or catalogs by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1521">https://github.com/spiceai/spiceai/pull/1521&lt;/a>&lt;/li>
+&lt;li>Trace on debug level for tables in &lt;code>runtime&lt;/code> schema by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1524">https://github.com/spiceai/spiceai/pull/1524&lt;/a>&lt;/li>
+&lt;li>Update SparkSessionBuilder::remote and update spark fork hash by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/1495">https://github.com/spiceai/spiceai/pull/1495&lt;/a>&lt;/li>
+&lt;li>Fix federation push-down for datasets with schemas by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1526">https://github.com/spiceai/spiceai/pull/1526&lt;/a>&lt;/li>
+&lt;li>Store history of queries in &amp;lsquo;spice.runtime.query_history&amp;rsquo; by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1501">https://github.com/spiceai/spiceai/pull/1501&lt;/a>&lt;/li>
+&lt;li>Disable cache for system queries by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1528">https://github.com/spiceai/spiceai/pull/1528&lt;/a>&lt;/li>
+&lt;li>Register runtime tables with runtime schema by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1532">https://github.com/spiceai/spiceai/pull/1532&lt;/a>&lt;/li>
+&lt;li>Fix acknowledgments workflow to include all cargo features by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1531">https://github.com/spiceai/spiceai/pull/1531&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.13.0-alpha...v0.13.1-alpha">https://github.com/spiceai/spiceai/compare/v0.13.0-alpha...v0.13.1-alpha&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
