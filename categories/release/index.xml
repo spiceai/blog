@@ -1,4 +1,94 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Release</title><link>/categories/release/</link><description>Recent content in Release on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 27 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.13.1-alpha (May 27, 2024)</title><link>/posts/2024/05/27/spice-v0.13.1-alpha-may-27-2024/</link><pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate><guid>/posts/2024/05/27/spice-v0.13.1-alpha-may-27-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Release</title><link>/categories/release/</link><description>Recent content in Release on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 03 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.13.2-alpha (June 3, 2024)</title><link>/posts/2024/06/03/spice-v0.13.2-alpha-june-3-2024/</link><pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate><guid>/posts/2024/06/03/spice-v0.13.2-alpha-june-3-2024/</guid><description>
+&lt;h1 id="spice-v0132-alpha-june-3-2024">Spice v0.13.2-alpha (June 3, 2024)&lt;/h1>
+&lt;p>The v0.13.2-alpha release is focused on quality and stability with improvements to federated query push-down, telemetry, and query history.&lt;/p>
+&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Filesystem Data Connector:&lt;/strong> Adds the Filesystem Data Connector for directly using files as data sources.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Federated Query Push-Down:&lt;/strong> Improved stability and schema compatibility for federated queries.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Enhanced Telemetry:&lt;/strong> Runtime Metrics now include last update time for accelerated datasets, count of refresh errors, and new metrics for query duration and failures.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Query History:&lt;/strong> Enabled query history logging for Arrow Flight queries in addition to HTTP queries.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@y-f-u&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@gloomweaver&lt;/li>
+&lt;li>@mach-kernel&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Update ROADMAP.md May 27, 2024 by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1535">https://github.com/spiceai/spiceai/pull/1535&lt;/a>&lt;/li>
+&lt;li>update helm chart version and use v0.13.1-alpha by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1536">https://github.com/spiceai/spiceai/pull/1536&lt;/a>&lt;/li>
+&lt;li>version correction in v0.13.1 release note by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1538">https://github.com/spiceai/spiceai/pull/1538&lt;/a>&lt;/li>
+&lt;li>update version to v0.14.0-alpha by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1539">https://github.com/spiceai/spiceai/pull/1539&lt;/a>&lt;/li>
+&lt;li>Update &lt;code>spice_cloud&lt;/code> - connect to cloud api by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1523">https://github.com/spiceai/spiceai/pull/1523&lt;/a>&lt;/li>
+&lt;li>Update spice_cloud extension params, and remove logging by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1541">https://github.com/spiceai/spiceai/pull/1541&lt;/a>&lt;/li>
+&lt;li>Update MSRV to 1.78 and remove unused Rust Version parameter in CI by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1540">https://github.com/spiceai/spiceai/pull/1540&lt;/a>&lt;/li>
+&lt;li>Improve &lt;code>llm&lt;/code> UX in &lt;code>spicepod.yaml&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1545">https://github.com/spiceai/spiceai/pull/1545&lt;/a>&lt;/li>
+&lt;li>Store local runtime metrics in Timestamp with nanoseconds precision and UTC time by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1548">https://github.com/spiceai/spiceai/pull/1548&lt;/a>&lt;/li>
+&lt;li>Object store metadata Table provider by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1518">https://github.com/spiceai/spiceai/pull/1518&lt;/a>&lt;/li>
+&lt;li>Remove clickhouse password requirement by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/1547">https://github.com/spiceai/spiceai/pull/1547&lt;/a>&lt;/li>
+&lt;li>pretty print loaded rows number by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1553">https://github.com/spiceai/spiceai/pull/1553&lt;/a>&lt;/li>
+&lt;li>Fix UNION ALL federated push down by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1550">https://github.com/spiceai/spiceai/pull/1550&lt;/a>&lt;/li>
+&lt;li>Update mistral, fix bugs and improve local file DX by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1552">https://github.com/spiceai/spiceai/pull/1552&lt;/a>&lt;/li>
+&lt;li>Cast &lt;code>runtime.metrics&lt;/code> schema, if remote (spiceai) data connector provided by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1554">https://github.com/spiceai/spiceai/pull/1554&lt;/a>&lt;/li>
+&lt;li>Use proper MySQL dialect during federation push-down by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1555">https://github.com/spiceai/spiceai/pull/1555&lt;/a>&lt;/li>
+&lt;li>parallel load dataset when starting up by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1551">https://github.com/spiceai/spiceai/pull/1551&lt;/a>&lt;/li>
+&lt;li>fix linter warning on Scanf return value by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1556">https://github.com/spiceai/spiceai/pull/1556&lt;/a>&lt;/li>
+&lt;li>Update spice cloud connect api endpoint by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1557">https://github.com/spiceai/spiceai/pull/1557&lt;/a>&lt;/li>
+&lt;li>Create new HTTP endpoint to create embeddings. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1558">https://github.com/spiceai/spiceai/pull/1558&lt;/a>&lt;/li>
+&lt;li>Query History support for Flight API by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1549">https://github.com/spiceai/spiceai/pull/1549&lt;/a>&lt;/li>
+&lt;li>Don&amp;rsquo;t cache queries for runtime tables by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1561">https://github.com/spiceai/spiceai/pull/1561&lt;/a>&lt;/li>
+&lt;li>Fix schema incompatibility on federated push-down queries by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1560">https://github.com/spiceai/spiceai/pull/1560&lt;/a>&lt;/li>
+&lt;li>move &amp;rsquo;embeddings&amp;rsquo; to top-level concept in spicepod.yaml by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1564">https://github.com/spiceai/spiceai/pull/1564&lt;/a>&lt;/li>
+&lt;li>&lt;code>object_store&lt;/code> table provider for UTF8 data formats by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1562">https://github.com/spiceai/spiceai/pull/1562&lt;/a>&lt;/li>
+&lt;li>Improve connectivity for JDBC clients, like Tableau by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1563">https://github.com/spiceai/spiceai/pull/1563&lt;/a>&lt;/li>
+&lt;li>Enable datasets from local filesystem by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1584">https://github.com/spiceai/spiceai/pull/1584&lt;/a>&lt;/li>
+&lt;li>Adds benchmarking tests for Spice by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1577">https://github.com/spiceai/spiceai/pull/1577&lt;/a>&lt;/li>
+&lt;li>Push down correct timestamp expr to SQLite, add binary type mapping by @mach-kernel in &lt;a href="https://github.com/spiceai/spiceai/pull/1566">https://github.com/spiceai/spiceai/pull/1566&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>query_duration_seconds&lt;/code> and &lt;code>query_failures&lt;/code> metrics by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1575">https://github.com/spiceai/spiceai/pull/1575&lt;/a>&lt;/li>
+&lt;li>Use &lt;code>/app&lt;/code> as a default workdir in spiceai docker image by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1586">https://github.com/spiceai/spiceai/pull/1586&lt;/a>&lt;/li>
+&lt;li>Add support for both file:// and file:/ by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1587">https://github.com/spiceai/spiceai/pull/1587&lt;/a>&lt;/li>
+&lt;li>put load_datasets as the latest step along with start_servers by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1559">https://github.com/spiceai/spiceai/pull/1559&lt;/a>&lt;/li>
+&lt;li>Embedding columns (from embedding providers) are now run inside datafusion plans. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1576">https://github.com/spiceai/spiceai/pull/1576&lt;/a>&lt;/li>
+&lt;li>Support BinaryArray in DuckDB accelerations by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1595">https://github.com/spiceai/spiceai/pull/1595&lt;/a>&lt;/li>
+&lt;li>Add cache header to Flight API and Spice REPL indicator by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1591">https://github.com/spiceai/spiceai/pull/1591&lt;/a>&lt;/li>
+&lt;li>Add accelerated datasets refresh metrics by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1589">https://github.com/spiceai/spiceai/pull/1589&lt;/a>&lt;/li>
+&lt;li>update the error when starting spice sql with no runtime to be actionable by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1597">https://github.com/spiceai/spiceai/pull/1597&lt;/a>&lt;/li>
+&lt;li>add odbc integration test by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1590">https://github.com/spiceai/spiceai/pull/1590&lt;/a>&lt;/li>
+&lt;li>Fix bug in instantiating &lt;code>EmbeddingConnector&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1592">https://github.com/spiceai/spiceai/pull/1592&lt;/a>&lt;/li>
+&lt;li>readme change to reflect new cli output by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1602">https://github.com/spiceai/spiceai/pull/1602&lt;/a>&lt;/li>
+&lt;li>Update version v0.13.2 by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1604">https://github.com/spiceai/spiceai/pull/1604&lt;/a>&lt;/li>
+&lt;li>Roadmap changes Jun 3, 2024 by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1609">https://github.com/spiceai/spiceai/pull/1609&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.13.1-alpha...v0.13.2">https://github.com/spiceai/spiceai/compare/v0.13.1-alpha...v0.13.2&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.13.1-alpha (May 27, 2024)</title><link>/posts/2024/05/27/spice-v0.13.1-alpha-may-27-2024/</link><pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate><guid>/posts/2024/05/27/spice-v0.13.1-alpha-may-27-2024/</guid><description>
 &lt;p>The v0.13.1-alpha release of Spice is a minor update focused on stability, quality, and operability. Query result caching provides protection against bursts of queries and schema support for datasets has been added logical grouping. An issue where Refresh SQL predicates were not pushed down underlying data sources has been resolved along with improved Acceleration Refresh logging.&lt;/p>
 &lt;h2 id="highlights-in-v0131-alpha">Highlights in v0.13.1-alpha&lt;/h2>
 &lt;ul>
