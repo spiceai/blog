@@ -1,4 +1,102 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.13.3-alpha (June 10, 2024)</title><link>/posts/2024/06/10/spice-v0.13.3-alpha-june-10-2024/</link><pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate><guid>/posts/2024/06/10/spice-v0.13.3-alpha-june-10-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.14-alpha (June 17, 2024)</title><link>/posts/2024/06/17/spice-v0.14-alpha-june-17-2024/</link><pubDate>Mon, 17 Jun 2024 00:00:00 +0000</pubDate><guid>/posts/2024/06/17/spice-v0.14-alpha-june-17-2024/</guid><description>
+&lt;p>The v0.14-alpha release focuses on enhancing accelerated dataset performance and data integrity, with support for configuring primary keys and indexes. Additionally, the GraphQL data connector been introduced, along with improved dataset registration and loading error information.&lt;/p>
+&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Accelerated Datasets:&lt;/strong> Ensure data integrity using primary key and unique index constraints. Configure conflict handling to either upsert new data or drop it. Create indexes on frequently filtered columns for faster queries on larger datasets.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>GraphQL Data Connector:&lt;/strong> Initial support for using GraphQL as a data source.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Example Spicepod showing how to use primary keys and indexes with accelerated datasets:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">datasets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">eth.blocks&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">blocks&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">acceleration&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">engine&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">duckdb&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Use DuckDB acceleration engine&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">primary_key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#39;(hash, timestamp)&amp;#39;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">indexes&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">number&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">enabled&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># same as `CREATE INDEX ON blocks (number);`&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;#39;(number, hash)&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">unique&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># same as `CREATE UNIQUE INDEX ON blocks (number, hash);`&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">on_conflict&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;#39;(hash, number)&amp;#39;: drop # possible values&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">drop (default), upsert&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;#39;(hash, timestamp)&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">upsert&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Primary Keys, constraints, and indexes are currently supported when using SQLite, DuckDB, and PostgreSQL acceleration engines.&lt;/p>
+&lt;p>Learn more with the &lt;a href="https://github.com/spiceai/quickstarts/blob/trunk/acceleration/indexes/README.md">indexing&lt;/a> quickstart and the &lt;a href="https://github.com/spiceai/samples/blob/trunk/constraints/README.md">primary key&lt;/a> sample.&lt;/p>
+&lt;p>Read the &lt;a href="https://docs.spiceai.org/features/local-acceleration">Local Acceleration&lt;/a> documentation.&lt;/p>
+&lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
+&lt;p>None.&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@digadeesh&lt;/li>
+&lt;li>@gloomweaver&lt;/li>
+&lt;li>@y-f-u&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@edmondop&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;h3 id="dependencies">Dependencies&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Apache DataFusion:&lt;/strong> Upgraded from 38.0.0 to 39.0.0&lt;/li>
+&lt;li>&lt;strong>Apache Arrow/Parquet:&lt;/strong> Upgraded from 51.0.0 to 52.0.0&lt;/li>
+&lt;li>&lt;strong>Rust:&lt;/strong> Upgraded from 1.78.0 to 1.79.0&lt;/li>
+&lt;/ul>
+&lt;h3 id="commits">Commits&lt;/h3>
+&lt;ul>
+&lt;li>Update Helm chart for v0.13.3-alpha by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1671">https://github.com/spiceai/spiceai/pull/1671&lt;/a>&lt;/li>
+&lt;li>Bump version to v0.14.0-alpha by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1673">https://github.com/spiceai/spiceai/pull/1673&lt;/a>&lt;/li>
+&lt;li>Dependency upgrades: DataFusion 39, Arrow/Parquet 52, object_store 0.10.1, arrow-odbc 11.1.0 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1674">https://github.com/spiceai/spiceai/pull/1674&lt;/a>&lt;/li>
+&lt;li>Generate unique runtime instance name and store in &lt;code>runtime.metrics&lt;/code> table by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1678">https://github.com/spiceai/spiceai/pull/1678&lt;/a>&lt;/li>
+&lt;li>Proper support for Snowflake TIMESTAMP_NTZ by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1677">https://github.com/spiceai/spiceai/pull/1677&lt;/a>&lt;/li>
+&lt;li>Enable tpch_q2 and tpch_q21 in the benchmark queries by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1679">https://github.com/spiceai/spiceai/pull/1679&lt;/a>&lt;/li>
+&lt;li>Start runtime metrics recorder after loading secrets and extensions by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1680">https://github.com/spiceai/spiceai/pull/1680&lt;/a>&lt;/li>
+&lt;li>Validate table constraints (Primary Keys/Unique Index) on accelerated tables by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1658">https://github.com/spiceai/spiceai/pull/1658&lt;/a>&lt;/li>
+&lt;li>Store labels as JSON string in &lt;code>runtime.metrics&lt;/code> by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1681">https://github.com/spiceai/spiceai/pull/1681&lt;/a>&lt;/li>
+&lt;li>Atomic updates for DuckDB tables with constraints by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1682">https://github.com/spiceai/spiceai/pull/1682&lt;/a>&lt;/li>
+&lt;li>Rename metrics column &lt;code>labels&lt;/code> to &lt;code>properties&lt;/code> and make it nullable by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1686">https://github.com/spiceai/spiceai/pull/1686&lt;/a>&lt;/li>
+&lt;li>Fix federation_optimizer_rule schema error for &lt;code>tpch_q7&lt;/code>, &lt;code>tpch_q8&lt;/code>, &lt;code>tpch_q9&lt;/code>, &lt;code>tpch_q14&lt;/code> by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1683">https://github.com/spiceai/spiceai/pull/1683&lt;/a>&lt;/li>
+&lt;li>Better prompt for /v1/assist by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1685">https://github.com/spiceai/spiceai/pull/1685&lt;/a>&lt;/li>
+&lt;li>Support stream in &lt;code>v1/assist&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1653">https://github.com/spiceai/spiceai/pull/1653&lt;/a>&lt;/li>
+&lt;li>Fix cache hit rate chart loading for Grafana v9.5 by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1691">https://github.com/spiceai/spiceai/pull/1691&lt;/a>&lt;/li>
+&lt;li>Update ROADMAP.md to include data connector statuses by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1684">https://github.com/spiceai/spiceai/pull/1684&lt;/a>&lt;/li>
+&lt;li>Support &lt;code>primary_key&lt;/code> in Spicepod and create in accelerated table by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1687">https://github.com/spiceai/spiceai/pull/1687&lt;/a>&lt;/li>
+&lt;li>Datasets with schema support for availability monitoring by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1690">https://github.com/spiceai/spiceai/pull/1690&lt;/a>&lt;/li>
+&lt;li>Improve dataset registration output by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1692">https://github.com/spiceai/spiceai/pull/1692&lt;/a>&lt;/li>
+&lt;li>Readme: update dataset registration traces by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1694">https://github.com/spiceai/spiceai/pull/1694&lt;/a>&lt;/li>
+&lt;li>Improved error logging for datasets load error by @edmondop in &lt;a href="https://github.com/spiceai/spiceai/pull/1695">https://github.com/spiceai/spiceai/pull/1695&lt;/a>&lt;/li>
+&lt;li>Improve &lt;code>ArrayDistance&lt;/code> scalar UDF by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1697">https://github.com/spiceai/spiceai/pull/1697&lt;/a>&lt;/li>
+&lt;li>Implement &lt;code>on_conflict&lt;/code> behavior for accelerated tables with constraints by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1688">https://github.com/spiceai/spiceai/pull/1688&lt;/a>&lt;/li>
+&lt;li>Fix datasets live update (Spice file watcher) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1702">https://github.com/spiceai/spiceai/pull/1702&lt;/a>&lt;/li>
+&lt;li>Grafana Dashboard: replace Quantile with Percentile filter by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1703">https://github.com/spiceai/spiceai/pull/1703&lt;/a>&lt;/li>
+&lt;li>refresh with append overlap by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1706">https://github.com/spiceai/spiceai/pull/1706&lt;/a>&lt;/li>
+&lt;li>Fix error message on DuckDB constraint violation by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1709">https://github.com/spiceai/spiceai/pull/1709&lt;/a>&lt;/li>
+&lt;li>Add warning when configuring indexes/primary_key/on_conflict for Arrow engine. by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1710">https://github.com/spiceai/spiceai/pull/1710&lt;/a>&lt;/li>
+&lt;li>ensure schema to be existing when query timestamp during refresh by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1711">https://github.com/spiceai/spiceai/pull/1711&lt;/a>&lt;/li>
+&lt;li>Improve README clarity and add comparison table by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1713">https://github.com/spiceai/spiceai/pull/1713&lt;/a>&lt;/li>
+&lt;li>Update acknowledgements by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/1716">https://github.com/spiceai/spiceai/pull/1716&lt;/a>&lt;/li>
+&lt;li>Update README.md to include GraphQL data connector in supported table by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1717">https://github.com/spiceai/spiceai/pull/1717&lt;/a>&lt;/li>
+&lt;li>Fix quoting issue for databricks identifier by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1718">https://github.com/spiceai/spiceai/pull/1718&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.13.3-alpha...v0.14.0-alpha">https://github.com/spiceai/spiceai/compare/v0.13.3-alpha...v0.14.0-alpha&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.13.3-alpha (June 10, 2024)</title><link>/posts/2024/06/10/spice-v0.13.3-alpha-june-10-2024/</link><pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate><guid>/posts/2024/06/10/spice-v0.13.3-alpha-june-10-2024/</guid><description>
 &lt;p>The v0.13.3-alpha release is focused on quality and stability with improvements to metrics, telemetry, and operability.&lt;/p>
 &lt;h2 id="highlights">Highlights&lt;/h2>
 &lt;p>&lt;strong>Ready API:&lt;/strong> - Add &lt;code>/v1/ready&lt;/code> API that returns success once all datasets and models are loaded and ready.&lt;/p>
