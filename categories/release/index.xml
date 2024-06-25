@@ -1,4 +1,91 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Release</title><link>/categories/release/</link><description>Recent content in Release on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 17 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.14-alpha (June 17, 2024)</title><link>/posts/2024/06/17/spice-v0.14-alpha-june-17-2024/</link><pubDate>Mon, 17 Jun 2024 00:00:00 +0000</pubDate><guid>/posts/2024/06/17/spice-v0.14-alpha-june-17-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Release</title><link>/categories/release/</link><description>Recent content in Release on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 24 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.14.1-alpha (June 24, 2024)</title><link>/posts/2024/06/24/spice-v0.14.1-alpha-june-24-2024/</link><pubDate>Mon, 24 Jun 2024 00:00:00 +0000</pubDate><guid>/posts/2024/06/24/spice-v0.14.1-alpha-june-24-2024/</guid><description>
+&lt;p>The v0.14.1-alpha release is focused on quality, stability, and type support with improvements in PostgreSQL, DuckDB, and GraphQL data connectors.&lt;/p>
+&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>PostgreSQL acceleration and data connector:&lt;/strong> Support for &lt;a href="https://www.postgresql.org/docs/current/rowtypes.html#ROWTYPES">Composite Types&lt;/a> and &lt;a href="https://www.postgresql.org/docs/current/datatype-uuid.html">UUID&lt;/a> data types.&lt;/li>
+&lt;li>&lt;strong>DuckDB acceleration and data connector:&lt;/strong> Support for LargeUTF8 and &lt;a href="https://duckdb.org/docs/data/overview">DuckDB functions&lt;/a>.&lt;/li>
+&lt;li>&lt;strong>GraphQL data connector:&lt;/strong> Improved error handling on invalid query syntax.&lt;/li>
+&lt;li>&lt;strong>Refresh SQL:&lt;/strong> Improved stability when overwriting STRUCT data types.&lt;/li>
+&lt;/ul>
+&lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
+&lt;p>None.&lt;/p>
+&lt;h2 id="new-contributors">New Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@phungleson made their first contribution in &lt;a href="https://github.com/spiceai/spiceai/pull/1750">https://github.com/spiceai/spiceai/pull/1750&lt;/a>&lt;/li>
+&lt;li>@peasee made their first contribution in &lt;a href="https://github.com/spiceai/spiceai/pull/1769">https://github.com/spiceai/spiceai/pull/1769&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@y-f-u&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@gloomweaver&lt;/li>
+&lt;li>@phungleson&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@digadeesh&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;h3 id="dependencies">Dependencies&lt;/h3>
+&lt;p>No major dependency updates.&lt;/p>
+&lt;h3 id="commits">Commits&lt;/h3>
+&lt;ul>
+&lt;li>Update Helm to v0.14.0-alpha by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1720">https://github.com/spiceai/spiceai/pull/1720&lt;/a>&lt;/li>
+&lt;li>Update version to 0.14.1-alpha by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1721">https://github.com/spiceai/spiceai/pull/1721&lt;/a>&lt;/li>
+&lt;li>Use &lt;code>spiceai/async-openai&lt;/code> to solve &lt;code>Deserialize&lt;/code> issue in &lt;code>v1/embed&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1707">https://github.com/spiceai/spiceai/pull/1707&lt;/a>&lt;/li>
+&lt;li>Add greatest least user defined functions by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1722">https://github.com/spiceai/spiceai/pull/1722&lt;/a>&lt;/li>
+&lt;li>default timeunit to be seconds when time column is a numeric column by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1727">https://github.com/spiceai/spiceai/pull/1727&lt;/a>&lt;/li>
+&lt;li>use system conf to construct dns resolver by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1728">https://github.com/spiceai/spiceai/pull/1728&lt;/a>&lt;/li>
+&lt;li>fix a bug that dataset refresh api does not work for table with schema by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1729">https://github.com/spiceai/spiceai/pull/1729&lt;/a>&lt;/li>
+&lt;li>Move secret crate to runtime module by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1723">https://github.com/spiceai/spiceai/pull/1723&lt;/a>&lt;/li>
+&lt;li>Return schema in get_flight_info_simple by @gloomweaver in &lt;a href="https://github.com/spiceai/spiceai/pull/1724">https://github.com/spiceai/spiceai/pull/1724&lt;/a>&lt;/li>
+&lt;li>Refactor vector search component of &lt;code>v1/assist&lt;/code> into a &lt;code>VectorSearch&lt;/code> struct by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1699">https://github.com/spiceai/spiceai/pull/1699&lt;/a>&lt;/li>
+&lt;li>Update ROADMAP.md. Fix a broken link for the &amp;ldquo;Get in touch&amp;rdquo; link. by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1725">https://github.com/spiceai/spiceai/pull/1725&lt;/a>&lt;/li>
+&lt;li>Secret keys in params should be case insensitive by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1737">https://github.com/spiceai/spiceai/pull/1737&lt;/a>&lt;/li>
+&lt;li>expose error log when refresh encountered some issue, also add more debug logs by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1739">https://github.com/spiceai/spiceai/pull/1739&lt;/a>&lt;/li>
+&lt;li>Support Struct in PostgreSQL accelerator by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1733">https://github.com/spiceai/spiceai/pull/1733&lt;/a>&lt;/li>
+&lt;li>rewrite refresh append update dedup logic using arrow comparators by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1743">https://github.com/spiceai/spiceai/pull/1743&lt;/a>&lt;/li>
+&lt;li>Add health checks when loading {llms, embeddings} by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1738">https://github.com/spiceai/spiceai/pull/1738&lt;/a>&lt;/li>
+&lt;li>Support DuckDB function in DuckDB datasets by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1742">https://github.com/spiceai/spiceai/pull/1742&lt;/a>&lt;/li>
+&lt;li>Update version of &lt;code>spiceai/duckdb-rs&lt;/code>, support LargeUTF8 by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1746">https://github.com/spiceai/spiceai/pull/1746&lt;/a>&lt;/li>
+&lt;li>Split refresh into coordination and execution layers by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1744">https://github.com/spiceai/spiceai/pull/1744&lt;/a>&lt;/li>
+&lt;li>bump duckdb rs git sha to resolve duckdb incorrect null value issue by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1747">https://github.com/spiceai/spiceai/pull/1747&lt;/a>&lt;/li>
+&lt;li>cargo.lock file update with #1747 duckdb-rs sha by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1748">https://github.com/spiceai/spiceai/pull/1748&lt;/a>&lt;/li>
+&lt;li>Fix error when GraphQL error locations is missing by @phungleson in &lt;a href="https://github.com/spiceai/spiceai/pull/1750">https://github.com/spiceai/spiceai/pull/1750&lt;/a>&lt;/li>
+&lt;li>Tweak refresh scheduling logic by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1749">https://github.com/spiceai/spiceai/pull/1749&lt;/a>&lt;/li>
+&lt;li>Ensure tonic package is in duckdb feature by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1756">https://github.com/spiceai/spiceai/pull/1756&lt;/a>&lt;/li>
+&lt;li>Change &lt;code>tonic::async_trait&lt;/code> -&amp;gt; &lt;code>async_trait::async_trait&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1757">https://github.com/spiceai/spiceai/pull/1757&lt;/a>&lt;/li>
+&lt;li>Streaming in v1/chat/completion by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1741">https://github.com/spiceai/spiceai/pull/1741&lt;/a>&lt;/li>
+&lt;li>Add refresh_retry_enabled/max_attempts acceleration params by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1753">https://github.com/spiceai/spiceai/pull/1753&lt;/a>&lt;/li>
+&lt;li>Implement refresh retry based on fibonacci backoff (not enabled) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1752">https://github.com/spiceai/spiceai/pull/1752&lt;/a>&lt;/li>
+&lt;li>Add VSCode debug target to debug runtime benchmark test by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1760">https://github.com/spiceai/spiceai/pull/1760&lt;/a>&lt;/li>
+&lt;li>update spiceai datafusion to include more unparser rules by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1764">https://github.com/spiceai/spiceai/pull/1764&lt;/a>&lt;/li>
+&lt;li>Show UUID types as String instead of base64 binary. by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1767">https://github.com/spiceai/spiceai/pull/1767&lt;/a>&lt;/li>
+&lt;li>docs: Add linux contributor guide for setup by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/1769">https://github.com/spiceai/spiceai/pull/1769&lt;/a>&lt;/li>
+&lt;li>Do not expose connection url on object store error by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1761">https://github.com/spiceai/spiceai/pull/1761&lt;/a>&lt;/li>
+&lt;li>Support secrets in llm and embeddings params by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1770">https://github.com/spiceai/spiceai/pull/1770&lt;/a>&lt;/li>
+&lt;li>Bump github.com/hashicorp/go-retryablehttp from 0.7.1 to 0.7.7 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/1775">https://github.com/spiceai/spiceai/pull/1775&lt;/a>&lt;/li>
+&lt;li>Update ROADMAP.md with latest roadmap changes for v0.15.0 by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1773">https://github.com/spiceai/spiceai/pull/1773&lt;/a>&lt;/li>
+&lt;li>Update acknowledgements by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/1776">https://github.com/spiceai/spiceai/pull/1776&lt;/a>&lt;/li>
+&lt;li>Strip kwarg &amp;lsquo;=&amp;rsquo; in DuckDB function parsing by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1777">https://github.com/spiceai/spiceai/pull/1777&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.14.0-alpha...v0.14.1-alpha">https://github.com/spiceai/spiceai/compare/v0.14.0-alpha...v0.14.1-alpha&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.14-alpha (June 17, 2024)</title><link>/posts/2024/06/17/spice-v0.14-alpha-june-17-2024/</link><pubDate>Mon, 17 Jun 2024 00:00:00 +0000</pubDate><guid>/posts/2024/06/17/spice-v0.14-alpha-june-17-2024/</guid><description>
 &lt;p>The v0.14-alpha release focuses on enhancing accelerated dataset performance and data integrity, with support for configuring primary keys and indexes. Additionally, the GraphQL data connector been introduced, along with improved dataset registration and loading error information.&lt;/p>
 &lt;h2 id="highlights">Highlights&lt;/h2>
 &lt;ul>
