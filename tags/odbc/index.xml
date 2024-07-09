@@ -7,8 +7,6 @@
 &lt;p>&lt;strong>GraphQL Object Unnesting:&lt;/strong> The &lt;a href="https://docs.spiceai.org/data-connectors/graphql">GraphQL Data Connector&lt;/a> can automatically unnest objects from GraphQL queries using the &lt;code>unnest_depth&lt;/code> parameter.&lt;/p>
 &lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
 &lt;p>None.&lt;/p>
-&lt;h2 id="new-contributors">New Contributors&lt;/h2>
-&lt;p>None.&lt;/p>
 &lt;h2 id="contributors">Contributors&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/digadeesh">@digadeesh&lt;/a>&lt;/li>
