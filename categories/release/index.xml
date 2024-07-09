@@ -1,4 +1,81 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Release</title><link>/categories/release/</link><description>Recent content in Release on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.15-alpha (July 1, 2024)</title><link>/posts/2024/07/01/spice-v0.15-alpha-july-1-2024/</link><pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate><guid>/posts/2024/07/01/spice-v0.15-alpha-july-1-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Release</title><link>/categories/release/</link><description>Recent content in Release on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 08 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.15.1-alpha (July 8, 2024)</title><link>/posts/2024/07/08/spice-v0.15.1-alpha-july-8-2024/</link><pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate><guid>/posts/2024/07/08/spice-v0.15.1-alpha-july-8-2024/</guid><description>
+&lt;p>The v0.15.1-alpha minor release focuses on enhancing stability, performance, and usability. Memory usage has been significantly improved for the &lt;code>postgres&lt;/code> and &lt;code>duckdb&lt;/code> acceleration engines which now use stream processing. A new Delta Lake Data Connector has been added, sharing a &lt;a href="https://github.com/delta-incubator/delta-kernel-rs">delta-kernel-rs&lt;/a> based implementation with the Databricks Data Connector supporting &lt;a href="https://docs.delta.io/latest/delta-deletion-vectors.html">deletion vectors&lt;/a>.&lt;/p>
+&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;p>&lt;strong>Improved memory usage for PostgreSQL and DuckDB acceleration engines:&lt;/strong> Large dataset acceleration with &lt;a href="https://docs.spiceai.org/data-accelerators/postgres">PostgreSQL&lt;/a> and &lt;a href="https://docs.spiceai.org/data-accelerators/duckdb">DuckDB&lt;/a> engines has reduced memory consumption by streaming data directly to the accelerated table as it is read from the source.&lt;/p>
+&lt;p>&lt;strong>Delta Lake Data Connector:&lt;/strong> A new &lt;a href="https://docs.spiceai.org/data-connectors/delta-lake">Delta Lake Data Connector&lt;/a> has been added for using &lt;a href="https://delta.io/">Delta Lake&lt;/a> outside of Databricks.&lt;/p>
+&lt;p>&lt;strong>ODBC Data Connector Streaming:&lt;/strong> The &lt;a href="https://docs.spiceai.org/data-connectors/odbc">ODBC Data Connector&lt;/a> now streams results, reducing memory usage, and improving performance.&lt;/p>
+&lt;p>&lt;strong>GraphQL Object Unnesting:&lt;/strong> The &lt;a href="https://docs.spiceai.org/data-connectors/graphql">GraphQL Data Connector&lt;/a> can automatically unnest objects from GraphQL queries using the &lt;code>unnest_depth&lt;/code> parameter.&lt;/p>
+&lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
+&lt;p>None.&lt;/p>
+&lt;h2 id="new-contributors">New Contributors&lt;/h2>
+&lt;p>None.&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/digadeesh">@digadeesh&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/y-f-u">@y-f-u&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/phillipleblanc">@phillipleblanc&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/Jeadie">@Jeadie&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/sgrebnov">@sgrebnov&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/ewgenius">@ewgenius&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/peasee">@peasee&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/lukekim">@lukekim&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;h3 id="dependencies">Dependencies&lt;/h3>
+&lt;p>The MySQL, PostgreSQL, SQLite and DuckDB DataFusion TableProviders developed by Spice AI have been donated to the &lt;a href="https://github.com/datafusion-contrib/datafusion-table-providers">datafusion-contrib/datafusion-table-providers&lt;/a> community repository.&lt;/p>
+&lt;p>From the v0.15.1-alpha release, a new dependency is taken on &lt;code>datafusion-contrib/datafusion-table-providers&lt;/code>&lt;/p>
+&lt;h3 id="commits">Commits&lt;/h3>
+&lt;ul>
+&lt;li>Update acknowledgements by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/1842">https://github.com/spiceai/spiceai/pull/1842&lt;/a>&lt;/li>
+&lt;li>Update ROADMAP.md - Remove v0.15.0-alpha roadmap items. by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1843">https://github.com/spiceai/spiceai/pull/1843&lt;/a>&lt;/li>
+&lt;li>update helm chart for v0.15.0-alpha by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1845">https://github.com/spiceai/spiceai/pull/1845&lt;/a>&lt;/li>
+&lt;li>update cargo.toml and version.txt to 0.15.1-alpha (for next release) by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1844">https://github.com/spiceai/spiceai/pull/1844&lt;/a>&lt;/li>
+&lt;li>Fix check for outdated Cargo.lock &amp;amp; update Cargo.lock by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1846">https://github.com/spiceai/spiceai/pull/1846&lt;/a>&lt;/li>
+&lt;li>Add Debezium to README by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1847">https://github.com/spiceai/spiceai/pull/1847&lt;/a>&lt;/li>
+&lt;li>use snmalloc as global allocator by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1848">https://github.com/spiceai/spiceai/pull/1848&lt;/a>&lt;/li>
+&lt;li>Various improvements for mistral.rs by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1831">https://github.com/spiceai/spiceai/pull/1831&lt;/a>&lt;/li>
+&lt;li>Enable streaming for accelerated tables refresh (common logic) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1863">https://github.com/spiceai/spiceai/pull/1863&lt;/a>&lt;/li>
+&lt;li>Use in-memory DB pool for DuckDB functions by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1849">https://github.com/spiceai/spiceai/pull/1849&lt;/a>&lt;/li>
+&lt;li>Generate Spicepod JSON Schema by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1865">https://github.com/spiceai/spiceai/pull/1865&lt;/a>&lt;/li>
+&lt;li>Update http param names by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1872">https://github.com/spiceai/spiceai/pull/1872&lt;/a>&lt;/li>
+&lt;li>Replace DuckDB, PostgreSQL, Sqlite and MySQL providers with the &lt;code>datafusion-table-providers&lt;/code> crate by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1873">https://github.com/spiceai/spiceai/pull/1873&lt;/a>&lt;/li>
+&lt;li>Remove more dead code moved to datafusion-table-providers by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1874">https://github.com/spiceai/spiceai/pull/1874&lt;/a>&lt;/li>
+&lt;li>feat: Optimize ODBC for streaming results by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/1862">https://github.com/spiceai/spiceai/pull/1862&lt;/a>&lt;/li>
+&lt;li>Fix how models uses secrets by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/1875">https://github.com/spiceai/spiceai/pull/1875&lt;/a>&lt;/li>
+&lt;li>fix: Add support for varying duplicate columns behavior in GraphQL unnesting by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/1876">https://github.com/spiceai/spiceai/pull/1876&lt;/a>&lt;/li>
+&lt;li>fix: Remove GraphQL duplicate rename support by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/1877">https://github.com/spiceai/spiceai/pull/1877&lt;/a>&lt;/li>
+&lt;li>fix: Remove Overwrite GraphQL duplicates behavior by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/1882">https://github.com/spiceai/spiceai/pull/1882&lt;/a>&lt;/li>
+&lt;li>fix: Use tokio mpsc channels for ODBC streaming by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/1883">https://github.com/spiceai/spiceai/pull/1883&lt;/a>&lt;/li>
+&lt;li>Upgrade table providers to enable DuckDB streaming write by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1884">https://github.com/spiceai/spiceai/pull/1884&lt;/a>&lt;/li>
+&lt;li>Update ROADMAP.md - Add debezium (alpha) to connector list. by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1880">https://github.com/spiceai/spiceai/pull/1880&lt;/a>&lt;/li>
+&lt;li>Allow defining user for mysql data connector via secrets by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1886">https://github.com/spiceai/spiceai/pull/1886&lt;/a>&lt;/li>
+&lt;li>Replace &lt;code>delta-rs&lt;/code> with &lt;code>delta-kernel-rs&lt;/code> and add new &lt;code>delta&lt;/code> data connector. by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1878">https://github.com/spiceai/spiceai/pull/1878&lt;/a>&lt;/li>
+&lt;li>Update README images by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1890">https://github.com/spiceai/spiceai/pull/1890&lt;/a>&lt;/li>
+&lt;li>Handle deletion vectors for &lt;code>delta&lt;/code> tables by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1891">https://github.com/spiceai/spiceai/pull/1891&lt;/a>&lt;/li>
+&lt;li>Rename &lt;code>delta&lt;/code> to &lt;code>delta_lake&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1892">https://github.com/spiceai/spiceai/pull/1892&lt;/a>&lt;/li>
+&lt;li>Add where is the AI to the FAQ. by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1885">https://github.com/spiceai/spiceai/pull/1885&lt;/a>&lt;/li>
+&lt;li>update df table providers rev version by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1889">https://github.com/spiceai/spiceai/pull/1889&lt;/a>&lt;/li>
+&lt;li>Enable other cloud providers for delta_lake integration by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1893">https://github.com/spiceai/spiceai/pull/1893&lt;/a>&lt;/li>
+&lt;li>Add CLI parameters for logging into Databricks with Azure/GCP cloud storage by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1894">https://github.com/spiceai/spiceai/pull/1894&lt;/a>&lt;/li>
+&lt;li>Bump zerovec from 0.10.2 to 0.10.4 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/1896">https://github.com/spiceai/spiceai/pull/1896&lt;/a>&lt;/li>
+&lt;li>Add &amp;lsquo;Content-Type&amp;rsquo; to metrics exporter to be prometheus exposition format compliant by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1897">https://github.com/spiceai/spiceai/pull/1897&lt;/a>&lt;/li>
+&lt;li>Update enforce-labels.yml so it accepts depdenabot updates with kind/… by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1898">https://github.com/spiceai/spiceai/pull/1898&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.15.0-alpha...v0.15.1-alpha">https://github.com/spiceai/spiceai/compare/v0.15.0-alpha...v0.15.1-alpha&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.15-alpha (July 1, 2024)</title><link>/posts/2024/07/01/spice-v0.15-alpha-july-1-2024/</link><pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate><guid>/posts/2024/07/01/spice-v0.15-alpha-july-1-2024/</guid><description>
 &lt;p>The v0.15-alpha release introduces support for streaming databases changes with Change Data Capture (CDC) into accelerated tables via a new Debezium connector, configurable retry logic for data refresh, and the release of a new C# SDK to build with Spice in Dotnet.&lt;/p>
 &lt;h2 id="highlights-in-v015-alpha">Highlights in v0.15-alpha&lt;/h2>
 &lt;ul>
