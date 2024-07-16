@@ -1,4 +1,100 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Databricks</title><link>/tags/databricks/</link><description>Recent content in Databricks on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 08 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/databricks/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.15.1-alpha (July 8, 2024)</title><link>/posts/2024/07/08/spice-v0.15.1-alpha-july-8-2024/</link><pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate><guid>/posts/2024/07/08/spice-v0.15.1-alpha-july-8-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Databricks</title><link>/tags/databricks/</link><description>Recent content in Databricks on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 15 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/databricks/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.15.2-alpha (July 15, 2024)</title><link>/posts/2024/07/15/spice-v0.15.2-alpha-july-15-2024/</link><pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate><guid>/posts/2024/07/15/spice-v0.15.2-alpha-july-15-2024/</guid><description>
+&lt;h1 id="spice-v0152-alpha-july-15-2024">Spice v0.15.2-alpha (July 15, 2024)&lt;/h1>
+&lt;p>The v0.15.2-alpha minor release focuses on enhancing stability, performance, and introduces &lt;a href="https://docs.spiceai.org/components/catalogs">Catalog Providers&lt;/a> for streamlined access to Data Catalog tables. Unity Catalog, Databricks Unity Catalog, and the Spice.ai Cloud Platform Catalog are supported in v0.15.2-alpha. The reliability of federated query push-down has also been improved for the MySQL, PostgreSQL, ODBC, S3, Databricks, and Spice.ai Cloud Platform data connectors.&lt;/p>
+&lt;h2 id="highlights-in-v0152-alpha">Highlights in v0.15.2-alpha&lt;/h2>
+&lt;p>&lt;strong>Catalog Providers:&lt;/strong> &lt;a href="https://docs.spiceai.org/components/catalogs">Catalog Providers&lt;/a> streamline access to Data Catalog tables. Initial catalog providers supported are &lt;a href="https://www.databricks.com/product/unity-catalog">Databricks Unity Catalog&lt;/a>, &lt;a href="https://github.com/unitycatalog/unitycatalog/tree/main">Unity Catalog&lt;/a> and Spice.ai Cloud Platform Catalog.&lt;/p>
+&lt;p>For example, to configure Spice to connect to &lt;code>tpch&lt;/code> tables in the Spice.ai Cloud Platform Catalog use the new &lt;code>catalogs:&lt;/code> section in the &lt;code>spicepod.yml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">catalogs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">spiceai&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">spiceai&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">include&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">tpch.*&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sql&amp;gt; show tables
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------------+--------------+---------------+------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> table_catalog &lt;span style="color:#000;font-weight:bold">|&lt;/span> table_schema &lt;span style="color:#000;font-weight:bold">|&lt;/span> table_name &lt;span style="color:#000;font-weight:bold">|&lt;/span> table_type &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------------+--------------+---------------+------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> spiceai &lt;span style="color:#000;font-weight:bold">|&lt;/span> tpch &lt;span style="color:#000;font-weight:bold">|&lt;/span> region &lt;span style="color:#000;font-weight:bold">|&lt;/span> BASE TABLE &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> spiceai &lt;span style="color:#000;font-weight:bold">|&lt;/span> tpch &lt;span style="color:#000;font-weight:bold">|&lt;/span> part &lt;span style="color:#000;font-weight:bold">|&lt;/span> BASE TABLE &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> spiceai &lt;span style="color:#000;font-weight:bold">|&lt;/span> tpch &lt;span style="color:#000;font-weight:bold">|&lt;/span> customer &lt;span style="color:#000;font-weight:bold">|&lt;/span> BASE TABLE &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> spiceai &lt;span style="color:#000;font-weight:bold">|&lt;/span> tpch &lt;span style="color:#000;font-weight:bold">|&lt;/span> lineitem &lt;span style="color:#000;font-weight:bold">|&lt;/span> BASE TABLE &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> spiceai &lt;span style="color:#000;font-weight:bold">|&lt;/span> tpch &lt;span style="color:#000;font-weight:bold">|&lt;/span> partsupp &lt;span style="color:#000;font-weight:bold">|&lt;/span> BASE TABLE &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> spiceai &lt;span style="color:#000;font-weight:bold">|&lt;/span> tpch &lt;span style="color:#000;font-weight:bold">|&lt;/span> supplier &lt;span style="color:#000;font-weight:bold">|&lt;/span> BASE TABLE &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> spiceai &lt;span style="color:#000;font-weight:bold">|&lt;/span> tpch &lt;span style="color:#000;font-weight:bold">|&lt;/span> nation &lt;span style="color:#000;font-weight:bold">|&lt;/span> BASE TABLE &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> spiceai &lt;span style="color:#000;font-weight:bold">|&lt;/span> tpch &lt;span style="color:#000;font-weight:bold">|&lt;/span> orders &lt;span style="color:#000;font-weight:bold">|&lt;/span> BASE TABLE &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> spice &lt;span style="color:#000;font-weight:bold">|&lt;/span> runtime &lt;span style="color:#000;font-weight:bold">|&lt;/span> query_history &lt;span style="color:#000;font-weight:bold">|&lt;/span> BASE TABLE &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------------+--------------+---------------+------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Time: 0.001866958 seconds. &lt;span style="color:#0000cf;font-weight:bold">9&lt;/span> rows.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>ODBC Data Connector Push-Down:&lt;/strong> The &lt;a href="https://docs.spiceai.org/components/data-connectors/odbc">ODBC Data Connector&lt;/a> now supports query push-down for joins, improving performance for joined datasets configured with the same &lt;code>odbc_connection_string&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Improved Spicepod Validation&lt;/strong> Improved &lt;code>spicepod.yml&lt;/code> validation has been added, including warnings when loading resources with duplicate names (&lt;code>datasets&lt;/code>, &lt;code>views&lt;/code>, &lt;code>models&lt;/code>, &lt;code>embeddings&lt;/code>).&lt;/p>
+&lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
+&lt;p>None.&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@y-f-u&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;h3 id="dependencies">Dependencies&lt;/h3>
+&lt;ul>
+&lt;li>Upgraded &lt;a href="https://datafusion.apache.org/">Apache DataFusion&lt;/a> to &lt;a href="https://crates.io/crates/datafusion/40.0.0">v40.0.0&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="commits">Commits&lt;/h3>
+&lt;ul>
+&lt;li>Update to next release version v0.15.2-alpha by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1901">https://github.com/spiceai/spiceai/pull/1901&lt;/a>&lt;/li>
+&lt;li>release: Update helm 0.15.1-alpha by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/1902">https://github.com/spiceai/spiceai/pull/1902&lt;/a>&lt;/li>
+&lt;li>fix: Detect and error on duplicate component names on spiced (re)load by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/1905">https://github.com/spiceai/spiceai/pull/1905&lt;/a>&lt;/li>
+&lt;li>fix: flaky test - test_refresh_status_change_to_ready by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1908">https://github.com/spiceai/spiceai/pull/1908&lt;/a>&lt;/li>
+&lt;li>Add support for parsing &lt;code>catalog&lt;/code> from Spicepod. by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1903">https://github.com/spiceai/spiceai/pull/1903&lt;/a>&lt;/li>
+&lt;li>Add catalog component to &lt;code>Runtime&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1906">https://github.com/spiceai/spiceai/pull/1906&lt;/a>&lt;/li>
+&lt;li>Adds a RuntimeBuilder and make most items on Runtime private by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1913">https://github.com/spiceai/spiceai/pull/1913&lt;/a>&lt;/li>
+&lt;li>Bump zerovec-derive from 0.10.2 to 0.10.3 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/1914">https://github.com/spiceai/spiceai/pull/1914&lt;/a>&lt;/li>
+&lt;li>Add separate tagged image with enabled models feature by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/1909">https://github.com/spiceai/spiceai/pull/1909&lt;/a>&lt;/li>
+&lt;li>Update datafusion-table-providers to use newest head by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/1927">https://github.com/spiceai/spiceai/pull/1927&lt;/a>&lt;/li>
+&lt;li>Add MySQL support for TPC-H test data generation script by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1932">https://github.com/spiceai/spiceai/pull/1932&lt;/a>&lt;/li>
+&lt;li>fix: Expose ODBC task errors if error is before data stream begins by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/1924">https://github.com/spiceai/spiceai/pull/1924&lt;/a>&lt;/li>
+&lt;li>Use public.ecr.aws/docker/library/{postgres/mysql}:latest for integration test images by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1934">https://github.com/spiceai/spiceai/pull/1934&lt;/a>&lt;/li>
+&lt;li>Implement &lt;code>spice.ai&lt;/code> &lt;code>CatalogProvider&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1925">https://github.com/spiceai/spiceai/pull/1925&lt;/a>&lt;/li>
+&lt;li>fix: validate time column and time format when constructing accelerated table refresh by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1926">https://github.com/spiceai/spiceai/pull/1926&lt;/a>&lt;/li>
+&lt;li>Add support for filtering tables included by a catalog by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1933">https://github.com/spiceai/spiceai/pull/1933&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>UnityCatalog&lt;/code> catalog provider by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1940">https://github.com/spiceai/spiceai/pull/1940&lt;/a>&lt;/li>
+&lt;li>Implement &lt;code>Databricks&lt;/code> catalog provider by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1941">https://github.com/spiceai/spiceai/pull/1941&lt;/a>&lt;/li>
+&lt;li>Copy &lt;code>params&lt;/code> into &lt;code>dataset_params&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1947">https://github.com/spiceai/spiceai/pull/1947&lt;/a>&lt;/li>
+&lt;li>Make integration tests more stable by using logged-in registry during CI by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1955">https://github.com/spiceai/spiceai/pull/1955&lt;/a>&lt;/li>
+&lt;li>Add integration test for Spice.ai catalog provider by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1956">https://github.com/spiceai/spiceai/pull/1956&lt;/a>&lt;/li>
+&lt;li>Add GET /v1/catalogs API and catalogs CMD by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/1957">https://github.com/spiceai/spiceai/pull/1957&lt;/a>&lt;/li>
+&lt;li>feat: Enable ODBC JoinPushDown with hashed connection string by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/1954">https://github.com/spiceai/spiceai/pull/1954&lt;/a>&lt;/li>
+&lt;li>Fix bug: arrow acceleration reports zero results during refresh by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/1962">https://github.com/spiceai/spiceai/pull/1962&lt;/a>&lt;/li>
+&lt;li>Revert &amp;ldquo;fix: validate time column and time format when constructing accelerated table refresh&amp;rdquo; by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1964">https://github.com/spiceai/spiceai/pull/1964&lt;/a>&lt;/li>
+&lt;li>fix: Update arrow-odbc to use our fork for pending fixes by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/1965">https://github.com/spiceai/spiceai/pull/1965&lt;/a>&lt;/li>
+&lt;li>Upgrade to DataFusion 40 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1963">https://github.com/spiceai/spiceai/pull/1963&lt;/a>&lt;/li>
+&lt;li>Do exchange shouldn&amp;rsquo;t require table to be writable by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/1958">https://github.com/spiceai/spiceai/pull/1958&lt;/a>&lt;/li>
+&lt;li>Use custom dialect rule for flight federated request by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1946">https://github.com/spiceai/spiceai/pull/1946&lt;/a>&lt;/li>
+&lt;li>upgrade datafusion federation to have the table rewrite fix for tpch-q9 by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/1970">https://github.com/spiceai/spiceai/pull/1970&lt;/a>&lt;/li>
+&lt;li>Create v0.15.2-alpha.md Release notes by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/1969">https://github.com/spiceai/spiceai/pull/1969&lt;/a>&lt;/li>
+&lt;li>Fix Unity Catalog API response for Azure Databricks by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/1973">https://github.com/spiceai/spiceai/pull/1973&lt;/a>&lt;/li>
+&lt;li>Update acknowledgements by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/1976">https://github.com/spiceai/spiceai/pull/1976&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.15.1-alpha...v0.15.2-alpha">https://github.com/spiceai/spiceai/compare/v0.15.1-alpha...v0.15.2-alpha&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.15.1-alpha (July 8, 2024)</title><link>/posts/2024/07/08/spice-v0.15.1-alpha-july-8-2024/</link><pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate><guid>/posts/2024/07/08/spice-v0.15.1-alpha-july-8-2024/</guid><description>
 &lt;p>The v0.15.1-alpha minor release focuses on enhancing stability, performance, and usability. Memory usage has been significantly improved for the &lt;code>postgres&lt;/code> and &lt;code>duckdb&lt;/code> acceleration engines which now use stream processing. A new Delta Lake Data Connector has been added, sharing a &lt;a href="https://github.com/delta-incubator/delta-kernel-rs">delta-kernel-rs&lt;/a> based implementation with the Databricks Data Connector supporting &lt;a href="https://docs.delta.io/latest/delta-deletion-vectors.html">deletion vectors&lt;/a>.&lt;/p>
 &lt;h2 id="highlights">Highlights&lt;/h2>
 &lt;p>&lt;strong>Improved memory usage for PostgreSQL and DuckDB acceleration engines:&lt;/strong> Large dataset acceleration with &lt;a href="https://docs.spiceai.org/data-accelerators/postgres">PostgreSQL&lt;/a> and &lt;a href="https://docs.spiceai.org/data-accelerators/duckdb">DuckDB&lt;/a> engines has reduced memory consumption by streaming data directly to the accelerated table as it is read from the source.&lt;/p>
