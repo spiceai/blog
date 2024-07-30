@@ -1,4 +1,139 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Data Connectors</title><link>/tags/data-connectors/</link><description>Recent content in Data Connectors on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/data-connectors/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.15-alpha (July 1, 2024)</title><link>/posts/2024/07/01/spice-v0.15-alpha-july-1-2024/</link><pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate><guid>/posts/2024/07/01/spice-v0.15-alpha-july-1-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Data Connectors</title><link>/tags/data-connectors/</link><description>Recent content in Data Connectors on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 29 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/data-connectors/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.17-beta (July 29, 2024)</title><link>/posts/2024/07/29/spice-v0.17-beta-july-29-2024/</link><pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate><guid>/posts/2024/07/29/spice-v0.17-beta-july-29-2024/</guid><description>
+&lt;p>Announcing the first beta release of Spice.ai OSS! 🎉&lt;/p>
+&lt;p>The core Spice runtime has graduated from alpha to beta! Components, such as Data Connectors and Models, follow independent release milestones. Data Connectors graduating from &lt;code>alpha&lt;/code> to &lt;code>beta&lt;/code> include &lt;code>databricks&lt;/code>, &lt;code>spiceai&lt;/code>, &lt;code>postgres&lt;/code>, &lt;code>s3&lt;/code>, &lt;code>odbc&lt;/code>, and &lt;code>mysql&lt;/code>. From beta to 1.0, project will be to on improving performance and scaling to larger datasets.&lt;/p>
+&lt;p>This release also includes enhanced security with Transport Layer Security (TLS) secured APIs, a new &lt;code>spice install&lt;/code> CLI command, and several performance and stability improvements.&lt;/p>
+&lt;h2 id="highlights-in-v017-beta">Highlights in v0.17-beta&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Encryption in transit with TLS&lt;/strong>: The HTTP, gRPC, Metrics, and OpenTelemetry (OTEL) API endpoints can be secured with TLS by specifying a certificate and private key in &lt;a href="https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail">PEM&lt;/a> format.&lt;/li>
+&lt;/ul>
+&lt;p>Enable TLS using the &lt;code>--tls-certificate-file&lt;/code> and &lt;code>--tls-key-file&lt;/code> command-line flags:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>spice run -- --tls-certificate-file /path/to/cert.pem --tls-key-file /path/to/key.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Or configure in the &lt;code>spicepod.yml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">runtime&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">tls&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">certificate_file&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">/path/to/cert.pem&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">key_file&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">/path/to/key.pem&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Get started with TLS by following the &lt;a href="https://github.com/spiceai/samples/tree/trunk/tls">TLS Sample&lt;/a>. For more details see the &lt;a href="https://docs.spiceai.org/api/tls">TLS Documentation&lt;/a>.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>&lt;code>spice install&lt;/code>&lt;/strong>: Running the &lt;code>spice install&lt;/code> CLI command will download and install the latest version of the runtime.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>spice install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Improved SQLite and DuckDB compatibility&lt;/strong>: The SQLite and DuckDB accelerators support more complex queries and additional data types.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Pass through arguments from &lt;code>spice run&lt;/code> to runtime&lt;/strong>: Arguments passed to &lt;code>spice run&lt;/code> are now passed through to the runtime.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Secrets replacement within connection strings&lt;/strong>: Secrets are now replaced within connection strings:&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">datasets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">mysql:my_table&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my_table&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">mysql_connection_string&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">mysql://user:${secrets:mysql_pw}@localhost:3306/db&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
+&lt;p>The &lt;code>odbc&lt;/code> data connector is now optional and has been removed from the released binaries. To use the &lt;code>odbc&lt;/code> data connector, use the official Spice Docker image or build the Spice runtime from source.&lt;/p>
+&lt;p>To build Spice from source with the &lt;code>odbc&lt;/code> feature:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cargo build --release --features odbc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use the official Spice Docker image from &lt;a href="https://hub.docker.com/r/spiceai/spiceai">DockerHub&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Pull the latest official Spice image&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker pull spiceai/spiceai:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Pull the official v0.17-beta Spice image&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker pull spiceai/spiceai:0.17.0-beta
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@y-f-u&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@digadeesh&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;h3 id="dependencies">Dependencies&lt;/h3>
+&lt;ul>
+&lt;li>Upgraded &lt;a href="https://github.com/delta-incubator/delta-kernel-rs">delta-kernel-rs&lt;/a> to &lt;a href="https://crates.io/crates/delta_kernel/0.2.0">v0.2.0&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="commits">Commits&lt;/h3>
+&lt;ul>
+&lt;li>update helm chart versions for v0.16.0-alpha by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2057">https://github.com/spiceai/spiceai/pull/2057&lt;/a>&lt;/li>
+&lt;li>Update spicepod.schema.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/2060">https://github.com/spiceai/spiceai/pull/2060&lt;/a>&lt;/li>
+&lt;li>fix: Install &lt;code>unixodbc&lt;/code> for E2E test release installation by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2063">https://github.com/spiceai/spiceai/pull/2063&lt;/a>&lt;/li>
+&lt;li>update next release to 0.16.1-beta by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/2065">https://github.com/spiceai/spiceai/pull/2065&lt;/a>&lt;/li>
+&lt;li>update version to 0.17.0-beta by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/2068">https://github.com/spiceai/spiceai/pull/2068&lt;/a>&lt;/li>
+&lt;li>Update ROADMAP.md - removing delivered features and updating Beta timeline. by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/2066">https://github.com/spiceai/spiceai/pull/2066&lt;/a>&lt;/li>
+&lt;li>make bench works for more connectors by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2042">https://github.com/spiceai/spiceai/pull/2042&lt;/a>&lt;/li>
+&lt;li>enable spark benchmark by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2069">https://github.com/spiceai/spiceai/pull/2069&lt;/a>&lt;/li>
+&lt;li>Make the &lt;code>json_pointer&lt;/code> param optional for the GraphQL connector by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2072">https://github.com/spiceai/spiceai/pull/2072&lt;/a>&lt;/li>
+&lt;li>Fix secrets init to not bail if a secret store can&amp;rsquo;t load by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2073">https://github.com/spiceai/spiceai/pull/2073&lt;/a>&lt;/li>
+&lt;li>Update end_game.md by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2059">https://github.com/spiceai/spiceai/pull/2059&lt;/a>&lt;/li>
+&lt;li>Fix time predicate with timezone info casting for Dremio by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2058">https://github.com/spiceai/spiceai/pull/2058&lt;/a>&lt;/li>
+&lt;li>Add benchmark tests for S3 data connector by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2049">https://github.com/spiceai/spiceai/pull/2049&lt;/a>&lt;/li>
+&lt;li>Add benchmark tests for MySQL data connector by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2048">https://github.com/spiceai/spiceai/pull/2048&lt;/a>&lt;/li>
+&lt;li>fix: Add Athena dialect for ODBC by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2084">https://github.com/spiceai/spiceai/pull/2084&lt;/a>&lt;/li>
+&lt;li>Workflow to build MySQL image with TPCH benchmark data by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2070">https://github.com/spiceai/spiceai/pull/2070&lt;/a>&lt;/li>
+&lt;li>Fix secrets replacement within connection strings by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2086">https://github.com/spiceai/spiceai/pull/2086&lt;/a>&lt;/li>
+&lt;li>fix: Correctly prefix missing required parameters by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2088">https://github.com/spiceai/spiceai/pull/2088&lt;/a>&lt;/li>
+&lt;li>Add Postgres Data Connector TPCH Benchmark Tests by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2009">https://github.com/spiceai/spiceai/pull/2009&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>spice install&lt;/code> CLI command by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2090">https://github.com/spiceai/spiceai/pull/2090&lt;/a>&lt;/li>
+&lt;li>Use MySQL service container for benchmark tests by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2089">https://github.com/spiceai/spiceai/pull/2089&lt;/a>&lt;/li>
+&lt;li>Remove ODBC from default released binaries by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2092">https://github.com/spiceai/spiceai/pull/2092&lt;/a>&lt;/li>
+&lt;li>Add cfg flag to properly support build w / wo feature in benchmark tests by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2095">https://github.com/spiceai/spiceai/pull/2095&lt;/a>&lt;/li>
+&lt;li>Move Prometheus metrics server to runtime by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2093">https://github.com/spiceai/spiceai/pull/2093&lt;/a>&lt;/li>
+&lt;li>fix: Remove unixodbc from test release install by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2103">https://github.com/spiceai/spiceai/pull/2103&lt;/a>&lt;/li>
+&lt;li>Upgrade &lt;code>delta_kernel&lt;/code> to 0.2.0 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2102">https://github.com/spiceai/spiceai/pull/2102&lt;/a>&lt;/li>
+&lt;li>Allow DuckDB to load extensions in Docker by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2104">https://github.com/spiceai/spiceai/pull/2104&lt;/a>&lt;/li>
+&lt;li>Spawn the metrics server in the background. by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2105">https://github.com/spiceai/spiceai/pull/2105&lt;/a>&lt;/li>
+&lt;li>fix: suffix delta kernel table location with slash if none by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2107">https://github.com/spiceai/spiceai/pull/2107&lt;/a>&lt;/li>
+&lt;li>Bump object_store from 0.10.1 to 0.10.2 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2094">https://github.com/spiceai/spiceai/pull/2094&lt;/a>&lt;/li>
+&lt;li>Decision Record: Default HTTP and GRPC ports for Spice.ai OSS by @digadeesh in &lt;a href="https://github.com/spiceai/spiceai/pull/2091">https://github.com/spiceai/spiceai/pull/2091&lt;/a>&lt;/li>
+&lt;li>Enable TLS for metrics endpoint by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2108">https://github.com/spiceai/spiceai/pull/2108&lt;/a>&lt;/li>
+&lt;li>Use Postgres container for tpch bench by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2112">https://github.com/spiceai/spiceai/pull/2112&lt;/a>&lt;/li>
+&lt;li>Add workflow to build Postgres Docker image using tpch data by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2101">https://github.com/spiceai/spiceai/pull/2101&lt;/a>&lt;/li>
+&lt;li>Enable TLS for HTTP endpoint by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2109">https://github.com/spiceai/spiceai/pull/2109&lt;/a>&lt;/li>
+&lt;li>Enable TLS on the Flight GRPC endpoint by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2110">https://github.com/spiceai/spiceai/pull/2110&lt;/a>&lt;/li>
+&lt;li>add timeout parameters for object store client options by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2114">https://github.com/spiceai/spiceai/pull/2114&lt;/a>&lt;/li>
+&lt;li>Enable TLS on the OpenTelemetry GRPC endpoint by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2111">https://github.com/spiceai/spiceai/pull/2111&lt;/a>&lt;/li>
+&lt;li>feat: Add ODBC Databricks Benches by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2113">https://github.com/spiceai/spiceai/pull/2113&lt;/a>&lt;/li>
+&lt;li>Support configuring TLS in the spicepod by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2118">https://github.com/spiceai/spiceai/pull/2118&lt;/a>&lt;/li>
+&lt;li>add broken tpch simple queries by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2116">https://github.com/spiceai/spiceai/pull/2116&lt;/a>&lt;/li>
+&lt;li>Add integration test for TLS by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2121">https://github.com/spiceai/spiceai/pull/2121&lt;/a>&lt;/li>
+&lt;li>Improve SQLite and DuckDB compatibility by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2122">https://github.com/spiceai/spiceai/pull/2122&lt;/a>&lt;/li>
+&lt;li>Pass through arguments from &lt;code>spice run&lt;/code> and &lt;code>spice sql&lt;/code> to runtime by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2123">https://github.com/spiceai/spiceai/pull/2123&lt;/a>&lt;/li>
+&lt;li>Handle TLS in the spice CLI when connecting to the runtime by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2124">https://github.com/spiceai/spiceai/pull/2124&lt;/a>&lt;/li>
+&lt;li>Handle connecting over TLS for &lt;code>spice sql&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2125">https://github.com/spiceai/spiceai/pull/2125&lt;/a>&lt;/li>
+&lt;li>Remove &lt;code>--tls&lt;/code> flag by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2128">https://github.com/spiceai/spiceai/pull/2128&lt;/a>&lt;/li>
+&lt;li>fix: Handle SQLResult error instead of unwrapping by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2127">https://github.com/spiceai/spiceai/pull/2127&lt;/a>&lt;/li>
+&lt;li>Add delta bench by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2120">https://github.com/spiceai/spiceai/pull/2120&lt;/a>&lt;/li>
+&lt;li>feat: Add Athena ODBC benches by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2129">https://github.com/spiceai/spiceai/pull/2129&lt;/a>&lt;/li>
+&lt;li>fix: Use odbc-api fork for decimal conversion fix by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2133">https://github.com/spiceai/spiceai/pull/2133&lt;/a>&lt;/li>
+&lt;li>Update benchmarks job env for delta testing by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2134">https://github.com/spiceai/spiceai/pull/2134&lt;/a>&lt;/li>
+&lt;li>Use forked dotenvy to disable variable substitution by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2135">https://github.com/spiceai/spiceai/pull/2135&lt;/a>&lt;/li>
+&lt;li>Remove unnecessary memory allocations in the query path by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2136">https://github.com/spiceai/spiceai/pull/2136&lt;/a>&lt;/li>
+&lt;li>upgrade spiceai df for tpch simple 6 and 7 by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2137">https://github.com/spiceai/spiceai/pull/2137&lt;/a>&lt;/li>
+&lt;li>Avoid more unnecessary allocations in the query path by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2138">https://github.com/spiceai/spiceai/pull/2138&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.16.0-alpha...v0.17-beta">https://github.com/spiceai/spiceai/compare/v0.16.0-alpha...v0.17-beta&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.15-alpha (July 1, 2024)</title><link>/posts/2024/07/01/spice-v0.15-alpha-july-1-2024/</link><pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate><guid>/posts/2024/07/01/spice-v0.15-alpha-july-1-2024/</guid><description>
 &lt;p>The v0.15-alpha release introduces support for streaming databases changes with Change Data Capture (CDC) into accelerated tables via a new Debezium connector, configurable retry logic for data refresh, and the release of a new C# SDK to build with Spice in Dotnet.&lt;/p>
 &lt;h2 id="highlights-in-v015-alpha">Highlights in v0.15-alpha&lt;/h2>
 &lt;ul>
