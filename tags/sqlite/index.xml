@@ -1,4 +1,132 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Sqlite</title><link>/tags/sqlite/</link><description>Recent content in Sqlite on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 05 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/sqlite/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.17.1-beta (August 5, 2024)</title><link>/posts/2024/08/05/spice-v0.17.1-beta-august-5-2024/</link><pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate><guid>/posts/2024/08/05/spice-v0.17.1-beta-august-5-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Sqlite</title><link>/tags/sqlite/</link><description>Recent content in Sqlite on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 26 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/sqlite/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.17.2-beta (August 26, 2024)</title><link>/posts/2024/08/26/spice-v0.17.2-beta-august-26-2024/</link><pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate><guid>/posts/2024/08/26/spice-v0.17.2-beta-august-26-2024/</guid><description>
+&lt;p>Announcing the release of Spice v0.17.2-beta 🏄&lt;/p>
+&lt;p>The v0.17.2-beta release focuses on improving data accelerator compatibility, stability, and performance. Expanded data type support for DuckDB, SQLite, and PostgreSQL data accelerators (and data connectors) enables significantly more data types to be accelerated. Error handling and logging has also been improved along with several bugs.&lt;/p>
+&lt;h2 id="highlights-in-v0172-beta">Highlights in v0.17.2-beta&lt;/h2>
+&lt;p>&lt;strong>Expanded Data Type Support for Data Accelerators:&lt;/strong> DuckDB, SQLite, and PostgreSQL Data Accelerators now support a wider range of data types, enabling acceleration of more diverse datasets.&lt;/p>
+&lt;p>&lt;strong>Enhanced Error Handling and Logging:&lt;/strong> Improvements have been made to aid in troubleshooting and debugging.&lt;/p>
+&lt;p>&lt;strong>Anonymous Usage Telemetry:&lt;/strong> Optional, anonymous, aggregated telemetry has been added to help improve Spice. This feature can be disabled. For details about collected data, see the &lt;a href="https://docs.spiceai.org/getting-started/telemetry">telemetry documentation&lt;/a>.&lt;/p>
+&lt;p>To opt out of telemetry:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Using the CLI flag:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>spice run -- --telemetry-enabled &lt;span style="color:#204a87">false&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add configuration to &lt;code>spicepod.yaml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">runtime&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">telemetry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">enabled&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Improved Benchmarking:&lt;/strong> A suite of performance benchmarking tests have been added to the project, helping to maintain and improve runtime performance; a top priority for the project.&lt;/p>
+&lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
+&lt;p>None.&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@y-f-u&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;h3 id="dependencies">Dependencies&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>&lt;a href="(https://datafusion.apache.org/)">DataFusion:&lt;/a>&lt;/strong> Upgraded from v40 to v41&lt;/li>
+&lt;/ul>
+&lt;h3 id="commits">Commits&lt;/h3>
+&lt;ul>
+&lt;li>Pin actions/upload-artifact to v4.3.4 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2200">https://github.com/spiceai/spiceai/pull/2200&lt;/a>&lt;/li>
+&lt;li>Update spicepod.schema.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/2202">https://github.com/spiceai/spiceai/pull/2202&lt;/a>&lt;/li>
+&lt;li>Update to next release version, &lt;code>v0.17.2-beta&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2203">https://github.com/spiceai/spiceai/pull/2203&lt;/a>&lt;/li>
+&lt;li>add accelerator beta criteria by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2201">https://github.com/spiceai/spiceai/pull/2201&lt;/a>&lt;/li>
+&lt;li>update helm chart to 0.17.1-beta by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2205">https://github.com/spiceai/spiceai/pull/2205&lt;/a>&lt;/li>
+&lt;li>add dockerignore to avoid copy target and test folder by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2206">https://github.com/spiceai/spiceai/pull/2206&lt;/a>&lt;/li>
+&lt;li>add client timeout for deltalake connector by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2208">https://github.com/spiceai/spiceai/pull/2208&lt;/a>&lt;/li>
+&lt;li>Upgrade tonic and opentelemetry-proto by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2223">https://github.com/spiceai/spiceai/pull/2223&lt;/a>&lt;/li>
+&lt;li>Add index and resource tuning for postgres ghcr image to support postgres benchmark in sf1 by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2196">https://github.com/spiceai/spiceai/pull/2196&lt;/a>&lt;/li>
+&lt;li>Remove embedding columns from &lt;code>retrieved_primary_keys&lt;/code> in v1/search by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2176">https://github.com/spiceai/spiceai/pull/2176&lt;/a>&lt;/li>
+&lt;li>use file as db_path_param as the param prefix is trimmed by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2230">https://github.com/spiceai/spiceai/pull/2230&lt;/a>&lt;/li>
+&lt;li>use file for sqlite db path param by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2231">https://github.com/spiceai/spiceai/pull/2231&lt;/a>&lt;/li>
+&lt;li>docs: Clarify the global requirement for local_infile when loading TPCH by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2228">https://github.com/spiceai/spiceai/pull/2228&lt;/a>&lt;/li>
+&lt;li>Revert pinning actions/upload-artifact@v4 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2232">https://github.com/spiceai/spiceai/pull/2232&lt;/a>&lt;/li>
+&lt;li>Runtime tools to chat models by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2207">https://github.com/spiceai/spiceai/pull/2207&lt;/a>&lt;/li>
+&lt;li>Create &lt;code>runtime.task_history&lt;/code> table for queries, and embeddings by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2191">https://github.com/spiceai/spiceai/pull/2191&lt;/a>&lt;/li>
+&lt;li>chore: Update Databricks ODBC Bench to use TPCH SF1 by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2238">https://github.com/spiceai/spiceai/pull/2238&lt;/a>&lt;/li>
+&lt;li>Replace &lt;code>metrics-rs&lt;/code> with OpenTelemetry Metrics by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2240">https://github.com/spiceai/spiceai/pull/2240&lt;/a>&lt;/li>
+&lt;li>fix: Remove dead code by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2249">https://github.com/spiceai/spiceai/pull/2249&lt;/a>&lt;/li>
+&lt;li>Improve tool quality and add vector search tool by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2250">https://github.com/spiceai/spiceai/pull/2250&lt;/a>&lt;/li>
+&lt;li>fix missing partition cols in delta lake by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2253">https://github.com/spiceai/spiceai/pull/2253&lt;/a>&lt;/li>
+&lt;li>download file from remote for delta testing by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2254">https://github.com/spiceai/spiceai/pull/2254&lt;/a>&lt;/li>
+&lt;li>feat: Set SQLite DB path to .spice/data by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2242">https://github.com/spiceai/spiceai/pull/2242&lt;/a>&lt;/li>
+&lt;li>Support tools for chat completions in streaming mode by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2255">https://github.com/spiceai/spiceai/pull/2255&lt;/a>&lt;/li>
+&lt;li>Load component &lt;code>description&lt;/code> field from spicepod.yaml and include in LLM context by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2261">https://github.com/spiceai/spiceai/pull/2261&lt;/a>&lt;/li>
+&lt;li>Add parameter for &lt;code>connection_pool_size&lt;/code> in the Postgres Data Connector by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2251">https://github.com/spiceai/spiceai/pull/2251&lt;/a>&lt;/li>
+&lt;li>Add primary keys to response of &lt;code>DocumentSimilarityTool&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2263">https://github.com/spiceai/spiceai/pull/2263&lt;/a>&lt;/li>
+&lt;li>run queries bash script by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2262">https://github.com/spiceai/spiceai/pull/2262&lt;/a>&lt;/li>
+&lt;li>Run benchmark test on schedule by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2277">https://github.com/spiceai/spiceai/pull/2277&lt;/a>&lt;/li>
+&lt;li>feat: Add a reference to originating App for a Dataset by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2283">https://github.com/spiceai/spiceai/pull/2283&lt;/a>&lt;/li>
+&lt;li>Tool use &amp;amp; telemetry productionisation. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2286">https://github.com/spiceai/spiceai/pull/2286&lt;/a>&lt;/li>
+&lt;li>Fix cron in benchmarks.yml by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2288">https://github.com/spiceai/spiceai/pull/2288&lt;/a>&lt;/li>
+&lt;li>Upgrade to DataFusion v41 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2290">https://github.com/spiceai/spiceai/pull/2290&lt;/a>&lt;/li>
+&lt;li>Chat completions adjustments and fixes by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2292">https://github.com/spiceai/spiceai/pull/2292&lt;/a>&lt;/li>
+&lt;li>Define the new metrics Arrow schema based on Open Telemetry by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2295">https://github.com/spiceai/spiceai/pull/2295&lt;/a>&lt;/li>
+&lt;li>OpenTelemetry Metrics Arrow exporter to &lt;code>runtime.metrics&lt;/code> table by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2296">https://github.com/spiceai/spiceai/pull/2296&lt;/a>&lt;/li>
+&lt;li>Calculate summary metrics from histograms for Prometheus endpoint by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2302">https://github.com/spiceai/spiceai/pull/2302&lt;/a>&lt;/li>
+&lt;li>Add back Spice DF runtime_env during SessionContext construction by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2304">https://github.com/spiceai/spiceai/pull/2304&lt;/a>&lt;/li>
+&lt;li>Add integration test for S3 data connector by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2305">https://github.com/spiceai/spiceai/pull/2305&lt;/a>&lt;/li>
+&lt;li>Fix &lt;code>secrets.inject_secrets&lt;/code> when secret not found. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2306">https://github.com/spiceai/spiceai/pull/2306&lt;/a>&lt;/li>
+&lt;li>Intra-table federation query on duckdb accelerated table by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2299">https://github.com/spiceai/spiceai/pull/2299&lt;/a>&lt;/li>
+&lt;li>Postgres federation on acceleration by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2309">https://github.com/spiceai/spiceai/pull/2309&lt;/a>&lt;/li>
+&lt;li>sqlite intra table federation on acceleration by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2308">https://github.com/spiceai/spiceai/pull/2308&lt;/a>&lt;/li>
+&lt;li>feat: Add &lt;code>DataAccelerator::init()&lt;/code> for SQLite acceleration federation by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2293">https://github.com/spiceai/spiceai/pull/2293&lt;/a>&lt;/li>
+&lt;li>Initial framework for collecting anonymous usage telemetry by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2310">https://github.com/spiceai/spiceai/pull/2310&lt;/a>&lt;/li>
+&lt;li>Add gRPC action to trigger accelerated dataset refresh by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2316">https://github.com/spiceai/spiceai/pull/2316&lt;/a>&lt;/li>
+&lt;li>add &lt;code>disable_query_push_down&lt;/code> option to acceleration settings by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2327">https://github.com/spiceai/spiceai/pull/2327&lt;/a>&lt;/li>
+&lt;li>Remove &lt;code>v1/assist&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2312">https://github.com/spiceai/spiceai/pull/2312&lt;/a>&lt;/li>
+&lt;li>bump table provider version to set the correct dialect for postgres writer by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2329">https://github.com/spiceai/spiceai/pull/2329&lt;/a>&lt;/li>
+&lt;li>Send telemetry on startup by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2331">https://github.com/spiceai/spiceai/pull/2331&lt;/a>&lt;/li>
+&lt;li>Calculate resource IDs for telemetry by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2332">https://github.com/spiceai/spiceai/pull/2332&lt;/a>&lt;/li>
+&lt;li>Refactor &lt;code>v1/search&lt;/code>: include WHERE condition, allow extra columns in projection. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2328">https://github.com/spiceai/spiceai/pull/2328&lt;/a>&lt;/li>
+&lt;li>Add integration test for gRPC dataset refresh action by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2330">https://github.com/spiceai/spiceai/pull/2330&lt;/a>&lt;/li>
+&lt;li>Propagate errors through all &lt;code>task_history&lt;/code> nested spans by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2337">https://github.com/spiceai/spiceai/pull/2337&lt;/a>&lt;/li>
+&lt;li>Improve tools by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2338">https://github.com/spiceai/spiceai/pull/2338&lt;/a>&lt;/li>
+&lt;li>update duckdb rs version to support more types: interval/duration/etc by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2336">https://github.com/spiceai/spiceai/pull/2336&lt;/a>&lt;/li>
+&lt;li>feat: Add DuckDB accelerator init, attach databases for federation by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2335">https://github.com/spiceai/spiceai/pull/2335&lt;/a>&lt;/li>
+&lt;li>Add query telemetry metrics by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2333">https://github.com/spiceai/spiceai/pull/2333&lt;/a>&lt;/li>
+&lt;li>Add system prompts for LLMs; system prompts for tool using models. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2342">https://github.com/spiceai/spiceai/pull/2342&lt;/a>&lt;/li>
+&lt;li>Fix benchmark test to keep running when there&amp;rsquo;s failed queries by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2347">https://github.com/spiceai/spiceai/pull/2347&lt;/a>&lt;/li>
+&lt;li>Tools as a spicepod first class citizen. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2344">https://github.com/spiceai/spiceai/pull/2344&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>bytes_processed&lt;/code> telemetry metric by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2343">https://github.com/spiceai/spiceai/pull/2343&lt;/a>&lt;/li>
+&lt;li>fix misaligned columns from delta lake by @y-f-u in &lt;a href="https://github.com/spiceai/spiceai/pull/2356">https://github.com/spiceai/spiceai/pull/2356&lt;/a>&lt;/li>
+&lt;li>Emit telemetry metrics to &lt;code>runtime.metrics&lt;/code>/Prometheus as well by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2352">https://github.com/spiceai/spiceai/pull/2352&lt;/a>&lt;/li>
+&lt;li>Use UTC timezone for telemetry timestamps by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2354">https://github.com/spiceai/spiceai/pull/2354&lt;/a>&lt;/li>
+&lt;li>Fix MetricType deserialization by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2358">https://github.com/spiceai/spiceai/pull/2358&lt;/a>&lt;/li>
+&lt;li>Add dataset details to tool using LLMs; early check tables in vector search by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2353">https://github.com/spiceai/spiceai/pull/2353&lt;/a>&lt;/li>
+&lt;li>Bump datafusion-federation/datafusion-table-providers dependencies by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2360">https://github.com/spiceai/spiceai/pull/2360&lt;/a>&lt;/li>
+&lt;li>Update spicepod.schema.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/2362">https://github.com/spiceai/spiceai/pull/2362&lt;/a>&lt;/li>
+&lt;li>fix: Disable DuckDB and SQLite federation by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2371">https://github.com/spiceai/spiceai/pull/2371&lt;/a>&lt;/li>
+&lt;li>Fix system prompt in ToolUsingChat, fix builtin registration by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2367">https://github.com/spiceai/spiceai/pull/2367&lt;/a>&lt;/li>
+&lt;li>fix: Use &amp;ndash;profile release for benchmarks by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2372">https://github.com/spiceai/spiceai/pull/2372&lt;/a>&lt;/li>
+&lt;li>nql parameter &amp;lsquo;use&amp;rsquo; -&amp;gt; &amp;lsquo;model&amp;rsquo; by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2366">https://github.com/spiceai/spiceai/pull/2366&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.17.1-beta...v0.17.2-beta">https://github.com/spiceai/spiceai/compare/v0.17.1-beta...v0.17.2-beta&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.17.1-beta (August 5, 2024)</title><link>/posts/2024/08/05/spice-v0.17.1-beta-august-5-2024/</link><pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate><guid>/posts/2024/08/05/spice-v0.17.1-beta-august-5-2024/</guid><description>
 &lt;p>The v0.17.1-beta minor release focuses on enhancing stability, performance, and usability. The Flight interface now supports the &lt;code>GetSchema&lt;/code> API and &lt;code>s3&lt;/code>, &lt;code>ftp&lt;/code>, &lt;code>sftp&lt;/code>, &lt;code>http&lt;/code>, &lt;code>https&lt;/code>, and &lt;code>databricks&lt;/code> data connectors have added support for a &lt;code>client_timeout&lt;/code> parameter.&lt;/p>
 &lt;h2 id="highlights-in-v0171-beta">Highlights in v0.17.1-beta&lt;/h2>
 &lt;p>&lt;strong>Flight API GetSchema:&lt;/strong> The &lt;a href="https://arrow.apache.org/docs/format/Flight.html">&lt;code>GetSchema&lt;/code>&lt;/a> API is now supported by the Flight interface. The schema of a dataset can be retrieved using &lt;code>GetSchema&lt;/code> with the &lt;code>PATH&lt;/code> or &lt;code>CMD&lt;/code> FlightDescriptor types. The &lt;code>CMD&lt;/code> FlightDescriptor type is used to get the schema of an arbitrary SQL query as the CMD bytes. The &lt;code>PATH&lt;/code> FlightDescriptor type is used to retrieve the schema of a dataset.&lt;/p>
