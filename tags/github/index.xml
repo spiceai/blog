@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Github</title><link>/tags/github/</link><description>Recent content in Github on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 02 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.17.3-beta (September 2, 2024)</title><link>/posts/2024/09/02/spice-v0.17.3-beta-september-2-2024/</link><pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate><guid>/posts/2024/09/02/spice-v0.17.3-beta-september-2-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Github</title><link>/tags/github/</link><description>Recent content in Github on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 02 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.17.3-beta (Sep 2, 2024)</title><link>/posts/2024/09/02/spice-v0.17.3-beta-sep-2-2024/</link><pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate><guid>/posts/2024/09/02/spice-v0.17.3-beta-sep-2-2024/</guid><description>
 &lt;p>Announcing the release of Spice v0.17.3-beta.&lt;/p>
 &lt;p>The v0.17.3-beta release further improves data accelerator robustness and adds a new &lt;code>github&lt;/code> data connector that makes accelerating GitHub Issues, Pull Requests, Commits, and Blobs easy.&lt;/p>
 &lt;h2 id="highlights-in-v0173-beta">Highlights in v0.17.3-beta&lt;/h2>
@@ -19,6 +19,12 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">github_token&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">${secrets:GITHUB_TOKEN}&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
 &lt;p>None.&lt;/p>
+&lt;h2 id="upgrade-instructions">Upgrade Instructions&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>CLI:&lt;/strong> Run &lt;code>spice upgrade&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Docker:&lt;/strong> &lt;code>docker pull spiceai/spiceai:latest&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Container image tag:&lt;/strong> &lt;code>spiceai/spiceai:latest&lt;/code> or &lt;code>spiceai/spiceai:0.17.3-beta&lt;/code>&lt;/li>
+&lt;/ul>
 &lt;h2 id="contributors">Contributors&lt;/h2>
 &lt;ul>
 &lt;li>@phillipleblanc&lt;/li>
