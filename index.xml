@@ -1,4 +1,119 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.17.2-beta (August 26, 2024)</title><link>/posts/2024/08/26/spice-v0.17.2-beta-august-26-2024/</link><pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate><guid>/posts/2024/08/26/spice-v0.17.2-beta-august-26-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.17.3-beta (September 2, 2024)</title><link>/posts/2024/09/02/spice-v0.17.3-beta-september-2-2024/</link><pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate><guid>/posts/2024/09/02/spice-v0.17.3-beta-september-2-2024/</guid><description>
+&lt;p>Announcing the release of Spice v0.17.3-beta.&lt;/p>
+&lt;p>The v0.17.3-beta release further improves data accelerator robustness and adds a new &lt;code>github&lt;/code> data connector that makes accelerating GitHub Issues, Pull Requests, Commits, and Blobs easy.&lt;/p>
+&lt;h2 id="highlights-in-v0173-beta">Highlights in v0.17.3-beta&lt;/h2>
+&lt;p>&lt;strong>Improved benchmarking, testing, and robustness of data accelerators:&lt;/strong> Continued improvements to benchmarking and testing of data accelerators, leading to more robust and reliable data accelerators.&lt;/p>
+&lt;p>&lt;strong>GitHub Connector (alpha):&lt;/strong> Connect to GitHub and accelerate Issues, Pull Requests, Commits, and Blobs.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">datasets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Fetch all rust and golang files from spiceai/spiceai&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">github:github.com/spiceai/spiceai/files/trunk&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">spiceai.files&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">include&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#39;**/*.rs; **/*.go&amp;#39;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">github_token&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">${secrets:GITHUB_TOKEN}&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Fetch all issues from spiceai/spiceai. Similar for pull requests, commits, and more.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">github:github.com/spiceai/spiceai/issues&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">spiceai.issues&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">github_token&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">${secrets:GITHUB_TOKEN}&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
+&lt;p>None.&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@dependabot&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;h3 id="dependencies">Dependencies&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>delta_kernel&lt;/code> from 0.2.0 to 0.3.0.&lt;/li>
+&lt;/ul>
+&lt;h3 id="commits">Commits&lt;/h3>
+&lt;ul>
+&lt;li>Prepare version for v0.17.3-beta by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2388">https://github.com/spiceai/spiceai/pull/2388&lt;/a>&lt;/li>
+&lt;li>Add a basic Github Connector by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2365">https://github.com/spiceai/spiceai/pull/2365&lt;/a>&lt;/li>
+&lt;li>task: Re-enable federation by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2389">https://github.com/spiceai/spiceai/pull/2389&lt;/a>&lt;/li>
+&lt;li>fix: Implement custom PartialEq for Dataset by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2390">https://github.com/spiceai/spiceai/pull/2390&lt;/a>&lt;/li>
+&lt;li>GitHub Data Connector &lt;code>files&lt;/code> support (basic fields) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2393">https://github.com/spiceai/spiceai/pull/2393&lt;/a>&lt;/li>
+&lt;li>Add a &lt;code>--force&lt;/code> flag to &lt;code>spice install&lt;/code> to force it to install the latest released version by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2395">https://github.com/spiceai/spiceai/pull/2395&lt;/a>&lt;/li>
+&lt;li>Improve experience of using &lt;code>spice chat&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2396">https://github.com/spiceai/spiceai/pull/2396&lt;/a>&lt;/li>
+&lt;li>Fix view loading on startup by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2398">https://github.com/spiceai/spiceai/pull/2398&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>include&lt;/code> param support to GitHub Data Connector by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2397">https://github.com/spiceai/spiceai/pull/2397&lt;/a>&lt;/li>
+&lt;li>Postgres integration test to cover on-conflict behavior by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2359">https://github.com/spiceai/spiceai/pull/2359&lt;/a>&lt;/li>
+&lt;li>Create dependabot.yml by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/2399">https://github.com/spiceai/spiceai/pull/2399&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>content&lt;/code> column to GitHub Connector when dataset is accelerated by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2400">https://github.com/spiceai/spiceai/pull/2400&lt;/a>&lt;/li>
+&lt;li>Fix dependabot indentation by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2402">https://github.com/spiceai/spiceai/pull/2402&lt;/a>&lt;/li>
+&lt;li>Bump docker/setup-buildx-action from 1 to 3 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2403">https://github.com/spiceai/spiceai/pull/2403&lt;/a>&lt;/li>
+&lt;li>Bump github/codeql-action from 2 to 3 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2404">https://github.com/spiceai/spiceai/pull/2404&lt;/a>&lt;/li>
+&lt;li>Bump docker/login-action from 1 to 3 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2405">https://github.com/spiceai/spiceai/pull/2405&lt;/a>&lt;/li>
+&lt;li>Bump yogevbd/enforce-label-action from 2.1.0 to 2.2.2 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2406">https://github.com/spiceai/spiceai/pull/2406&lt;/a>&lt;/li>
+&lt;li>Bump actions/checkout from 3 to 4 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2407">https://github.com/spiceai/spiceai/pull/2407&lt;/a>&lt;/li>
+&lt;li>Bump go.uber.org/zap from 1.21.0 to 1.27.0 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2408">https://github.com/spiceai/spiceai/pull/2408&lt;/a>&lt;/li>
+&lt;li>Bump github.com/prometheus/client_model from 0.6.0 to 0.6.1 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2409">https://github.com/spiceai/spiceai/pull/2409&lt;/a>&lt;/li>
+&lt;li>Bump github.com/spf13/cobra from 1.6.0 to 1.8.1 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2412">https://github.com/spiceai/spiceai/pull/2412&lt;/a>&lt;/li>
+&lt;li>Bump chrono-tz from 0.8.6 to 0.9.0 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2413">https://github.com/spiceai/spiceai/pull/2413&lt;/a>&lt;/li>
+&lt;li>Bump tokio from 1.39.2 to 1.39.3 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2414">https://github.com/spiceai/spiceai/pull/2414&lt;/a>&lt;/li>
+&lt;li>Bump tokenizers from 0.19.1 to 0.20.0 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2415">https://github.com/spiceai/spiceai/pull/2415&lt;/a>&lt;/li>
+&lt;li>Bump serde from 1.0.207 to 1.0.209 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2416">https://github.com/spiceai/spiceai/pull/2416&lt;/a>&lt;/li>
+&lt;li>Bump gopkg.in/natefinch/lumberjack.v2 from 2.0.0 to 2.2.1 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2410">https://github.com/spiceai/spiceai/pull/2410&lt;/a>&lt;/li>
+&lt;li>Bump ndarray from 0.15.6 to 0.16.1 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2417">https://github.com/spiceai/spiceai/pull/2417&lt;/a>&lt;/li>
+&lt;li>Bump golang.org/x/mod from 0.14.0 to 0.20.0 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2411">https://github.com/spiceai/spiceai/pull/2411&lt;/a>&lt;/li>
+&lt;li>Add correct labels to dependabot.yml by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2418">https://github.com/spiceai/spiceai/pull/2418&lt;/a>&lt;/li>
+&lt;li>Fix build break by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2430">https://github.com/spiceai/spiceai/pull/2430&lt;/a>&lt;/li>
+&lt;li>Dependabot updates by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2431">https://github.com/spiceai/spiceai/pull/2431&lt;/a>&lt;/li>
+&lt;li>Bump github.com/stretchr/testify from 1.8.1 to 1.9.0 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2422">https://github.com/spiceai/spiceai/pull/2422&lt;/a>&lt;/li>
+&lt;li>Preserve timezone information in constructing expr by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2392">https://github.com/spiceai/spiceai/pull/2392&lt;/a>&lt;/li>
+&lt;li>Bump github.com/spf13/viper from 1.12.0 to 1.19.0 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2420">https://github.com/spiceai/spiceai/pull/2420&lt;/a>&lt;/li>
+&lt;li>Fix repeated base table data in acceleration with embeddings by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2401">https://github.com/spiceai/spiceai/pull/2401&lt;/a>&lt;/li>
+&lt;li>Fix tool calling with Groq (and potentially other tool-enabled models) by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2435">https://github.com/spiceai/spiceai/pull/2435&lt;/a>&lt;/li>
+&lt;li>Remove candle from &lt;code>crates/llms/src/chat/&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2439">https://github.com/spiceai/spiceai/pull/2439&lt;/a>&lt;/li>
+&lt;li>fix: Only attach successfully initialized accelerators by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2433">https://github.com/spiceai/spiceai/pull/2433&lt;/a>&lt;/li>
+&lt;li>Support overriding OpenAI default values in a model param; add token usage telemetry to task_history. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2434">https://github.com/spiceai/spiceai/pull/2434&lt;/a>&lt;/li>
+&lt;li>Enable message chains and tool calls for local LLMs by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2180">https://github.com/spiceai/spiceai/pull/2180&lt;/a>&lt;/li>
+&lt;li>DuckDB on-conflict integration test by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2437">https://github.com/spiceai/spiceai/pull/2437&lt;/a>&lt;/li>
+&lt;li>Fix MySQL E2E tests and include MySQL acceleration testing by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2441">https://github.com/spiceai/spiceai/pull/2441&lt;/a>&lt;/li>
+&lt;li>Use rtcontext for proper cloud/local context in &lt;code>spice chat&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2442">https://github.com/spiceai/spiceai/pull/2442&lt;/a>&lt;/li>
+&lt;li>Fix MySQL connector to respect the source column&amp;rsquo;s decimal precision by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2443">https://github.com/spiceai/spiceai/pull/2443&lt;/a>&lt;/li>
+&lt;li>Improve Github Data Connector tables schema by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2448">https://github.com/spiceai/spiceai/pull/2448&lt;/a>&lt;/li>
+&lt;li>Improve GitHub Connector error msg when invalid token or permissions by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2449">https://github.com/spiceai/spiceai/pull/2449&lt;/a>&lt;/li>
+&lt;li>Proper error tracking across tracing spans by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2454">https://github.com/spiceai/spiceai/pull/2454&lt;/a>&lt;/li>
+&lt;li>task: Disable and update federation by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2457">https://github.com/spiceai/spiceai/pull/2457&lt;/a>&lt;/li>
+&lt;li>GitHub connector: convert &lt;code>labels&lt;/code> and &lt;code>hashes&lt;/code> to primitive arrays by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2452">https://github.com/spiceai/spiceai/pull/2452&lt;/a>&lt;/li>
+&lt;li>Bump &lt;code>datafusion&lt;/code> version to the latest by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2456">https://github.com/spiceai/spiceai/pull/2456&lt;/a>&lt;/li>
+&lt;li>Trim trailing &lt;code>/&lt;/code> for S3 data connector by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2458">https://github.com/spiceai/spiceai/pull/2458&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>accelerated_refresh&lt;/code> to &lt;code>task_history&lt;/code> table by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2459">https://github.com/spiceai/spiceai/pull/2459&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>assignees&lt;/code> and &lt;code>labels&lt;/code> fields to github issues and github pulls datasets by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2467">https://github.com/spiceai/spiceai/pull/2467&lt;/a>&lt;/li>
+&lt;li>Native clickhouse schema inference by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2466">https://github.com/spiceai/spiceai/pull/2466&lt;/a>&lt;/li>
+&lt;li>List GitHub connector in readme by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2468">https://github.com/spiceai/spiceai/pull/2468&lt;/a>&lt;/li>
+&lt;li>Fix LLMs health check; Add &lt;code>updatedAt&lt;/code> field to GitHub connector by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2474">https://github.com/spiceai/spiceai/pull/2474&lt;/a>&lt;/li>
+&lt;li>Remove non existing updated_at from github.pulls dataset by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2475">https://github.com/spiceai/spiceai/pull/2475&lt;/a>&lt;/li>
+&lt;li>GitHub connector: add pulls labels and rm duplicate milestoneId and milestoneTitle for issues by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2477">https://github.com/spiceai/spiceai/pull/2477&lt;/a>&lt;/li>
+&lt;li>Bump delta_kernel from 0.2.0 to 0.3.0 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2472">https://github.com/spiceai/spiceai/pull/2472&lt;/a>&lt;/li>
+&lt;li>Add back GitHub connector Pull Request &lt;code>updated_at&lt;/code> by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/2479">https://github.com/spiceai/spiceai/pull/2479&lt;/a>&lt;/li>
+&lt;li>Update ROADMAP Sep 2, 2024. by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/2478">https://github.com/spiceai/spiceai/pull/2478&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.17.2-beta...v0.17.3-beta">https://github.com/spiceai/spiceai/compare/v0.17.2-beta...v0.17.3-beta&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.17.2-beta (August 26, 2024)</title><link>/posts/2024/08/26/spice-v0.17.2-beta-august-26-2024/</link><pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate><guid>/posts/2024/08/26/spice-v0.17.2-beta-august-26-2024/</guid><description>
 &lt;p>Announcing the release of Spice v0.17.2-beta 🏄&lt;/p>
 &lt;p>The v0.17.2-beta release focuses on improving data accelerator compatibility, stability, and performance. Expanded data type support for DuckDB, SQLite, and PostgreSQL data accelerators (and data connectors) enables significantly more data types to be accelerated. Error handling and logging has also been improved along with several bugs.&lt;/p>
 &lt;h2 id="highlights-in-v0172-beta">Highlights in v0.17.2-beta&lt;/h2>
