@@ -1,0 +1,83 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Stargazers</title><link>/tags/stargazers/</link><description>Recent content in Stargazers on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 09 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/stargazers/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.17.4-beta (Sep 9, 2024)</title><link>/posts/2024/09/09/spice-v0.17.4-beta-sep-9-2024/</link><pubDate>Mon, 09 Sep 2024 00:00:00 +0000</pubDate><guid>/posts/2024/09/09/spice-v0.17.4-beta-sep-9-2024/</guid><description>
+&lt;p>Announcing the release of Spice v0.17.4-beta.&lt;/p>
+&lt;p>The v0.17.4-beta release adds compatibilty, performance, and reliability improvements to the DuckDB and SQLite accelerators. The GitHub data connector adds a Stargazers table, Snowflake and Clickhouse data connectors have improved resiliency for empty tables, and core data processing and quality has been improved.&lt;/p>
+&lt;h2 id="highlights-in-v0174-beta">Highlights in v0.17.4-beta&lt;/h2>
+&lt;p>&lt;strong>Improved benchmarking, testing, and robustness of data accelerators:&lt;/strong> Continued compatibility, performance, and reliability improvements for SQLite and DuckDB data accelerators and expanded performance and quality testing.&lt;/p>
+&lt;p>&lt;strong>GitHub Stargazers:&lt;/strong> The GitHub Data Connector adds support for a &lt;code>/stargazers&lt;/code> table making it easy to query GitHub Stargazers using SQL!&lt;/p>
+&lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
+&lt;p>None.&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@eltociear&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-contributors">New Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@eltociear made their first contribution in &lt;a href="https://github.com/spiceai/spiceai/pull/2516">https://github.com/spiceai/spiceai/pull/2516&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Change to sql lang by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2484">https://github.com/spiceai/spiceai/pull/2484&lt;/a>&lt;/li>
+&lt;li>Update acknowledgements by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/2487">https://github.com/spiceai/spiceai/pull/2487&lt;/a>&lt;/li>
+&lt;li>Bump rustyline from 13.0.0 to 14.0.0 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2473">https://github.com/spiceai/spiceai/pull/2473&lt;/a>&lt;/li>
+&lt;li>Update spicepod.schema.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/2490">https://github.com/spiceai/spiceai/pull/2490&lt;/a>&lt;/li>
+&lt;li>Native schema inference for snowflake (and support timezone_tz, better numeric support) by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2493">https://github.com/spiceai/spiceai/pull/2493&lt;/a>&lt;/li>
+&lt;li>Add checks for GitHub quickstart and docs banner to endgame template by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2489">https://github.com/spiceai/spiceai/pull/2489&lt;/a>&lt;/li>
+&lt;li>Prepare for v0.18.0-beta by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2488">https://github.com/spiceai/spiceai/pull/2488&lt;/a>&lt;/li>
+&lt;li>Add logo to README.md by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/2497">https://github.com/spiceai/spiceai/pull/2497&lt;/a>&lt;/li>
+&lt;li>Add stargazers to GitHub data connector by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/2502">https://github.com/spiceai/spiceai/pull/2502&lt;/a>&lt;/li>
+&lt;li>Enable federation for accelerated queries (sqlite and duckdb) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2511">https://github.com/spiceai/spiceai/pull/2511&lt;/a>&lt;/li>
+&lt;li>Load SQLite decimal extension by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2498">https://github.com/spiceai/spiceai/pull/2498&lt;/a>&lt;/li>
+&lt;li>fix: Support INTERVAL in SQLite by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2513">https://github.com/spiceai/spiceai/pull/2513&lt;/a>&lt;/li>
+&lt;li>Add refresh jitter to refreshing dataset acceleration by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2510">https://github.com/spiceai/spiceai/pull/2510&lt;/a>&lt;/li>
+&lt;li>Update to use DuckDB streaming by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2514">https://github.com/spiceai/spiceai/pull/2514&lt;/a>&lt;/li>
+&lt;li>Add more MySQL types in E2E testing by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2512">https://github.com/spiceai/spiceai/pull/2512&lt;/a>&lt;/li>
+&lt;li>Update tpc loading script to support automatic loading into postgres by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2509">https://github.com/spiceai/spiceai/pull/2509&lt;/a>&lt;/li>
+&lt;li>docs: update README.md by @eltociear in &lt;a href="https://github.com/spiceai/spiceai/pull/2516">https://github.com/spiceai/spiceai/pull/2516&lt;/a>&lt;/li>
+&lt;li>Bump quinn-proto from 0.11.6 to 0.11.8 in the cargo group by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2501">https://github.com/spiceai/spiceai/pull/2501&lt;/a>&lt;/li>
+&lt;li>Script for loading clickbench data into arrow / postgres and run clickbench queries by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2500">https://github.com/spiceai/spiceai/pull/2500&lt;/a>&lt;/li>
+&lt;li>Fix run query script to correctly record all errors by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2529">https://github.com/spiceai/spiceai/pull/2529&lt;/a>&lt;/li>
+&lt;li>Add support for DuckDB engine to setup-tpc-spicepod.bash by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2530">https://github.com/spiceai/spiceai/pull/2530&lt;/a>&lt;/li>
+&lt;li>Upgrade &lt;code>datafusion&lt;/code> (fixes subquery alias table unparsing for SQLite) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2532">https://github.com/spiceai/spiceai/pull/2532&lt;/a>&lt;/li>
+&lt;li>Make dataset acceleration delay &lt;code>period +- jitter&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2534">https://github.com/spiceai/spiceai/pull/2534&lt;/a>&lt;/li>
+&lt;li>Add refresh options to &lt;code>POST /v1/datasets/:name/acceleration/refresh&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2515">https://github.com/spiceai/spiceai/pull/2515&lt;/a>&lt;/li>
+&lt;li>Add E2E for GitHub Connector by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2505">https://github.com/spiceai/spiceai/pull/2505&lt;/a>&lt;/li>
+&lt;li>Add on-conflict integration test for file based and memory based sqlite by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2533">https://github.com/spiceai/spiceai/pull/2533&lt;/a>&lt;/li>
+&lt;li>Upgrade to Rust v.1.81.0 and fix resulting compile error by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2539">https://github.com/spiceai/spiceai/pull/2539&lt;/a>&lt;/li>
+&lt;li>Remove unneeded &lt;code>RwLock&lt;/code> from &lt;code>EmbeddingModelStore&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2541">https://github.com/spiceai/spiceai/pull/2541&lt;/a>&lt;/li>
+&lt;li>Remove unneeded RwLock from LlmModelStore by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2537">https://github.com/spiceai/spiceai/pull/2537&lt;/a>&lt;/li>
+&lt;li>Add sqlite to the setup tpc benchmark script by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2540">https://github.com/spiceai/spiceai/pull/2540&lt;/a>&lt;/li>
+&lt;li>Add sqlite to setup clickbench script by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2548">https://github.com/spiceai/spiceai/pull/2548&lt;/a>&lt;/li>
+&lt;li>Update version for v0.17.4-beta release by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2563">https://github.com/spiceai/spiceai/pull/2563&lt;/a>&lt;/li>
+&lt;li>Sharepoint data connector by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2294">https://github.com/spiceai/spiceai/pull/2294&lt;/a>&lt;/li>
+&lt;li>Fix predicate/projection push-down for BytesProcessedNode by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2564">https://github.com/spiceai/spiceai/pull/2564&lt;/a>&lt;/li>
+&lt;li>fix out of order projections in sharepoint scans by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2569">https://github.com/spiceai/spiceai/pull/2569&lt;/a>&lt;/li>
+&lt;li>Use Decimal instead of Float64 for SQLite Decimal columns by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2566">https://github.com/spiceai/spiceai/pull/2566&lt;/a>&lt;/li>
+&lt;li>Add snapshot tests for EXPLAIN plans in integration tests by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2570">https://github.com/spiceai/spiceai/pull/2570&lt;/a>&lt;/li>
+&lt;li>Set refresh.period from &lt;code>refresh_data_window&lt;/code> by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2578">https://github.com/spiceai/spiceai/pull/2578&lt;/a>&lt;/li>
+&lt;li>Add snapshot tests for EXPLAIN plans in benchmark tests by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2580">https://github.com/spiceai/spiceai/pull/2580&lt;/a>&lt;/li>
+&lt;li>Disable federation for accelerated queries by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2581">https://github.com/spiceai/spiceai/pull/2581&lt;/a>&lt;/li>
+&lt;li>Add manual refresh payload to &amp;lsquo;spice refresh&amp;hellip;&amp;rsquo; by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2565">https://github.com/spiceai/spiceai/pull/2565&lt;/a>&lt;/li>
+&lt;li>Update acknowledgements by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/2586">https://github.com/spiceai/spiceai/pull/2586&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.17.3-beta...v0.17.4-beta">https://github.com/spiceai/spiceai/compare/v0.17.3-beta...v0.17.4-beta&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
