@@ -1,4 +1,134 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Graphql</title><link>/tags/graphql/</link><description>Recent content in Graphql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 08 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/graphql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.15.1-alpha (July 8, 2024)</title><link>/posts/2024/07/08/spice-v0.15.1-alpha-july-8-2024/</link><pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate><guid>/posts/2024/07/08/spice-v0.15.1-alpha-july-8-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Graphql</title><link>/tags/graphql/</link><description>Recent content in Graphql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 23 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/graphql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.18.1-beta (Sep 23, 2024)</title><link>/posts/2024/09/23/spice-v0.18.1-beta-sep-23-2024/</link><pubDate>Mon, 23 Sep 2024 00:00:00 +0000</pubDate><guid>/posts/2024/09/23/spice-v0.18.1-beta-sep-23-2024/</guid><description>
+&lt;p>Announcing the release of Spice v0.18.1-beta. 🏎️&lt;/p>
+&lt;p>The v0.18.1-beta release continues to improve runtime performance and reliability. Performance for accelerated queries joining multiple datasets has been significantly improved with join push-down support. GraphQL, MySQL, and SharePoint data connectors have better reliability and error handling, and a new Microsoft SQL Server data connector has been introduced. Task History now has fine-grained configuration, including the ability to disable the feature entirely. A new &lt;code>spice search&lt;/code> CLI command has been added, enabling development-time embeddings-based searches across datasets.&lt;/p>
+&lt;h2 id="highlights-in-v0181-beta">Highlights in v0.18.1-beta&lt;/h2>
+&lt;p>&lt;strong>Join push-down for accelerations&lt;/strong>: Queries to the same accelerator will now push-down joins, significantly improving acceleration performance for queries joining multiple tables.&lt;/p>
+&lt;p>&lt;strong>Microsoft SQL Server Data Connector&lt;/strong>: Use &lt;code>from: mssql:&lt;/code> to access and accelerate Microsoft SQL Server datasets.&lt;/p>
+&lt;p>Example &lt;code>spicepod.yml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">datasets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">mssql:path.to.my_dataset&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my_dataset&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">mssql_connection_string&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">${secrets:mssql_connection_string}&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See the &lt;a href="https://docs.spiceai.org/components/data-connectors/mssql">Microsoft SQL Server Data Connector documentation&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Task History&lt;/strong>: Task History can be configured in the &lt;code>spicepod.yml&lt;/code>, including the ability to include, or truncate outputs such as the results of a SQL query.&lt;/p>
+&lt;p>Example &lt;code>spicepod.yml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">runtime&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">task_history&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">enabled&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">captured_output&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">truncated&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">retention_period&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">8h&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">retention_check_interval&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">15m&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See the &lt;a href="https://docs.spiceai.org/reference/spicepod#runtimetask_history">Task History Spicepod reference&lt;/a> for more information on possible values and behaviors.&lt;/p>
+&lt;p>&lt;strong>Search CLI Command&lt;/strong> Use the &lt;code>spice search&lt;/code> CLI command to perform embeddings-based searches across search configure datasets. Note: Search requires the &lt;code>ai&lt;/code> feature to be installed.&lt;/p>
+&lt;p>&lt;strong>Refresh on File Changes&lt;/strong>: File Data Connector data refreshes can be configured to be triggered when the source file is modified through a file system watcher. Enable the watcher by adding &lt;code>file_watcher: enabled&lt;/code> to the acceleration parameters.&lt;/p>
+&lt;p>Example &lt;code>spicepod.yml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">datasets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">file://path/to/my_file.csv&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my_file&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">acceleration&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">enabled&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">refresh_mode&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">full&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">file_watcher&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">enabled&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
+&lt;p>The Query History table &lt;code>runtime.query_history&lt;/code> has been deprecated and removed in favor of the Task History table &lt;code>runtime.task_history&lt;/code>. The Task History table tracks tasks across all features such as SQL query, vector search, and AI completion in a unified table.&lt;/p>
+&lt;p>See the &lt;a href="https://docs.spiceai.org/reference/task_history">Task History documentation&lt;/a>.&lt;/p>
+&lt;h2 id="dependencies">Dependencies&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>&lt;a href="(https://datafusion.apache.org/)">DataFusion&lt;/a>:&lt;/strong> Upgraded from v41 to v42.&lt;/li>
+&lt;li>&lt;strong>&lt;a href="(https://arrow.apache.org/)">Apache Arrow&lt;/a>:&lt;/strong> Upgraded from v52 to v53.&lt;/li>
+&lt;li>&lt;strong>&lt;a href="(https://duckdb.org/)">DuckDB&lt;/a>:&lt;/strong> Upgraded from v1.0 to v1.1.&lt;/li>
+&lt;/ul>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@slyons&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-contributors">New Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@slyons made their first contribution in &lt;a href="https://github.com/spiceai/spiceai/pull/2724">https://github.com/spiceai/spiceai/pull/2724&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Update Helm Chart for 0.18.0-beta release by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2711">https://github.com/spiceai/spiceai/pull/2711&lt;/a>&lt;/li>
+&lt;li>Use a single instance for all DuckDB accelerated datasets by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2669">https://github.com/spiceai/spiceai/pull/2669&lt;/a>&lt;/li>
+&lt;li>Dependabot upgrades by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2715">https://github.com/spiceai/spiceai/pull/2715&lt;/a>&lt;/li>
+&lt;li>Use a single instance for all SQLite accelerated datasets by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2720">https://github.com/spiceai/spiceai/pull/2720&lt;/a>&lt;/li>
+&lt;li>Prepare for v0.18.1-beta release by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2692">https://github.com/spiceai/spiceai/pull/2692&lt;/a>&lt;/li>
+&lt;li>For GraphQL, remove necessity of &lt;code>json_pointer&lt;/code> and improve error messaging. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2713">https://github.com/spiceai/spiceai/pull/2713&lt;/a>&lt;/li>
+&lt;li>Postgres accelerator benchmark test by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2652">https://github.com/spiceai/spiceai/pull/2652&lt;/a>&lt;/li>
+&lt;li>Trace query result while running benchmark tests by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2684">https://github.com/spiceai/spiceai/pull/2684&lt;/a>&lt;/li>
+&lt;li>Early check EmbeddingConnector if embedding models do not exist by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2717">https://github.com/spiceai/spiceai/pull/2717&lt;/a>&lt;/li>
+&lt;li>Move table creation for spice_sys_dataset_checkpoint to DatasetCheckpoint::try_new by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2732">https://github.com/spiceai/spiceai/pull/2732&lt;/a>&lt;/li>
+&lt;li>Don&amp;rsquo;t load tools immediately by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2731">https://github.com/spiceai/spiceai/pull/2731&lt;/a>&lt;/li>
+&lt;li>Renable accelerator federation on trunk by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2725">https://github.com/spiceai/spiceai/pull/2725&lt;/a>&lt;/li>
+&lt;li>Fixing Data Connectors link in README.md by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/2724">https://github.com/spiceai/spiceai/pull/2724&lt;/a>&lt;/li>
+&lt;li>Enable rehydration tests for DuckDB by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2729">https://github.com/spiceai/spiceai/pull/2729&lt;/a>&lt;/li>
+&lt;li>Check pageInfo is correct at initialisation of GraphQL connector by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2730">https://github.com/spiceai/spiceai/pull/2730&lt;/a>&lt;/li>
+&lt;li>Microsoft SQL Server data connector initial support by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2741">https://github.com/spiceai/spiceai/pull/2741&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>spice search&lt;/code> CLI command by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/2739">https://github.com/spiceai/spiceai/pull/2739&lt;/a>&lt;/li>
+&lt;li>Update threat model by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2738">https://github.com/spiceai/spiceai/pull/2738&lt;/a>&lt;/li>
+&lt;li>Upgrade to Arrow 53, DataFusion 42 and DuckDB 1.1 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2744">https://github.com/spiceai/spiceai/pull/2744&lt;/a>&lt;/li>
+&lt;li>Update datafusion table provider patch by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2747">https://github.com/spiceai/spiceai/pull/2747&lt;/a>&lt;/li>
+&lt;li>feat: Add enabled config option for task_history by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2758">https://github.com/spiceai/spiceai/pull/2758&lt;/a>&lt;/li>
+&lt;li>Remove v0.18.0-beta from the Roadmap by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2748">https://github.com/spiceai/spiceai/pull/2748&lt;/a>&lt;/li>
+&lt;li>Fix spark-connect to use native roots for TLS again by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2766">https://github.com/spiceai/spiceai/pull/2766&lt;/a>&lt;/li>
+&lt;li>Fix benchmark test - Install default crypto provider by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2752">https://github.com/spiceai/spiceai/pull/2752&lt;/a>&lt;/li>
+&lt;li>Resolve primary keys for datasets with catalog or schema by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2749">https://github.com/spiceai/spiceai/pull/2749&lt;/a>&lt;/li>
+&lt;li>MSSQL: include table name in schema retrieval error by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2746">https://github.com/spiceai/spiceai/pull/2746&lt;/a>&lt;/li>
+&lt;li>File Format parsing for Document tables, support for docx + pdf by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2740">https://github.com/spiceai/spiceai/pull/2740&lt;/a>&lt;/li>
+&lt;li>Add Document parsing to Sharepoint connector. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2760">https://github.com/spiceai/spiceai/pull/2760&lt;/a>&lt;/li>
+&lt;li>Execution plan with BinaryExpr predicates pushdown support for MS SQL by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2768">https://github.com/spiceai/spiceai/pull/2768&lt;/a>&lt;/li>
+&lt;li>Update datafusion patch by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2772">https://github.com/spiceai/spiceai/pull/2772&lt;/a>&lt;/li>
+&lt;li>Support for standalone config parameters for MS SQL by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2773">https://github.com/spiceai/spiceai/pull/2773&lt;/a>&lt;/li>
+&lt;li>Utilize DataConnectorError for MySQL Data Connector Errors by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2759">https://github.com/spiceai/spiceai/pull/2759&lt;/a>&lt;/li>
+&lt;li>Add Score to search results by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/2774">https://github.com/spiceai/spiceai/pull/2774&lt;/a>&lt;/li>
+&lt;li>Don&amp;rsquo;t call GetComponentStatuses when &amp;ndash;metrics not enabled by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2779">https://github.com/spiceai/spiceai/pull/2779&lt;/a>&lt;/li>
+&lt;li>Implement better error handling for spicepods by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2767">https://github.com/spiceai/spiceai/pull/2767&lt;/a>&lt;/li>
+&lt;li>Make integration tests more robust by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2782">https://github.com/spiceai/spiceai/pull/2782&lt;/a>&lt;/li>
+&lt;li>Query results streaming support for MS SQL by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2781">https://github.com/spiceai/spiceai/pull/2781&lt;/a>&lt;/li>
+&lt;li>Update benchmark snapshots by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2778">https://github.com/spiceai/spiceai/pull/2778&lt;/a>&lt;/li>
+&lt;li>For Sharepoint connector, if client_secret and auth_code are both provided, default to auth_code by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2780">https://github.com/spiceai/spiceai/pull/2780&lt;/a>&lt;/li>
+&lt;li>Add modified pk/indexes scenario to rehydration tests by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2743">https://github.com/spiceai/spiceai/pull/2743&lt;/a>&lt;/li>
+&lt;li>Run benchmarks on Wed, Fri, Sat, and Sun. by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/2786">https://github.com/spiceai/spiceai/pull/2786&lt;/a>&lt;/li>
+&lt;li>Update PULL_REQUEST_TEMPLATE.md to include a section for Documentation by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/2785">https://github.com/spiceai/spiceai/pull/2785&lt;/a>&lt;/li>
+&lt;li>Add E2E test for MS SQL data connector by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2788">https://github.com/spiceai/spiceai/pull/2788&lt;/a>&lt;/li>
+&lt;li>More types support for MS SQL data connector by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2789">https://github.com/spiceai/spiceai/pull/2789&lt;/a>&lt;/li>
+&lt;li>feat: Add captured_output option for task_history by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2783">https://github.com/spiceai/spiceai/pull/2783&lt;/a>&lt;/li>
+&lt;li>Add ability to refresh when file data connector detects changes by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2787">https://github.com/spiceai/spiceai/pull/2787&lt;/a>&lt;/li>
+&lt;li>Propagate MySQL invalid table name error by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2776">https://github.com/spiceai/spiceai/pull/2776&lt;/a>&lt;/li>
+&lt;li>feat: Add retention options for task_history config by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2784">https://github.com/spiceai/spiceai/pull/2784&lt;/a>&lt;/li>
+&lt;li>fix: Move task history check after query history creation by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2793">https://github.com/spiceai/spiceai/pull/2793&lt;/a>&lt;/li>
+&lt;li>MS SQL connector should ignore all unsupported types by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2795">https://github.com/spiceai/spiceai/pull/2795&lt;/a>&lt;/li>
+&lt;li>Improve Sharepoint DX by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2791">https://github.com/spiceai/spiceai/pull/2791&lt;/a>&lt;/li>
+&lt;li>Replace query history with task history by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2792">https://github.com/spiceai/spiceai/pull/2792&lt;/a>&lt;/li>
+&lt;li>Fix datasets_health_monitor spice.runtime.task_history not found warning by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2805">https://github.com/spiceai/spiceai/pull/2805&lt;/a>&lt;/li>
+&lt;li>Upgrade macOS x86_64 test runner to macOS 13.6.9 Ventura by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2803">https://github.com/spiceai/spiceai/pull/2803&lt;/a>&lt;/li>
+&lt;li>Update acknowledgements by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/2808">https://github.com/spiceai/spiceai/pull/2808&lt;/a>&lt;/li>
+&lt;li>Add mssql to the list of supported data connectors by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/28">https://github.com/spiceai/spiceai/pull/28&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.18.0-beta...v0.18.1-beta">https://github.com/spiceai/spiceai/compare/v0.18.0-beta...v0.18.1-beta&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.15.1-alpha (July 8, 2024)</title><link>/posts/2024/07/08/spice-v0.15.1-alpha-july-8-2024/</link><pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate><guid>/posts/2024/07/08/spice-v0.15.1-alpha-july-8-2024/</guid><description>
 &lt;p>The v0.15.1-alpha minor release focuses on enhancing stability, performance, and usability. Memory usage has been significantly improved for the &lt;code>postgres&lt;/code> and &lt;code>duckdb&lt;/code> acceleration engines which now use stream processing. A new Delta Lake Data Connector has been added, sharing a &lt;a href="https://github.com/delta-incubator/delta-kernel-rs">delta-kernel-rs&lt;/a> based implementation with the Databricks Data Connector supporting &lt;a href="https://docs.delta.io/latest/delta-deletion-vectors.html">deletion vectors&lt;/a>.&lt;/p>
 &lt;h2 id="highlights">Highlights&lt;/h2>
 &lt;p>&lt;strong>Improved memory usage for PostgreSQL and DuckDB acceleration engines:&lt;/strong> Large dataset acceleration with &lt;a href="https://docs.spiceai.org/data-accelerators/postgres">PostgreSQL&lt;/a> and &lt;a href="https://docs.spiceai.org/data-accelerators/duckdb">DuckDB&lt;/a> engines has reduced memory consumption by streaming data directly to the accelerated table as it is read from the source.&lt;/p>
