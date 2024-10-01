@@ -1,4 +1,98 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Release</title><link>/categories/release/</link><description>Recent content in Release on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 23 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.18.1-beta (Sep 23, 2024)</title><link>/posts/2024/09/23/spice-v0.18.1-beta-sep-23-2024/</link><pubDate>Mon, 23 Sep 2024 00:00:00 +0000</pubDate><guid>/posts/2024/09/23/spice-v0.18.1-beta-sep-23-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Release</title><link>/categories/release/</link><description>Recent content in Release on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 30 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.18.3-beta (Sep 30, 2024)</title><link>/posts/2024/09/30/spice-v0.18.3-beta-sep-30-2024/</link><pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate><guid>/posts/2024/09/30/spice-v0.18.3-beta-sep-30-2024/</guid><description>
+&lt;p>Announcing the release of Spice v0.18.3-beta. 🛠️&lt;/p>
+&lt;p>The Spice v0.18.3-beta release includes several quality-of-life improvements including verbosity flags for &lt;code>spiced&lt;/code> and the Spice CLI, vector search over larger documents with support for chunking dataset embeddings, and multiple performance enhancements. Additionally, the release includes several bug fixes, dependency updates, and optimizations, including updated table providers and significantly improved GitHub data connector performance for issues and pull requests.&lt;/p>
+&lt;h2 id="highlights-in-v0183-beta">Highlights in v0.18.3-beta&lt;/h2>
+&lt;p>&lt;strong>GitHub Query Mode&lt;/strong>: A new &lt;code>github_query_mode: search&lt;/code> parameter has been added to the &lt;a href="https://docs.spiceai.org/components/data-connectors/github">GitHub Data Connector&lt;/a>, which uses the &lt;a href="https://docs.github.com/en/graphql/reference/queries#search">GitHub Search API&lt;/a> to enable faster and more efficient query of issues and pull requests when using filters.&lt;/p>
+&lt;p>Example &lt;code>spicepod.yml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">github:github.com/spiceai/spiceai/issues/trunk&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">spiceai.issues&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">github_query_mode&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">search&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Use GitHub Search API&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">github_token&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">${secrets:GITHUB_TOKEN}&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Output Verbosity&lt;/strong>: Higher verbosity output levels can be specified through flags for both &lt;code>spiced&lt;/code> and the Spice CLI.&lt;/p>
+&lt;p>Example command line:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>spice -v
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>spice --very-verbose
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>spiced -vv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>spiced --verbose
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Embedding Chunking&lt;/strong>: Chunking can be enabled and configured to preprocess input data before generating dataset embeddings. This improves the relevance and precision for larger pieces of content.&lt;/p>
+&lt;p>Example &lt;code>spicepod.yml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">support_tickets&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">embeddings&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">column&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">conversation_history&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">use&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">openai_embeddings&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">chunking&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">enabled&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">target_chunk_size&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">128&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">overlap_size&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">16&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">trim_whitespace&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For details, see the &lt;a href="https://docs.spiceai.org/features/search">Search Documentation&lt;/a>.&lt;/p>
+&lt;h2 id="dependencies">Dependencies&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>&lt;a href="(https://github.com/datafusion-contrib/datafusion-table-providers)">DataFusion Table Providers&lt;/a>:&lt;/strong> Upgraded to rev &lt;code>b0af91992699ecbf5adf2036a07122578f06150e&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@slyons&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Update datafusion table provider patch by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2817">https://github.com/spiceai/spiceai/pull/2817&lt;/a>&lt;/li>
+&lt;li>refactor: Set max_rows_per_batch for ODBC to 4000 by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2822">https://github.com/spiceai/spiceai/pull/2822&lt;/a>&lt;/li>
+&lt;li>Use User message for health check by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2823">https://github.com/spiceai/spiceai/pull/2823&lt;/a>&lt;/li>
+&lt;li>Upgrade Helm chart (Spice v0.18.2-beta) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2820">https://github.com/spiceai/spiceai/pull/2820&lt;/a>&lt;/li>
+&lt;li>Add verbosity flags for spiced, spice: &lt;code>-v&lt;/code>, &lt;code>-vv&lt;/code>, &lt;code>--verbose&lt;/code>, &lt;code>--very-verbose&lt;/code>. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2831">https://github.com/spiceai/spiceai/pull/2831&lt;/a>&lt;/li>
+&lt;li>Rename &lt;code>spiceai&lt;/code> data connector to &lt;code>spice.ai&lt;/code> by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2680">https://github.com/spiceai/spiceai/pull/2680&lt;/a>&lt;/li>
+&lt;li>Prepare for v0.19.0-beta release (version bump) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2821">https://github.com/spiceai/spiceai/pull/2821&lt;/a>&lt;/li>
+&lt;li>Bump clap from 4.5.17 to 4.5.18 (#2801) by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2848">https://github.com/spiceai/spiceai/pull/2848&lt;/a>&lt;/li>
+&lt;li>Enable &amp;ldquo;rc&amp;rdquo; feature for serde in spicepod crate by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2851">https://github.com/spiceai/spiceai/pull/2851&lt;/a>&lt;/li>
+&lt;li>Update spicepod.schema.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/2852">https://github.com/spiceai/spiceai/pull/2852&lt;/a>&lt;/li>
+&lt;li>chore: update table providers by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2858">https://github.com/spiceai/spiceai/pull/2858&lt;/a>&lt;/li>
+&lt;li>fix: Use GitHub search for issues in GraphQL by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2845">https://github.com/spiceai/spiceai/pull/2845&lt;/a>&lt;/li>
+&lt;li>fix: Use GitHub search for pull_requests by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2847">https://github.com/spiceai/spiceai/pull/2847&lt;/a>&lt;/li>
+&lt;li>Support chunking dataset embeddings by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2854">https://github.com/spiceai/spiceai/pull/2854&lt;/a>&lt;/li>
+&lt;li>refactor: Update GraphQL client to be more robust for filter push down by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2864">https://github.com/spiceai/spiceai/pull/2864&lt;/a>&lt;/li>
+&lt;li>docs: Update accelerator beta criteria by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2865">https://github.com/spiceai/spiceai/pull/2865&lt;/a>&lt;/li>
+&lt;li>Change &lt;code>BytesProcessedRule&lt;/code> to be an optimizer rather than an analyzer rule by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2867">https://github.com/spiceai/spiceai/pull/2867&lt;/a>&lt;/li>
+&lt;li>Don&amp;rsquo;t run E2E or PR tests on documentation by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2869">https://github.com/spiceai/spiceai/pull/2869&lt;/a>&lt;/li>
+&lt;li>Verify benchmark query results using snapshot testing (spice.ai connector) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2866">https://github.com/spiceai/spiceai/pull/2866&lt;/a>&lt;/li>
+&lt;li>feat: Add GraphQLOptimizer by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2868">https://github.com/spiceai/spiceai/pull/2868&lt;/a>&lt;/li>
+&lt;li>Update quickstarts for Endgame by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2863">https://github.com/spiceai/spiceai/pull/2863&lt;/a>&lt;/li>
+&lt;li>Update version to v0.18.3-beta by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2882">https://github.com/spiceai/spiceai/pull/2882&lt;/a>&lt;/li>
+&lt;li>Update DataFusion: fix coalesce, Aggregation with Window functions unparsing support by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2884">https://github.com/spiceai/spiceai/pull/2884&lt;/a>&lt;/li>
+&lt;li>Revert &amp;ldquo;Rename &lt;code>spiceai&lt;/code> data connector to &lt;code>spice.ai&lt;/code>&amp;rdquo; by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2881">https://github.com/spiceai/spiceai/pull/2881&lt;/a>&lt;/li>
+&lt;li>Adding integration test for DuckDB read functions by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/2857">https://github.com/spiceai/spiceai/pull/2857&lt;/a>&lt;/li>
+&lt;li>Show more informative mysql error message by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2883">https://github.com/spiceai/spiceai/pull/2883&lt;/a>&lt;/li>
+&lt;li>Fix &lt;code>no process-level CryptoProvider available&lt;/code> when using REPL and TLS by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2887">https://github.com/spiceai/spiceai/pull/2887&lt;/a>&lt;/li>
+&lt;li>Change UX for chunking and enable overlap_size in chunking by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2890">https://github.com/spiceai/spiceai/pull/2890&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>log/slog&lt;/code> to spice CLI tool by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2859">https://github.com/spiceai/spiceai/pull/2859&lt;/a>&lt;/li>
+&lt;li>feat: Add GitHub GraphQLOptimizer by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2870">https://github.com/spiceai/spiceai/pull/2870&lt;/a>&lt;/li>
+&lt;li>Fix mysql invalid tablename error message by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2896">https://github.com/spiceai/spiceai/pull/2896&lt;/a>&lt;/li>
+&lt;li>fix: Remove login column rename in pulls and update Optimizer by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2897">https://github.com/spiceai/spiceai/pull/2897&lt;/a>&lt;/li>
+&lt;li>Fix require check checking. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2898">https://github.com/spiceai/spiceai/pull/2898&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.18.2-beta...v0.18.3-beta">https://github.com/spiceai/spiceai/compare/v0.18.2-beta...v0.18.3-beta&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.18.1-beta (Sep 23, 2024)</title><link>/posts/2024/09/23/spice-v0.18.1-beta-sep-23-2024/</link><pubDate>Mon, 23 Sep 2024 00:00:00 +0000</pubDate><guid>/posts/2024/09/23/spice-v0.18.1-beta-sep-23-2024/</guid><description>
 &lt;p>Announcing the release of Spice v0.18.1-beta. 🏎️&lt;/p>
 &lt;p>The v0.18.1-beta release continues to improve runtime performance and reliability. Performance for accelerated queries joining multiple datasets has been significantly improved with join push-down support. GraphQL, MySQL, and SharePoint data connectors have better reliability and error handling, and a new Microsoft SQL Server data connector has been introduced. Task History now has fine-grained configuration, including the ability to disable the feature entirely. A new &lt;code>spice search&lt;/code> CLI command has been added, enabling development-time embeddings-based searches across datasets.&lt;/p>
 &lt;h2 id="highlights-in-v0181-beta">Highlights in v0.18.1-beta&lt;/h2>
