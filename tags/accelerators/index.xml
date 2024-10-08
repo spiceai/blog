@@ -1,4 +1,125 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Accelerators</title><link>/tags/accelerators/</link><description>Recent content in Accelerators on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 29 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/accelerators/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.12-alpha (April 29, 2024)</title><link>/posts/2024/04/29/spice-v0.12-alpha-april-29-2024/</link><pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/29/spice-v0.12-alpha-april-29-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Accelerators</title><link>/tags/accelerators/</link><description>Recent content in Accelerators on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 07 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/accelerators/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.19-beta (Oct 7, 2024)</title><link>/posts/2024/10/07/spice-v0.19-beta-oct-7-2024/</link><pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate><guid>/posts/2024/10/07/spice-v0.19-beta-oct-7-2024/</guid><description>
+&lt;p>Announcing the release of Spice v0.19-beta 📦&lt;/p>
+&lt;p>Spice v0.19.0-beta brings performance improvements for accelerators and expanded TPC-DS coverage. A new Azure Blob Storage data connector has also been added.&lt;/p>
+&lt;h2 id="highlights-in-v0190-beta">Highlights in v0.19.0-beta&lt;/h2>
+&lt;p>&lt;strong>Improved TPC-DS Coverage&lt;/strong>: Enhanced support for TPC-DS derived queries.&lt;/p>
+&lt;p>&lt;strong>CLI SQL REPL&lt;/strong>: The CLI SQL REPL (&lt;code>spice sql&lt;/code>) now supports multi-line editing and tab indentation. Note, a terminating semi-colon &amp;lsquo;;&amp;rsquo; is now required for each executed SQL block.&lt;/p>
+&lt;p>&lt;strong>Azure Storage Data Connector&lt;/strong>: A new Azure Blob Storage data connector (&lt;code>abfs://&lt;/code>) has been added, enabling federated SQL queries on files stored in Azure Blob-compatible endpoints, including Azure BlobFS (&lt;code>abfss://&lt;/code>) and Azure Data Lake (&lt;code>adl://&lt;/code>). Supported file formats can be specified using the &lt;code>file_format&lt;/code> parameter.&lt;/p>
+&lt;p>Example &lt;code>spicepod.yml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">datasets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">abfs://foocontainer/taxi_sample.csv&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">azure_test&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">azure_account&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">spiceadls&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">azure_access_key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">abc123==&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">file_format&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">csv&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For a full list of supported files, see the &lt;a href="/components/data-connectors/index.md#object-store-file-formats">Object Store File Formats&lt;/a> documentation.&lt;/p>
+&lt;p>For more details, see the &lt;a href="https://docs.spiceai.org/components/data-connectors/github">Azure Blob Storage Data Connector documentation&lt;/a>.&lt;/p>
+&lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Spice.ai Data Connector:&lt;/strong> The key for the Spice.ai Cloud Platform Data Connector has changed from &lt;code>spiceai&lt;/code> to &lt;code>spice.ai&lt;/code>. To upgrade, change uses of &lt;code>from: spiceai:&lt;/code> to &lt;code>from: spice.ai:&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>GitHub Data Connector:&lt;/strong> Pull Requests column &lt;code>login&lt;/code> has been renamed to &lt;code>author&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>CLI SQL REPL:&lt;/strong> A terminating semi-colon &amp;lsquo;;&amp;rsquo; is now required for each executed SQL block.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Spicepod Hot-Reload:&lt;/strong> When running &lt;code>spiced&lt;/code> directly, hot-reload of spicepod.yml configuration is now disabled. Run with &lt;code>spice run&lt;/code> to use hot-reload.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@slyons&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;/ul>
+&lt;h2 id="dependencies">Dependencies&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>&lt;a href="(https://github.com/datafusion-contrib/datafusion-table-providers)">DataFusion Table Providers&lt;/a>:&lt;/strong> Upgraded to rev &lt;code>826814ab149aad8ee668454c83a0650fb8b18d60&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Bump tonic from 0.12.2 to 0.12.3 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2880">https://github.com/spiceai/spiceai/pull/2880&lt;/a>&lt;/li>
+&lt;li>Verify benchmark query results using snapshot testing (s3 connector) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2902">https://github.com/spiceai/spiceai/pull/2902&lt;/a>&lt;/li>
+&lt;li>Fix &lt;code>paths-ignore:&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2906">https://github.com/spiceai/spiceai/pull/2906&lt;/a>&lt;/li>
+&lt;li>Rename &lt;code>spiceai&lt;/code> data connector to &lt;code>spice.ai&lt;/code> by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2899">https://github.com/spiceai/spiceai/pull/2899&lt;/a>&lt;/li>
+&lt;li>Update ROADMAP.md by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2907">https://github.com/spiceai/spiceai/pull/2907&lt;/a>&lt;/li>
+&lt;li>Helm update for helm for 0.18.3-beta by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2910">https://github.com/spiceai/spiceai/pull/2910&lt;/a>&lt;/li>
+&lt;li>Add tpcds queries by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2918">https://github.com/spiceai/spiceai/pull/2918&lt;/a>&lt;/li>
+&lt;li>Fix &lt;code>paths-ignore&lt;/code> for docs. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2911">https://github.com/spiceai/spiceai/pull/2911&lt;/a>&lt;/li>
+&lt;li>feat: Support LIKE expressions in GitHub filter pushdown by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2903">https://github.com/spiceai/spiceai/pull/2903&lt;/a>&lt;/li>
+&lt;li>feat: Support date comparison pushdown in GitHub connector by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2904">https://github.com/spiceai/spiceai/pull/2904&lt;/a>&lt;/li>
+&lt;li>Improve aggregation and union queries unparsing by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2925">https://github.com/spiceai/spiceai/pull/2925&lt;/a>&lt;/li>
+&lt;li>Initialize file based accelerators on dataset reload by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2923">https://github.com/spiceai/spiceai/pull/2923&lt;/a>&lt;/li>
+&lt;li>Update spiceai/spiceai for next release by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2928">https://github.com/spiceai/spiceai/pull/2928&lt;/a>&lt;/li>
+&lt;li>Verify TPC-H benchmark query results for arrow acceleration by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2927">https://github.com/spiceai/spiceai/pull/2927&lt;/a>&lt;/li>
+&lt;li>Update spicepod.schema.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/2912">https://github.com/spiceai/spiceai/pull/2912&lt;/a>&lt;/li>
+&lt;li>Use structured output for NSQL by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2922">https://github.com/spiceai/spiceai/pull/2922&lt;/a>&lt;/li>
+&lt;li>Update TPC-DS queries to use supported date addition format by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2930">https://github.com/spiceai/spiceai/pull/2930&lt;/a>&lt;/li>
+&lt;li>Add busy_timeout accelerator param for Sqlite by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2855">https://github.com/spiceai/spiceai/pull/2855&lt;/a>&lt;/li>
+&lt;li>Use Cosine Similarity in vector search by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2932">https://github.com/spiceai/spiceai/pull/2932&lt;/a>&lt;/li>
+&lt;li>Add support for passing &lt;code>x-spiceai-app-id&lt;/code> metadata in spiceai data connector by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2934">https://github.com/spiceai/spiceai/pull/2934&lt;/a>&lt;/li>
+&lt;li>docs: update beta accelerator criteria by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2905">https://github.com/spiceai/spiceai/pull/2905&lt;/a>&lt;/li>
+&lt;li>Azure Connector implementation by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/2926">https://github.com/spiceai/spiceai/pull/2926&lt;/a>&lt;/li>
+&lt;li>Local embedding model from relative paths by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2908">https://github.com/spiceai/spiceai/pull/2908&lt;/a>&lt;/li>
+&lt;li>Add Markdown aware chunker when &lt;code>params.file_format: md&lt;/code>. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2943">https://github.com/spiceai/spiceai/pull/2943&lt;/a>&lt;/li>
+&lt;li>&amp;lsquo;spice version&amp;rsquo; without structured logging by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2944">https://github.com/spiceai/spiceai/pull/2944&lt;/a>&lt;/li>
+&lt;li>Bump tempfile from 3.12.0 to 3.13.0 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2878">https://github.com/spiceai/spiceai/pull/2878&lt;/a>&lt;/li>
+&lt;li>feat: GraphQL commit query parameters by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2945">https://github.com/spiceai/spiceai/pull/2945&lt;/a>&lt;/li>
+&lt;li>Update OpenAI client and use new request fields by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2951">https://github.com/spiceai/spiceai/pull/2951&lt;/a>&lt;/li>
+&lt;li>refactor: Rename GitHub pulls login to author by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2954">https://github.com/spiceai/spiceai/pull/2954&lt;/a>&lt;/li>
+&lt;li>Run tpcds benchmarks for accelerators by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2853">https://github.com/spiceai/spiceai/pull/2853&lt;/a>&lt;/li>
+&lt;li>Add spiced arg &lt;code>--pods-watcher-enabled&lt;/code>. Watcher disabled by default for spiced. by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2953">https://github.com/spiceai/spiceai/pull/2953&lt;/a>&lt;/li>
+&lt;li>Add error message when spicepod has embeddings or models without &amp;lsquo;&amp;ndash;features models&amp;rsquo; by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2952">https://github.com/spiceai/spiceai/pull/2952&lt;/a>&lt;/li>
+&lt;li>Adding multi-line editing and tab indentation to sql REPL by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/2949">https://github.com/spiceai/spiceai/pull/2949&lt;/a>&lt;/li>
+&lt;li>Update MySQL ghcr image to include tpcds data by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2941">https://github.com/spiceai/spiceai/pull/2941&lt;/a>&lt;/li>
+&lt;li>Document DataFusion limitation: The context only support single SQL Statement, Date Arithmetic like date + 3 not supported by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2970">https://github.com/spiceai/spiceai/pull/2970&lt;/a>&lt;/li>
+&lt;li>Bump snafu from 0.8.4 to 0.8.5 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2876">https://github.com/spiceai/spiceai/pull/2876&lt;/a>&lt;/li>
+&lt;li>Bump async-trait from 0.1.82 to 0.1.83 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2879">https://github.com/spiceai/spiceai/pull/2879&lt;/a>&lt;/li>
+&lt;li>Bump async-graphql from 7.0.9 to 7.0.11 in the cargo group by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2950">https://github.com/spiceai/spiceai/pull/2950&lt;/a>&lt;/li>
+&lt;li>Verify TPC-H benchmark query results for MySQL by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2972">https://github.com/spiceai/spiceai/pull/2972&lt;/a>&lt;/li>
+&lt;li>Verify TPCH benchmark query results for Postgres by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2973">https://github.com/spiceai/spiceai/pull/2973&lt;/a>&lt;/li>
+&lt;li>Verify TPCH benchmark query results for sqlite acceleration by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2974">https://github.com/spiceai/spiceai/pull/2974&lt;/a>&lt;/li>
+&lt;li>Verify TPCH benchmark query results for duckdb (in-memory) acceleration by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2975">https://github.com/spiceai/spiceai/pull/2975&lt;/a>&lt;/li>
+&lt;li>Support for &lt;code>mdx&lt;/code> file extensions to apply a markdown splitter by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/2977">https://github.com/spiceai/spiceai/pull/2977&lt;/a>&lt;/li>
+&lt;li>Don&amp;rsquo;t assume first vector or content will be non-null/zero by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2940">https://github.com/spiceai/spiceai/pull/2940&lt;/a>&lt;/li>
+&lt;li>use custom chunk sizers for HF, local and OpenAI models by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2971">https://github.com/spiceai/spiceai/pull/2971&lt;/a>&lt;/li>
+&lt;li>Ensure we return N unique documents, not N unique chunks by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2976">https://github.com/spiceai/spiceai/pull/2976&lt;/a>&lt;/li>
+&lt;li>Fix issues parsing &lt;code>messages[*].tool_calls&lt;/code> for local models by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2957">https://github.com/spiceai/spiceai/pull/2957&lt;/a>&lt;/li>
+&lt;li>text -&amp;gt; SQL trait to customise per model. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2942">https://github.com/spiceai/spiceai/pull/2942&lt;/a>&lt;/li>
+&lt;li>Remove system message from ToolUsingChat. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/2978">https://github.com/spiceai/spiceai/pull/2978&lt;/a>&lt;/li>
+&lt;li>Make logical plan to sql more robust (improve ORDER BY; support &lt;code>round&lt;/code> for Postgres) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2984">https://github.com/spiceai/spiceai/pull/2984&lt;/a>&lt;/li>
+&lt;li>Add connection_pool_size parameter for Postgres accelerator by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2969">https://github.com/spiceai/spiceai/pull/2969&lt;/a>&lt;/li>
+&lt;li>Fix dataset configure prompt by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2991">https://github.com/spiceai/spiceai/pull/2991&lt;/a>&lt;/li>
+&lt;li>Verify TPCH benchmark query results for Databricks(odbc) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2989">https://github.com/spiceai/spiceai/pull/2989&lt;/a>&lt;/li>
+&lt;li>Verify TPCH benchmark query results for Databricks (delta_lake) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2982">https://github.com/spiceai/spiceai/pull/2982&lt;/a>&lt;/li>
+&lt;li>Set log level for anonymous telemetry traces to &lt;code>trace&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/2995">https://github.com/spiceai/spiceai/pull/2995&lt;/a>&lt;/li>
+&lt;li>Improvements to issue templates by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/2992">https://github.com/spiceai/spiceai/pull/2992&lt;/a>&lt;/li>
+&lt;li>&lt;code>spice login&lt;/code> writes to &lt;code>.env.local&lt;/code> if present by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/2996">https://github.com/spiceai/spiceai/pull/2996&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.18.3-beta...v0.19.0-beta">https://github.com/spiceai/spiceai/compare/v0.18.3-beta...v0.19.0-beta&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.12-alpha (April 29, 2024)</title><link>/posts/2024/04/29/spice-v0.12-alpha-april-29-2024/</link><pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate><guid>/posts/2024/04/29/spice-v0.12-alpha-april-29-2024/</guid><description>
 &lt;p>The v0.12-alpha release introduces Clickhouse and Apache Spark data connectors, adds support for limiting refresh data periods for temporal datasets, and includes upgraded Spice Client SDKs compatible with Spice OSS.&lt;/p>
 &lt;h2 id="highlights">Highlights&lt;/h2>
 &lt;ul>
