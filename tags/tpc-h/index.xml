@@ -1,0 +1,87 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Tpc-H</title><link>/tags/tpc-h/</link><description>Recent content in Tpc-H on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 14 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/tpc-h/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.19.1-beta (Oct 14, 2024)</title><link>/posts/2024/10/14/spice-v0.19.1-beta-oct-14-2024/</link><pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate><guid>/posts/2024/10/14/spice-v0.19.1-beta-oct-14-2024/</guid><description>
+&lt;p>Announcing the release of Spice v0.19.1-beta 🔥&lt;/p>
+&lt;p>Spice v0.19.1 brings further performance and stability improvements to data connectors, including improved query push-down for file-based connectors (&lt;code>s3&lt;/code>, &lt;code>abfs&lt;/code>, &lt;code>file&lt;/code>, &lt;code>ftp&lt;/code>, &lt;code>sftp&lt;/code>) that use Hive-style partitioning.&lt;/p>
+&lt;h2 id="highlights-in-v0191">Highlights in v0.19.1&lt;/h2>
+&lt;p>&lt;strong>TPC-H and TPC-DS Coverage&lt;/strong>: Expanded coverage for TPC-H and TPC-DS benchmarking suites across accelerators and connectors.&lt;/p>
+&lt;p>&lt;strong>GitHub Connector Array Filter&lt;/strong>: The GitHub connector now supports filter push down for the &lt;code>array_contains&lt;/code> function in SQL queries using &lt;code>search&lt;/code> query mode.&lt;/p>
+&lt;p>&lt;strong>NSQL CLI Command&lt;/strong>: A new &lt;code>spice nsql&lt;/code> CLI command has been added to easily query datasets with natural language from the command line.&lt;/p>
+&lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
+&lt;p>None&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@peasee&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@karifabri&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@slyons&lt;/li>
+&lt;/ul>
+&lt;h2 id="dependencies">Dependencies&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>&lt;a href="(https://github.com/datafusion-contrib/datafusion-table-providers)">DataFusion Table Providers&lt;/a>:&lt;/strong> Upgraded to rev &lt;code>f22b96601891856e02a73d482cca4f6100137df8&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>release: Update helm chart for v0.19.0-beta by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3024">https://github.com/spiceai/spiceai/pull/3024&lt;/a>&lt;/li>
+&lt;li>Set fail-fast = true for benchmark test by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2997">https://github.com/spiceai/spiceai/pull/2997&lt;/a>&lt;/li>
+&lt;li>release: Update next version and ROADMAP by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3033">https://github.com/spiceai/spiceai/pull/3033&lt;/a>&lt;/li>
+&lt;li>Verify TPCH benchmark query results for Spark connector by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2993">https://github.com/spiceai/spiceai/pull/2993&lt;/a>&lt;/li>
+&lt;li>feat: Add x-spice-user-agent header to Spice REPL by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2979">https://github.com/spiceai/spiceai/pull/2979&lt;/a>&lt;/li>
+&lt;li>Update to object store file formats documentation link by @karifabri in &lt;a href="https://github.com/spiceai/spiceai/pull/3036">https://github.com/spiceai/spiceai/pull/3036&lt;/a>&lt;/li>
+&lt;li>Use teraswitch-runners for Linux x64 workflows + builds by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3042">https://github.com/spiceai/spiceai/pull/3042&lt;/a>&lt;/li>
+&lt;li>feat: Support array contains in GitHub pushdown by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2983">https://github.com/spiceai/spiceai/pull/2983&lt;/a>&lt;/li>
+&lt;li>Bump text-splitter from 0.16.1 to 0.17.0 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2987">https://github.com/spiceai/spiceai/pull/2987&lt;/a>&lt;/li>
+&lt;li>Revert integration tests back to hosted runner by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3046">https://github.com/spiceai/spiceai/pull/3046&lt;/a>&lt;/li>
+&lt;li>Tune Github runner resources to allow in memory TPCDS benchmark to run by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3025">https://github.com/spiceai/spiceai/pull/3025&lt;/a>&lt;/li>
+&lt;li>fix: add winver by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3054">https://github.com/spiceai/spiceai/pull/3054&lt;/a>&lt;/li>
+&lt;li>refactor: Use is modifier for checking GitHub state filter by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3056">https://github.com/spiceai/spiceai/pull/3056&lt;/a>&lt;/li>
+&lt;li>Enable &lt;code>merge_group&lt;/code> checks for PR workflows by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3058">https://github.com/spiceai/spiceai/pull/3058&lt;/a>&lt;/li>
+&lt;li>Fix issues with merge group by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3059">https://github.com/spiceai/spiceai/pull/3059&lt;/a>&lt;/li>
+&lt;li>Validate in-memory arrow accelertion TPCDS result correctness by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3044">https://github.com/spiceai/spiceai/pull/3044&lt;/a>&lt;/li>
+&lt;li>Fix rev parsing for PR checks by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3060">https://github.com/spiceai/spiceai/pull/3060&lt;/a>&lt;/li>
+&lt;li>Use &amp;lsquo;Accept&amp;rsquo; header for &lt;code>/v1/sql/&lt;/code> and &lt;code>/v1/nsql&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3032">https://github.com/spiceai/spiceai/pull/3032&lt;/a>&lt;/li>
+&lt;li>Verify Postgres acceleration TPCDS result correctness by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3043">https://github.com/spiceai/spiceai/pull/3043&lt;/a>&lt;/li>
+&lt;li>Add NSQL CLI REPL command by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/2856">https://github.com/spiceai/spiceai/pull/2856&lt;/a>&lt;/li>
+&lt;li>Preserve query results order and add TPCH benchmark results verification for duckdb:file mode by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3034">https://github.com/spiceai/spiceai/pull/3034&lt;/a>&lt;/li>
+&lt;li>Refactor benchmark to include MySQL tpcds bench, tweaks to makefile target for generating mysql tpcds data by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2967">https://github.com/spiceai/spiceai/pull/2967&lt;/a>&lt;/li>
+&lt;li>Support runtime parameter for &lt;code>sql_query_keep_partition_by_columns&lt;/code> &amp;amp; enable by default by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3065">https://github.com/spiceai/spiceai/pull/3065&lt;/a>&lt;/li>
+&lt;li>Document TPC-DS limitations: &lt;code>EXCEPT&lt;/code>, &lt;code>INTERSECT&lt;/code>, duplicate names by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3069">https://github.com/spiceai/spiceai/pull/3069&lt;/a>&lt;/li>
+&lt;li>Adding ABFS benchmark by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/3062">https://github.com/spiceai/spiceai/pull/3062&lt;/a>&lt;/li>
+&lt;li>Add support for GitHub app installation auth for GitHub connector by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3063">https://github.com/spiceai/spiceai/pull/3063&lt;/a>&lt;/li>
+&lt;li>docs: Document stack overflow workaround, add helper script by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3070">https://github.com/spiceai/spiceai/pull/3070&lt;/a>&lt;/li>
+&lt;li>Tune MySQL TPCDS image to allow for successful benchmark test run by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3067">https://github.com/spiceai/spiceai/pull/3067&lt;/a>&lt;/li>
+&lt;li>Automatically infer partitions for hive-style partitioned files for object store based connectors by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3073">https://github.com/spiceai/spiceai/pull/3073&lt;/a>&lt;/li>
+&lt;li>Support &lt;code>hf_token&lt;/code> from params/secrets by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3071">https://github.com/spiceai/spiceai/pull/3071&lt;/a>&lt;/li>
+&lt;li>Inherit embedding columns from source, when available. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3045">https://github.com/spiceai/spiceai/pull/3045&lt;/a>&lt;/li>
+&lt;li>Validate identifiers for component names by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3079">https://github.com/spiceai/spiceai/pull/3079&lt;/a>&lt;/li>
+&lt;li>docs: Add workaround for TPC-DS Q97 in MySQL by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3080">https://github.com/spiceai/spiceai/pull/3080&lt;/a>&lt;/li>
+&lt;li>Document TPC-DS Postgres column alias in a CASE statement limitation by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3083">https://github.com/spiceai/spiceai/pull/3083&lt;/a>&lt;/li>
+&lt;li>Update plan snapshots for TPC-H bench queries by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3088">https://github.com/spiceai/spiceai/pull/3088&lt;/a>&lt;/li>
+&lt;li>Update Datafusion crate to include recent unparsing fixes by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3089">https://github.com/spiceai/spiceai/pull/3089&lt;/a>&lt;/li>
+&lt;li>Sample SQL table data tool and API by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3081">https://github.com/spiceai/spiceai/pull/3081&lt;/a>&lt;/li>
+&lt;li>chore: Update datafusion-table-providers by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3090">https://github.com/spiceai/spiceai/pull/3090&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>hive_infer_partitions&lt;/code> to remaining object store connectors by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3086">https://github.com/spiceai/spiceai/pull/3086&lt;/a>&lt;/li>
+&lt;li>deps: Update datafusion-table-providers by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3093">https://github.com/spiceai/spiceai/pull/3093&lt;/a>&lt;/li>
+&lt;li>For local embedding models, return usage input tokens. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3095">https://github.com/spiceai/spiceai/pull/3095&lt;/a>&lt;/li>
+&lt;li>Update end_game.md with Accelerator/Connector criteria check by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/3092">https://github.com/spiceai/spiceai/pull/3092&lt;/a>&lt;/li>
+&lt;li>Update TPC-DS Q90 by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3094">https://github.com/spiceai/spiceai/pull/3094&lt;/a>&lt;/li>
+&lt;li>docs: Add RC connector criteria by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3026">https://github.com/spiceai/spiceai/pull/3026&lt;/a>&lt;/li>
+&lt;li>Update version to 0.19.1-beta by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3101">https://github.com/spiceai/spiceai/pull/3101&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.19.0-beta...v0.19.1-beta">https://github.com/spiceai/spiceai/compare/v0.19.0-beta...v0.19.1-beta&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

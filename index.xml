@@ -1,4 +1,90 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.19-beta (Oct 7, 2024)</title><link>/posts/2024/10/07/spice-v0.19-beta-oct-7-2024/</link><pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate><guid>/posts/2024/10/07/spice-v0.19-beta-oct-7-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.19.1-beta (Oct 14, 2024)</title><link>/posts/2024/10/14/spice-v0.19.1-beta-oct-14-2024/</link><pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate><guid>/posts/2024/10/14/spice-v0.19.1-beta-oct-14-2024/</guid><description>
+&lt;p>Announcing the release of Spice v0.19.1-beta 🔥&lt;/p>
+&lt;p>Spice v0.19.1 brings further performance and stability improvements to data connectors, including improved query push-down for file-based connectors (&lt;code>s3&lt;/code>, &lt;code>abfs&lt;/code>, &lt;code>file&lt;/code>, &lt;code>ftp&lt;/code>, &lt;code>sftp&lt;/code>) that use Hive-style partitioning.&lt;/p>
+&lt;h2 id="highlights-in-v0191">Highlights in v0.19.1&lt;/h2>
+&lt;p>&lt;strong>TPC-H and TPC-DS Coverage&lt;/strong>: Expanded coverage for TPC-H and TPC-DS benchmarking suites across accelerators and connectors.&lt;/p>
+&lt;p>&lt;strong>GitHub Connector Array Filter&lt;/strong>: The GitHub connector now supports filter push down for the &lt;code>array_contains&lt;/code> function in SQL queries using &lt;code>search&lt;/code> query mode.&lt;/p>
+&lt;p>&lt;strong>NSQL CLI Command&lt;/strong>: A new &lt;code>spice nsql&lt;/code> CLI command has been added to easily query datasets with natural language from the command line.&lt;/p>
+&lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
+&lt;p>None&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@peasee&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@karifabri&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@slyons&lt;/li>
+&lt;/ul>
+&lt;h2 id="dependencies">Dependencies&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>&lt;a href="(https://github.com/datafusion-contrib/datafusion-table-providers)">DataFusion Table Providers&lt;/a>:&lt;/strong> Upgraded to rev &lt;code>f22b96601891856e02a73d482cca4f6100137df8&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>release: Update helm chart for v0.19.0-beta by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3024">https://github.com/spiceai/spiceai/pull/3024&lt;/a>&lt;/li>
+&lt;li>Set fail-fast = true for benchmark test by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2997">https://github.com/spiceai/spiceai/pull/2997&lt;/a>&lt;/li>
+&lt;li>release: Update next version and ROADMAP by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3033">https://github.com/spiceai/spiceai/pull/3033&lt;/a>&lt;/li>
+&lt;li>Verify TPCH benchmark query results for Spark connector by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/2993">https://github.com/spiceai/spiceai/pull/2993&lt;/a>&lt;/li>
+&lt;li>feat: Add x-spice-user-agent header to Spice REPL by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2979">https://github.com/spiceai/spiceai/pull/2979&lt;/a>&lt;/li>
+&lt;li>Update to object store file formats documentation link by @karifabri in &lt;a href="https://github.com/spiceai/spiceai/pull/3036">https://github.com/spiceai/spiceai/pull/3036&lt;/a>&lt;/li>
+&lt;li>Use teraswitch-runners for Linux x64 workflows + builds by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3042">https://github.com/spiceai/spiceai/pull/3042&lt;/a>&lt;/li>
+&lt;li>feat: Support array contains in GitHub pushdown by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/2983">https://github.com/spiceai/spiceai/pull/2983&lt;/a>&lt;/li>
+&lt;li>Bump text-splitter from 0.16.1 to 0.17.0 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/2987">https://github.com/spiceai/spiceai/pull/2987&lt;/a>&lt;/li>
+&lt;li>Revert integration tests back to hosted runner by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3046">https://github.com/spiceai/spiceai/pull/3046&lt;/a>&lt;/li>
+&lt;li>Tune Github runner resources to allow in memory TPCDS benchmark to run by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3025">https://github.com/spiceai/spiceai/pull/3025&lt;/a>&lt;/li>
+&lt;li>fix: add winver by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3054">https://github.com/spiceai/spiceai/pull/3054&lt;/a>&lt;/li>
+&lt;li>refactor: Use is modifier for checking GitHub state filter by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3056">https://github.com/spiceai/spiceai/pull/3056&lt;/a>&lt;/li>
+&lt;li>Enable &lt;code>merge_group&lt;/code> checks for PR workflows by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3058">https://github.com/spiceai/spiceai/pull/3058&lt;/a>&lt;/li>
+&lt;li>Fix issues with merge group by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3059">https://github.com/spiceai/spiceai/pull/3059&lt;/a>&lt;/li>
+&lt;li>Validate in-memory arrow accelertion TPCDS result correctness by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3044">https://github.com/spiceai/spiceai/pull/3044&lt;/a>&lt;/li>
+&lt;li>Fix rev parsing for PR checks by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3060">https://github.com/spiceai/spiceai/pull/3060&lt;/a>&lt;/li>
+&lt;li>Use &amp;lsquo;Accept&amp;rsquo; header for &lt;code>/v1/sql/&lt;/code> and &lt;code>/v1/nsql&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3032">https://github.com/spiceai/spiceai/pull/3032&lt;/a>&lt;/li>
+&lt;li>Verify Postgres acceleration TPCDS result correctness by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3043">https://github.com/spiceai/spiceai/pull/3043&lt;/a>&lt;/li>
+&lt;li>Add NSQL CLI REPL command by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/2856">https://github.com/spiceai/spiceai/pull/2856&lt;/a>&lt;/li>
+&lt;li>Preserve query results order and add TPCH benchmark results verification for duckdb:file mode by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3034">https://github.com/spiceai/spiceai/pull/3034&lt;/a>&lt;/li>
+&lt;li>Refactor benchmark to include MySQL tpcds bench, tweaks to makefile target for generating mysql tpcds data by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/2967">https://github.com/spiceai/spiceai/pull/2967&lt;/a>&lt;/li>
+&lt;li>Support runtime parameter for &lt;code>sql_query_keep_partition_by_columns&lt;/code> &amp;amp; enable by default by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3065">https://github.com/spiceai/spiceai/pull/3065&lt;/a>&lt;/li>
+&lt;li>Document TPC-DS limitations: &lt;code>EXCEPT&lt;/code>, &lt;code>INTERSECT&lt;/code>, duplicate names by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3069">https://github.com/spiceai/spiceai/pull/3069&lt;/a>&lt;/li>
+&lt;li>Adding ABFS benchmark by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/3062">https://github.com/spiceai/spiceai/pull/3062&lt;/a>&lt;/li>
+&lt;li>Add support for GitHub app installation auth for GitHub connector by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3063">https://github.com/spiceai/spiceai/pull/3063&lt;/a>&lt;/li>
+&lt;li>docs: Document stack overflow workaround, add helper script by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3070">https://github.com/spiceai/spiceai/pull/3070&lt;/a>&lt;/li>
+&lt;li>Tune MySQL TPCDS image to allow for successful benchmark test run by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3067">https://github.com/spiceai/spiceai/pull/3067&lt;/a>&lt;/li>
+&lt;li>Automatically infer partitions for hive-style partitioned files for object store based connectors by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3073">https://github.com/spiceai/spiceai/pull/3073&lt;/a>&lt;/li>
+&lt;li>Support &lt;code>hf_token&lt;/code> from params/secrets by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3071">https://github.com/spiceai/spiceai/pull/3071&lt;/a>&lt;/li>
+&lt;li>Inherit embedding columns from source, when available. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3045">https://github.com/spiceai/spiceai/pull/3045&lt;/a>&lt;/li>
+&lt;li>Validate identifiers for component names by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3079">https://github.com/spiceai/spiceai/pull/3079&lt;/a>&lt;/li>
+&lt;li>docs: Add workaround for TPC-DS Q97 in MySQL by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3080">https://github.com/spiceai/spiceai/pull/3080&lt;/a>&lt;/li>
+&lt;li>Document TPC-DS Postgres column alias in a CASE statement limitation by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3083">https://github.com/spiceai/spiceai/pull/3083&lt;/a>&lt;/li>
+&lt;li>Update plan snapshots for TPC-H bench queries by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3088">https://github.com/spiceai/spiceai/pull/3088&lt;/a>&lt;/li>
+&lt;li>Update Datafusion crate to include recent unparsing fixes by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3089">https://github.com/spiceai/spiceai/pull/3089&lt;/a>&lt;/li>
+&lt;li>Sample SQL table data tool and API by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3081">https://github.com/spiceai/spiceai/pull/3081&lt;/a>&lt;/li>
+&lt;li>chore: Update datafusion-table-providers by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3090">https://github.com/spiceai/spiceai/pull/3090&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>hive_infer_partitions&lt;/code> to remaining object store connectors by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3086">https://github.com/spiceai/spiceai/pull/3086&lt;/a>&lt;/li>
+&lt;li>deps: Update datafusion-table-providers by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3093">https://github.com/spiceai/spiceai/pull/3093&lt;/a>&lt;/li>
+&lt;li>For local embedding models, return usage input tokens. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3095">https://github.com/spiceai/spiceai/pull/3095&lt;/a>&lt;/li>
+&lt;li>Update end_game.md with Accelerator/Connector criteria check by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/3092">https://github.com/spiceai/spiceai/pull/3092&lt;/a>&lt;/li>
+&lt;li>Update TPC-DS Q90 by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3094">https://github.com/spiceai/spiceai/pull/3094&lt;/a>&lt;/li>
+&lt;li>docs: Add RC connector criteria by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3026">https://github.com/spiceai/spiceai/pull/3026&lt;/a>&lt;/li>
+&lt;li>Update version to 0.19.1-beta by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3101">https://github.com/spiceai/spiceai/pull/3101&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.19.0-beta...v0.19.1-beta">https://github.com/spiceai/spiceai/compare/v0.19.0-beta...v0.19.1-beta&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.19-beta (Oct 7, 2024)</title><link>/posts/2024/10/07/spice-v0.19-beta-oct-7-2024/</link><pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate><guid>/posts/2024/10/07/spice-v0.19-beta-oct-7-2024/</guid><description>
 &lt;p>Announcing the release of Spice v0.19-beta 📦&lt;/p>
 &lt;p>Spice v0.19.0-beta brings performance improvements for accelerators and expanded TPC-DS coverage. A new Azure Blob Storage data connector has also been added.&lt;/p>
 &lt;h2 id="highlights-in-v0190-beta">Highlights in v0.19.0-beta&lt;/h2>
@@ -3906,88 +3992,6 @@ It becomes trickier if the team responsible for the initial training of the mach
 &lt;li>&lt;strong>Adds&lt;/strong> error reporting for AI engine crashes, where previously it would fail silently.&lt;/li>
 &lt;li>&lt;strong>Fixes&lt;/strong> the dashboard pods list from &amp;ldquo;jumping&amp;rdquo; around due to being unsorted.&lt;/li>
 &lt;li>&lt;strong>Fixes&lt;/strong> rare cases where categorical data might be sent to the AI engine in the wrong format.&lt;/li>
-&lt;/ul>
-&lt;h2 id="resources">Resources&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/spiceai/quickstarts/blob/trunk/README.md">Quickstarts&lt;/a> and &lt;a href="https://github.com/spiceai/samples/blob/trunk/README.md">Samples&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="community">Community&lt;/h2>
-&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved. We will also be starting a community call series soon!&lt;/p>
-&lt;ul>
-&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
-&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
-&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
-&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: Spice.ai v0.3-alpha is now available</title><link>/posts/2021/10/26/spice.ai-v0.3-alpha-is-now-available/</link><pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/2021/10/26/spice.ai-v0.3-alpha-is-now-available/</guid><description>
-&lt;p>We are excited to announce the release of Spice.ai v0.3-alpha! 🎉&lt;/p>
-&lt;p>This release adds support for ingestion, automatic encoding, and training of categorical data, enabling more use-cases and datasets beyond just numerical measurements. For example, perhaps you want to learn from data that includes a category of t-shirt sizes, with discrete values, such as small, medium, and large. The v0.3 engine now supports this and automatically encodes the categorical string values into numerical values that the AI engine can use. Also included is a preview of data visualizations in the dashboard, which is helpful for developers as they author Spicepods and dataspaces.&lt;/p>
-&lt;div style="display: flex; justify-content: center;">
-&lt;div style="display: flex; flex-direction: column;">
-&lt;img style="max-width: 500px;" src="https://user-images.githubusercontent.com/80174/138641533-612d1541-a90e-4279-b4f9-2872e02619d6.png" />
-&lt;em style="text-align: center">A screenshot of the data visualization preview&lt;/em>
-&lt;/div>
-&lt;/div>
-&lt;p>A special acknowledgment to &lt;a href="https://github.com/sboorlagadda">@sboorlagadda&lt;/a>, who submitted the first Spice.ai feature contribution from the community ever! He added the ability to list pods from the CLI with the new &lt;code>spice pods list&lt;/code> command. Thank you, &lt;a href="https://github.com/sboorlagadda">@sboorlagadda&lt;/a>!!!&lt;/p>
-&lt;div style="display: flex; justify-content: center;">
-&lt;div style="display: flex; flex-direction: column;">
-&lt;img style="max-width: 500px;" src="https://user-images.githubusercontent.com/80174/138642457-a8f254ce-6b4f-4836-b921-f0eb0feadeab.png" />
-&lt;em style="text-align: center">A screenshot of the new spice pods list command and output.&lt;/em>
-&lt;/div>
-&lt;/div>
-&lt;p>If you are new to Spice.ai, check out the &lt;a href="https://docs.spiceai.org/getting-started/">getting started guide&lt;/a> and star &lt;a href="https://github.com/spiceai/spiceai">spiceai/spiceai&lt;/a> on GitHub.&lt;/p>
-&lt;h2 id="highlights-in-v03-alpha">Highlights in v0.3-alpha&lt;/h2>
-&lt;h3 id="categorical-data">Categorical data&lt;/h3>
-&lt;p>In v0.1, the runtime and AI engine only supported ingesting numerical data. In v0.2, tagged data was accepted and automatically encoded into fields available for learning. In this release, v0.3, categorical data can now also be ingested and automatically encoded into fields available for learning. This is a &lt;em>breaking change&lt;/em> with the format of the manifest changing separating numerical measurements and categorical data.&lt;/p>
-&lt;p>Pre-v0.3, the manifest author specified numerical data using the &lt;code>fields&lt;/code> node.&lt;/p>
-&lt;p>In v0.3, numerical data is now specified under &lt;code>measurements&lt;/code> and categorical data under &lt;code>categories&lt;/code>. E.g.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">dataspaces&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">event&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">stream&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">measurements&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">duration&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">selector&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">length_of_time&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">fill&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">none&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">guest_count&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">selector&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">num_guests&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">fill&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">none&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">categories&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">event_type&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">values&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">dinner&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">party&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">target_audience&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">values&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">employees&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">investors&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">tags&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">tagA&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">tagB&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="data-visualizations-preview">Data visualizations preview&lt;/h3>
-&lt;p>A top piece of community feedback was the ability to visualize data. After first running Spice.ai, we&amp;rsquo;d often hear from developers, &amp;ldquo;how do I see the data?&amp;rdquo;. A preview of data visualizations is now included in the dashboard on the pod page.&lt;/p>
-&lt;h3 id="listing-pods">Listing pods&lt;/h3>
-&lt;p>Once the Spice.ai runtime has started, you can view the loaded pods on the dashboard and fetch them via API call &lt;a href="http://localhost:8000/api/v0.1/pods">localhost:8000/api/v0.1/pods&lt;/a>. To make it even easier, we&amp;rsquo;ve added the ability to list them via the CLI with the new &lt;code>spice pods list&lt;/code> command, which shows the list of pods and their manifest paths.&lt;/p>
-&lt;h3 id="coinbase-data-connector">Coinbase data connector&lt;/h3>
-&lt;p>A new &lt;a href="https://github.com/spiceai/data-components-contrib/blob/trunk/dataconnectors/coinbase/README.md">Coinbase data connector&lt;/a> is included in v0.3, enabling the streaming of live market ticker prices from Coinbase Pro. Enable it by specifying the &lt;code>coinbase&lt;/code> data connector and providing a list of Coinbase Pro product ids. E.g. &amp;ldquo;BTC-USD&amp;rdquo;. A new sample which demonstrates is also available with its associated Spicepod available from the spicerack.org registry. Get it with &lt;code>spice add samples/trader&lt;/code>&lt;/p>
-&lt;h3 id="tweet-recommendation-quickstart">Tweet Recommendation Quickstart&lt;/h3>
-&lt;p>A new &lt;a href="https://github.com/spiceai/quickstarts/blob/trunk/tweet-recommendation/README.md">Tweet Recommendation Quickstart&lt;/a> has been added. Given past tweet activity and metrics of a given account, this app can recommend when to tweet, comment, or retweet to maximize for like count, interaction rates, and outreach of said given Twitter account.&lt;/p>
-&lt;h3 id="trader-sample">Trader Sample&lt;/h3>
-&lt;p>A new &lt;a href="https://github.com/spiceai/samples/blob/trunk/trader/README.md">Trader Sample&lt;/a> has been added in addition to the Trader Quickstart. The sample uses the new &lt;a href="https://github.com/spiceai/data-components-contrib/blob/trunk/dataconnectors/coinbase/README.md">Coinbase data connector&lt;/a> to stream live Coinbase Pro ticker data for learning.&lt;/p>
-&lt;h2 id="new-in-this-release">New in this release&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Adds&lt;/strong> support for ingesting, encoding, and training on categorical data. v0.3 uses one-hot-encoding.&lt;/li>
-&lt;li>&lt;strong>Changes&lt;/strong> Spicepod manifest fields node to &lt;a href="docs.spiceai.org/reference/pod/#dataspacesmeasurements">measurements&lt;/a> and add the &lt;a href="docs.spiceai.org/reference/pod/#dataspacescategories">categories&lt;/a> node.&lt;/li>
-&lt;li>&lt;strong>Adds&lt;/strong> the ability to select a field from the source data and map it to a different field name in the dataspace. See &lt;a href="docs.spiceai.org/reference/pod/#dataspacesmeasurementsselector">an example for measurements&lt;/a> in docs.&lt;/li>
-&lt;li>&lt;strong>Adds&lt;/strong> support for JSON content type when fetching from the &lt;code>/observations&lt;/code> API. Previously, only CSV was supported.&lt;/li>
-&lt;li>&lt;strong>Adds&lt;/strong> a preview version of data visualizations to the dashboard. The grid has several limitations, one of which is it currently cannot be resized.&lt;/li>
-&lt;li>&lt;strong>Adds&lt;/strong> the ability to select which learning algorithm to use via the CLI, the API, and specified in the Spicepod manifest. Possible choices are currently &amp;ldquo;vpg&amp;rdquo;, Vanilla Policy Gradient and &amp;ldquo;dql&amp;rdquo;, Deep Q-Learning. Shout out to &lt;a href="https://github.com/corentin-pro">@corentin-pro&lt;/a>, who added this feature on his second day on the team!&lt;/li>
-&lt;li>&lt;strong>Adds&lt;/strong> the ability to list loaded pods with the CLI command spice pods list.&lt;/li>
-&lt;li>&lt;strong>Adds&lt;/strong> a new &lt;a href="https://github.com/spiceai/data-components-contrib/blob/trunk/dataconnectors/coinbase/README.md">coinbase data connector&lt;/a> for Coinbase Pro market prices.&lt;/li>
-&lt;li>&lt;strong>Adds&lt;/strong> a new &lt;a href="https://github.com/spiceai/quickstarts/blob/trunk/tweet-recommendation/README.md">Tweet Recommendation Quickstart&lt;/a>.&lt;/li>
-&lt;li>&lt;strong>Adds&lt;/strong> a new &lt;a href="https://github.com/spiceai/samples/blob/trunk/trader/README.md">Trader Sample&lt;/a>.&lt;/li>
-&lt;li>&lt;strong>Fixes&lt;/strong> bug where the &lt;code>/observations&lt;/code> endpoint was not providing fully qualified field names.&lt;/li>
-&lt;li>&lt;strong>Fixes&lt;/strong> issue where debugging messages were printed when using spice add.&lt;/li>
 &lt;/ul>
 &lt;h2 id="resources">Resources&lt;/h2>
 &lt;ul>
