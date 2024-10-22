@@ -1,4 +1,82 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Data Accelerator</title><link>/tags/data-accelerator/</link><description>Recent content in Data Accelerator on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 02 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/data-accelerator/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.17.3-beta (Sep 2, 2024)</title><link>/posts/2024/09/02/spice-v0.17.3-beta-sep-2-2024/</link><pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate><guid>/posts/2024/09/02/spice-v0.17.3-beta-sep-2-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Data Accelerator</title><link>/tags/data-accelerator/</link><description>Recent content in Data Accelerator on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 21 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/data-accelerator/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.19.2-beta (Oct 21, 2024)</title><link>/posts/2024/10/21/spice-v0.19.2-beta-oct-21-2024/</link><pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate><guid>/posts/2024/10/21/spice-v0.19.2-beta-oct-21-2024/</guid><description>
+&lt;p>Announcing the release of Spice v0.19.2-beta ⚡&lt;/p>
+&lt;p>Spice v0.19.2-beta continues to improve performance and stability of data connectors and data accelerators, further expands TPC-DS coverage, and includes several bug fixes.&lt;/p>
+&lt;h2 id="highlights-in-v0192">Highlights in v0.19.2&lt;/h2>
+&lt;p>&lt;strong>DataFusion Fixes&lt;/strong>: Resolved bugs in DataFusion and DataFusion Table Providers, improving TPC-DS query support and correctness.&lt;/p>
+&lt;p>&lt;strong>TPC-DS Snapshots&lt;/strong>: Extended support for TPC-DS benchmarks with added snapshot tests for validating query plans and result accuracy.&lt;/p>
+&lt;p>&lt;strong>PostgreSQL Accelerator Beta&lt;/strong>: Postgres Data Accelerator has been promoted to &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/criteria/accelerators/beta.md">Beta Quality&lt;/a>&lt;/p>
+&lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
+&lt;ul>
+&lt;li>The &lt;code>hive_infer_partitions&lt;/code> parameter been changed to &lt;code>hive_partitioning_enabled&lt;/code>, now defaults to &lt;code>false&lt;/code> and must be explicitly enabled.&lt;/li>
+&lt;/ul>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@slyons&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@dependabot&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;/ul>
+&lt;h2 id="dependencies">Dependencies&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>&lt;a href="(https://github.com/datafusion-contrib/datafusion-table-providers)">DataFusion Table Providers&lt;/a>:&lt;/strong> Upgraded to rev &lt;code>2bcf481b4abe9d0bd6bb2479ce49020df66ff97f&lt;/code>.&lt;/li>
+&lt;li>&lt;strong>&lt;a href="https://github.com/duckdb/duckdb-rs">duckdb-rs&lt;/a>:&lt;/strong> Upgraded from &lt;a href="https://github.com/spiceai/spiceai/pull/3161">1.0.0 to 1.1.1&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Update Helm chart for v0.19.1-beta by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3106">https://github.com/spiceai/spiceai/pull/3106&lt;/a>&lt;/li>
+&lt;li>Add more TPC-DS snapshots for Postgres acceleration by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3107">https://github.com/spiceai/spiceai/pull/3107&lt;/a>&lt;/li>
+&lt;li>Bumping version to 1.0.0-rc.1 by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/3109">https://github.com/spiceai/spiceai/pull/3109&lt;/a>&lt;/li>
+&lt;li>New table sampling methods: sample_distinct_columns, random_sample, top_n_sample by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3108">https://github.com/spiceai/spiceai/pull/3108&lt;/a>&lt;/li>
+&lt;li>Add TPCDS snapshot tests for file-based and in-mem duckdb by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3115">https://github.com/spiceai/spiceai/pull/3115&lt;/a>&lt;/li>
+&lt;li>Add Postgres acceleration E2E test for MySQL by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3110">https://github.com/spiceai/spiceai/pull/3110&lt;/a>&lt;/li>
+&lt;li>Update datafusion logical plan to avoid wrong group_by columns in aggregation by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3111">https://github.com/spiceai/spiceai/pull/3111&lt;/a>&lt;/li>
+&lt;li>Warn if user tries to embed column that does not exist by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3120">https://github.com/spiceai/spiceai/pull/3120&lt;/a>&lt;/li>
+&lt;li>Changes for Rust version upgrade by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3134">https://github.com/spiceai/spiceai/pull/3134&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>unnest&lt;/code> support for federated plans by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3133">https://github.com/spiceai/spiceai/pull/3133&lt;/a>&lt;/li>
+&lt;li>Don&amp;rsquo;t &lt;code>.clone()&lt;/code> unnecessarily by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3128">https://github.com/spiceai/spiceai/pull/3128&lt;/a>&lt;/li>
+&lt;li>Fix Flight &lt;code>get_schema&lt;/code> to construct logical plan and return that schema. by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3131">https://github.com/spiceai/spiceai/pull/3131&lt;/a>&lt;/li>
+&lt;li>Bump clap from 4.5.19 to 4.5.20 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/3099">https://github.com/spiceai/spiceai/pull/3099&lt;/a>&lt;/li>
+&lt;li>Add GitHub Workflow to build &lt;code>spice-postgres-tpcds-bench&lt;/code> image by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3140">https://github.com/spiceai/spiceai/pull/3140&lt;/a>&lt;/li>
+&lt;li>test: Add basic MySQL integration test by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3143">https://github.com/spiceai/spiceai/pull/3143&lt;/a>&lt;/li>
+&lt;li>Bump datafusion-federation and datafusion-table-providers crates by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3148">https://github.com/spiceai/spiceai/pull/3148&lt;/a>&lt;/li>
+&lt;li>docs: Add MySQL limitation for division by zero by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3144">https://github.com/spiceai/spiceai/pull/3144&lt;/a>&lt;/li>
+&lt;li>fix: Dataset refresh by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3147">https://github.com/spiceai/spiceai/pull/3147&lt;/a>&lt;/li>
+&lt;li>Update arrow, duckdb, postgres accelerator tpcds snapshots by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3145">https://github.com/spiceai/spiceai/pull/3145&lt;/a>&lt;/li>
+&lt;li>Add TPC-DS benchmarks for Postgres data connector by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3149">https://github.com/spiceai/spiceai/pull/3149&lt;/a>&lt;/li>
+&lt;li>Update E2E test ci to include tests for accelerating Postgres into accelerators by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3137">https://github.com/spiceai/spiceai/pull/3137&lt;/a>&lt;/li>
+&lt;li>Add TPCDS Benchmark test and snapshots for S3 by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3152">https://github.com/spiceai/spiceai/pull/3152&lt;/a>&lt;/li>
+&lt;li>[cli] Include 200 in acceptable response codes for &lt;code>doRuntimeApiRequest&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3157">https://github.com/spiceai/spiceai/pull/3157&lt;/a>&lt;/li>
+&lt;li>Use &lt;code>-build.{GIT_SHA}&lt;/code> for unreleased versions by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3159">https://github.com/spiceai/spiceai/pull/3159&lt;/a>&lt;/li>
+&lt;li>Upgrade to Rust 1.82 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3158">https://github.com/spiceai/spiceai/pull/3158&lt;/a>&lt;/li>
+&lt;li>Disable &lt;code>hive_infer_partitions&lt;/code> by default by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3160">https://github.com/spiceai/spiceai/pull/3160&lt;/a>&lt;/li>
+&lt;li>Upgrade to DuckDB 1.1.1 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3161">https://github.com/spiceai/spiceai/pull/3161&lt;/a>&lt;/li>
+&lt;li>feat: Add MySQL TPCDS results snapshots and exclude workarounds by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3165">https://github.com/spiceai/spiceai/pull/3165&lt;/a>&lt;/li>
+&lt;li>Fix task_history output for sql, add output to table_schema &amp;amp; list_datasets tool by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3166">https://github.com/spiceai/spiceai/pull/3166&lt;/a>&lt;/li>
+&lt;li>feat: Add ClickBench queries as separate files by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3169">https://github.com/spiceai/spiceai/pull/3169&lt;/a>&lt;/li>
+&lt;li>Calculate embeddings in a separate blocking thread by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3170">https://github.com/spiceai/spiceai/pull/3170&lt;/a>&lt;/li>
+&lt;li>docs: Update ROADMAP.md and release criterias by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3124">https://github.com/spiceai/spiceai/pull/3124&lt;/a>&lt;/li>
+&lt;li>Handle OpenTelemetry errors by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3173">https://github.com/spiceai/spiceai/pull/3173&lt;/a>&lt;/li>
+&lt;li>Update version to 0.19.2-beta by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3182">https://github.com/spiceai/spiceai/pull/3182&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.19.1-beta...v0.19.2-beta">https://github.com/spiceai/spiceai/compare/v0.19.1-beta...v0.19.2-beta&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.17.3-beta (Sep 2, 2024)</title><link>/posts/2024/09/02/spice-v0.17.3-beta-sep-2-2024/</link><pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate><guid>/posts/2024/09/02/spice-v0.17.3-beta-sep-2-2024/</guid><description>
 &lt;p>Announcing the release of Spice v0.17.3-beta.&lt;/p>
 &lt;p>The v0.17.3-beta release further improves data accelerator robustness and adds a new &lt;code>github&lt;/code> data connector that makes accelerating GitHub Issues, Pull Requests, Commits, and Blobs easy.&lt;/p>
 &lt;h2 id="highlights-in-v0173-beta">Highlights in v0.17.3-beta&lt;/h2>
