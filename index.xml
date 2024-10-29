@@ -1,4 +1,89 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.19.2-beta (Oct 21, 2024)</title><link>/posts/2024/10/21/spice-v0.19.2-beta-oct-21-2024/</link><pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate><guid>/posts/2024/10/21/spice-v0.19.2-beta-oct-21-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.19.3-beta (Oct 28, 2024)</title><link>/posts/2024/10/28/spice-v0.19.3-beta-oct-28-2024/</link><pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate><guid>/posts/2024/10/28/spice-v0.19.3-beta-oct-28-2024/</guid><description>
+&lt;p>Announcing the release of Spice v0.19.3-beta 📈&lt;/p>
+&lt;p>Spice v0.19.3-beta improves the performance and stability of data connectors and accelerators, including faster queries across multiple federated sources by optimizing how filters are applied. Anthropic has also been added as a LLM model provider.&lt;/p>
+&lt;h2 id="highlights-in-v0193">Highlights in v0.19.3&lt;/h2>
+&lt;p>&lt;strong>DataFusion Fixes&lt;/strong>: Resolved bugs in DataFusion and DataFusion Table Providers, expanding TPC-DS coverage and correctness.&lt;/p>
+&lt;p>&lt;strong>GitHub Data Connector Beta Milestone:&lt;/strong> The &lt;a href="https://docs.spiceai.org/components/data-connectors/github">GitHub Data Connector&lt;/a> has graduated to Beta after extensive testing, stability, and performance improvements.&lt;/p>
+&lt;p>&lt;strong>Anthropic Models Provider:&lt;/strong> &lt;a href="https://docs.spiceai.org/components/models/anthropic">Anthropic&lt;/a> has been added as an LLM provider, including support for streaming.&lt;/p>
+&lt;p>Example &lt;code>spicepod.yml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">models&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">anthropic:claude-3-5-sonnet-20240620&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">claude_3_5_sonnet&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">anthropic_api_key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">${ secrets:SPICE_ANTHROPIC_API_KEY }&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
+&lt;p>None.&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@nlamirault&lt;/li>
+&lt;li>@barracudarin&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@slyons&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-contributors">New Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@nlamirault made their first contribution in &lt;a href="https://github.com/spiceai/spiceai/pull/3207">https://github.com/spiceai/spiceai/pull/3207&lt;/a>&lt;/li>
+&lt;li>@barracudarin made their first contribution in &lt;a href="https://github.com/spiceai/spiceai/pull/3228">https://github.com/spiceai/spiceai/pull/3228&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Make Anthropic OpenAI compatible. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3087">https://github.com/spiceai/spiceai/pull/3087&lt;/a>&lt;/li>
+&lt;li>Update spicepod.schema.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/3200">https://github.com/spiceai/spiceai/pull/3200&lt;/a>&lt;/li>
+&lt;li>Bump version to 1.0.0-rc.1 by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3202">https://github.com/spiceai/spiceai/pull/3202&lt;/a>&lt;/li>
+&lt;li>Fix clickhouse schema inference for non-default database by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3201">https://github.com/spiceai/spiceai/pull/3201&lt;/a>&lt;/li>
+&lt;li>Update endgame template by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3198">https://github.com/spiceai/spiceai/pull/3198&lt;/a>&lt;/li>
+&lt;li>Upgrade dependencies by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3197">https://github.com/spiceai/spiceai/pull/3197&lt;/a>&lt;/li>
+&lt;li>fix: dataset refresh defaults properties to None by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3205">https://github.com/spiceai/spiceai/pull/3205&lt;/a>&lt;/li>
+&lt;li>Upgrade OTEL to v0.26 and make seconds based metrics reported precisely by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3203">https://github.com/spiceai/spiceai/pull/3203&lt;/a>&lt;/li>
+&lt;li>use &lt;code>text_embedding_inference::Infer&lt;/code> for more complete embedding solution by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3199">https://github.com/spiceai/spiceai/pull/3199&lt;/a>&lt;/li>
+&lt;li>Add S3 parquet file - arrow accelerator e2e test by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3154">https://github.com/spiceai/spiceai/pull/3154&lt;/a>&lt;/li>
+&lt;li>feat: Add script to setup clickbench on mysql by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3176">https://github.com/spiceai/spiceai/pull/3176&lt;/a>&lt;/li>
+&lt;li>Update helm chart version to v0.19.2 by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3210">https://github.com/spiceai/spiceai/pull/3210&lt;/a>&lt;/li>
+&lt;li>Add sample dataset option in &lt;code>v1/nsql&lt;/code>. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3105">https://github.com/spiceai/spiceai/pull/3105&lt;/a>&lt;/li>
+&lt;li>Split spiced_docker build across architectures by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3206">https://github.com/spiceai/spiceai/pull/3206&lt;/a>&lt;/li>
+&lt;li>feat(helm): do not install demo dataset by default by @nlamirault in &lt;a href="https://github.com/spiceai/spiceai/pull/3207">https://github.com/spiceai/spiceai/pull/3207&lt;/a>&lt;/li>
+&lt;li>Split integration test across build/run steps by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3215">https://github.com/spiceai/spiceai/pull/3215&lt;/a>&lt;/li>
+&lt;li>feat(helm): Refactoring Kubernetes labels by @nlamirault in &lt;a href="https://github.com/spiceai/spiceai/pull/3208">https://github.com/spiceai/spiceai/pull/3208&lt;/a>&lt;/li>
+&lt;li>Define &amp;rsquo;tool_recursion_limit&amp;rsquo; for LLMs, and limit internal tool calling recursion. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3214">https://github.com/spiceai/spiceai/pull/3214&lt;/a>&lt;/li>
+&lt;li>Improve filters pushdown for federated queries by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3183">https://github.com/spiceai/spiceai/pull/3183&lt;/a>&lt;/li>
+&lt;li>Implement native schema inference for PostgreSQL by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3209">https://github.com/spiceai/spiceai/pull/3209&lt;/a>&lt;/li>
+&lt;li>docs: Update release criteria by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3219">https://github.com/spiceai/spiceai/pull/3219&lt;/a>&lt;/li>
+&lt;li>Run SQLite acceleration TPC-DS tests using smaller scale by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3227">https://github.com/spiceai/spiceai/pull/3227&lt;/a>&lt;/li>
+&lt;li>bind the serviceAccount if a name is given or if we&amp;rsquo;re creating one by @barracudarin in &lt;a href="https://github.com/spiceai/spiceai/pull/3228">https://github.com/spiceai/spiceai/pull/3228&lt;/a>&lt;/li>
+&lt;li>Only emit channel send error log when its not a closed channel error by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3230">https://github.com/spiceai/spiceai/pull/3230&lt;/a>&lt;/li>
+&lt;li>Enable Parquet Exec filter pushdown in Spice by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3216">https://github.com/spiceai/spiceai/pull/3216&lt;/a>&lt;/li>
+&lt;li>Add snapshots for SQLite TPC-DS benchmark (file mode) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3234">https://github.com/spiceai/spiceai/pull/3234&lt;/a>&lt;/li>
+&lt;li>docs: Add SDK release checks to endgame by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3256">https://github.com/spiceai/spiceai/pull/3256&lt;/a>&lt;/li>
+&lt;li>Implement &lt;code>localpod&lt;/code> Data Connector by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3249">https://github.com/spiceai/spiceai/pull/3249&lt;/a>&lt;/li>
+&lt;li>Revert &amp;ldquo;Enable Parquet Exec filter pushdown in Spice (#3216)&amp;rdquo; by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3244">https://github.com/spiceai/spiceai/pull/3244&lt;/a>&lt;/li>
+&lt;li>refactor: Use existing action for detecting changes by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3255">https://github.com/spiceai/spiceai/pull/3255&lt;/a>&lt;/li>
+&lt;li>feat: Add GitHub integration test by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3226">https://github.com/spiceai/spiceai/pull/3226&lt;/a>&lt;/li>
+&lt;li>Add get_readiness tool to retrieve status of all registered components by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/3035">https://github.com/spiceai/spiceai/pull/3035&lt;/a>&lt;/li>
+&lt;li>Improve CLI error output when REPL can&amp;rsquo;t connect to the Flight endpoint by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/3188">https://github.com/spiceai/spiceai/pull/3188&lt;/a>&lt;/li>
+&lt;li>Fixing FTP link in Endgame by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/3267">https://github.com/spiceai/spiceai/pull/3267&lt;/a>&lt;/li>
+&lt;li>Update version to 0.19.3-beta by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3269">https://github.com/spiceai/spiceai/pull/3269&lt;/a>&lt;/li>
+&lt;li>add service type and annotation customizations in &lt;a href="https://github.com/spiceai/spiceai/pull/3268">https://github.com/spiceai/spiceai/pull/3268&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.19.2-beta...v0.19.3-beta">https://github.com/spiceai/spiceai/compare/v0.19.2-beta...v0.19.3-beta&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.19.2-beta (Oct 21, 2024)</title><link>/posts/2024/10/21/spice-v0.19.2-beta-oct-21-2024/</link><pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate><guid>/posts/2024/10/21/spice-v0.19.2-beta-oct-21-2024/</guid><description>
 &lt;p>Announcing the release of Spice v0.19.2-beta ⚡&lt;/p>
 &lt;p>Spice v0.19.2-beta continues to improve performance and stability of data connectors and data accelerators, further expands TPC-DS coverage, and includes several bug fixes.&lt;/p>
 &lt;h2 id="highlights-in-v0192">Highlights in v0.19.2&lt;/h2>
@@ -3991,25 +4076,6 @@ It becomes trickier if the team responsible for the initial training of the mach
 &lt;p>Treating Spicepods as packages and enabling their sharing and distribution through spicerack.org will help developers share their &amp;ldquo;restaurant guides&amp;rdquo; and build upon each other&amp;rsquo;s work, much like they do with npmjs.org or pypi.org. In this way, developers can together build better and more intelligent applications.&lt;/p>
 &lt;p>In the next post, we&amp;rsquo;ll dive deeper into authoring a Spicepod manifest to create an intelligent application. Follow &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a> on Twitter to get an update when we post.&lt;/p>
 &lt;p>If you haven&amp;rsquo;t already, read the next the first post in the series, &lt;a href="https://blog.spiceai.org/posts/2021/11/05/making-apps-that-learn-and-adapt/">Making Apps that Learn and Adapt&lt;/a>.&lt;/p>
-&lt;h3 id="learn-more-and-contribute">Learn more and contribute&lt;/h3>
-&lt;p>Building intelligent apps that leverage AI is still way too hard, even for advanced developers. Our mission is to make this as easy as creating a modern web page. If the vision resonates with you, join us!&lt;/p>
-&lt;p>Our &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md">Spice.ai Roadmap&lt;/a> is public, and now that we have launched, the project and work are open for collaboration.&lt;/p>
-&lt;p>If you are interested in partnering, we&amp;rsquo;d love to talk. Try out &lt;a href="https://spiceai.org">Spice.ai&lt;/a>, &lt;a href="mailto:hey@spice.ai">email us&lt;/a> &amp;ldquo;hey,&amp;rdquo; get in touch on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, or reach out on &lt;a href="https://twitter.com/spice_ai">Twitter&lt;/a>.&lt;/p>
-&lt;p>We are just getting started! 🚀&lt;/p>
-&lt;p>Luke&lt;/p></description></item><item><title>Posts: Making Apps That Learn And Adapt</title><link>/posts/2021/11/05/making-apps-that-learn-and-adapt/</link><pubDate>Fri, 05 Nov 2021 00:00:00 +0000</pubDate><guid>/posts/2021/11/05/making-apps-that-learn-and-adapt/</guid><description>
-&lt;p>In the &lt;a href="https://blog.spiceai.org/posts/2021/09/07/introducing-spice.ai-open-source-time-series-ai-for-developers/">Spice.ai announcement blog post&lt;/a>, we shared some of the inspiration for the project stemming from challenges in applying and integrating AI/ML into a neurofeedback application. Building upon those ideas, in this post, we explore the shift in approach from a focus of data science and machine learning (ML) to apps that learn and adapt.&lt;/p>
-&lt;p>As a developer, I&amp;rsquo;ve followed the AI/ML space with keen interest and been impressed with the advances and announcements that only seem to be increasing. &lt;a href="https://stateof.ai">stateof.ai&lt;/a> recently published its 2021 report, and once again, it&amp;rsquo;s been another great year of progress. At the same time, it&amp;rsquo;s still more challenging than ever for mainstream developers to integrate AI/ML into their applications. For most developers, where AI/ML is not their full-time job, and without the support of a dedicated ML team, creating and developing an intelligent application that learns and adapts is still too hard.&lt;/p>
-&lt;p>Most solutions on the market, even those that claim they are for developers, focus on helping make ML easier instead of making it easier to build applications. These solutions have been great for advancing ML itself but have not helped developers leverage ML in their apps to make them intelligent. Even when a developer successfully integrates ML into an application, it might make that application smart, but often does not help the app continue to learn and adapt over time.&lt;/p>
-&lt;p>Traditionally, the industry has viewed AI/ML as separate from the application. A pipeline, service, or team is provided with data, which trains on that data, and can then provide answers or insights. These solutions are often created with a waterfall-like approach, gathering and defining requirements, designing, implementing, testing, and deploying. Sometimes this process can take months or even years.&lt;/p>
-&lt;p>With Spice.ai, we propose a new approach to building applications. By bringing AI/ML alongside your compute and data and incorporating it as part of your application, the app can incrementally adopt recommendations from the AI engine and in addition the AI engine can learn from the application&amp;rsquo;s data and actions. This approach shifts from waterfall-like to agile-like, where the AI engine ingests streams of application and external data, along with the results of the application&amp;rsquo;s actions, to continuously learn. This virtuous feedback cycle from the app to the AI engine and back again enables the app to get smarter and adapt over time. In this approach, building your application &lt;em>is&lt;/em> developing the ML.&lt;/p>
-&lt;p>Being part of the application is not just conceptual. Development teams deploy the Spice.ai runtime and AI engine with the application as a sidecar or microservice, enabling the app services and runtime to work together and for data to be kept application local. A developer teaches the AI engine how to learn by defining application goals and rewards for actions the application takes. The AI Engine observes the application and the consequences of its actions, which feeds into its experience. As the AI engine learns, the application can adapt.&lt;/p>
-&lt;div style="display: flex; justify-content: center; padding: 5px;">
-&lt;div style="display: flex; flex-direction: column;">
-&lt;img style="max-width: 400px;" src="https://user-images.githubusercontent.com/80174/140449760-97974f3c-8a78-4ea2-9ec5-843dc3cff5b6.png" />
-&lt;/div>
-&lt;/div>
-&lt;p>As developers shift from thinking about disparate applications and ML to building applications where AI that learns and adapts is integrated as a core part of the application logic, a new class of intelligent applications will emerge. And as technical talent becomes even more scarce, applications built this way will be necessary, not just to be competitive but to be even built at all.&lt;/p>
-&lt;p>In the next post, I&amp;rsquo;ll discuss the concept of Spicepods, bundles of configuration that describes how the application should learn, and how the Spice.ai runtime hosts and uses them to help developers make applications that learn.&lt;/p>
 &lt;h3 id="learn-more-and-contribute">Learn more and contribute&lt;/h3>
 &lt;p>Building intelligent apps that leverage AI is still way too hard, even for advanced developers. Our mission is to make this as easy as creating a modern web page. If the vision resonates with you, join us!&lt;/p>
 &lt;p>Our &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md">Spice.ai Roadmap&lt;/a> is public, and now that we have launched, the project and work are open for collaboration.&lt;/p>

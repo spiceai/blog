@@ -1,4 +1,89 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Github</title><link>/tags/github/</link><description>Recent content in Github on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 14 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.19.1-beta (Oct 14, 2024)</title><link>/posts/2024/10/14/spice-v0.19.1-beta-oct-14-2024/</link><pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate><guid>/posts/2024/10/14/spice-v0.19.1-beta-oct-14-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Github</title><link>/tags/github/</link><description>Recent content in Github on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 28 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.19.3-beta (Oct 28, 2024)</title><link>/posts/2024/10/28/spice-v0.19.3-beta-oct-28-2024/</link><pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate><guid>/posts/2024/10/28/spice-v0.19.3-beta-oct-28-2024/</guid><description>
+&lt;p>Announcing the release of Spice v0.19.3-beta 📈&lt;/p>
+&lt;p>Spice v0.19.3-beta improves the performance and stability of data connectors and accelerators, including faster queries across multiple federated sources by optimizing how filters are applied. Anthropic has also been added as a LLM model provider.&lt;/p>
+&lt;h2 id="highlights-in-v0193">Highlights in v0.19.3&lt;/h2>
+&lt;p>&lt;strong>DataFusion Fixes&lt;/strong>: Resolved bugs in DataFusion and DataFusion Table Providers, expanding TPC-DS coverage and correctness.&lt;/p>
+&lt;p>&lt;strong>GitHub Data Connector Beta Milestone:&lt;/strong> The &lt;a href="https://docs.spiceai.org/components/data-connectors/github">GitHub Data Connector&lt;/a> has graduated to Beta after extensive testing, stability, and performance improvements.&lt;/p>
+&lt;p>&lt;strong>Anthropic Models Provider:&lt;/strong> &lt;a href="https://docs.spiceai.org/components/models/anthropic">Anthropic&lt;/a> has been added as an LLM provider, including support for streaming.&lt;/p>
+&lt;p>Example &lt;code>spicepod.yml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">models&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">anthropic:claude-3-5-sonnet-20240620&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">claude_3_5_sonnet&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">anthropic_api_key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">${ secrets:SPICE_ANTHROPIC_API_KEY }&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
+&lt;p>None.&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@nlamirault&lt;/li>
+&lt;li>@barracudarin&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@slyons&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-contributors">New Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@nlamirault made their first contribution in &lt;a href="https://github.com/spiceai/spiceai/pull/3207">https://github.com/spiceai/spiceai/pull/3207&lt;/a>&lt;/li>
+&lt;li>@barracudarin made their first contribution in &lt;a href="https://github.com/spiceai/spiceai/pull/3228">https://github.com/spiceai/spiceai/pull/3228&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Make Anthropic OpenAI compatible. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3087">https://github.com/spiceai/spiceai/pull/3087&lt;/a>&lt;/li>
+&lt;li>Update spicepod.schema.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/3200">https://github.com/spiceai/spiceai/pull/3200&lt;/a>&lt;/li>
+&lt;li>Bump version to 1.0.0-rc.1 by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3202">https://github.com/spiceai/spiceai/pull/3202&lt;/a>&lt;/li>
+&lt;li>Fix clickhouse schema inference for non-default database by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3201">https://github.com/spiceai/spiceai/pull/3201&lt;/a>&lt;/li>
+&lt;li>Update endgame template by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3198">https://github.com/spiceai/spiceai/pull/3198&lt;/a>&lt;/li>
+&lt;li>Upgrade dependencies by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3197">https://github.com/spiceai/spiceai/pull/3197&lt;/a>&lt;/li>
+&lt;li>fix: dataset refresh defaults properties to None by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3205">https://github.com/spiceai/spiceai/pull/3205&lt;/a>&lt;/li>
+&lt;li>Upgrade OTEL to v0.26 and make seconds based metrics reported precisely by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3203">https://github.com/spiceai/spiceai/pull/3203&lt;/a>&lt;/li>
+&lt;li>use &lt;code>text_embedding_inference::Infer&lt;/code> for more complete embedding solution by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3199">https://github.com/spiceai/spiceai/pull/3199&lt;/a>&lt;/li>
+&lt;li>Add S3 parquet file - arrow accelerator e2e test by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3154">https://github.com/spiceai/spiceai/pull/3154&lt;/a>&lt;/li>
+&lt;li>feat: Add script to setup clickbench on mysql by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3176">https://github.com/spiceai/spiceai/pull/3176&lt;/a>&lt;/li>
+&lt;li>Update helm chart version to v0.19.2 by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3210">https://github.com/spiceai/spiceai/pull/3210&lt;/a>&lt;/li>
+&lt;li>Add sample dataset option in &lt;code>v1/nsql&lt;/code>. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3105">https://github.com/spiceai/spiceai/pull/3105&lt;/a>&lt;/li>
+&lt;li>Split spiced_docker build across architectures by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3206">https://github.com/spiceai/spiceai/pull/3206&lt;/a>&lt;/li>
+&lt;li>feat(helm): do not install demo dataset by default by @nlamirault in &lt;a href="https://github.com/spiceai/spiceai/pull/3207">https://github.com/spiceai/spiceai/pull/3207&lt;/a>&lt;/li>
+&lt;li>Split integration test across build/run steps by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3215">https://github.com/spiceai/spiceai/pull/3215&lt;/a>&lt;/li>
+&lt;li>feat(helm): Refactoring Kubernetes labels by @nlamirault in &lt;a href="https://github.com/spiceai/spiceai/pull/3208">https://github.com/spiceai/spiceai/pull/3208&lt;/a>&lt;/li>
+&lt;li>Define &amp;rsquo;tool_recursion_limit&amp;rsquo; for LLMs, and limit internal tool calling recursion. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3214">https://github.com/spiceai/spiceai/pull/3214&lt;/a>&lt;/li>
+&lt;li>Improve filters pushdown for federated queries by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3183">https://github.com/spiceai/spiceai/pull/3183&lt;/a>&lt;/li>
+&lt;li>Implement native schema inference for PostgreSQL by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3209">https://github.com/spiceai/spiceai/pull/3209&lt;/a>&lt;/li>
+&lt;li>docs: Update release criteria by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3219">https://github.com/spiceai/spiceai/pull/3219&lt;/a>&lt;/li>
+&lt;li>Run SQLite acceleration TPC-DS tests using smaller scale by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3227">https://github.com/spiceai/spiceai/pull/3227&lt;/a>&lt;/li>
+&lt;li>bind the serviceAccount if a name is given or if we&amp;rsquo;re creating one by @barracudarin in &lt;a href="https://github.com/spiceai/spiceai/pull/3228">https://github.com/spiceai/spiceai/pull/3228&lt;/a>&lt;/li>
+&lt;li>Only emit channel send error log when its not a closed channel error by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3230">https://github.com/spiceai/spiceai/pull/3230&lt;/a>&lt;/li>
+&lt;li>Enable Parquet Exec filter pushdown in Spice by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3216">https://github.com/spiceai/spiceai/pull/3216&lt;/a>&lt;/li>
+&lt;li>Add snapshots for SQLite TPC-DS benchmark (file mode) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3234">https://github.com/spiceai/spiceai/pull/3234&lt;/a>&lt;/li>
+&lt;li>docs: Add SDK release checks to endgame by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3256">https://github.com/spiceai/spiceai/pull/3256&lt;/a>&lt;/li>
+&lt;li>Implement &lt;code>localpod&lt;/code> Data Connector by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3249">https://github.com/spiceai/spiceai/pull/3249&lt;/a>&lt;/li>
+&lt;li>Revert &amp;ldquo;Enable Parquet Exec filter pushdown in Spice (#3216)&amp;rdquo; by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3244">https://github.com/spiceai/spiceai/pull/3244&lt;/a>&lt;/li>
+&lt;li>refactor: Use existing action for detecting changes by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3255">https://github.com/spiceai/spiceai/pull/3255&lt;/a>&lt;/li>
+&lt;li>feat: Add GitHub integration test by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3226">https://github.com/spiceai/spiceai/pull/3226&lt;/a>&lt;/li>
+&lt;li>Add get_readiness tool to retrieve status of all registered components by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/3035">https://github.com/spiceai/spiceai/pull/3035&lt;/a>&lt;/li>
+&lt;li>Improve CLI error output when REPL can&amp;rsquo;t connect to the Flight endpoint by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/3188">https://github.com/spiceai/spiceai/pull/3188&lt;/a>&lt;/li>
+&lt;li>Fixing FTP link in Endgame by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/3267">https://github.com/spiceai/spiceai/pull/3267&lt;/a>&lt;/li>
+&lt;li>Update version to 0.19.3-beta by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3269">https://github.com/spiceai/spiceai/pull/3269&lt;/a>&lt;/li>
+&lt;li>add service type and annotation customizations in &lt;a href="https://github.com/spiceai/spiceai/pull/3268">https://github.com/spiceai/spiceai/pull/3268&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.19.2-beta...v0.19.3-beta">https://github.com/spiceai/spiceai/compare/v0.19.2-beta...v0.19.3-beta&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.19.1-beta (Oct 14, 2024)</title><link>/posts/2024/10/14/spice-v0.19.1-beta-oct-14-2024/</link><pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate><guid>/posts/2024/10/14/spice-v0.19.1-beta-oct-14-2024/</guid><description>
 &lt;p>Announcing the release of Spice v0.19.1-beta 🔥&lt;/p>
 &lt;p>Spice v0.19.1 brings further performance and stability improvements to data connectors, including improved query push-down for file-based connectors (&lt;code>s3&lt;/code>, &lt;code>abfs&lt;/code>, &lt;code>file&lt;/code>, &lt;code>ftp&lt;/code>, &lt;code>sftp&lt;/code>) that use Hive-style partitioning.&lt;/p>
 &lt;h2 id="highlights-in-v0191">Highlights in v0.19.1&lt;/h2>
