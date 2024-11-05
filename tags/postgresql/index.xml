@@ -1,4 +1,75 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Postgresql</title><link>/tags/postgresql/</link><description>Recent content in Postgresql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 26 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.17.2-beta (August 26, 2024)</title><link>/posts/2024/08/26/spice-v0.17.2-beta-august-26-2024/</link><pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate><guid>/posts/2024/08/26/spice-v0.17.2-beta-august-26-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Postgresql</title><link>/tags/postgresql/</link><description>Recent content in Postgresql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 04 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.20-beta (Nov 4, 2024)</title><link>/posts/2024/11/04/spice-v0.20-beta-nov-4-2024/</link><pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate><guid>/posts/2024/11/04/spice-v0.20-beta-nov-4-2024/</guid><description>
+&lt;p>Announcing the release of Spice v0.20-beta 🧩&lt;/p>
+&lt;p>Spice v0.20.0-beta improves federated query performance with column pruning and adds support for Metal (Apple Silicon) and CUDA (NVidia) accelerators. The S3, PostgreSQL, MySQL, and GitHub Data Connectors have graduated from Beta to Release Candidates. The Arrow, DuckDB, and SQLite Data Accelerators have graduated from Alpha to Beta.&lt;/p>
+&lt;h2 id="highlights-in-v0200-beta">Highlights in v0.20.0-beta&lt;/h2>
+&lt;p>&lt;strong>Data Connectors:&lt;/strong> The &lt;code>S3&lt;/code>, &lt;code>PostgreSQL&lt;/code>, &lt;code>MySQL&lt;/code>, and &lt;code>GitHub&lt;/code> Data Connectors have graduated from &lt;code>beta&lt;/code> to &lt;code>release candidate&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Data Accelerators:&lt;/strong> The &lt;code>Arrow&lt;/code>, &lt;code>DuckDB&lt;/code>, and &lt;code>SQLite&lt;/code> Data Accelerators have graduated from &lt;code>alpha&lt;/code> to &lt;code>beta&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Metal and CUDA Support:&lt;/strong> Added support for Metal (Apple Silicon) and CUDA (NVidia) for AI/ML workloads including embeddings and local LLM inference.&lt;/p>
+&lt;p>For instructions on compiling a Meta or CUDA binary, see the &lt;a href="https://docs.spiceai.org/installation">Installation Docs&lt;/a>.&lt;/p>
+&lt;h2 id="breaking-changes">Breaking Changes&lt;/h2>
+&lt;ul>
+&lt;li>The ODBC Data Connector now requires ODBC drivers specified in connection strings are registered in the system ODBC driver manager.&lt;/li>
+&lt;/ul>
+&lt;p>Example invalid connection string:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">DRIVER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">={&lt;/span>/path/to/driver.so&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>&lt;span style="color:#000">SERVER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>localhost&lt;span style="color:#000;font-weight:bold">;&lt;/span>&lt;span style="color:#000">DATABASE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>master
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example valid connection string:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">DRIVER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">={&lt;/span>My ODBC Driver&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>&lt;span style="color:#000">SERVER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>localhost&lt;span style="color:#000;font-weight:bold">;&lt;/span>&lt;span style="color:#000">DATABASE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>master
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Where &lt;code>My ODBC Driver&lt;/code> is the name of an ODBC driver registered in the ODBC driver manager.&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@barracudarin&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Update Helm for v0.19.4-beta and add release notes by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3310">https://github.com/spiceai/spiceai/pull/3310&lt;/a>&lt;/li>
+&lt;li>Update spicepod.schema.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/3311">https://github.com/spiceai/spiceai/pull/3311&lt;/a>&lt;/li>
+&lt;li>&lt;code>metal&lt;/code> &amp;amp; &lt;code>cuda&lt;/code> flags for spice by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3212">https://github.com/spiceai/spiceai/pull/3212&lt;/a>&lt;/li>
+&lt;li>Promote postgres connector to RC quality by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3305">https://github.com/spiceai/spiceai/pull/3305&lt;/a>&lt;/li>
+&lt;li>docs: Update ROADMAP.md by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3322">https://github.com/spiceai/spiceai/pull/3322&lt;/a>&lt;/li>
+&lt;li>feat: Enable federation for in-memory accelerators by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3325">https://github.com/spiceai/spiceai/pull/3325&lt;/a>&lt;/li>
+&lt;li>fix: Only allow env files from the current dir by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3327">https://github.com/spiceai/spiceai/pull/3327&lt;/a>&lt;/li>
+&lt;li>Always read TimezoneTZ from PostgreSQL as UTC by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3330">https://github.com/spiceai/spiceai/pull/3330&lt;/a>&lt;/li>
+&lt;li>For multi-sink acceleration refreshes, ensure parent table completes before the children. by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3329">https://github.com/spiceai/spiceai/pull/3329&lt;/a>&lt;/li>
+&lt;li>Update TPC-DS Q49 (Decimal to Float) to match SQLite&amp;rsquo;s type system by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3323">https://github.com/spiceai/spiceai/pull/3323&lt;/a>&lt;/li>
+&lt;li>Enable parquet pushdown in Spice by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3245">https://github.com/spiceai/spiceai/pull/3245&lt;/a>&lt;/li>
+&lt;li>Use spice object_store fork to fix S3 ambiguous error by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3304">https://github.com/spiceai/spiceai/pull/3304&lt;/a>&lt;/li>
+&lt;li>Don&amp;rsquo;t mix commented out queries for s3 connectors and accelerators by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3331">https://github.com/spiceai/spiceai/pull/3331&lt;/a>&lt;/li>
+&lt;li>Allow only valid WHERE conditions in vector searches by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3335">https://github.com/spiceai/spiceai/pull/3335&lt;/a>&lt;/li>
+&lt;li>fix: Allow only ODBC profiles by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3324">https://github.com/spiceai/spiceai/pull/3324&lt;/a>&lt;/li>
+&lt;li>Track how many times an acceleration falls back during initialization by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3339">https://github.com/spiceai/spiceai/pull/3339&lt;/a>&lt;/li>
+&lt;li>Anthropic model regex and fix tool parsing aggregation bug by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3334">https://github.com/spiceai/spiceai/pull/3334&lt;/a>&lt;/li>
+&lt;li>Upgrade runtime along with CLI on &lt;code>spice upgrade&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3341">https://github.com/spiceai/spiceai/pull/3341&lt;/a>&lt;/li>
+&lt;li>Update upcoming Roadmap by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3343">https://github.com/spiceai/spiceai/pull/3343&lt;/a>&lt;/li>
+&lt;li>fix: Prevent acceleration files outside of working directory by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3340">https://github.com/spiceai/spiceai/pull/3340&lt;/a>&lt;/li>
+&lt;li>Document S3 connector limitations by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3333">https://github.com/spiceai/spiceai/pull/3333&lt;/a>&lt;/li>
+&lt;li>Update Object Store Patch by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3361">https://github.com/spiceai/spiceai/pull/3361&lt;/a>&lt;/li>
+&lt;li>Promote SQLite Data Accelerator to Beta by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3365">https://github.com/spiceai/spiceai/pull/3365&lt;/a>&lt;/li>
+&lt;li>Promote S3 connector to RC quality by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3362">https://github.com/spiceai/spiceai/pull/3362&lt;/a>&lt;/li>
+&lt;li>Revert &amp;ldquo;fix: Only allow env files from the current dir&amp;rdquo; by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3368">https://github.com/spiceai/spiceai/pull/3368&lt;/a>&lt;/li>
+&lt;li>docs: Fix typo for S3 release status in README.md by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3370">https://github.com/spiceai/spiceai/pull/3370&lt;/a>&lt;/li>
+&lt;li>Include unnecessary columns pruning step during federated plan creation by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3363">https://github.com/spiceai/spiceai/pull/3363&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.19.4-beta...v0.20.0-beta">https://github.com/spiceai/spiceai/compare/v0.19.4-beta...v0.20.0-beta&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.17.2-beta (August 26, 2024)</title><link>/posts/2024/08/26/spice-v0.17.2-beta-august-26-2024/</link><pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate><guid>/posts/2024/08/26/spice-v0.17.2-beta-august-26-2024/</guid><description>
 &lt;p>Announcing the release of Spice v0.17.2-beta 🏄&lt;/p>
 &lt;p>The v0.17.2-beta release focuses on improving data accelerator compatibility, stability, and performance. Expanded data type support for DuckDB, SQLite, and PostgreSQL data accelerators (and data connectors) enables significantly more data types to be accelerated. Error handling and logging has also been improved along with several bugs.&lt;/p>
 &lt;h2 id="highlights-in-v0172-beta">Highlights in v0.17.2-beta&lt;/h2>
