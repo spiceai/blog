@@ -1,4 +1,401 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Api</title><link>/tags/api/</link><description>Recent content in Api on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 16 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/api/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.18-beta (Sep 16, 2024)</title><link>/posts/2024/09/16/spice-v0.18-beta-sep-16-2024/</link><pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate><guid>/posts/2024/09/16/spice-v0.18-beta-sep-16-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Api</title><link>/tags/api/</link><description>Recent content in Api on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 27 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/api/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v1.0-rc.1 (Nov 27, 2024)</title><link>/posts/2024/11/27/spice-v1.0-rc.1-nov-27-2024/</link><pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate><guid>/posts/2024/11/27/spice-v1.0-rc.1-nov-27-2024/</guid><description>
+&lt;p>Announcing the release of Spice v1.0-rc.1 🚀&lt;/p>
+&lt;p>Spice v1.0.0-rc.1 marks the release candidate for the first major version of Spice.ai OSS. This milestone includes key Connector and Accelerator graduations and bug fixes, positioning Spice for a stable and production-ready release.&lt;/p>
+&lt;h2 id="highlights-in-v10-rc1">Highlights in v1.0-rc.1&lt;/h2>
+&lt;p>&lt;strong>API Key Authentication:&lt;/strong> Spice now supports optional authentication for API endpoints via configurable API keys, for additional security and control over runtime access.&lt;/p>
+&lt;p>Example Spicepod.yml configuration:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">runtime&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">api-key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">enabled&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">keys&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">${ secrets:api_key }&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Load from a secret store&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">my-api-key&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Or specify directly&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Usage:&lt;/p>
+&lt;ul>
+&lt;li>HTTP API: Include the API key in the &lt;code>X-API-Key&lt;/code> header.&lt;/li>
+&lt;li>Flight SQL: Use the API key in the &lt;code>Authorization&lt;/code> header as a Bearer token.&lt;/li>
+&lt;li>Spice CLI: Provide the &lt;code>--api-key&lt;/code> flag for CLI commands.&lt;/li>
+&lt;/ul>
+&lt;p>For more details on using API Key auth, refer to the &lt;a href="https://docs.spiceai.org/api/auth">API Auth documentation&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>DuckDB Data Connector:&lt;/strong> Has graduated from Beta to Release Candidate.&lt;/p>
+&lt;p>&lt;strong>Arrow and DuckDB Data Accelerators:&lt;/strong> Both have graduated from Beta to Release Candidates.&lt;/p>
+&lt;p>&lt;strong>Debezium Kafka Integration:&lt;/strong> Spice now supports secure authentication and encryption options for Kafka connections when using Debezium for Change Data Capture (CDC). The previous limitation of PLAINTEXT protocol-only connections has been lifted. Spice now supports the following Kafka security configurations:&lt;/p>
+&lt;ul>
+&lt;li>Security protocol: PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL&lt;/li>
+&lt;li>SASL mechanisms: PLAIN, SCRAM-SHA-256, SCRAM-SHA-512&lt;/li>
+&lt;/ul>
+&lt;p>Example Spicepod.yml configuration:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">datasets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">debezium:my_kafka_topic_with_debezium_changes&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my_dataset&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">kafka_security_protocol&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">SASL_SSL&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">kafka_sasl_mechanism&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">SCRAM-SHA-512&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">kafka_sasl_username&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">kafka&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">kafka_sasl_password&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">${secrets:kafka_sasl_password}&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">kafka_ssl_ca_location&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">./certs/kafka_ca_cert.pem&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
+&lt;p>&lt;strong>Model Parameters:&lt;/strong> The &lt;code>params.spice_tools&lt;/code> parameter has been replaced by &lt;code>params.tools&lt;/code>. Backward compatibility is maintained for existing configurations using &lt;code>params.spice_tools&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Dataset Accelerator State:&lt;/strong> The &lt;code>ready_state&lt;/code> parameter has been moved to the dataset level.&lt;/p>
+&lt;p>&lt;strong>Ready Handler Response:&lt;/strong> The response body of the &lt;code>/v1/ready&lt;/code> handler has been changed from &lt;code>Ready&lt;/code> (uppercase) to &lt;code>ready&lt;/code> (lowercase) for consistency and adherence to standards.&lt;/p>
+&lt;p>&lt;strong>Default Kafka Security for Debezium:&lt;/strong> The default Kafka &lt;code>kafka_security_protocol&lt;/code> parameter for Debezium datasets has changed from &lt;code>PLAINTEXT&lt;/code> to &lt;code>SASL_SSL&lt;/code>, improving security by default.&lt;/p>
+&lt;p>&lt;strong>Metrics Name Updates:&lt;/strong> Adjustments have been made to specific metrics for improved observability and accuracy:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;strong>Before&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>v1.0-rc.1&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>catalogs_load_error&lt;/td>
+&lt;td>catalog_load_errors&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>catalogs_status&lt;/td>
+&lt;td>catalog_load_state&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>datasets_acceleration_append_duration_ms, datasets_acceleration_load_duration_ms&lt;/td>
+&lt;td>dataset_acceleration_refresh_duration_ms {mode: append/full}&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>datasets_acceleration_last_refresh_time&lt;/td>
+&lt;td>dataset_acceleration_last_refresh_time_ms&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>datasets_acceleration_refresh_error&lt;/td>
+&lt;td>dataset_acceleration_refresh_errors&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>datasets_count&lt;/td>
+&lt;td>dataset_active_count&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>datasets_load_error&lt;/td>
+&lt;td>dataset_load_errors&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>datasets_status&lt;/td>
+&lt;td>dataset_load_state&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>datasets_unavailable_time&lt;/td>
+&lt;td>dataset_unavailable_time_ms&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>embeddings_count&lt;/td>
+&lt;td>embeddings_active_count&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>embeddings_load_error&lt;/td>
+&lt;td>embeddings_load_errors&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>embeddings_status&lt;/td>
+&lt;td>embeddings_load_state&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>flight_do_action_duration_ms, flight_do_get_get_primary_keys_duration_ms, flight_do_get_get_catalogs_duration_ms, flight_do_get_get_schemas_duration_ms, flight_do_get_get_sql_info_duration_ms, flight_do_get_table_types_duration_ms, flight_do_get_get_tables_duration_ms, flight_do_get_prepared_statement_query_duration_ms, flight_do_get_simple_duration_ms, flight_do_get_statement_query_duration_ms, flight_do_put_duration_ms, flight_handshake_request_duration_ms, flight_list_actions_duration_ms, flight_get_flight_info_request_duration_ms&lt;/td>
+&lt;td>flight_request_duration_ms {method: method_name, command: command_name}&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>flight_do_action_requests, flight_do_exchange_data_updates_sent, flight_do_exchange_requests, flight_do_put_requests, flight_do_get_requests, flight_handshake_requests, flight_list_actions_requests, flight_list_flights_requests, flight_get_flight_info_requests, flight_get_schema_requests&lt;/td>
+&lt;td>flight_requests {method: method_name, command: command_name}&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>http_requests_duration_ms&lt;/td>
+&lt;td>http_request_duration_ms&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>models_count&lt;/td>
+&lt;td>model_active_count&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>models_load_duration_ms&lt;/td>
+&lt;td>model_load_duration_ms&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>models_load_error&lt;/td>
+&lt;td>model_load_errors&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>models_status&lt;/td>
+&lt;td>model_load_state&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>tool_count&lt;/td>
+&lt;td>tool_active_count&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>tool_load_error&lt;/td>
+&lt;td>tool_load_errors&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>tools_status&lt;/td>
+&lt;td>tool_load_state&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>query_count&lt;/td>
+&lt;td>query_executions&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>query_execution_duration&lt;/td>
+&lt;td>query_execution_duration_ms&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>results_cache_hit_count&lt;/td>
+&lt;td>results_cache_hits&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>results_cache_item_count&lt;/td>
+&lt;td>results_cache_items_count&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>results_cache_max_size&lt;/td>
+&lt;td>results_cache_max_size_bytes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>results_cache_request_count&lt;/td>
+&lt;td>results_cache_requests&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>results_cache_size&lt;/td>
+&lt;td>results_cache_size_bytes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>secrets_stores_load_duration_ms&lt;/td>
+&lt;td>secrets_store_load_duration_ms&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>bytes_processed&lt;/td>
+&lt;td>query_processed_bytes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>bytes_returned&lt;/td>
+&lt;td>query_returned_bytes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>spiced_runtime_flight_server_start&lt;/td>
+&lt;td>runtime_flight_server_started&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>spiced_runtime_http_server_start&lt;/td>
+&lt;td>runtime_http_server_started&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>views_load_error&lt;/td>
+&lt;td>view_load_errors&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@slyons&lt;/li>
+&lt;li>@barracudarin&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s changed&lt;/h2>
+&lt;ul>
+&lt;li>Update to next release version by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3372">https://github.com/spiceai/spiceai/pull/3372&lt;/a>&lt;/li>
+&lt;li>Update Helm chart to v0.20.0-beta by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3373">https://github.com/spiceai/spiceai/pull/3373&lt;/a>&lt;/li>
+&lt;li>Upgrade dependencies by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3375">https://github.com/spiceai/spiceai/pull/3375&lt;/a>&lt;/li>
+&lt;li>E2E: Add a test to confirm refreshing with custom &lt;code>refresh-sql&lt;/code> via CLI by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3374">https://github.com/spiceai/spiceai/pull/3374&lt;/a>&lt;/li>
+&lt;li>Fix regression in inferring embedding model vector size for non-default models by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3376">https://github.com/spiceai/spiceai/pull/3376&lt;/a>&lt;/li>
+&lt;li>add AI quickstarts to endgame by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3378">https://github.com/spiceai/spiceai/pull/3378&lt;/a>&lt;/li>
+&lt;li>Remove need for &lt;code>params.model_type&lt;/code> for most HF LLMs by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3342">https://github.com/spiceai/spiceai/pull/3342&lt;/a>&lt;/li>
+&lt;li>Replace &lt;code>query_duration_seconds&lt;/code> and &lt;code>http_requests_duration_seconds&lt;/code> with &lt;code>milliseconds&lt;/code> metrics by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3251">https://github.com/spiceai/spiceai/pull/3251&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>Extension&amp;lt;Runtime&amp;gt;&lt;/code> to HTTP routes to simplify tooling in NSQL. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3384">https://github.com/spiceai/spiceai/pull/3384&lt;/a>&lt;/li>
+&lt;li>Update datafusion patch by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3386">https://github.com/spiceai/spiceai/pull/3386&lt;/a>&lt;/li>
+&lt;li>Ensure hyperparameters are obeyed in recursive chat/completion calls. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3395">https://github.com/spiceai/spiceai/pull/3395&lt;/a>&lt;/li>
+&lt;li>fix: update odbc benchmarks by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3394">https://github.com/spiceai/spiceai/pull/3394&lt;/a>&lt;/li>
+&lt;li>Implement traits &amp;amp; plumbing for pluggable HTTP Auth by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3397">https://github.com/spiceai/spiceai/pull/3397&lt;/a>&lt;/li>
+&lt;li>Add allow_http parameter for S3 data connector by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3398">https://github.com/spiceai/spiceai/pull/3398&lt;/a>&lt;/li>
+&lt;li>Add column field to dataset spicepod component by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3336">https://github.com/spiceai/spiceai/pull/3336&lt;/a>&lt;/li>
+&lt;li>feat: add duckdb connector benchmarks by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3403">https://github.com/spiceai/spiceai/pull/3403&lt;/a>&lt;/li>
+&lt;li>Add integration tests for OpenAI NSQL functionality by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3402">https://github.com/spiceai/spiceai/pull/3402&lt;/a>&lt;/li>
+&lt;li>Implement optional api-key auth for the HTTP endpoint by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3405">https://github.com/spiceai/spiceai/pull/3405&lt;/a>&lt;/li>
+&lt;li>Add integration tests for Search API (OpenAI and HF models) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3410">https://github.com/spiceai/spiceai/pull/3410&lt;/a>&lt;/li>
+&lt;li>HTTP APIs: list tools, call tool by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3404">https://github.com/spiceai/spiceai/pull/3404&lt;/a>&lt;/li>
+&lt;li>Implement optional api-key auth for the Flight/FlightSQL endpoint by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3412">https://github.com/spiceai/spiceai/pull/3412&lt;/a>&lt;/li>
+&lt;li>Adding semicolons to some TPCH queries to make sure they run on the CLI by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/3420">https://github.com/spiceai/spiceai/pull/3420&lt;/a>&lt;/li>
+&lt;li>Add GrpcAuth to protect the OpenTelemetry endpoint by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3417">https://github.com/spiceai/spiceai/pull/3417&lt;/a>&lt;/li>
+&lt;li>Support Kafka-native authentication and TLS connections for Debezium connector by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3419">https://github.com/spiceai/spiceai/pull/3419&lt;/a>&lt;/li>
+&lt;li>Add integration tests for Embeddings API (OpenAI and HF models) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3416">https://github.com/spiceai/spiceai/pull/3416&lt;/a>&lt;/li>
+&lt;li>Support base64 embedding format by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3418">https://github.com/spiceai/spiceai/pull/3418&lt;/a>&lt;/li>
+&lt;li>Give local models some love by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3425">https://github.com/spiceai/spiceai/pull/3425&lt;/a>&lt;/li>
+&lt;li>Have views update on &lt;code>--pods-watcher-enabled&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3428">https://github.com/spiceai/spiceai/pull/3428&lt;/a>&lt;/li>
+&lt;li>Simplify running models integration tests locally by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3424">https://github.com/spiceai/spiceai/pull/3424&lt;/a>&lt;/li>
+&lt;li>Make Debezium connector MySQL compatible by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3432">https://github.com/spiceai/spiceai/pull/3432&lt;/a>&lt;/li>
+&lt;li>Store + load memory tooling, enable by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3413">https://github.com/spiceai/spiceai/pull/3413&lt;/a>&lt;/li>
+&lt;li>Statically compile OpenSSL by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3434">https://github.com/spiceai/spiceai/pull/3434&lt;/a>&lt;/li>
+&lt;li>Build macOS x64 on macos-14 (Sonoma) by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3435">https://github.com/spiceai/spiceai/pull/3435&lt;/a>&lt;/li>
+&lt;li>Upgrade dependencies by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3443">https://github.com/spiceai/spiceai/pull/3443&lt;/a>&lt;/li>
+&lt;li>Bump azure_core from 0.20.0 to 0.21.0 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/3436">https://github.com/spiceai/spiceai/pull/3436&lt;/a>&lt;/li>
+&lt;li>Add integration tests for chat completion API (HF and OpenAI) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3433">https://github.com/spiceai/spiceai/pull/3433&lt;/a>&lt;/li>
+&lt;li>Run Clickbench with Spice Benchmark Binary by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3389">https://github.com/spiceai/spiceai/pull/3389&lt;/a>&lt;/li>
+&lt;li>Use &lt;code>datatype_is_semantically_equal&lt;/code> in &lt;code>verify_schema&lt;/code> by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3423">https://github.com/spiceai/spiceai/pull/3423&lt;/a>&lt;/li>
+&lt;li>Use spiceai-large-runners to build benchmark binary by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3446">https://github.com/spiceai/spiceai/pull/3446&lt;/a>&lt;/li>
+&lt;li>Skip reqwest_retry::middleware tracing in non verbose configuration by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3445">https://github.com/spiceai/spiceai/pull/3445&lt;/a>&lt;/li>
+&lt;li>feat: Add invalid type action handling for DuckDB by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3430">https://github.com/spiceai/spiceai/pull/3430&lt;/a>&lt;/li>
+&lt;li>Fix benchmark: Lock poisoning issue from INSTA by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3457">https://github.com/spiceai/spiceai/pull/3457&lt;/a>&lt;/li>
+&lt;li>docs: Release DuckDB Connector RC by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3459">https://github.com/spiceai/spiceai/pull/3459&lt;/a>&lt;/li>
+&lt;li>DR: Code Pattern For Obtaining Milliseconds-Based Duration by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3460">https://github.com/spiceai/spiceai/pull/3460&lt;/a>&lt;/li>
+&lt;li>Improve ClickBench setup script: avoid re-downloading test data every time by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3463">https://github.com/spiceai/spiceai/pull/3463&lt;/a>&lt;/li>
+&lt;li>Fix &lt;code>TableReference&lt;/code> quoting for MySQL by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3461">https://github.com/spiceai/spiceai/pull/3461&lt;/a>&lt;/li>
+&lt;li>Tool use and model name for local models by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3458">https://github.com/spiceai/spiceai/pull/3458&lt;/a>&lt;/li>
+&lt;li>&lt;code>params.tools&lt;/code>, not &lt;code>params.spice_tools&lt;/code>. Allow backwards compatibility to &lt;code>params.spice_tools&lt;/code>. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3473">https://github.com/spiceai/spiceai/pull/3473&lt;/a>&lt;/li>
+&lt;li>fix: Support DuckDB boolean list by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3474">https://github.com/spiceai/spiceai/pull/3474&lt;/a>&lt;/li>
+&lt;li>Upgrade to DataFusion 43 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3462">https://github.com/spiceai/spiceai/pull/3462&lt;/a>&lt;/li>
+&lt;li>Build explicit ODBC Docker image by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3476">https://github.com/spiceai/spiceai/pull/3476&lt;/a>&lt;/li>
+&lt;li>Promote Arrow acceleration to RC by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3478">https://github.com/spiceai/spiceai/pull/3478&lt;/a>&lt;/li>
+&lt;li>Update benchmark workflow to create PR for updating snapshot by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3479">https://github.com/spiceai/spiceai/pull/3479&lt;/a>&lt;/li>
+&lt;li>Update benchmark snapshots for spice.ai connector tpch by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/3481">https://github.com/spiceai/spiceai/pull/3481&lt;/a>&lt;/li>
+&lt;li>Update setup-make action by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3488">https://github.com/spiceai/spiceai/pull/3488&lt;/a>&lt;/li>
+&lt;li>Option to return sql from &lt;code>v1/nsql&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3487">https://github.com/spiceai/spiceai/pull/3487&lt;/a>&lt;/li>
+&lt;li>Adding scripts to run and monitor TPC-H/-DS queries at larger scale factors by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/3483">https://github.com/spiceai/spiceai/pull/3483&lt;/a>&lt;/li>
+&lt;li>Update Datafusion and Datafusion-Table-Providers patch by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3489">https://github.com/spiceai/spiceai/pull/3489&lt;/a>&lt;/li>
+&lt;li>docs: Update Accelerator RC to specify clickbench in all modes by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3490">https://github.com/spiceai/spiceai/pull/3490&lt;/a>&lt;/li>
+&lt;li>Add logos and marks by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/3485">https://github.com/spiceai/spiceai/pull/3485&lt;/a>&lt;/li>
+&lt;li>Updates to repo docs by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/3486">https://github.com/spiceai/spiceai/pull/3486&lt;/a>&lt;/li>
+&lt;li>Change &lt;code>document_similarity&lt;/code> to return markdown, not JSON. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3477">https://github.com/spiceai/spiceai/pull/3477&lt;/a>&lt;/li>
+&lt;li>Add support for creating embeddings for Utf8View type columns by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3498">https://github.com/spiceai/spiceai/pull/3498&lt;/a>&lt;/li>
+&lt;li>Add vector search support for Utf8View type columns by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3500">https://github.com/spiceai/spiceai/pull/3500&lt;/a>&lt;/li>
+&lt;li>Update &lt;code>datafusion-table-providers&lt;/code> version by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3503">https://github.com/spiceai/spiceai/pull/3503&lt;/a>&lt;/li>
+&lt;li>Update &lt;code>text-embeddings-inference&lt;/code> and &lt;code>mistral.rs&lt;/code> from downstream. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3505">https://github.com/spiceai/spiceai/pull/3505&lt;/a>&lt;/li>
+&lt;li>Fix snapshot update PR push in benchmark by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3484">https://github.com/spiceai/spiceai/pull/3484&lt;/a>&lt;/li>
+&lt;li>Run FederationAnalyzerRule before ResolveGroupingFunction rule by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3508">https://github.com/spiceai/spiceai/pull/3508&lt;/a>&lt;/li>
+&lt;li>Update benchmark snapshots by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/3509">https://github.com/spiceai/spiceai/pull/3509&lt;/a>&lt;/li>
+&lt;li>docs: Release DuckDB accelerator RC by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3512">https://github.com/spiceai/spiceai/pull/3512&lt;/a>&lt;/li>
+&lt;li>Upgrade datafusion-functions-json to 0.43 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3511">https://github.com/spiceai/spiceai/pull/3511&lt;/a>&lt;/li>
+&lt;li>Update Datafusion Table Provider patch to fix MySQL refresh append mode by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3514">https://github.com/spiceai/spiceai/pull/3514&lt;/a>&lt;/li>
+&lt;li>Handle panics in HF API calls by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3521">https://github.com/spiceai/spiceai/pull/3521&lt;/a>&lt;/li>
+&lt;li>Update Runtime metrics according to metrics naming guidelines by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3518">https://github.com/spiceai/spiceai/pull/3518&lt;/a>&lt;/li>
+&lt;li>Update Flight metrics according to metrics naming guidelines by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3515">https://github.com/spiceai/spiceai/pull/3515&lt;/a>&lt;/li>
+&lt;li>Update Results Cache metrics according to metrics naming guidelines by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3520">https://github.com/spiceai/spiceai/pull/3520&lt;/a>&lt;/li>
+&lt;li>Move &lt;code>ready_state&lt;/code> to dataset level by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3526">https://github.com/spiceai/spiceai/pull/3526&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>--force&lt;/code> option to &lt;code>spice upgrade&lt;/code> to force it to upgrade to the latest released version by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3527">https://github.com/spiceai/spiceai/pull/3527&lt;/a>&lt;/li>
+&lt;li>Refactor runtime initialization into separate modules by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3531">https://github.com/spiceai/spiceai/pull/3531&lt;/a>&lt;/li>
+&lt;li>Update Anonymous telemetry metrics according to metrics naming guidelines by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3529">https://github.com/spiceai/spiceai/pull/3529&lt;/a>&lt;/li>
+&lt;li>Add Metrics naming principles and guidelines by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3516">https://github.com/spiceai/spiceai/pull/3516&lt;/a>&lt;/li>
+&lt;li>Update Dataset Acceleration metrics according to metrics naming guidelines by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3528">https://github.com/spiceai/spiceai/pull/3528&lt;/a>&lt;/li>
+&lt;li>Improve localpod startup to register immediately after its parent is registered by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3532">https://github.com/spiceai/spiceai/pull/3532&lt;/a>&lt;/li>
+&lt;li>AI/LLM integration tests: make tests more robust and verify more ai_tools by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3513">https://github.com/spiceai/spiceai/pull/3513&lt;/a>&lt;/li>
+&lt;li>Update dashboards to match new metrics names by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3530">https://github.com/spiceai/spiceai/pull/3530&lt;/a>&lt;/li>
+&lt;li>Clarify source of prefixes for data component parameters. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3541">https://github.com/spiceai/spiceai/pull/3541&lt;/a>&lt;/li>
+&lt;li>Upgrade dependencies by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3564">https://github.com/spiceai/spiceai/pull/3564&lt;/a>&lt;/li>
+&lt;li>Update Spice release process to support release branches by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3525">https://github.com/spiceai/spiceai/pull/3525&lt;/a>&lt;/li>
+&lt;li>fix: Validate the endpoint for ABFS and S3 by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3565">https://github.com/spiceai/spiceai/pull/3565&lt;/a>&lt;/li>
+&lt;li>Vector Search: Default to datasets with embeddings only when none are specified by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3575">https://github.com/spiceai/spiceai/pull/3575&lt;/a>&lt;/li>
+&lt;li>Lowercase the ready handler response by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3577">https://github.com/spiceai/spiceai/pull/3577&lt;/a>&lt;/li>
+&lt;li>Update benchmark snapshots by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/3579">https://github.com/spiceai/spiceai/pull/3579&lt;/a>&lt;/li>
+&lt;li>Improve &lt;code>spice search&lt;/code> error handling by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3571">https://github.com/spiceai/spiceai/pull/3571&lt;/a>&lt;/li>
+&lt;li>Load components in parallel, not concurrently by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3566">https://github.com/spiceai/spiceai/pull/3566&lt;/a>&lt;/li>
+&lt;li>fix: Make S3 auth parameter validation more robust: by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3578">https://github.com/spiceai/spiceai/pull/3578&lt;/a>&lt;/li>
+&lt;li>fix: Infer if the specified file format is correct in object store by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3580">https://github.com/spiceai/spiceai/pull/3580&lt;/a>&lt;/li>
+&lt;li>Add ability to configure CORS on the HTTP server by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3581">https://github.com/spiceai/spiceai/pull/3581&lt;/a>&lt;/li>
+&lt;li>fix: Handle invalid S3 auth and region better by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3582">https://github.com/spiceai/spiceai/pull/3582&lt;/a>&lt;/li>
+&lt;li>allow setting of replicaCount to a falsy-value by @barracudarin in &lt;a href="https://github.com/spiceai/spiceai/pull/3586">https://github.com/spiceai/spiceai/pull/3586&lt;/a>&lt;/li>
+&lt;li>&lt;code>spice search&lt;/code> to default to only datasets with embeddings by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3588">https://github.com/spiceai/spiceai/pull/3588&lt;/a>&lt;/li>
+&lt;li>Run AI integration tests as part of CI by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3572">https://github.com/spiceai/spiceai/pull/3572&lt;/a>&lt;/li>
+&lt;li>Load datasets in parallel by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3585">https://github.com/spiceai/spiceai/pull/3585&lt;/a>&lt;/li>
+&lt;li>Run integration test on smaller runners by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3583">https://github.com/spiceai/spiceai/pull/3583&lt;/a>&lt;/li>
+&lt;li>Use folders for model component by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3584">https://github.com/spiceai/spiceai/pull/3584&lt;/a>&lt;/li>
+&lt;li>Improve models integration tests by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3592">https://github.com/spiceai/spiceai/pull/3592&lt;/a>&lt;/li>
+&lt;li>Change default task_history captured_output to &lt;code>none&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3598">https://github.com/spiceai/spiceai/pull/3598&lt;/a>&lt;/li>
+&lt;li>Add timeout to &lt;code>/v1/datasets&lt;/code> APIs when app is locked by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3601">https://github.com/spiceai/spiceai/pull/3601&lt;/a>&lt;/li>
+&lt;li>Properly drop the read lock on the runtime app in http.start by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3603">https://github.com/spiceai/spiceai/pull/3603&lt;/a>&lt;/li>
+&lt;li>Make integration tests more robust on fewer cores by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3604">https://github.com/spiceai/spiceai/pull/3604&lt;/a>&lt;/li>
+&lt;li>refactor: First pass data connector error messages update by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3602">https://github.com/spiceai/spiceai/pull/3602&lt;/a>&lt;/li>
+&lt;li>Add log if no datasets are configured by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3605">https://github.com/spiceai/spiceai/pull/3605&lt;/a>&lt;/li>
+&lt;li>Upgrade to DuckDB 1.1.3 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3606">https://github.com/spiceai/spiceai/pull/3606&lt;/a>&lt;/li>
+&lt;li>Add E2E test for spice search and chat functionality (OpenAI) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3599">https://github.com/spiceai/spiceai/pull/3599&lt;/a>&lt;/li>
+&lt;li>Use spiceai-runners for TPCH / TPCDS benchmark by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3507">https://github.com/spiceai/spiceai/pull/3507&lt;/a>&lt;/li>
+&lt;li>docs: Update error handling guide by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3611">https://github.com/spiceai/spiceai/pull/3611&lt;/a>&lt;/li>
+&lt;li>Improve default description for sql tool by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3612">https://github.com/spiceai/spiceai/pull/3612&lt;/a>&lt;/li>
+&lt;li>Update metric name from &lt;code>query_invocations&lt;/code> to &lt;code>query_executions&lt;/code> by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3613">https://github.com/spiceai/spiceai/pull/3613&lt;/a>&lt;/li>
+&lt;li>Don&amp;rsquo;t provide runtime tools to health check. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3615">https://github.com/spiceai/spiceai/pull/3615&lt;/a>&lt;/li>
+&lt;li>Sort vector search results based on similarity score by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3620">https://github.com/spiceai/spiceai/pull/3620&lt;/a>&lt;/li>
+&lt;li>Allow overriding runtime configuration with &lt;code>--set-runtime&lt;/code> CLI flags by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3619">https://github.com/spiceai/spiceai/pull/3619&lt;/a>&lt;/li>
+&lt;li>Some bugs by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3621">https://github.com/spiceai/spiceai/pull/3621&lt;/a>&lt;/li>
+&lt;li>Improve S3 errors by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3640">https://github.com/spiceai/spiceai/pull/3640&lt;/a>&lt;/li>
+&lt;li>Update Databricks, Delta Lake, DuckDB error messages by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3642">https://github.com/spiceai/spiceai/pull/3642&lt;/a>&lt;/li>
+&lt;li>docs: Add error message UX to beta connector criteria by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3639">https://github.com/spiceai/spiceai/pull/3639&lt;/a>&lt;/li>
+&lt;li>feat: Make REPL identify it&amp;rsquo;s waiting on a new line by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3617">https://github.com/spiceai/spiceai/pull/3617&lt;/a>&lt;/li>
+&lt;li>Wrap Server-Sent-Events chat errors as OpenAI error events by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3641">https://github.com/spiceai/spiceai/pull/3641&lt;/a>&lt;/li>
+&lt;li>refactor: Update accelerated table errors, dataset health monitor errors by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3614">https://github.com/spiceai/spiceai/pull/3614&lt;/a>&lt;/li>
+&lt;li>Extend &lt;code>v1/datasets&lt;/code> api to indicate if dataset can be used in vector search by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3644">https://github.com/spiceai/spiceai/pull/3644&lt;/a>&lt;/li>
+&lt;li>feat: Unnest DataFusion errors by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3646">https://github.com/spiceai/spiceai/pull/3646&lt;/a>&lt;/li>
+&lt;li>feat: Add RateLimited DataConnectorError by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3648">https://github.com/spiceai/spiceai/pull/3648&lt;/a>&lt;/li>
+&lt;li>Setup nightly docker release workflow by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3649">https://github.com/spiceai/spiceai/pull/3649&lt;/a>&lt;/li>
+&lt;li>Make LLM integration tests more extensible. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3576">https://github.com/spiceai/spiceai/pull/3576&lt;/a>&lt;/li>
+&lt;li>feat: Update ODBC error messages by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3651">https://github.com/spiceai/spiceai/pull/3651&lt;/a>&lt;/li>
+&lt;li>feat: Better tonic errors by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3650">https://github.com/spiceai/spiceai/pull/3650&lt;/a>&lt;/li>
+&lt;li>Nightly release workflow fixes by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3652">https://github.com/spiceai/spiceai/pull/3652&lt;/a>&lt;/li>
+&lt;li>Fix missing ARM64 image for nightly publish step by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3653">https://github.com/spiceai/spiceai/pull/3653&lt;/a>&lt;/li>
+&lt;li>Use GitHub GraphQL rate limiting responses to rate limit requests by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/3610">https://github.com/spiceai/spiceai/pull/3610&lt;/a>&lt;/li>
+&lt;li>Fix typo in nightly release publish step by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3654">https://github.com/spiceai/spiceai/pull/3654&lt;/a>&lt;/li>
+&lt;li>Handle GitHub rate-limiting for the Rest API by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3656">https://github.com/spiceai/spiceai/pull/3656&lt;/a>&lt;/li>
+&lt;li>Adding custom User-Agent parameters to chat, nsql and flightrepl by @slyons in &lt;a href="https://github.com/spiceai/spiceai/pull/3609">https://github.com/spiceai/spiceai/pull/3609&lt;/a>&lt;/li>
+&lt;li>Remove &amp;ldquo;nightly-&amp;rdquo; prefix from tag by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3671">https://github.com/spiceai/spiceai/pull/3671&lt;/a>&lt;/li>
+&lt;li>Upgrade dependencies by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3670">https://github.com/spiceai/spiceai/pull/3670&lt;/a>&lt;/li>
+&lt;li>&lt;code>spice search&lt;/code> to warn if dataset is not ready and won&amp;rsquo;t be included in search by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3590">https://github.com/spiceai/spiceai/pull/3590&lt;/a>&lt;/li>
+&lt;li>Fix keyring secret store to try both prefixed &amp;amp; unprefixed secrets by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3672">https://github.com/spiceai/spiceai/pull/3672&lt;/a>&lt;/li>
+&lt;li>Handle empty embeds by allowing for nulls by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3600">https://github.com/spiceai/spiceai/pull/3600&lt;/a>&lt;/li>
+&lt;li>Improve github connector error by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3677">https://github.com/spiceai/spiceai/pull/3677&lt;/a>&lt;/li>
+&lt;li>Update FlightSQL error messages by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3676">https://github.com/spiceai/spiceai/pull/3676&lt;/a>&lt;/li>
+&lt;li>Update Datafusion Table Provider Patch to include error message improvements by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3678">https://github.com/spiceai/spiceai/pull/3678&lt;/a>&lt;/li>
+&lt;li>Integration tests for &lt;code>llms&lt;/code> crate, with basic Anthropic test. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3647">https://github.com/spiceai/spiceai/pull/3647&lt;/a>&lt;/li>
+&lt;li>Allow E2E model tests to complete even if parallel platform tests failed by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3679">https://github.com/spiceai/spiceai/pull/3679&lt;/a>&lt;/li>
+&lt;li>Add Openai to llms testing by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3680">https://github.com/spiceai/spiceai/pull/3680&lt;/a>&lt;/li>
+&lt;li>Fix .env in &amp;lsquo;.github/workflows/integration_llms.yml&amp;rsquo; by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3686">https://github.com/spiceai/spiceai/pull/3686&lt;/a>&lt;/li>
+&lt;li>Improve error messages for spice ai connector, separate errors to different lines for DuckDB, Delta Lake, Databricks connector by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3643">https://github.com/spiceai/spiceai/pull/3643&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>microsoft/Phi-3-mini-4k-instruct&lt;/code> to llms crate testing, with &lt;code>MODEL_SKIPLIST&lt;/code> &amp;amp; &lt;code>MODEL_ALLOWLIST&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3690">https://github.com/spiceai/spiceai/pull/3690&lt;/a>&lt;/li>
+&lt;li>Add nightly label to spiced version in Cargo.toml by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3691">https://github.com/spiceai/spiceai/pull/3691&lt;/a>&lt;/li>
+&lt;li>Disable HF in models integration tests (not supported) by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3693">https://github.com/spiceai/spiceai/pull/3693&lt;/a>&lt;/li>
+&lt;li>Add log when CORS is enabled by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3695">https://github.com/spiceai/spiceai/pull/3695&lt;/a>&lt;/li>
+&lt;li>Fix nightly release workflow by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3698">https://github.com/spiceai/spiceai/pull/3698&lt;/a>&lt;/li>
+&lt;li>Correctly set nightly labels for both release and pre-release versions by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3699">https://github.com/spiceai/spiceai/pull/3699&lt;/a>&lt;/li>
+&lt;li>Improve REPL error handling for multiline error messages by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3692">https://github.com/spiceai/spiceai/pull/3692&lt;/a>&lt;/li>
+&lt;li>Determine support_filter_pushdown based on Accelerator federated reader &amp;amp; ZeroResultsAction by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3694">https://github.com/spiceai/spiceai/pull/3694&lt;/a>&lt;/li>
+&lt;li>Fix rdfkafak duplicated version by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3707">https://github.com/spiceai/spiceai/pull/3707&lt;/a>&lt;/li>
+&lt;li>feat: Render multiline errors better in REPL by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3701">https://github.com/spiceai/spiceai/pull/3701&lt;/a>&lt;/li>
+&lt;li>refactor: Update UnableToAttachDataConnector error message by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3706">https://github.com/spiceai/spiceai/pull/3706&lt;/a>&lt;/li>
+&lt;li>refactor: Update errors for Alpha connectors by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3705">https://github.com/spiceai/spiceai/pull/3705&lt;/a>&lt;/li>
+&lt;li>Update benchmark snapshots by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/3704">https://github.com/spiceai/spiceai/pull/3704&lt;/a>&lt;/li>
+&lt;li>Implement a RequestContext that automatically propagates request details to metric dimensions by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3709">https://github.com/spiceai/spiceai/pull/3709&lt;/a>&lt;/li>
+&lt;li>Fix acceleration in append mode with refresh_sql specified by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3697">https://github.com/spiceai/spiceai/pull/3697&lt;/a>&lt;/li>
+&lt;li>Bump github.com/stretchr/testify from 1.9.0 to 1.10.0 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/3655">https://github.com/spiceai/spiceai/pull/3655&lt;/a>&lt;/li>
+&lt;li>Tokenizer for OpenAI embedding models for accurate chunking by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3519">https://github.com/spiceai/spiceai/pull/3519&lt;/a>&lt;/li>
+&lt;li>Update error message when dataset isn&amp;rsquo;t configured with time_column in append refresh by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3703">https://github.com/spiceai/spiceai/pull/3703&lt;/a>&lt;/li>
+&lt;li>Add the missing winver dependency in runtime crate by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3711">https://github.com/spiceai/spiceai/pull/3711&lt;/a>&lt;/li>
+&lt;li>deps: Update table providers by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3712">https://github.com/spiceai/spiceai/pull/3712&lt;/a>&lt;/li>
+&lt;li>Add special tokens in chunk sizer by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3713">https://github.com/spiceai/spiceai/pull/3713&lt;/a>&lt;/li>
+&lt;li>Disable results cache for benchmark tests by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3715">https://github.com/spiceai/spiceai/pull/3715&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v0.20.0-beta...v1.0.0-rc.1">https://github.com/spiceai/spiceai/compare/v0.20.0-beta...v1.0.0-rc.1&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.18-beta (Sep 16, 2024)</title><link>/posts/2024/09/16/spice-v0.18-beta-sep-16-2024/</link><pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate><guid>/posts/2024/09/16/spice-v0.18-beta-sep-16-2024/</guid><description>
 &lt;p>Announcing the release of Spice v0.18-beta.&lt;/p>
 &lt;p>The v0.18.0-beta release adds new Sharepoint and File data connectors, introduces AWS Identity and Access Management (IAM) support for the S3 Data Connector, improves performance of the GitHub connector, and increases the overall reliability of all data accelerators. The &lt;code>/ready&lt;/code> API endpoint was enhanced to report as ready only when all components, including loaded data, have successfully reported readiness.&lt;/p>
 &lt;h2 id="highlights-in-v0180-beta">Highlights in v0.18.0-beta&lt;/h2>
