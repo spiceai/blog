@@ -1,0 +1,188 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Ms Sql</title><link>/tags/ms-sql/</link><description>Recent content in Ms Sql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/ms-sql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v1.0-rc.2 (Dec 16, 2024)</title><link>/posts/2024/12/16/spice-v1.0-rc.2-dec-16-2024/</link><pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate><guid>/posts/2024/12/16/spice-v1.0-rc.2-dec-16-2024/</guid><description>
+&lt;p>Announcing the release of Spice v1.0-rc.2 🔗&lt;/p>
+&lt;p>Spice v1.0.0-rc.2 is the second release candidate for the first major version of Spice.ai OSS. This release continues to build on the stability of Spice for production use, including key Data Connector graduations, bug fixes, and AI features.&lt;/p>
+&lt;h2 id="highlights-in-v10-rc2">Highlights in v1.0-rc.2&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>MS SQL and File Data Connectors:&lt;/strong> Graduated from Alpha to Beta.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>GraphQL and Databricks Delta Lake Data Connectors:&lt;/strong> Graduated from Beta to Release Candidate.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>gospice SDK Release:&lt;/strong> The &lt;a href="https://github.com/spiceai/gospice/releases">Spice Go SDK has updated to v7.0&lt;/a>, adding support for refreshing datasets and upgrading dependencies.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Azure AI Support:&lt;/strong> Added support for both LLMs and embedding models. Example &lt;code>spicepod.yml&lt;/code> configuration:&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">embeddings&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">azure&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">azure:text-embedding-3-small&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">endpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https://your-resource-name.openai.azure.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">azure_api_version&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">2024-08-01&lt;/span>-&lt;span style="color:#000">preview&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">azure_deployment_name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">text-embedding-3-small&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">azure_api_key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">${ secrets:SPICE_AZURE_API_KEY }&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">models&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">azure&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">azure:gpt-4o-mini&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">endpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https://your-resource-name.openai.azure.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">azure_api_version&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">2024-08-01&lt;/span>-&lt;span style="color:#000">preview&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">azure_deployment_name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">gpt-4o-mini&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">azure_api_key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">${ secrets:SPICE_AZURE_TOKEN }&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Accelerate subsets of columns:&lt;/strong> Spice now supports acceleration for specific columns from a federated source. Specify the desired columns directly in the &lt;a href="https://docs.spiceai.org/components/data-accelerators/data-refresh#refresh-sql">Refresh SQL&lt;/a> for more selective and efficient data acceleration.&lt;/p>
+&lt;p>Example &lt;code>spicepod.yaml&lt;/code> configuration:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">datasets&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">s3://spiceai-demo-datasets/taxi_trips/2024/&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">taxi_trips&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">file_format&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">parquet&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">acceleration&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">refresh_sql&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">SELECT tpep_pickup_datetime, tpep_dropoff_datetime, trip_distance, total_amount FROM taxi_trips&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
+&lt;p>&lt;strong>Sharepoint Authentication Parameters:&lt;/strong> now use access tokens instead of authorization codes, using the &lt;code>sharepoint_bearer_token&lt;/code> parameter. The &lt;code>sharepoint_auth_code&lt;/code> parameter has been removed.&lt;/p>
+&lt;p>&lt;strong>Data Connector Delimiters:&lt;/strong> now support &lt;code>/&lt;/code> and &lt;code>://&lt;/code>, in addition to &lt;code>:&lt;/code> in the &lt;code>from&lt;/code> parameter of the dataset configuration. The following examples are equivalent:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>from: postgres://my_postgres_table&lt;/code>&lt;/li>
+&lt;li>&lt;code>from: postgres/my_postgres_table&lt;/code>&lt;/li>
+&lt;li>&lt;code>from: postgres:my_postgres_table&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Some data connectors, such as &lt;code>s3&lt;/code> which only accepts &lt;code>://&lt;/code>, place further restrictions on the allowed delimiter.&lt;/p>
+&lt;p>The &lt;code>file&lt;/code> data connector has changed how it interprets the &lt;code>://&lt;/code> delimiter to reflect how most other URL parsers work, i.e. &lt;code>file://my_file_path&lt;/code>. Previously, the file path was interpreted as &lt;code>/my_file_path&lt;/code>. Now, it is interpreted as a relative path, i.e. &lt;code>my_file_path&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Spice Search limit:&lt;/strong> is now applied to the final search result, instead of previously being applied separately to each dataset involved in a search before aggregation.&lt;/p>
+&lt;h2 id="dependencies">Dependencies&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>&lt;a href="(https://releases.rs/docs/1.83.0/)">Rust&lt;/a>:&lt;/strong> Upgraded to 1.83&lt;/li>
+&lt;/ul>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@Advayp&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-contributors">New Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@Advayp made their first contribution in &lt;a href="https://github.com/spiceai/spiceai/pull/3862">https://github.com/spiceai/spiceai/pull/3862&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Fix install scripts to handle the RC release by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3718">https://github.com/spiceai/spiceai/pull/3718&lt;/a>&lt;/li>
+&lt;li>Update helm chart to v1.0.0-rc.1 by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3720">https://github.com/spiceai/spiceai/pull/3720&lt;/a>&lt;/li>
+&lt;li>Update spicepod.schema.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/3719">https://github.com/spiceai/spiceai/pull/3719&lt;/a>&lt;/li>
+&lt;li>Add logic to ignore task cancellations due to runtime shutdown by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3717">https://github.com/spiceai/spiceai/pull/3717&lt;/a>&lt;/li>
+&lt;li>Update to next relese version v1.0.0-rc.2 by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3721">https://github.com/spiceai/spiceai/pull/3721&lt;/a>&lt;/li>
+&lt;li>Handle parsing OTel KeyValues from the &lt;code>baggage&lt;/code> header by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3722">https://github.com/spiceai/spiceai/pull/3722&lt;/a>&lt;/li>
+&lt;li>Update &lt;code>llms&lt;/code> dependencies: &lt;code>mistralrs&lt;/code>, &lt;code>async-openai&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3725">https://github.com/spiceai/spiceai/pull/3725&lt;/a>&lt;/li>
+&lt;li>Support &lt;code>jsonl&lt;/code> for object store by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3726">https://github.com/spiceai/spiceai/pull/3726&lt;/a>&lt;/li>
+&lt;li>Fix NSQL models integration tests for HF by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3727">https://github.com/spiceai/spiceai/pull/3727&lt;/a>&lt;/li>
+&lt;li>standardise &amp;lsquo;csv_schema_infer_max_records&amp;rsquo; -&amp;gt; &amp;lsquo;schema_infer_max_records&amp;rsquo;; include deprecation messages for dataset params by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3732">https://github.com/spiceai/spiceai/pull/3732&lt;/a>&lt;/li>
+&lt;li>feat: Add script to generate TPC-H data for file connector by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3737">https://github.com/spiceai/spiceai/pull/3737&lt;/a>&lt;/li>
+&lt;li>feat: Add file connector integration test by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3735">https://github.com/spiceai/spiceai/pull/3735&lt;/a>&lt;/li>
+&lt;li>fix: Add explicit message for ODBC connector when not installed by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3736">https://github.com/spiceai/spiceai/pull/3736&lt;/a>&lt;/li>
+&lt;li>Remove Box::leak in &lt;code>create_accelerated_table&lt;/code> by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3739">https://github.com/spiceai/spiceai/pull/3739&lt;/a>&lt;/li>
+&lt;li>docs: Update enhancement and PR template by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3740">https://github.com/spiceai/spiceai/pull/3740&lt;/a>&lt;/li>
+&lt;li>feat: add file connector benchmark by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3734">https://github.com/spiceai/spiceai/pull/3734&lt;/a>&lt;/li>
+&lt;li>docs: Release file connector beta by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3738">https://github.com/spiceai/spiceai/pull/3738&lt;/a>&lt;/li>
+&lt;li>For embeddings, use &lt;code>sentence_*_config.json&lt;/code>, download HF async, use TEI functions by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3724">https://github.com/spiceai/spiceai/pull/3724&lt;/a>&lt;/li>
+&lt;li>Optimize build &amp;amp; release workflow for trunk builds by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3741">https://github.com/spiceai/spiceai/pull/3741&lt;/a>&lt;/li>
+&lt;li>Update benchmark snapshots by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/3752">https://github.com/spiceai/spiceai/pull/3752&lt;/a>&lt;/li>
+&lt;li>Skip Spice cloud integration tests by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3755">https://github.com/spiceai/spiceai/pull/3755&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>http_requests&lt;/code> metric and deprecate &lt;code>http_requests_total&lt;/code> by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3748">https://github.com/spiceai/spiceai/pull/3748&lt;/a>&lt;/li>
+&lt;li>Update benchmark snapshots by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/3759">https://github.com/spiceai/spiceai/pull/3759&lt;/a>&lt;/li>
+&lt;li>fix: Parquet file generation script by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3762">https://github.com/spiceai/spiceai/pull/3762&lt;/a>&lt;/li>
+&lt;li>fix: Use InvalidConfiguration error for GraphQL query errors by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3763">https://github.com/spiceai/spiceai/pull/3763&lt;/a>&lt;/li>
+&lt;li>Extend Spice Search integration and E2E tests to cover chunking by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3750">https://github.com/spiceai/spiceai/pull/3750&lt;/a>&lt;/li>
+&lt;li>test: Add GraphQL integration tests from external sources by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3756">https://github.com/spiceai/spiceai/pull/3756&lt;/a>&lt;/li>
+&lt;li>docs: Release GraphQL release candidate by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3764">https://github.com/spiceai/spiceai/pull/3764&lt;/a>&lt;/li>
+&lt;li>Accelerate a subset of columns from source dataset in Refresh SQL by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3765">https://github.com/spiceai/spiceai/pull/3765&lt;/a>&lt;/li>
+&lt;li>Run TPCDS benchmark for databricks delta mode by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3751">https://github.com/spiceai/spiceai/pull/3751&lt;/a>&lt;/li>
+&lt;li>Update dependencies by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3747">https://github.com/spiceai/spiceai/pull/3747&lt;/a>&lt;/li>
+&lt;li>Implement vector search benchmark initialization by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3774">https://github.com/spiceai/spiceai/pull/3774&lt;/a>&lt;/li>
+&lt;li>Implement InvalidTypeAction for PostgreSQL Data Connector by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3767">https://github.com/spiceai/spiceai/pull/3767&lt;/a>&lt;/li>
+&lt;li>fix: Check ODBC parameters are positive integers by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3777">https://github.com/spiceai/spiceai/pull/3777&lt;/a>&lt;/li>
+&lt;li>Fix Delta DataType &lt;code>Map&lt;/code> type mapping to arrow type by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3776">https://github.com/spiceai/spiceai/pull/3776&lt;/a>&lt;/li>
+&lt;li>Update Databricks &amp;amp; Delta Lake Connector RC criteria by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3778">https://github.com/spiceai/spiceai/pull/3778&lt;/a>&lt;/li>
+&lt;li>Add a &lt;code>/v1/packages/generate&lt;/code> API to generate a Spicepod package from a GitHub repo. by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3782">https://github.com/spiceai/spiceai/pull/3782&lt;/a>&lt;/li>
+&lt;li>Set &lt;code>Spice-Target-Source&lt;/code> header for &lt;code>spice add&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3783">https://github.com/spiceai/spiceai/pull/3783&lt;/a>&lt;/li>
+&lt;li>Call v1 spicerack API by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3784">https://github.com/spiceai/spiceai/pull/3784&lt;/a>&lt;/li>
+&lt;li>Run models integration tests on self-hosted macOS runners by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3785">https://github.com/spiceai/spiceai/pull/3785&lt;/a>&lt;/li>
+&lt;li>Fix OpenAI models integration tests by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3786">https://github.com/spiceai/spiceai/pull/3786&lt;/a>&lt;/li>
+&lt;li>Integration test for Databricks delta_lake mode by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3779">https://github.com/spiceai/spiceai/pull/3779&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>spice connect&lt;/code> for connecting to existing Spice.ai instances by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3790">https://github.com/spiceai/spiceai/pull/3790&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>eval&lt;/code> spicepod component; basic HTTP api to run eval. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3766">https://github.com/spiceai/spiceai/pull/3766&lt;/a>&lt;/li>
+&lt;li>Release RC for databricks delta_lake mode by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3792">https://github.com/spiceai/spiceai/pull/3792&lt;/a>&lt;/li>
+&lt;li>Include Huggingface model to E2E models tests by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3788">https://github.com/spiceai/spiceai/pull/3788&lt;/a>&lt;/li>
+&lt;li>Enable &lt;code>trace_id&lt;/code> &amp;amp; &lt;code>parent_span_id&lt;/code> overrides for &lt;code>v1/chat/completion&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3791">https://github.com/spiceai/spiceai/pull/3791&lt;/a>&lt;/li>
+&lt;li>Search benchmark: run search workload and measure result by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3793">https://github.com/spiceai/spiceai/pull/3793&lt;/a>&lt;/li>
+&lt;li>Search benchmark: measure search precision by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3804">https://github.com/spiceai/spiceai/pull/3804&lt;/a>&lt;/li>
+&lt;li>Use MinIO instead of S3 for benchmark tests by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3794">https://github.com/spiceai/spiceai/pull/3794&lt;/a>&lt;/li>
+&lt;li>Update benchmark snapshots by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/3814">https://github.com/spiceai/spiceai/pull/3814&lt;/a>&lt;/li>
+&lt;li>Only verify TPCH / TPCDS official query results for DuckDB by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3816">https://github.com/spiceai/spiceai/pull/3816&lt;/a>&lt;/li>
+&lt;li>Fixes for the Debezium connector by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3819">https://github.com/spiceai/spiceai/pull/3819&lt;/a>&lt;/li>
+&lt;li>Fix insert statement when all columns are constraint columns by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3820">https://github.com/spiceai/spiceai/pull/3820&lt;/a>&lt;/li>
+&lt;li>docs: Move ODBC to Beta for current state of roadmap by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3823">https://github.com/spiceai/spiceai/pull/3823&lt;/a>&lt;/li>
+&lt;li>Accept &lt;code>:&lt;/code>, &lt;code>/&lt;/code> or &lt;code>://&lt;/code> as the delimiter for the data connector by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3821">https://github.com/spiceai/spiceai/pull/3821&lt;/a>&lt;/li>
+&lt;li>Update dependencies by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3826">https://github.com/spiceai/spiceai/pull/3826&lt;/a>&lt;/li>
+&lt;li>Enable &lt;code>read_write&lt;/code> mode support for Postgres Data Connector by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3813">https://github.com/spiceai/spiceai/pull/3813&lt;/a>&lt;/li>
+&lt;li>feat: add Databricks ODBC TPCDS benchmark by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3825">https://github.com/spiceai/spiceai/pull/3825&lt;/a>&lt;/li>
+&lt;li>Change &lt;code>spice.ai&lt;/code> data connector dataset path format to &lt;code>&amp;lt;org&amp;gt;/&amp;lt;app&amp;gt;/datasets/&amp;lt;table_reference&amp;gt;&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3828">https://github.com/spiceai/spiceai/pull/3828&lt;/a>&lt;/li>
+&lt;li>fix: enable tpcds explain snapshotting by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3830">https://github.com/spiceai/spiceai/pull/3830&lt;/a>&lt;/li>
+&lt;li>Azure AI support for both LLMs &amp;amp; embedding models by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3824">https://github.com/spiceai/spiceai/pull/3824&lt;/a>&lt;/li>
+&lt;li>Add Github Workflow to run Search Benchmark by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3834">https://github.com/spiceai/spiceai/pull/3834&lt;/a>&lt;/li>
+&lt;li>Fetch access token with Microsoft OAuth, and use access token to initiate Sharepoint data connector graph client by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3836">https://github.com/spiceai/spiceai/pull/3836&lt;/a>&lt;/li>
+&lt;li>Initialize accelerator for datasets dynamically included by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3714">https://github.com/spiceai/spiceai/pull/3714&lt;/a>&lt;/li>
+&lt;li>Update cargo.lock by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3838">https://github.com/spiceai/spiceai/pull/3838&lt;/a>&lt;/li>
+&lt;li>feat: add MS SQL TPCH benchmark by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3833">https://github.com/spiceai/spiceai/pull/3833&lt;/a>&lt;/li>
+&lt;li>Improve Azure AI models support by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3835">https://github.com/spiceai/spiceai/pull/3835&lt;/a>&lt;/li>
+&lt;li>Primary key support for Arrow&amp;rsquo;s &lt;code>Memtable&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3829">https://github.com/spiceai/spiceai/pull/3829&lt;/a>&lt;/li>
+&lt;li>Update Tokenizer to 0.21 and mistral.rs by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3839">https://github.com/spiceai/spiceai/pull/3839&lt;/a>&lt;/li>
+&lt;li>Fix models integration tests by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3843">https://github.com/spiceai/spiceai/pull/3843&lt;/a>&lt;/li>
+&lt;li>Enable &lt;code>spice login abfs&lt;/code> by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3844">https://github.com/spiceai/spiceai/pull/3844&lt;/a>&lt;/li>
+&lt;li>update &lt;code>crates/llms&lt;/code> dependencies to &amp;lsquo;spiceai&amp;rsquo; branch by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3846">https://github.com/spiceai/spiceai/pull/3846&lt;/a>&lt;/li>
+&lt;li>Make eval runs non-blocking; &lt;code>spice.eval.{results, runs}&lt;/code> tables. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3780">https://github.com/spiceai/spiceai/pull/3780&lt;/a>&lt;/li>
+&lt;li>fix: Update GraphQL snapshots by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3849">https://github.com/spiceai/spiceai/pull/3849&lt;/a>&lt;/li>
+&lt;li>Update to Rust 1.83 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3847">https://github.com/spiceai/spiceai/pull/3847&lt;/a>&lt;/li>
+&lt;li>feat: add mssql integration test by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3848">https://github.com/spiceai/spiceai/pull/3848&lt;/a>&lt;/li>
+&lt;li>Prepend user-specified user agent in flight repl by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3850">https://github.com/spiceai/spiceai/pull/3850&lt;/a>&lt;/li>
+&lt;li>fix: trim CHAR in mssql by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3852">https://github.com/spiceai/spiceai/pull/3852&lt;/a>&lt;/li>
+&lt;li>Fix column quoting for SpiceCloudPlatform dialect by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3857">https://github.com/spiceai/spiceai/pull/3857&lt;/a>&lt;/li>
+&lt;li>Optimize builds by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3861">https://github.com/spiceai/spiceai/pull/3861&lt;/a>&lt;/li>
+&lt;li>Endgame template: Add recently added AI/ML quickstarts and samples by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3859">https://github.com/spiceai/spiceai/pull/3859&lt;/a>&lt;/li>
+&lt;li>docs: Release MS SQL Beta by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3853">https://github.com/spiceai/spiceai/pull/3853&lt;/a>&lt;/li>
+&lt;li>Fix nsql sampling for tables with embeddings by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3860">https://github.com/spiceai/spiceai/pull/3860&lt;/a>&lt;/li>
+&lt;li>Make GH workflows with spiceai-macos runners more stable by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3863">https://github.com/spiceai/spiceai/pull/3863&lt;/a>&lt;/li>
+&lt;li>fix: Remove GraphQL swapi test by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3867">https://github.com/spiceai/spiceai/pull/3867&lt;/a>&lt;/li>
+&lt;li>create 1 &lt;code>tokio::test&lt;/code> per test/model by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3696">https://github.com/spiceai/spiceai/pull/3696&lt;/a>&lt;/li>
+&lt;li>handle &lt;code>max_completion_tokens&lt;/code> vs &lt;code>max_tokens&lt;/code> for openai vs azure by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3869">https://github.com/spiceai/spiceai/pull/3869&lt;/a>&lt;/li>
+&lt;li>Search benchmark: write results to dataset by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3871">https://github.com/spiceai/spiceai/pull/3871&lt;/a>&lt;/li>
+&lt;li>Create &lt;code>evalconverter&lt;/code> that creates spice eval components. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3864">https://github.com/spiceai/spiceai/pull/3864&lt;/a>&lt;/li>
+&lt;li>Update quickstart in README.md by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3876">https://github.com/spiceai/spiceai/pull/3876&lt;/a>&lt;/li>
+&lt;li>Remove reference to spiceai-smart-demo from the repo home by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3885">https://github.com/spiceai/spiceai/pull/3885&lt;/a>&lt;/li>
+&lt;li>Trace &lt;code>evals&lt;/code> accelerated tables updates in debug mode by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3884">https://github.com/spiceai/spiceai/pull/3884&lt;/a>&lt;/li>
+&lt;li>Clarify confusing log message by @Advayp in &lt;a href="https://github.com/spiceai/spiceai/pull/3862">https://github.com/spiceai/spiceai/pull/3862&lt;/a>&lt;/li>
+&lt;li>Update spicepod.schema.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/3840">https://github.com/spiceai/spiceai/pull/3840&lt;/a>&lt;/li>
+&lt;li>Azure OpenAI models: make &lt;code>endpoint&lt;/code> parameter required by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3883">https://github.com/spiceai/spiceai/pull/3883&lt;/a>&lt;/li>
+&lt;li>Use spiceai delta kernel fork, actionable message for delta checkpoint errors by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3856">https://github.com/spiceai/spiceai/pull/3856&lt;/a>&lt;/li>
+&lt;li>Add support for GGUF files in HF by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3875">https://github.com/spiceai/spiceai/pull/3875&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v1.0.0-rc.1...v1.0.0-rc.2">https://github.com/spiceai/spiceai/compare/v1.0.0-rc.1...v1.0.0-rc.2&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
