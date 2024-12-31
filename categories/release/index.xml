@@ -1,4 +1,165 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Release</title><link>/categories/release/</link><description>Recent content in Release on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v1.0-rc.2 (Dec 16, 2024)</title><link>/posts/2024/12/16/spice-v1.0-rc.2-dec-16-2024/</link><pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate><guid>/posts/2024/12/16/spice-v1.0-rc.2-dec-16-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Release</title><link>/categories/release/</link><description>Recent content in Release on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v1.0-rc.3 (Dec 30, 2024)</title><link>/posts/2024/12/30/spice-v1.0-rc.3-dec-30-2024/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>/posts/2024/12/30/spice-v1.0-rc.3-dec-30-2024/</guid><description>
+&lt;p>Announcing the release of Spice v1.0-rc.3 🧊&lt;/p>
+&lt;p>Spice v1.0.0-rc.3 is the third release candidate for the first major version of Spice.ai OSS. This release continues the focus on production readiness and includes new Iceberg Catalog APIs, DuckDB improvements, and a new Iceberg Catalog Connector.&lt;/p>
+&lt;h2 id="highlights-in-v10-rc2">Highlights in v1.0-rc.2&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Iceberg Catalog APIs:&lt;/strong> Spice now functions as an Iceberg Catalog provider, implementing a core subset of the &lt;a href="https://iceberg.apache.org/concepts/catalog#decoupling-using-the-rest-catalog">Iceberg Catalog APIs&lt;/a>. This enables Iceberg Catalog clients native discovery of datasets and schemas through Spice APIs.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>GET /v1/namespaces&lt;/code> - List all catalogs registered in Spice.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>GET /v1/namespaces?parent=catalog&lt;/code> - List schemas registered under a given catalog.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>GET /v1/namespaces/:catalog_schema/tables&lt;/code> - List tables registered under a given schema.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>GET /v1/namespaces/:catalog_schema/tables/:table&lt;/code> - Get the schema of a given table.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Iceberg Catalog Connector:&lt;/strong> The &lt;a href="https://docs.spiceai.org/components/catalogs/iceberg">Iceberg Catalog Connector&lt;/a> is a new integration to discover and query datasets from a remote Iceberg Catalog.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Example connecting to a remote Iceberg Catalog with tables stored in S3:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">catalogs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">iceberg:https://my-iceberg-catalog.com/v1/namespaces&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">ice&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">iceberg_s3_access_key_id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">${secrets:ICEBERG_S3_ACCESS_KEY_ID}&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">iceberg_s3_secret_access_key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">${secrets:ICEBERG_S3_SECRET_ACCESS_KEY}&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">iceberg_s3_region&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">us-east-1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>View the &lt;a href="https://docs.spiceai.org/components/catalogs/iceberg">Iceberg Catalog Connector documentation&lt;/a> for more details.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>DuckDB Improvements:&lt;/strong> Added &lt;code>cosine_distance&lt;/code> support for DuckDB-backed vector search, improved &lt;code>unnest&lt;/code> nested type handling for &lt;code>array_element&lt;/code> and lists, and optimized query performance.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>SQLite Data Accelerator:&lt;/strong> Graduated to &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/criteria/accelerators/rc.md">Release Candidate (RC)&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>File Data Accelerator:&lt;/strong> Graduated to &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/criteria/accelerators/rc.md">Release Candidate (RC)&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="breaking-changes">Breaking changes&lt;/h2>
+&lt;ul>
+&lt;li>API:&lt;code>v1/datasets/sample&lt;/code> has been removed as it is not particularly useful, can be replicated via SQL, and via the tools endpoint &lt;code>POST v1/tools/:name&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="cookbook">Cookbook&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>New &lt;a href="https://github.com/spiceai/cookbook/blob/trunk/evals/README.md">Language Model Evals Recipe&lt;/a> shwoing how to measure the performance of a language model using LLM-as-Judge, configured entirely in the spice runtime.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>New &lt;a href="https://github.com/spiceai/cookbook/blob/trunk/catalogs/iceberg/README.md">Iceberg Catalog Recipe&lt;/a> showing how to use Spice to query Iceberg tables from a Iceberg catalog.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="dependencies">Dependencies&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://opentelemetry.io/">OpenTelemetry&lt;/a>: Upgraded from 0.26.0 to 0.27.1&lt;/li>
+&lt;li>&lt;a href="https://go.dev/">Go&lt;/a>: Upgraded from 1.22 to 1.23 (CLI)&lt;/li>
+&lt;/ul>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@Sevenannn&lt;/li>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Add CI configuration for search benchmark dataset access by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3888">https://github.com/spiceai/spiceai/pull/3888&lt;/a>&lt;/li>
+&lt;li>Update acknowledgements by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/3895">https://github.com/spiceai/spiceai/pull/3895&lt;/a>&lt;/li>
+&lt;li>Upgrade dependencies by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3896">https://github.com/spiceai/spiceai/pull/3896&lt;/a>&lt;/li>
+&lt;li>chore: Update helm chart for RC.2 by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3899">https://github.com/spiceai/spiceai/pull/3899&lt;/a>&lt;/li>
+&lt;li>Update spicepod.schema.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/3903">https://github.com/spiceai/spiceai/pull/3903&lt;/a>&lt;/li>
+&lt;li>chore: Update MacOS test release install to macos-13 by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3901">https://github.com/spiceai/spiceai/pull/3901&lt;/a>&lt;/li>
+&lt;li>Add usage to &lt;code>spice chat&lt;/code> and fix &lt;code>v1/models?status=true&lt;/code>. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3898">https://github.com/spiceai/spiceai/pull/3898&lt;/a>&lt;/li>
+&lt;li>chore: Bump versions for rc3 by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3902">https://github.com/spiceai/spiceai/pull/3902&lt;/a>&lt;/li>
+&lt;li>docs: Update endgame with a step to verify dependencies in release notes by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3897">https://github.com/spiceai/spiceai/pull/3897&lt;/a>&lt;/li>
+&lt;li>Ensure eval dataset input and ouput of correct length by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3900">https://github.com/spiceai/spiceai/pull/3900&lt;/a>&lt;/li>
+&lt;li>&lt;code>spice add/connect/dataset configure&lt;/code> should update spicepod, not overwrite it &amp;amp; upgrade to Go 1.23 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3905">https://github.com/spiceai/spiceai/pull/3905&lt;/a>&lt;/li>
+&lt;li>Bump opentelemetry from 0.26.0 to 0.27.1 by @dependabot in &lt;a href="https://github.com/spiceai/spiceai/pull/3879">https://github.com/spiceai/spiceai/pull/3879&lt;/a>&lt;/li>
+&lt;li>Ensure trace_id is overridden for prior written spans by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3906">https://github.com/spiceai/spiceai/pull/3906&lt;/a>&lt;/li>
+&lt;li>add &amp;lsquo;role&amp;rsquo;: &amp;lsquo;assistant&amp;rsquo; for local models by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3910">https://github.com/spiceai/spiceai/pull/3910&lt;/a>&lt;/li>
+&lt;li>Run tpcds benchmark for file connector by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3924">https://github.com/spiceai/spiceai/pull/3924&lt;/a>&lt;/li>
+&lt;li>Update to reference cookbook instead of quickstarts/samples by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3928">https://github.com/spiceai/spiceai/pull/3928&lt;/a>&lt;/li>
+&lt;li>Fix/remove flaky integration tests by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3930">https://github.com/spiceai/spiceai/pull/3930&lt;/a>&lt;/li>
+&lt;li>Implement &lt;code>/v1/iceberg/namespaces&lt;/code> &amp;amp; &lt;code>/v1/iceberg/config&lt;/code> APIs by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3923">https://github.com/spiceai/spiceai/pull/3923&lt;/a>&lt;/li>
+&lt;li>Add script for creating tpcds parquet files and spicepod for file connector by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3931">https://github.com/spiceai/spiceai/pull/3931&lt;/a>&lt;/li>
+&lt;li>Use &lt;code>utoipa&lt;/code> to generate openapi.json and swagger for dev by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3927">https://github.com/spiceai/spiceai/pull/3927&lt;/a>&lt;/li>
+&lt;li>&lt;code>fuzzy_match&lt;/code>, &lt;code>json_match&lt;/code>, &lt;code>includes&lt;/code> scorer by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3926">https://github.com/spiceai/spiceai/pull/3926&lt;/a>&lt;/li>
+&lt;li>Implement &lt;code>/v1/iceberg/namespaces/:namespace&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3933">https://github.com/spiceai/spiceai/pull/3933&lt;/a>&lt;/li>
+&lt;li>Implement &lt;code>GET /v1/iceberg/namespaces/:namespace/tables&lt;/code> API by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3934">https://github.com/spiceai/spiceai/pull/3934&lt;/a>&lt;/li>
+&lt;li>Add custom Spice DuckDB dialect with cosine_distance support by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3938">https://github.com/spiceai/spiceai/pull/3938&lt;/a>&lt;/li>
+&lt;li>Fix NSQL error: &lt;code>all columns in a record batch must have the same length&lt;/code> by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3947">https://github.com/spiceai/spiceai/pull/3947&lt;/a>&lt;/li>
+&lt;li>Don&amp;rsquo;t include tools use in hf test model by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3955">https://github.com/spiceai/spiceai/pull/3955&lt;/a>&lt;/li>
+&lt;li>Implement &lt;code>GET /v1/namespaces/{namespace}/tables/{table}&lt;/code> API by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3940">https://github.com/spiceai/spiceai/pull/3940&lt;/a>&lt;/li>
+&lt;li>Update dependencies by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3967">https://github.com/spiceai/spiceai/pull/3967&lt;/a>&lt;/li>
+&lt;li>DuckDB: add support for nested types in Lists by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3961">https://github.com/spiceai/spiceai/pull/3961&lt;/a>&lt;/li>
+&lt;li>Add script to set up clickbench for file connector by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3945">https://github.com/spiceai/spiceai/pull/3945&lt;/a>&lt;/li>
+&lt;li>docs: Add connector stable criteria by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3908">https://github.com/spiceai/spiceai/pull/3908&lt;/a>&lt;/li>
+&lt;li>Update Roadmp Dec 23, 2024 by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/3978">https://github.com/spiceai/spiceai/pull/3978&lt;/a>&lt;/li>
+&lt;li>Improve CI testing for OpenAPI, new tool &lt;code>spiceschema&lt;/code>, fix broken OpenAPI stuff. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3948">https://github.com/spiceai/spiceai/pull/3948&lt;/a>&lt;/li>
+&lt;li>remove &lt;code>v1/datasets/sample&lt;/code> by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3981">https://github.com/spiceai/spiceai/pull/3981&lt;/a>&lt;/li>
+&lt;li>feat: add SQLite ClickBench benchmark by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/3975">https://github.com/spiceai/spiceai/pull/3975&lt;/a>&lt;/li>
+&lt;li>Remove feature &amp;rsquo;llms/mistralrs&amp;rsquo; by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3984">https://github.com/spiceai/spiceai/pull/3984&lt;/a>&lt;/li>
+&lt;li>Add support for &amp;lsquo;params.spice_tools: nsql&amp;rsquo; by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3985">https://github.com/spiceai/spiceai/pull/3985&lt;/a>&lt;/li>
+&lt;li>Fix integration tests - add missing &lt;code>format&lt;/code> query parameter in /v1/status requests by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3989">https://github.com/spiceai/spiceai/pull/3989&lt;/a>&lt;/li>
+&lt;li>Enhance AI tools sampling logic for robust handling of large fields by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3959">https://github.com/spiceai/spiceai/pull/3959&lt;/a>&lt;/li>
+&lt;li>Fix subquery federation by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/3991">https://github.com/spiceai/spiceai/pull/3991&lt;/a>&lt;/li>
+&lt;li>Fix unnest and add DuckDB support for &lt;code>array_element&lt;/code> by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3995">https://github.com/spiceai/spiceai/pull/3995&lt;/a>&lt;/li>
+&lt;li>Add score value snapshotting to vector similarity search tests by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3996">https://github.com/spiceai/spiceai/pull/3996&lt;/a>&lt;/li>
+&lt;li>Use Llama-3.2-3B-Instruct for Hugging Face integration testing by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3992">https://github.com/spiceai/spiceai/pull/3992&lt;/a>&lt;/li>
+&lt;li>Simplify &lt;code>construct_chunk_query_sql&lt;/code> for DuckDB compatibility by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3988">https://github.com/spiceai/spiceai/pull/3988&lt;/a>&lt;/li>
+&lt;li>Update TPCH and TPCDS benchmarks for spice.ai connector by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/3982">https://github.com/spiceai/spiceai/pull/3982&lt;/a>&lt;/li>
+&lt;li>Correctly pass Hugging Face token in models integration tests by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/3997">https://github.com/spiceai/spiceai/pull/3997&lt;/a>&lt;/li>
+&lt;li>Fix: &lt;code>on_zero_results&lt;/code> causes &lt;code>TransactionContext Error: Catalog write-write conflict on create with &amp;quot;attachment_0&amp;quot;&lt;/code> by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/3998">https://github.com/spiceai/spiceai/pull/3998&lt;/a>&lt;/li>
+&lt;li>Add DuckDB acceleration to search benchmarks by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/4000">https://github.com/spiceai/spiceai/pull/4000&lt;/a>&lt;/li>
+&lt;li>Enable Postgres write via non-default &lt;code>postgres-write&lt;/code> feature flag by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/4004">https://github.com/spiceai/spiceai/pull/4004&lt;/a>&lt;/li>
+&lt;li>Allow search benchmark to write test results by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/4008">https://github.com/spiceai/spiceai/pull/4008&lt;/a>&lt;/li>
+&lt;li>Make Flight DoPut atomic and commit write only on successful stream completion by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/4002">https://github.com/spiceai/spiceai/pull/4002&lt;/a>&lt;/li>
+&lt;li>Create a &lt;code>CatalogConnector&lt;/code> abstraction by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4003">https://github.com/spiceai/spiceai/pull/4003&lt;/a>&lt;/li>
+&lt;li>Fix &lt;code>generate-openapi.yml&lt;/code> and add &lt;code>.schema/openapi.json&lt;/code>. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/3983">https://github.com/spiceai/spiceai/pull/3983&lt;/a>&lt;/li>
+&lt;li>Enable spice.ai tpcds bench workflow. Comment failing tpch queries. by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/4001">https://github.com/spiceai/spiceai/pull/4001&lt;/a>&lt;/li>
+&lt;li>feat: Add SQLite ClickBench overrides by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4016">https://github.com/spiceai/spiceai/pull/4016&lt;/a>&lt;/li>
+&lt;li>Implement Iceberg Catalog Connector by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4053">https://github.com/spiceai/spiceai/pull/4053&lt;/a>&lt;/li>
+&lt;li>feat: Datafusion updates for SQLite fixes and release by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4054">https://github.com/spiceai/spiceai/pull/4054&lt;/a>&lt;/li>
+&lt;li>docs: Add accelerator stable release criteria by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4017">https://github.com/spiceai/spiceai/pull/4017&lt;/a>&lt;/li>
+&lt;li>Add dremio tpch / tpcds benchmark test by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/4063">https://github.com/spiceai/spiceai/pull/4063&lt;/a>&lt;/li>
+&lt;li>Update docs, and make PR to &lt;code>spiceai/docs&lt;/code> for new &lt;code>openapi.json&lt;/code>. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/4019">https://github.com/spiceai/spiceai/pull/4019&lt;/a>&lt;/li>
+&lt;li>Update openapi.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/4065">https://github.com/spiceai/spiceai/pull/4065&lt;/a>&lt;/li>
+&lt;li>Fix dremio subquery rewrite by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/4064">https://github.com/spiceai/spiceai/pull/4064&lt;/a>&lt;/li>
+&lt;li>Update generate-openapi.yml by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/4073">https://github.com/spiceai/spiceai/pull/4073&lt;/a>&lt;/li>
+&lt;li>docs: Add catalog criteria by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4052">https://github.com/spiceai/spiceai/pull/4052&lt;/a>&lt;/li>
+&lt;li>fix &lt;code>distinct_columns&lt;/code> in auto/nsql tool groups by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/4074">https://github.com/spiceai/spiceai/pull/4074&lt;/a>&lt;/li>
+&lt;li>Update openapi.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/4075">https://github.com/spiceai/spiceai/pull/4075&lt;/a>&lt;/li>
+&lt;li>Update openapi.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/4076">https://github.com/spiceai/spiceai/pull/4076&lt;/a>&lt;/li>
+&lt;li>Implement window_func_support_window_frame from DremioDialect by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/4012">https://github.com/spiceai/spiceai/pull/4012&lt;/a>&lt;/li>
+&lt;li>Update acknowledgements by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/4079">https://github.com/spiceai/spiceai/pull/4079&lt;/a>&lt;/li>
+&lt;li>Promote file connector to rc by @Sevenannn in &lt;a href="https://github.com/spiceai/spiceai/pull/4080">https://github.com/spiceai/spiceai/pull/4080&lt;/a>&lt;/li>
+&lt;li>Add Iceberg to README by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4085">https://github.com/spiceai/spiceai/pull/4085&lt;/a>&lt;/li>
+&lt;li>Fix &amp;lsquo;/v1/status&amp;rsquo; default format by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/4081">https://github.com/spiceai/spiceai/pull/4081&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v1.0.0-rc.2...v1.0.0-rc.3">https://github.com/spiceai/spiceai/compare/v1.0.0-rc.2...v1.0.0-rc.3&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v1.0-rc.2 (Dec 16, 2024)</title><link>/posts/2024/12/16/spice-v1.0-rc.2-dec-16-2024/</link><pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate><guid>/posts/2024/12/16/spice-v1.0-rc.2-dec-16-2024/</guid><description>
 &lt;p>Announcing the release of Spice v1.0-rc.2 🔗&lt;/p>
 &lt;p>Spice v1.0.0-rc.2 is the second release candidate for the first major version of Spice.ai OSS. This release continues to build on the stability of Spice for production use, including key Data Connector graduations, bug fixes, and AI features.&lt;/p>
 &lt;h2 id="highlights-in-v10-rc2">Highlights in v1.0-rc.2&lt;/h2>
