@@ -49,10 +49,10 @@
 &lt;h2 id="cookbook">Cookbook&lt;/h2>
 &lt;ul>
 &lt;li>
-&lt;p>New &lt;a href="https://github.com/spiceai/cookbook/blob/trunk/evals/README.md">Language Model Evals Recipe&lt;/a> shwoing how to measure the performance of a language model using LLM-as-Judge, configured entirely in the spice runtime.&lt;/p>
+&lt;p>New &lt;a href="https://github.com/spiceai/cookbook/blob/trunk/evals/README.md">Language Model Evals Recipe&lt;/a> showing how to measure the performance of a language model using LLM-as-Judge, configured entirely in the spice runtime.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>New &lt;a href="https://github.com/spiceai/cookbook/blob/trunk/catalogs/iceberg/README.md">Iceberg Catalog Recipe&lt;/a> showing how to use Spice to query Iceberg tables from a Iceberg catalog.&lt;/p>
+&lt;p>New &lt;a href="https://github.com/spiceai/cookbook/blob/trunk/catalogs/iceberg/README.md">Iceberg Catalog Recipe&lt;/a> showing how to use Spice to query Iceberg tables from an Iceberg catalog.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="dependencies">Dependencies&lt;/h2>
