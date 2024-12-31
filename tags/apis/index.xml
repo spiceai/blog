@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Apis</title><link>/tags/apis/</link><description>Recent content in Apis on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/apis/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v1.0-rc.3 (Dec 30, 2024)</title><link>/posts/2024/12/30/spice-v1.0-rc.3-dec-30-2024/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>/posts/2024/12/30/spice-v1.0-rc.3-dec-30-2024/</guid><description>
 &lt;p>Announcing the release of Spice v1.0-rc.3 🧊&lt;/p>
 &lt;p>Spice v1.0.0-rc.3 is the third release candidate for the first major version of Spice.ai OSS. This release continues the focus on production readiness and includes new Iceberg Catalog APIs, DuckDB improvements, and a new Iceberg Catalog Connector.&lt;/p>
-&lt;h2 id="highlights-in-v10-rc2">Highlights in v1.0-rc.2&lt;/h2>
+&lt;h2 id="highlights-in-v10-rc3">Highlights in v1.0-rc.3&lt;/h2>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;strong>Iceberg Catalog APIs:&lt;/strong> Spice now functions as an Iceberg Catalog provider, implementing a core subset of the &lt;a href="https://iceberg.apache.org/concepts/catalog#decoupling-using-the-rest-catalog">Iceberg Catalog APIs&lt;/a>. This enables Iceberg Catalog clients native discovery of datasets and schemas through Spice APIs.&lt;/p>
