@@ -1,4 +1,104 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v1.0-rc.3 (Dec 30, 2024)</title><link>/posts/2024/12/30/spice-v1.0-rc.3-dec-30-2024/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>/posts/2024/12/30/spice-v1.0-rc.3-dec-30-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Spice.ai Blog</title><link>/</link><description>Recent content in Spice.ai Blog on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v1.0-rc.4 (Jan 6, 2025)</title><link>/posts/2025/01/06/spice-v1.0-rc.4-jan-6-2025/</link><pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate><guid>/posts/2025/01/06/spice-v1.0-rc.4-jan-6-2025/</guid><description>
+&lt;p>Happy New Year 🎆!&lt;/p>
+&lt;p>Announcing the release of Spice v1.0-rc.4 🌟&lt;/p>
+&lt;p>Spice v1.0.0-rc.4 is the fourth release candidate for the first major version of Spice.ai OSS. This release continues the focus on production readiness. In addition, xAI has been added as a model provider.&lt;/p>
+&lt;h2 id="highlights-in-v10-rc4">Highlights in v1.0-rc.4&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>xAI Model Provider:&lt;/strong> Adds support for &lt;a href="https://docs.x.ai/docs/api-reference#list-models">xAI&lt;/a> hosted models.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">models&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">xai:grok2-latest&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">xai&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">xai_api_key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">${secrets:SPICE_XAI_API_KEY}&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>Spicepod Spec Version:&lt;/strong> Spicepod spec version &lt;code>v1&lt;/code> is now by default. &lt;code>v1beta1&lt;/code> will continue to work.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">version&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">v1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">kind&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Spicepod&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my_pod&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>GitHub Data Connector:&lt;/strong> Graduated to &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/criteria/connectors/stable.md">Stable&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>PostgreSQL Data Accelerator:&lt;/strong> Graduated to &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/criteria/accelerators/rc.md">Release Candidate (RC)&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="cookbook">Cookbook&lt;/h2>
+&lt;ul>
+&lt;li>Added &lt;a href="https://github.com/spiceai/cookbook/blob/trunk/models/xai/README.md">xAI model provider recipe&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="dependencies">Dependencies&lt;/h2>
+&lt;p>No major dependency changes.&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@karifabri&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Update openapi.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/4087">https://github.com/spiceai/spiceai/pull/4087&lt;/a>&lt;/li>
+&lt;li>Update Helm chart for v1.0.0-rc.3 (v0.2.2) by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/4088">https://github.com/spiceai/spiceai/pull/4088&lt;/a>&lt;/li>
+&lt;li>Rev version to v1.0.0-rc.4 by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/4090">https://github.com/spiceai/spiceai/pull/4090&lt;/a>&lt;/li>
+&lt;li>Update spicepod.schema.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/4089">https://github.com/spiceai/spiceai/pull/4089&lt;/a>&lt;/li>
+&lt;li>Fix OpenAI Models Integration tests by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4084">https://github.com/spiceai/spiceai/pull/4084&lt;/a>&lt;/li>
+&lt;li>fix: Update Postgres TPCDS and ClickBench queries by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4092">https://github.com/spiceai/spiceai/pull/4092&lt;/a>&lt;/li>
+&lt;li>fix: Check Postgres acceleration schema on insert by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4094">https://github.com/spiceai/spiceai/pull/4094&lt;/a>&lt;/li>
+&lt;li>Update v1.0.0-rc.3.md by @karifabri in &lt;a href="https://github.com/spiceai/spiceai/pull/4096">https://github.com/spiceai/spiceai/pull/4096&lt;/a>&lt;/li>
+&lt;li>Update openapi.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/4093">https://github.com/spiceai/spiceai/pull/4093&lt;/a>&lt;/li>
+&lt;li>First-class TSV for file data connector by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/4098">https://github.com/spiceai/spiceai/pull/4098&lt;/a>&lt;/li>
+&lt;li>Allow Flight DoPut only for write api-keys by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/4010">https://github.com/spiceai/spiceai/pull/4010&lt;/a>&lt;/li>
+&lt;li>Only create tables &lt;code>eval.runs&lt;/code> and &lt;code>eval.results&lt;/code> when an eval is defined by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/4099">https://github.com/spiceai/spiceai/pull/4099&lt;/a>&lt;/li>
+&lt;li>Update Copyright year to include 2025 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4100">https://github.com/spiceai/spiceai/pull/4100&lt;/a>&lt;/li>
+&lt;li>feat: add postgres clickbench accelerator, release postgres accelerator by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4111">https://github.com/spiceai/spiceai/pull/4111&lt;/a>&lt;/li>
+&lt;li>Add spice binaries with metal to releases; detect metal device in &lt;code>spice install/upgrade&lt;/code>. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/4097">https://github.com/spiceai/spiceai/pull/4097&lt;/a>&lt;/li>
+&lt;li>docs: Clarify connector release criteria by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4112">https://github.com/spiceai/spiceai/pull/4112&lt;/a>&lt;/li>
+&lt;li>Update datafusion-federation to fix LIMIT with OFFSET handling in logical plan rewrite by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/4115">https://github.com/spiceai/spiceai/pull/4115&lt;/a>&lt;/li>
+&lt;li>Support Grok AI. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/4113">https://github.com/spiceai/spiceai/pull/4113&lt;/a>&lt;/li>
+&lt;li>Fix &lt;code>spice chat&lt;/code> usage bar. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/4119">https://github.com/spiceai/spiceai/pull/4119&lt;/a>&lt;/li>
+&lt;li>Set unified max encoding and decoding message size for all flight client configurations across runtime by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/4116">https://github.com/spiceai/spiceai/pull/4116&lt;/a>&lt;/li>
+&lt;li>feat: Add the file connector as an appendable benchmark connector by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4120">https://github.com/spiceai/spiceai/pull/4120&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>spice eval&lt;/code> command by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/4118">https://github.com/spiceai/spiceai/pull/4118&lt;/a>&lt;/li>
+&lt;li>Support multi-level table nesting for Dremio by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4129">https://github.com/spiceai/spiceai/pull/4129&lt;/a>&lt;/li>
+&lt;li>feat: run append TPCH benchmarks in workflow (Arrow, DuckDB) by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4131">https://github.com/spiceai/spiceai/pull/4131&lt;/a>&lt;/li>
+&lt;li>Fix bug in Iceberg tables selecting a subset of columns by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4132">https://github.com/spiceai/spiceai/pull/4132&lt;/a>&lt;/li>
+&lt;li>feat: Run append TPCDS benchmarks in workflow (Arrow, DuckDB) by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4141">https://github.com/spiceai/spiceai/pull/4141&lt;/a>&lt;/li>
+&lt;li>Setup spice.ai clickbench by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/4134">https://github.com/spiceai/spiceai/pull/4134&lt;/a>&lt;/li>
+&lt;li>Data is streamed when reading from the GitHub connector (GraphQL tables) by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4142">https://github.com/spiceai/spiceai/pull/4142&lt;/a>&lt;/li>
+&lt;li>Mark the GitHub Data Connector as Stable by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4143">https://github.com/spiceai/spiceai/pull/4143&lt;/a>&lt;/li>
+&lt;li>Fix table quoting for Databricks Spark connector by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4145">https://github.com/spiceai/spiceai/pull/4145&lt;/a>&lt;/li>
+&lt;li>Extend flight compute context for spice.ai connector with org and app names, to fix federated queries from different spice.ai data sources by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/4144">https://github.com/spiceai/spiceai/pull/4144&lt;/a>&lt;/li>
+&lt;li>Enforce Flight DoPut policies: Rate Limiting, Read Timeout, and Max Records per Batch by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/4117">https://github.com/spiceai/spiceai/pull/4117&lt;/a>&lt;/li>
+&lt;li>Fix bug Changes in catalog.yaml would require saving in spicepod.yaml to apply by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/4147">https://github.com/spiceai/spiceai/pull/4147&lt;/a>&lt;/li>
+&lt;li>Update benchmark snapshots by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/4137">https://github.com/spiceai/spiceai/pull/4137&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>test-framework&lt;/code> crate to contain all common benchmark, E2E, integration testing logic. by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4157">https://github.com/spiceai/spiceai/pull/4157&lt;/a>&lt;/li>
+&lt;li>Fix &lt;code>platform_option&lt;/code> variable in &lt;code>build_and_release.yml&lt;/code>. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/4154">https://github.com/spiceai/spiceai/pull/4154&lt;/a>&lt;/li>
+&lt;li>feat: Add Clickbench append benchmark for DuckDB and Arrow by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4160">https://github.com/spiceai/spiceai/pull/4160&lt;/a>&lt;/li>
+&lt;li>Upload artifacts to Minio on build_and_release by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4159">https://github.com/spiceai/spiceai/pull/4159&lt;/a>&lt;/li>
+&lt;li>feat: add on zero results benchmark by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4164">https://github.com/spiceai/spiceai/pull/4164&lt;/a>&lt;/li>
+&lt;li>Update spice.ai connector tests by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/4161">https://github.com/spiceai/spiceai/pull/4161&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v1.0.0-rc.3...v1.0.0-rc.4">https://github.com/spiceai/spiceai/compare/v1.0.0-rc.3...v1.0.0-rc.4&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v1.0-rc.3 (Dec 30, 2024)</title><link>/posts/2024/12/30/spice-v1.0-rc.3-dec-30-2024/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>/posts/2024/12/30/spice-v1.0-rc.3-dec-30-2024/</guid><description>
 &lt;p>Announcing the release of Spice v1.0-rc.3 🧊&lt;/p>
 &lt;p>Spice v1.0.0-rc.3 is the third release candidate for the first major version of Spice.ai OSS. This release continues the focus on production readiness and includes new Iceberg Catalog APIs, DuckDB improvements, and a new Iceberg Catalog Connector.&lt;/p>
 &lt;h2 id="highlights-in-v10-rc3">Highlights in v1.0-rc.3&lt;/h2>
@@ -4637,50 +4737,4 @@ Added &lt;code>pg_sslrootcert&lt;/code> parameter to allow setting custom root c
 &lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
 &lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
 &lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Posts: AI needs AI-ready data</title><link>/posts/2021/12/05/ai-needs-ai-ready-data/</link><pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate><guid>/posts/2021/12/05/ai-needs-ai-ready-data/</guid><description>
-&lt;p>A significant challenge when developing an app powered by AI is providing the machine learning (ML) engine with data in a format that it can use to learn. To do that, you need to normalize the numerical data, one-hot encode categorical data, and decide what to do with incomplete data - among other things.&lt;/p>
-&lt;p>This data handling is often challenging! For example, to learn from Bitcoin price data, the prices are better if normalized to a range between -1 and 1. Being close to 0 is also a problem because of the lack of precision in floating-point representations (usually under 1e-5).&lt;/p>
-&lt;p>As a developer, if you are new to AI and machine learning, a great talk that explains the basics is &lt;a href="https://www.youtube.com/watch?v=VwVg9jCtqaU">Machine Learning Zero to Hero&lt;/a>. Spice.ai makes the process of getting the data into an AI-ready format easy by doing it for you!&lt;/p>
-&lt;h2 id="what-is-ai-ready-data">What is AI-ready data?&lt;/h2>
-&lt;p>You write code with if statements and functions, but your machine only understands 1s and 0s. When you write code, you leverage tools, like a compiler, to translate that human-readable code into a machine-readable format.&lt;/p>
-&lt;p>Similarly, data for AI needs to be translated or &amp;ldquo;compiled&amp;rdquo; to be understood by the ML engine. You may have heard of &lt;a href="https://www.tensorflow.org/guide/tensor">tensors&lt;/a> before; they are simply another word for a multi-dimensional array and they are the language of ML engines. All inputs to and all outputs from the engine are in tensors. You could use the following techniques when converting (or &amp;ldquo;compiling&amp;rdquo;) source data to a tensor.&lt;/p>
-&lt;ol>
-&lt;li>&lt;strong>Normalization/standardization of the numerical input data.&lt;/strong> Many of the inputs and outputs in machine learning are interpreted as probability distributions. Much of the math that powers machine learning, such as softmax, tanh, sigmoid, etc., is meant to work in the [-1, 1] range.&lt;/li>
-&lt;/ol>
-&lt;div style="display: flex; justify-content: center; padding: 5px;">
-&lt;div style="display: grid;">
-&lt;img style="max-width: 563px; margin: auto" alt="Normalizing raw data" src="https://user-images.githubusercontent.com/879445/144733722-46baa2f7-5e94-4113-9770-735987d6a390.png">
-&lt;div style="font-size: 0.8rem; font-style: italic; text-align: center;">Figure 1. Normalizing Bitcoin price data.&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;ol start="2">
-&lt;li>&lt;strong>Conversion of categorical data into numerical data.&lt;/strong> For categorical data (i.e., colors such as &amp;ldquo;red,&amp;rdquo; &amp;ldquo;blue,&amp;rdquo; or &amp;ldquo;green&amp;rdquo;), you can achieve this through a technique called &lt;a href="https://www.educative.io/blog/one-hot-encoding">&amp;ldquo;One Hot Encoding.&amp;rdquo;&lt;/a> In one hot encoding, each possible value in the category appears as a column. The values in the column are assigned a binary value of 1 or 0 depending on whether the value exists or not.&lt;/li>
-&lt;/ol>
-&lt;div style="display: flex; justify-content: center; padding: 5px;">
-&lt;div style="display: flex; flex-direction: column;">
-&lt;img style="max-width: 300px; margin: auto" src="https://user-images.githubusercontent.com/879445/144733213-bd162dc0-7ac9-4bbb-9115-1dc46d2084cf.png" />
-&lt;div style="font-size: 0.8rem; font-style: italic;">Figure 2. A visualization of one-hot encoding&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;ol start="3">
-&lt;li>Several advanced techniques exist for &amp;ldquo;compiling&amp;rdquo; this source data - this process is known in the AI world as &amp;ldquo;feature engineering.&amp;rdquo; &lt;a href="https://developers.google.com/machine-learning/crash-course/representation/feature-engineering">This article&lt;/a> goes into more detail on feature engineering techniques if you are interested in learning more.&lt;/li>
-&lt;/ol>
-&lt;p>There are excellent tools like &lt;a href="https://pandas.pydata.org/">Pandas&lt;/a>, &lt;a href="https://numpy.org/">Numpy&lt;/a>, &lt;a href="https://scipy.org/">scipy&lt;/a>, and others that make the process of data transformation easier. However, most of these tools are Python libraries and frameworks - which means having to learn Python if you don&amp;rsquo;t know it already. Plus, when building intelligent apps (instead of just doing pure data analysis), this all needs to work on real-time data in production.&lt;/p>
-&lt;h2 id="building-intelligent-apps">Building intelligent apps&lt;/h2>
-&lt;p>The tools mentioned above are not designed for building real-time apps. They are often designed for analytics/data science.&lt;/p>
-&lt;p>In your app, you will need to do this data compilation in real-time - and you can&amp;rsquo;t rely on a local script to help process your data.
-It becomes trickier if the team responsible for the initial training of the machine learning model is not the team responsible for deploying it out into production.&lt;/p>
-&lt;p>How data is loaded and processed in a static dataset is likely very different from how the data is loaded and processed in real-time as your app is live. The result often is two separate codebases that are maintained by different teams that are both responsible for doing the same thing! Ensuring that those codebases stay consistent and evolve together is another challenge to tackle.&lt;/p>
-&lt;h2 id="spiceai-helps-developers-build-apps-with-real-time-ml">Spice.ai helps developers build apps with real-time ML&lt;/h2>
-&lt;p>Spice.ai handles the &amp;ldquo;compilation&amp;rdquo; of data for you.&lt;/p>
-&lt;p>You specify the data that your ML should learn from in a &lt;a href="https://blog.spiceai.org/posts/2021/12/02/spicepods-from-zero-to-hero/">Spicepod&lt;/a>. The Spice.ai runtime handles the logistics of gathering the data and compiling it into an AI-ready format.&lt;/p>
-&lt;p>It does this by using many techniques described earlier, such as normalization and one-hot encoding. And because we&amp;rsquo;re continuing to evolve Spice.ai, our data compilation will only get better over time.&lt;/p>
-&lt;p>In addition, the design of the Spice.ai runtime naturally ensures that the data used for both the training and real-time cases are consistent. Spice.ai uses the same data-components and runtime logic to produce the data. And not only that, you can take this a step further and share your Spicepod with someone else, and they would be able to use the same AI-ready data for their applications.&lt;/p>
-&lt;h2 id="summary">Summary&lt;/h2>
-&lt;p>Spice.ai handles the process of compiling your data into an AI-ready format in a way that is consistent both during the training and real-time stages of the ML engine. A Spicepod defines which data to get and where to get it. Sharing this Spicepod allows someone else to use the same AI-ready data format in their application.&lt;/p>
-&lt;h3 id="learn-more-and-contribute">Learn more and contribute&lt;/h3>
-&lt;p>Building intelligent apps that leverage AI is still way too hard, even for advanced developers. Our mission is to make this as easy as creating a modern web page. If the vision resonates with you, join us!&lt;/p>
-&lt;p>Our &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/ROADMAP.md">Spice.ai Roadmap&lt;/a> is public, and now that we have launched, the project and work are open for collaboration.&lt;/p>
-&lt;p>If you are interested in partnering, we&amp;rsquo;d love to talk. Try out &lt;a href="https://spiceai.org">Spice.ai&lt;/a>, &lt;a href="mailto:hey@spice.ai">email us&lt;/a> &amp;ldquo;hey,&amp;rdquo; get in touch on &lt;a href="https://discord.gg/kZnTfneP5u">Discord&lt;/a>, or reach out on &lt;a href="https://twitter.com/spice_ai">Twitter&lt;/a>.&lt;/p>
-&lt;p>We are just getting started! 🚀&lt;/p>
-&lt;p>Phillip&lt;/p></description></item></channel></rss>
+&lt;/ul></description></item></channel></rss>

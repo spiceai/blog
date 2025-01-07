@@ -1,4 +1,104 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Postgresql</title><link>/tags/postgresql/</link><description>Recent content in Postgresql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 04 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v0.20-beta (Nov 4, 2024)</title><link>/posts/2024/11/04/spice-v0.20-beta-nov-4-2024/</link><pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate><guid>/posts/2024/11/04/spice-v0.20-beta-nov-4-2024/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spice.ai blog – Postgresql</title><link>/tags/postgresql/</link><description>Recent content in Postgresql on Spice.ai blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 06 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>Posts: Spice v1.0-rc.4 (Jan 6, 2025)</title><link>/posts/2025/01/06/spice-v1.0-rc.4-jan-6-2025/</link><pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate><guid>/posts/2025/01/06/spice-v1.0-rc.4-jan-6-2025/</guid><description>
+&lt;p>Happy New Year 🎆!&lt;/p>
+&lt;p>Announcing the release of Spice v1.0-rc.4 🌟&lt;/p>
+&lt;p>Spice v1.0.0-rc.4 is the fourth release candidate for the first major version of Spice.ai OSS. This release continues the focus on production readiness. In addition, xAI has been added as a model provider.&lt;/p>
+&lt;h2 id="highlights-in-v10-rc4">Highlights in v1.0-rc.4&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>xAI Model Provider:&lt;/strong> Adds support for &lt;a href="https://docs.x.ai/docs/api-reference#list-models">xAI&lt;/a> hosted models.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">models&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">from&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">xai:grok2-latest&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">xai&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">params&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">xai_api_key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">${secrets:SPICE_XAI_API_KEY}&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>Spicepod Spec Version:&lt;/strong> Spicepod spec version &lt;code>v1&lt;/code> is now by default. &lt;code>v1beta1&lt;/code> will continue to work.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">version&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">v1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">kind&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Spicepod&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my_pod&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>GitHub Data Connector:&lt;/strong> Graduated to &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/criteria/connectors/stable.md">Stable&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>PostgreSQL Data Accelerator:&lt;/strong> Graduated to &lt;a href="https://github.com/spiceai/spiceai/blob/trunk/docs/criteria/accelerators/rc.md">Release Candidate (RC)&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="cookbook">Cookbook&lt;/h2>
+&lt;ul>
+&lt;li>Added &lt;a href="https://github.com/spiceai/cookbook/blob/trunk/models/xai/README.md">xAI model provider recipe&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="dependencies">Dependencies&lt;/h2>
+&lt;p>No major dependency changes.&lt;/p>
+&lt;h2 id="contributors">Contributors&lt;/h2>
+&lt;ul>
+&lt;li>@lukekim&lt;/li>
+&lt;li>@phillipleblanc&lt;/li>
+&lt;li>@peasee&lt;/li>
+&lt;li>@karifabri&lt;/li>
+&lt;li>@sgrebnov&lt;/li>
+&lt;li>@Jeadie&lt;/li>
+&lt;li>@ewgenius&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-changed">What&amp;rsquo;s Changed&lt;/h2>
+&lt;ul>
+&lt;li>Update openapi.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/4087">https://github.com/spiceai/spiceai/pull/4087&lt;/a>&lt;/li>
+&lt;li>Update Helm chart for v1.0.0-rc.3 (v0.2.2) by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/4088">https://github.com/spiceai/spiceai/pull/4088&lt;/a>&lt;/li>
+&lt;li>Rev version to v1.0.0-rc.4 by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/4090">https://github.com/spiceai/spiceai/pull/4090&lt;/a>&lt;/li>
+&lt;li>Update spicepod.schema.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/4089">https://github.com/spiceai/spiceai/pull/4089&lt;/a>&lt;/li>
+&lt;li>Fix OpenAI Models Integration tests by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4084">https://github.com/spiceai/spiceai/pull/4084&lt;/a>&lt;/li>
+&lt;li>fix: Update Postgres TPCDS and ClickBench queries by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4092">https://github.com/spiceai/spiceai/pull/4092&lt;/a>&lt;/li>
+&lt;li>fix: Check Postgres acceleration schema on insert by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4094">https://github.com/spiceai/spiceai/pull/4094&lt;/a>&lt;/li>
+&lt;li>Update v1.0.0-rc.3.md by @karifabri in &lt;a href="https://github.com/spiceai/spiceai/pull/4096">https://github.com/spiceai/spiceai/pull/4096&lt;/a>&lt;/li>
+&lt;li>Update openapi.json by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/4093">https://github.com/spiceai/spiceai/pull/4093&lt;/a>&lt;/li>
+&lt;li>First-class TSV for file data connector by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/4098">https://github.com/spiceai/spiceai/pull/4098&lt;/a>&lt;/li>
+&lt;li>Allow Flight DoPut only for write api-keys by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/4010">https://github.com/spiceai/spiceai/pull/4010&lt;/a>&lt;/li>
+&lt;li>Only create tables &lt;code>eval.runs&lt;/code> and &lt;code>eval.results&lt;/code> when an eval is defined by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/4099">https://github.com/spiceai/spiceai/pull/4099&lt;/a>&lt;/li>
+&lt;li>Update Copyright year to include 2025 by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4100">https://github.com/spiceai/spiceai/pull/4100&lt;/a>&lt;/li>
+&lt;li>feat: add postgres clickbench accelerator, release postgres accelerator by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4111">https://github.com/spiceai/spiceai/pull/4111&lt;/a>&lt;/li>
+&lt;li>Add spice binaries with metal to releases; detect metal device in &lt;code>spice install/upgrade&lt;/code>. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/4097">https://github.com/spiceai/spiceai/pull/4097&lt;/a>&lt;/li>
+&lt;li>docs: Clarify connector release criteria by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4112">https://github.com/spiceai/spiceai/pull/4112&lt;/a>&lt;/li>
+&lt;li>Update datafusion-federation to fix LIMIT with OFFSET handling in logical plan rewrite by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/4115">https://github.com/spiceai/spiceai/pull/4115&lt;/a>&lt;/li>
+&lt;li>Support Grok AI. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/4113">https://github.com/spiceai/spiceai/pull/4113&lt;/a>&lt;/li>
+&lt;li>Fix &lt;code>spice chat&lt;/code> usage bar. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/4119">https://github.com/spiceai/spiceai/pull/4119&lt;/a>&lt;/li>
+&lt;li>Set unified max encoding and decoding message size for all flight client configurations across runtime by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/4116">https://github.com/spiceai/spiceai/pull/4116&lt;/a>&lt;/li>
+&lt;li>feat: Add the file connector as an appendable benchmark connector by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4120">https://github.com/spiceai/spiceai/pull/4120&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>spice eval&lt;/code> command by @lukekim in &lt;a href="https://github.com/spiceai/spiceai/pull/4118">https://github.com/spiceai/spiceai/pull/4118&lt;/a>&lt;/li>
+&lt;li>Support multi-level table nesting for Dremio by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4129">https://github.com/spiceai/spiceai/pull/4129&lt;/a>&lt;/li>
+&lt;li>feat: run append TPCH benchmarks in workflow (Arrow, DuckDB) by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4131">https://github.com/spiceai/spiceai/pull/4131&lt;/a>&lt;/li>
+&lt;li>Fix bug in Iceberg tables selecting a subset of columns by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4132">https://github.com/spiceai/spiceai/pull/4132&lt;/a>&lt;/li>
+&lt;li>feat: Run append TPCDS benchmarks in workflow (Arrow, DuckDB) by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4141">https://github.com/spiceai/spiceai/pull/4141&lt;/a>&lt;/li>
+&lt;li>Setup spice.ai clickbench by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/4134">https://github.com/spiceai/spiceai/pull/4134&lt;/a>&lt;/li>
+&lt;li>Data is streamed when reading from the GitHub connector (GraphQL tables) by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4142">https://github.com/spiceai/spiceai/pull/4142&lt;/a>&lt;/li>
+&lt;li>Mark the GitHub Data Connector as Stable by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4143">https://github.com/spiceai/spiceai/pull/4143&lt;/a>&lt;/li>
+&lt;li>Fix table quoting for Databricks Spark connector by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4145">https://github.com/spiceai/spiceai/pull/4145&lt;/a>&lt;/li>
+&lt;li>Extend flight compute context for spice.ai connector with org and app names, to fix federated queries from different spice.ai data sources by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/4144">https://github.com/spiceai/spiceai/pull/4144&lt;/a>&lt;/li>
+&lt;li>Enforce Flight DoPut policies: Rate Limiting, Read Timeout, and Max Records per Batch by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/4117">https://github.com/spiceai/spiceai/pull/4117&lt;/a>&lt;/li>
+&lt;li>Fix bug Changes in catalog.yaml would require saving in spicepod.yaml to apply by @sgrebnov in &lt;a href="https://github.com/spiceai/spiceai/pull/4147">https://github.com/spiceai/spiceai/pull/4147&lt;/a>&lt;/li>
+&lt;li>Update benchmark snapshots by @github-actions in &lt;a href="https://github.com/spiceai/spiceai/pull/4137">https://github.com/spiceai/spiceai/pull/4137&lt;/a>&lt;/li>
+&lt;li>Add &lt;code>test-framework&lt;/code> crate to contain all common benchmark, E2E, integration testing logic. by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4157">https://github.com/spiceai/spiceai/pull/4157&lt;/a>&lt;/li>
+&lt;li>Fix &lt;code>platform_option&lt;/code> variable in &lt;code>build_and_release.yml&lt;/code>. by @Jeadie in &lt;a href="https://github.com/spiceai/spiceai/pull/4154">https://github.com/spiceai/spiceai/pull/4154&lt;/a>&lt;/li>
+&lt;li>feat: Add Clickbench append benchmark for DuckDB and Arrow by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4160">https://github.com/spiceai/spiceai/pull/4160&lt;/a>&lt;/li>
+&lt;li>Upload artifacts to Minio on build_and_release by @phillipleblanc in &lt;a href="https://github.com/spiceai/spiceai/pull/4159">https://github.com/spiceai/spiceai/pull/4159&lt;/a>&lt;/li>
+&lt;li>feat: add on zero results benchmark by @peasee in &lt;a href="https://github.com/spiceai/spiceai/pull/4164">https://github.com/spiceai/spiceai/pull/4164&lt;/a>&lt;/li>
+&lt;li>Update spice.ai connector tests by @ewgenius in &lt;a href="https://github.com/spiceai/spiceai/pull/4161">https://github.com/spiceai/spiceai/pull/4161&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full Changelog&lt;/strong>: &lt;a href="https://github.com/spiceai/spiceai/compare/v1.0.0-rc.3...v1.0.0-rc.4">https://github.com/spiceai/spiceai/compare/v1.0.0-rc.3...v1.0.0-rc.4&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spiceai.org/getting-started/">Getting started with Spice.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.spiceai.org/">Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="community">Community&lt;/h2>
+&lt;p>Spice.ai started with the vision to make AI easy for developers. We are building Spice.ai in the open and with the community. Reach out on Discord or by email to get involved.&lt;/p>
+&lt;ul>
+&lt;li>Twitter: &lt;a href="https://twitter.com/spice_ai">@spice_ai&lt;/a>&lt;/li>
+&lt;li>Discord: &lt;a href="https://discord.gg/kZnTfneP5u">https://discord.gg/kZnTfneP5u&lt;/a>&lt;/li>
+&lt;li>Telegram: &lt;a href="https://t.me/spiceaichat">Spice AI Discussion&lt;/a>&lt;/li>
+&lt;li>Reddit: &lt;a href="https://www.reddit.com/r/spiceai">https://www.reddit.com/r/spiceai&lt;/a>&lt;/li>
+&lt;li>Email: &lt;a href="mailto:hey@spice.ai">hey@spice.ai&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Posts: Spice v0.20-beta (Nov 4, 2024)</title><link>/posts/2024/11/04/spice-v0.20-beta-nov-4-2024/</link><pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate><guid>/posts/2024/11/04/spice-v0.20-beta-nov-4-2024/</guid><description>
 &lt;p>Announcing the release of Spice v0.20-beta 🧩&lt;/p>
 &lt;p>Spice v0.20.0-beta improves federated query performance with column pruning and adds support for Metal (Apple Silicon) and CUDA (NVidia) accelerators. The S3, PostgreSQL, MySQL, and GitHub Data Connectors have graduated from Beta to Release Candidates. The Arrow, DuckDB, and SQLite Data Accelerators have graduated from Alpha to Beta.&lt;/p>
 &lt;h2 id="highlights-in-v0200-beta">Highlights in v0.20.0-beta&lt;/h2>
